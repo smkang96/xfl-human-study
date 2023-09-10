@@ -54,18 +54,14 @@ class Styler:
     Parameters
     ----------
     data : Series or DataFrame
-        Data to be styled - either a Series or DataFrame.
     precision : int
-        Precision to round floats to, defaults to pd.options.display.precision.
+        precision to round floats to, defaults to pd.options.display.precision
     table_styles : list-like, default None
-        List of {selector: (attr, value)} dicts; see Notes.
+        list of {selector: (attr, value)} dicts; see Notes
     uuid : str, default None
-        A unique identifier to avoid CSS collisions; generated automatically.
+        a unique identifier to avoid CSS collisions; generated automatically
     caption : str, default None
-        Caption to attach to the table.
-    table_attributes : str, default None
-        Items that show up in the opening ``<table>`` tag
-        in addition to automatic (by default) id.
+        caption to attach to the table
     cell_ids : bool, default True
         If True, each cell will have an ``id`` attribute in their HTML tag.
         The ``id`` takes the form ``T_<uuid>_row<num_row>_col<num_col>``
@@ -80,8 +76,7 @@ class Styler:
 
     See Also
     --------
-    DataFrame.style : Return a Styler object containing methods for building
-        a styled HTML representation for the DataFrame.
+    DataFrame.style
 
     Notes
     -----

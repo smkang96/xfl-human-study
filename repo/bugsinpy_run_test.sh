@@ -1,1 +1,1 @@
-pytest pandas/tests/indexes/test_range.py::TestRangeIndex::test_get_indexer_decreasing 
+pytest pandas/tests/series/test_analytics.py::TestSeriesAnalytics::test_bool_diff 

@@ -2738,7 +2738,10 @@ class Series(base.IndexOpsMixin, generic.NDFrame):
             result = func(this_vals, other_vals)
 
         name = ops.get_op_result_name(self, other)
-        ret = ops._construct_result(self, result, new_index, name)
+        if func.__name__ in ["divmod", "rdivmod"]:
+            ret = ops._construct_divmod_result(self, result, new_index, name)
+        else:
+            ret = ops._construct_result(self, result, new_index, name)
         return ret
 
     def combine(self, other, func, fill_value=None):
@@ -4407,9 +4410,9 @@ class Series(base.IndexOpsMixin, generic.NDFrame):
 
         Parameters
         ----------
-        left : scalar or list-like
+        left : scalar
             Left boundary.
-        right : scalar or list-like
+        right : scalar
             Right boundary.
         inclusive : bool, default True
             Include boundaries.
