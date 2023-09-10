@@ -4,9 +4,10 @@ from distutils.version import LooseVersion
 import numpy as np
 import pytest
 
+import pandas.util._test_decorators as td
+
 import pandas as pd
-import pandas.util.testing as tm
-from pandas.util.testing import assert_frame_equal, ensure_clean
+import pandas._testing as tm
 
 from pandas.io.feather_format import read_feather, to_feather  # noqa: E402 isort:skip
 
@@ -25,19 +26,19 @@ class TestFeather:
         # on writing
 
         with pytest.raises(exc):
-            with ensure_clean() as path:
+            with tm.ensure_clean() as path:
                 to_feather(df, path)
 
-    def check_round_trip(self, df, expected=None, **kwargs):
+    def check_round_trip(self, df, expected=None, write_kwargs={}, **read_kwargs):
 
         if expected is None:
             expected = df
 
-        with ensure_clean() as path:
-            to_feather(df, path)
+        with tm.ensure_clean() as path:
+            to_feather(df, path, **write_kwargs)
 
-            result = read_feather(path, **kwargs)
-            assert_frame_equal(result, expected)
+            result = read_feather(path, **read_kwargs)
+            tm.assert_frame_equal(result, expected)
 
     def test_error(self):
 
@@ -72,6 +73,10 @@ class TestFeather:
                 "dtns": pd.date_range("20130101", periods=3, freq="ns"),
             }
         )
+        if pyarrow_version >= LooseVersion("0.16.1.dev"):
+            df["periods"] = pd.period_range("2013", freq="M", periods=3)
+            df["timedeltas"] = pd.timedelta_range("1 day", periods=3)
+            df["intervals"] = pd.interval_range(0, 3, 3)
 
         assert df.dttz.dtype.tz.zone == "US/Eastern"
         self.check_round_trip(df)
@@ -103,27 +108,10 @@ class TestFeather:
 
     def test_unsupported_other(self):
 
-        # period
-        df = pd.DataFrame({"a": pd.period_range("2013", freq="M", periods=3)})
+        # mixed python objects
+        df = pd.DataFrame({"a": ["a", 1, 2.0]})
         # Some versions raise ValueError, others raise ArrowInvalid.
         self.check_error_on_write(df, Exception)
-
-    def test_rw_nthreads(self):
-        df = pd.DataFrame({"A": np.arange(100000)})
-        expected_warning = (
-            "the 'nthreads' keyword is deprecated, use 'use_threads' instead"
-        )
-        # TODO: make the warning work with check_stacklevel=True
-        with tm.assert_produces_warning(FutureWarning, check_stacklevel=False) as w:
-            self.check_round_trip(df, nthreads=2)
-        # we have an extra FutureWarning because of #GH23752
-        assert any(expected_warning in str(x) for x in w)
-
-        # TODO: make the warning work with check_stacklevel=True
-        with tm.assert_produces_warning(FutureWarning, check_stacklevel=False) as w:
-            self.check_round_trip(df, nthreads=1)
-        # we have an extra FutureWarnings because of #GH23752
-        assert any(expected_warning in str(x) for x in w)
 
     def test_rw_use_threads(self):
         df = pd.DataFrame({"A": np.arange(100000)})
@@ -154,7 +142,7 @@ class TestFeather:
 
         # column multi-index
         df.index = [0, 1, 2]
-        df.columns = (pd.MultiIndex.from_tuples([("a", 1), ("a", 2), ("b", 1)]),)
+        df.columns = pd.MultiIndex.from_tuples([("a", 1)])
         self.check_error_on_write(df, ValueError)
 
     def test_path_pathlib(self):
@@ -166,3 +154,8 @@ class TestFeather:
         df = tm.makeDataFrame().reset_index()
         result = tm.round_trip_localpath(df.to_feather, pd.read_feather)
         tm.assert_frame_equal(df, result)
+
+    @td.skip_if_no("pyarrow", min_version="0.16.1.dev")
+    def test_passthrough_keywords(self):
+        df = tm.makeDataFrame().reset_index()
+        self.check_round_trip(df, write_kwargs=dict(version=1))

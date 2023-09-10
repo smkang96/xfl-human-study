@@ -1,4 +1,5 @@
 import calendar
+from datetime import datetime
 import locale
 import unicodedata
 
@@ -6,20 +7,11 @@ import numpy as np
 import pytest
 
 import pandas as pd
-from pandas import DatetimeIndex, Index, Timestamp, date_range, datetime, offsets
-import pandas.util.testing as tm
+from pandas import DatetimeIndex, Index, Timestamp, date_range, offsets
+import pandas._testing as tm
 
 
 class TestTimeSeries:
-    def test_pass_datetimeindex_to_index(self):
-        # Bugs in #1396
-        rng = date_range("1/1/2000", "3/1/2000")
-        idx = Index(rng, dtype=object)
-
-        expected = Index(rng.to_pydatetime(), dtype=object)
-
-        tm.assert_numpy_array_equal(idx.values, expected.values)
-
     def test_range_edges(self):
         # GH#13672
         idx = pd.date_range(
@@ -200,7 +192,6 @@ class TestDatetime64:
             assert len(dti.is_quarter_end) == 365
             assert len(dti.is_year_start) == 365
             assert len(dti.is_year_end) == 365
-            assert len(dti.weekday_name) == 365
 
             dti.name = "name"
 
@@ -339,11 +330,8 @@ class TestDatetime64:
         ]
         for day, name, eng_name in zip(range(4, 11), expected_days, english_days):
             name = name.capitalize()
-            assert dti.weekday_name[day] == eng_name
             assert dti.day_name(locale=time_locale)[day] == name
             ts = Timestamp(datetime(2016, 4, day))
-            with tm.assert_produces_warning(FutureWarning, check_stacklevel=False):
-                assert ts.weekday_name == eng_name
             assert ts.day_name(locale=time_locale) == name
         dti = dti.append(DatetimeIndex([pd.NaT]))
         assert np.isnan(dti.day_name(locale=time_locale)[-1])
@@ -385,3 +373,17 @@ def test_iter_readonly():
     arr.setflags(write=False)
     dti = pd.to_datetime(arr)
     list(dti)
+
+
+def test_isocalendar_returns_correct_values_close_to_new_year_with_tz():
+    # GH 6538: Check that DatetimeIndex and its TimeStamp elements
+    # return the same weekofyear accessor close to new year w/ tz
+    dates = ["2013/12/29", "2013/12/30", "2013/12/31"]
+    dates = DatetimeIndex(dates, tz="Europe/Brussels")
+    result = dates.isocalendar()
+    expected_data_frame = pd.DataFrame(
+        [[2013, 52, 7], [2014, 1, 1], [2014, 1, 2]],
+        columns=["year", "week", "day"],
+        dtype="UInt32",
+    )
+    tm.assert_frame_equal(result, expected_data_frame)

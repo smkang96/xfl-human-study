@@ -1,9 +1,11 @@
 """Sparse Dtype"""
 
 import re
-from typing import Any
+from typing import TYPE_CHECKING, Any, Tuple, Type
 
 import numpy as np
+
+from pandas._typing import Dtype
 
 from pandas.core.dtypes.base import ExtensionDtype
 from pandas.core.dtypes.cast import astype_nansafe
@@ -17,7 +19,8 @@ from pandas.core.dtypes.common import (
 from pandas.core.dtypes.dtypes import register_extension_dtype
 from pandas.core.dtypes.missing import isna, na_value_for_dtype
 
-from pandas._typing import Dtype
+if TYPE_CHECKING:
+    from pandas.core.arrays.sparse.array import SparseArray  # noqa: F401
 
 
 @register_extension_dtype
@@ -64,7 +67,7 @@ class SparseDtype(ExtensionDtype):
     # hash(nan) is (sometimes?) 0.
     _metadata = ("_dtype", "_fill_value", "_is_na_fill_value")
 
-    def __init__(self, dtype: Dtype = np.float64, fill_value: Any = None) -> None:
+    def __init__(self, dtype: Dtype = np.float64, fill_value: Any = None):
 
         if isinstance(dtype, type(self)):
             if fill_value is None:
@@ -79,9 +82,7 @@ class SparseDtype(ExtensionDtype):
             fill_value = na_value_for_dtype(dtype)
 
         if not is_scalar(fill_value):
-            raise ValueError(
-                "fill_value must be a scalar. Got {} instead".format(fill_value)
-            )
+            raise ValueError(f"fill_value must be a scalar. Got {fill_value} instead")
         self._dtype = dtype
         self._fill_value = fill_value
 
@@ -90,7 +91,7 @@ class SparseDtype(ExtensionDtype):
         # __eq__, so we explicitly do it here.
         return super().__hash__()
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
         # We have to override __eq__ to handle NA values in _metadata.
         # The base class does simple == checks, which fail for NA.
         if isinstance(other, str):
@@ -139,11 +140,11 @@ class SparseDtype(ExtensionDtype):
         return isna(self.fill_value)
 
     @property
-    def _is_numeric(self):
+    def _is_numeric(self) -> bool:
         return not is_object_dtype(self.subtype)
 
     @property
-    def _is_boolean(self):
+    def _is_boolean(self) -> bool:
         return is_bool_dtype(self.subtype)
 
     @property
@@ -163,19 +164,26 @@ class SparseDtype(ExtensionDtype):
 
     @property
     def name(self):
-        return "Sparse[{}, {}]".format(self.subtype.name, self.fill_value)
+        return f"Sparse[{self.subtype.name}, {self.fill_value}]"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.name
 
     @classmethod
-    def construct_array_type(cls):
-        from .array import SparseArray
+    def construct_array_type(cls) -> Type["SparseArray"]:
+        """
+        Return the array type associated with this dtype.
+
+        Returns
+        -------
+        type
+        """
+        from pandas.core.arrays.sparse.array import SparseArray  # noqa: F811
 
         return SparseArray
 
     @classmethod
-    def construct_from_string(cls, string):
+    def construct_from_string(cls, string: str) -> "SparseDtype":
         """
         Construct a SparseDtype from a string form.
 
@@ -201,29 +209,33 @@ class SparseDtype(ExtensionDtype):
         -------
         SparseDtype
         """
-        msg = "Could not construct SparseDtype from '{}'".format(string)
+        if not isinstance(string, str):
+            raise TypeError(
+                f"'construct_from_string' expects a string, got {type(string)}"
+            )
+        msg = f"Cannot construct a 'SparseDtype' from '{string}'"
         if string.startswith("Sparse"):
             try:
                 sub_type, has_fill_value = cls._parse_subtype(string)
-            except ValueError:
-                raise TypeError(msg)
+            except ValueError as err:
+                raise TypeError(msg) from err
             else:
                 result = SparseDtype(sub_type)
                 msg = (
-                    "Could not construct SparseDtype from '{}'.\n\nIt "
+                    f"Cannot construct a 'SparseDtype' from '{string}'.\n\nIt "
                     "looks like the fill_value in the string is not "
                     "the default for the dtype. Non-default fill_values "
                     "are not supported. Use the 'SparseDtype()' "
                     "constructor instead."
                 )
                 if has_fill_value and str(result) != string:
-                    raise TypeError(msg.format(string))
+                    raise TypeError(msg)
                 return result
         else:
             raise TypeError(msg)
 
     @staticmethod
-    def _parse_subtype(dtype):
+    def _parse_subtype(dtype: str) -> Tuple[str, bool]:
         """
         Parse a string to get the subtype
 
@@ -249,15 +261,15 @@ class SparseDtype(ExtensionDtype):
         has_fill_value = False
         if m:
             subtype = m.groupdict()["subtype"]
-            has_fill_value = m.groupdict()["fill_value"] or has_fill_value
+            has_fill_value = bool(m.groupdict()["fill_value"])
         elif dtype == "Sparse":
             subtype = "float64"
         else:
-            raise ValueError("Cannot parse {}".format(dtype))
+            raise ValueError(f"Cannot parse {dtype}")
         return subtype, has_fill_value
 
     @classmethod
-    def is_dtype(cls, dtype):
+    def is_dtype(cls, dtype: object) -> bool:
         dtype = getattr(dtype, "dtype", dtype)
         if isinstance(dtype, str) and dtype.startswith("Sparse"):
             sub_type, _ = cls._parse_subtype(dtype)
@@ -285,7 +297,7 @@ class SparseDtype(ExtensionDtype):
         Returns
         -------
         SparseDtype
-            A new SparseDtype with the corret `dtype` and fill value
+            A new SparseDtype with the correct `dtype` and fill value
             for that `dtype`.
 
         Raises
@@ -324,7 +336,6 @@ class SparseDtype(ExtensionDtype):
 
         Returns
         -------
-
         >>> SparseDtype(int, 1)._subtype_with_str
         dtype('int64')
 
@@ -336,7 +347,7 @@ class SparseDtype(ExtensionDtype):
         dtype('O')
 
         >>> dtype._subtype_with_str
-        str
+        <class 'str'>
         """
         if isinstance(self.fill_value, str):
             return type(self.fill_value)

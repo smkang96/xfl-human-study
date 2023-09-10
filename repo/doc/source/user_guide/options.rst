@@ -140,7 +140,7 @@ More information can be found in the `ipython documentation
 
 .. _options.frequently_used:
 
-Frequently Used Options
+Frequently used options
 -----------------------
 The following is a walk-through of the more frequently used display options.
 
@@ -560,8 +560,6 @@ However, setting this option incorrectly for your terminal will cause these char
 
 Table schema display
 --------------------
-
-.. versionadded:: 0.20.0
 
 ``DataFrame`` and ``Series`` will publish a Table Schema representation
 by default. False by default, this can be enabled globally with the

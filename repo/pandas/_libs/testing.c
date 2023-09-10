@@ -10,12 +10,10 @@
             ]
         ],
         "extra_compile_args": [
-            "-Wno-unused-function"
+            "-Werror"
         ],
         "include_dirs": [
-            "pandas/_libs/src/klib",
-            "pandas/_libs/src",
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include"
+            "/opt/conda/envs/d59357c11ae8befe278c11c046925e8f/lib/python3.8/site-packages/numpy/core/include"
         ],
         "language": "c",
         "name": "pandas._libs.testing",
@@ -862,6 +860,7 @@ struct __pyx_opt_args_6pandas_5_libs_7testing_assert_almost_equal {
   PyObject *obj;
   PyObject *lobj;
   PyObject *robj;
+  PyObject *index_values;
 };
 
 /* --- Runtime support code (head) --- */
@@ -1092,9 +1091,27 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
     const char* function_name);
 
-/* PyObjectFormatAndDecref.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_FormatSimpleAndDecref(PyObject* s, PyObject* f);
-static CYTHON_INLINE PyObject* __Pyx_PyObject_FormatAndDecref(PyObject* s, PyObject* f);
+/* PyObjectFormatSimple.proto */
+#if CYTHON_COMPILING_IN_PYPY
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        PyObject_Format(s, f))
+#elif PY_MAJOR_VERSION < 3
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        likely(PyString_CheckExact(s)) ? PyUnicode_FromEncodedObject(s, NULL, "strict") :\
+        PyObject_Format(s, f))
+#elif CYTHON_USE_TYPE_SLOTS
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        likely(PyLong_CheckExact(s)) ? PyLong_Type.tp_str(s) :\
+        likely(PyFloat_CheckExact(s)) ? PyFloat_Type.tp_str(s) :\
+        PyObject_Format(s, f))
+#else
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        PyObject_Format(s, f))
+#endif
 
 /* IncludeStringH.proto */
 #include <string.h>
@@ -1156,9 +1173,6 @@ static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level);
 /* ImportFrom.proto */
 static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name);
 
-/* PyObjectCall2Args.proto */
-static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
-
 /* py_abs.proto */
 #if CYTHON_USE_PYLONG_INTERNALS
 static PyObject *__Pyx_PyLong_AbsNeg(PyObject *num);
@@ -1201,6 +1215,9 @@ static int __Pyx__GetException(PyThreadState *tstate, PyObject **type, PyObject 
 #else
 static int __Pyx_GetException(PyObject **type, PyObject **value, PyObject **tb);
 #endif
+
+/* PyObjectCall2Args.proto */
+static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
 
 /* PyObjectFormat.proto */
 #if CYTHON_USE_UNICODE_WRITER
@@ -1288,17 +1305,16 @@ extern int __pyx_module_is_main_pandas___libs__testing;
 int __pyx_module_is_main_pandas___libs__testing = 0;
 
 /* Implementation of 'pandas._libs.testing' */
-static PyObject *__pyx_builtin_xrange;
+static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_AssertionError;
 static const char __pyx_k_[] = " != ";
 static const char __pyx_k_a[] = "a";
 static const char __pyx_k_b[] = "b";
-static const char __pyx_k_d[] = "d";
 static const char __pyx_k_5f[] = ".5f";
 static const char __pyx_k__2[] = ", ";
 static const char __pyx_k__3[] = ")";
+static const char __pyx_k__4[] = " %)";
 static const char __pyx_k_np[] = "np";
-static const char __pyx_k_0_1[] = "{0} != {1}";
 static const char __pyx_k_len[] = "__len__";
 static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_bool[] = "bool";
@@ -1321,12 +1337,10 @@ static const char __pyx_k_range[] = "range";
 static const char __pyx_k_round[] = "round";
 static const char __pyx_k_shape[] = "shape";
 static const char __pyx_k_uint8[] = "uint8";
-static const char __pyx_k_format[] = "format";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_uint16[] = "uint16";
 static const char __pyx_k_uint32[] = "uint32";
 static const char __pyx_k_uint64[] = "uint64";
-static const char __pyx_k_xrange[] = "xrange";
 static const char __pyx_k_but_got[] = " but got ";
 static const char __pyx_k_float16[] = "float16";
 static const char __pyx_k_float32[] = "float32";
@@ -1339,29 +1353,26 @@ static const char __pyx_k_strict_nan[] = "strict_nan";
 static const char __pyx_k_check_dtype[] = "check_dtype";
 static const char __pyx_k_numpy_array[] = "numpy array";
 static const char __pyx_k_compare_keys[] = "compare_keys";
+static const char __pyx_k_index_values[] = "index_values";
 static const char __pyx_k_with_decimal[] = ", with decimal ";
 static const char __pyx_k_AssertionError[] = "AssertionError";
 static const char __pyx_k_is_dtype_equal[] = "is_dtype_equal";
+static const char __pyx_k_pandas__testing[] = "pandas._testing";
 static const char __pyx_k_array_equivalent[] = "array_equivalent";
 static const char __pyx_k_assert_attr_equal[] = "assert_attr_equal";
 static const char __pyx_k_assert_class_equal[] = "assert_class_equal";
 static const char __pyx_k_check_less_precise[] = "check_less_precise";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_pandas_util_testing[] = "pandas.util.testing";
 static const char __pyx_k_raise_assert_detail[] = "raise_assert_detail";
-static const char __pyx_k_0_length_are_different[] = "{0} length are different";
-static const char __pyx_k_0_shapes_are_different[] = "{0} shapes are different";
-static const char __pyx_k_0_values_are_different_1[] = "{0} values are different ({1} %)";
+static const char __pyx_k_length_are_different[] = " length are different";
+static const char __pyx_k_shapes_are_different[] = " shapes are different";
+static const char __pyx_k_values_are_different[] = " values are different (";
 static const char __pyx_k_very_low_values_expected[] = "(very low values) expected ";
 static const char __pyx_k_pandas_core_dtypes_common[] = "pandas.core.dtypes.common";
 static const char __pyx_k_pandas_core_dtypes_missing[] = "pandas.core.dtypes.missing";
 static const char __pyx_k_Cannot_compare_dict_objects_one[] = "Cannot compare dict objects, one or both is not dict-like";
 static const char __pyx_k_Can_t_compare_objects_without_le[] = "Can't compare objects without length, one or both is invalid: (";
 static PyObject *__pyx_kp_u_;
-static PyObject *__pyx_kp_u_0_1;
-static PyObject *__pyx_kp_u_0_length_are_different;
-static PyObject *__pyx_kp_u_0_shapes_are_different;
-static PyObject *__pyx_kp_u_0_values_are_different_1;
 static PyObject *__pyx_kp_u_5f;
 static PyObject *__pyx_n_s_AssertionError;
 static PyObject *__pyx_kp_u_Can_t_compare_objects_without_le;
@@ -1369,6 +1380,7 @@ static PyObject *__pyx_kp_u_Cannot_compare_dict_objects_one;
 static PyObject *__pyx_n_u_Iterable;
 static PyObject *__pyx_kp_u__2;
 static PyObject *__pyx_kp_u__3;
+static PyObject *__pyx_kp_u__4;
 static PyObject *__pyx_n_s_a;
 static PyObject *__pyx_n_s_array_equivalent;
 static PyObject *__pyx_n_s_assert_attr_equal;
@@ -1380,16 +1392,15 @@ static PyObject *__pyx_n_s_check_dtype;
 static PyObject *__pyx_n_s_check_less_precise;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_compare_keys;
-static PyObject *__pyx_n_u_d;
 static PyObject *__pyx_n_s_dtype;
 static PyObject *__pyx_n_u_dtype;
 static PyObject *__pyx_kp_u_expected;
 static PyObject *__pyx_n_s_float16;
 static PyObject *__pyx_n_s_float32;
 static PyObject *__pyx_n_s_float64;
-static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_u_getitem;
 static PyObject *__pyx_n_s_import;
+static PyObject *__pyx_n_s_index_values;
 static PyObject *__pyx_n_s_int16;
 static PyObject *__pyx_n_s_int32;
 static PyObject *__pyx_n_s_int64;
@@ -1400,6 +1411,7 @@ static PyObject *__pyx_n_u_iter;
 static PyObject *__pyx_n_s_keys;
 static PyObject *__pyx_n_u_keys;
 static PyObject *__pyx_n_u_len;
+static PyObject *__pyx_kp_u_length_are_different;
 static PyObject *__pyx_n_s_lobj;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
@@ -1408,14 +1420,15 @@ static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_kp_u_numpy_array;
 static PyObject *__pyx_n_s_obj;
+static PyObject *__pyx_n_s_pandas__testing;
 static PyObject *__pyx_n_s_pandas_core_dtypes_common;
 static PyObject *__pyx_n_s_pandas_core_dtypes_missing;
-static PyObject *__pyx_n_s_pandas_util_testing;
 static PyObject *__pyx_n_s_raise_assert_detail;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_robj;
 static PyObject *__pyx_n_s_round;
 static PyObject *__pyx_n_s_shape;
+static PyObject *__pyx_kp_u_shapes_are_different;
 static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_strict_nan;
 static PyObject *__pyx_n_s_test;
@@ -1423,11 +1436,11 @@ static PyObject *__pyx_n_s_uint16;
 static PyObject *__pyx_n_s_uint32;
 static PyObject *__pyx_n_s_uint64;
 static PyObject *__pyx_n_s_uint8;
+static PyObject *__pyx_kp_u_values_are_different;
 static PyObject *__pyx_kp_u_very_low_values_expected;
 static PyObject *__pyx_kp_u_with_decimal;
-static PyObject *__pyx_n_s_xrange;
 static PyObject *__pyx_pf_6pandas_5_libs_7testing_assert_dict_equal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, int __pyx_v_compare_keys); /* proto */
-static PyObject *__pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_check_less_precise, int __pyx_v_check_dtype, PyObject *__pyx_v_obj, PyObject *__pyx_v_lobj, PyObject *__pyx_v_robj); /* proto */
+static PyObject *__pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_check_less_precise, int __pyx_v_check_dtype, PyObject *__pyx_v_obj, PyObject *__pyx_v_lobj, PyObject *__pyx_v_robj, PyObject *__pyx_v_index_values); /* proto */
 static PyObject *__pyx_int_5;
 static PyObject *__pyx_int_10;
 /* Late includes */
@@ -2029,7 +2042,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  * cpdef assert_almost_equal(a, b,
  *                           check_less_precise=False,             # <<<<<<<<<<<<<<
  *                           bint check_dtype=True,
- *                           obj=None, lobj=None, robj=None):
+ *                           obj=None, lobj=None, robj=None, index_values=None):
  */
   PyObject *__pyx_v_check_less_precise = ((PyObject *)Py_False);
 
@@ -2037,21 +2050,22 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  * cpdef assert_almost_equal(a, b,
  *                           check_less_precise=False,
  *                           bint check_dtype=True,             # <<<<<<<<<<<<<<
- *                           obj=None, lobj=None, robj=None):
- *     """Check that left and right objects are almost equal.
+ *                           obj=None, lobj=None, robj=None, index_values=None):
+ *     """
  */
   int __pyx_v_check_dtype = ((int)1);
 
   /* "pandas/_libs/testing.pyx":68
  *                           check_less_precise=False,
  *                           bint check_dtype=True,
- *                           obj=None, lobj=None, robj=None):             # <<<<<<<<<<<<<<
- *     """Check that left and right objects are almost equal.
- * 
+ *                           obj=None, lobj=None, robj=None, index_values=None):             # <<<<<<<<<<<<<<
+ *     """
+ *     Check that left and right objects are almost equal.
  */
   PyObject *__pyx_v_obj = ((PyObject *)Py_None);
   PyObject *__pyx_v_lobj = ((PyObject *)Py_None);
   PyObject *__pyx_v_robj = ((PyObject *)Py_None);
+  PyObject *__pyx_v_index_values = ((PyObject *)Py_None);
   int __pyx_v_decimal;
   double __pyx_v_diff;
   Py_ssize_t __pyx_v_i;
@@ -2105,6 +2119,9 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
             __pyx_v_lobj = __pyx_optional_args->lobj;
             if (__pyx_optional_args->__pyx_n > 4) {
               __pyx_v_robj = __pyx_optional_args->robj;
+              if (__pyx_optional_args->__pyx_n > 5) {
+                __pyx_v_index_values = __pyx_optional_args->index_values;
+              }
             }
           }
         }
@@ -2115,7 +2132,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __Pyx_INCREF(__pyx_v_lobj);
   __Pyx_INCREF(__pyx_v_robj);
 
-  /* "pandas/_libs/testing.pyx":95
+  /* "pandas/_libs/testing.pyx":101
  *     cdef:
  *         int decimal
  *         double diff = 0.0             # <<<<<<<<<<<<<<
@@ -2124,7 +2141,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   __pyx_v_diff = 0.0;
 
-  /* "pandas/_libs/testing.pyx":98
+  /* "pandas/_libs/testing.pyx":104
  *         Py_ssize_t i, na, nb
  *         double fa, fb
  *         bint is_unequal = False, a_is_ndarray, b_is_ndarray             # <<<<<<<<<<<<<<
@@ -2133,7 +2150,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   __pyx_v_is_unequal = 0;
 
-  /* "pandas/_libs/testing.pyx":100
+  /* "pandas/_libs/testing.pyx":106
  *         bint is_unequal = False, a_is_ndarray, b_is_ndarray
  * 
  *     if lobj is None:             # <<<<<<<<<<<<<<
@@ -2144,7 +2161,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/testing.pyx":101
+    /* "pandas/_libs/testing.pyx":107
  * 
  *     if lobj is None:
  *         lobj = a             # <<<<<<<<<<<<<<
@@ -2154,7 +2171,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __Pyx_INCREF(__pyx_v_a);
     __Pyx_DECREF_SET(__pyx_v_lobj, __pyx_v_a);
 
-    /* "pandas/_libs/testing.pyx":100
+    /* "pandas/_libs/testing.pyx":106
  *         bint is_unequal = False, a_is_ndarray, b_is_ndarray
  * 
  *     if lobj is None:             # <<<<<<<<<<<<<<
@@ -2163,7 +2180,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   }
 
-  /* "pandas/_libs/testing.pyx":102
+  /* "pandas/_libs/testing.pyx":108
  *     if lobj is None:
  *         lobj = a
  *     if robj is None:             # <<<<<<<<<<<<<<
@@ -2174,7 +2191,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_t_1 = (__pyx_t_2 != 0);
   if (__pyx_t_1) {
 
-    /* "pandas/_libs/testing.pyx":103
+    /* "pandas/_libs/testing.pyx":109
  *         lobj = a
  *     if robj is None:
  *         robj = b             # <<<<<<<<<<<<<<
@@ -2184,7 +2201,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __Pyx_INCREF(__pyx_v_b);
     __Pyx_DECREF_SET(__pyx_v_robj, __pyx_v_b);
 
-    /* "pandas/_libs/testing.pyx":102
+    /* "pandas/_libs/testing.pyx":108
  *     if lobj is None:
  *         lobj = a
  *     if robj is None:             # <<<<<<<<<<<<<<
@@ -2193,7 +2210,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   }
 
-  /* "pandas/_libs/testing.pyx":105
+  /* "pandas/_libs/testing.pyx":111
  *         robj = b
  * 
  *     assert isinstance(check_less_precise, (int, bool))             # <<<<<<<<<<<<<<
@@ -2218,12 +2235,12 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!(__pyx_t_1 != 0))) {
       PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 105, __pyx_L1_error)
+      __PYX_ERR(0, 111, __pyx_L1_error)
     }
   }
   #endif
 
-  /* "pandas/_libs/testing.pyx":107
+  /* "pandas/_libs/testing.pyx":113
  *     assert isinstance(check_less_precise, (int, bool))
  * 
  *     if isinstance(a, dict) or isinstance(b, dict):             # <<<<<<<<<<<<<<
@@ -2243,7 +2260,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_L8_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "pandas/_libs/testing.pyx":108
+    /* "pandas/_libs/testing.pyx":114
  * 
  *     if isinstance(a, dict) or isinstance(b, dict):
  *         return assert_dict_equal(a, b)             # <<<<<<<<<<<<<<
@@ -2251,13 +2268,13 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  *     if isinstance(a, str) or isinstance(b, str):
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __pyx_f_6pandas_5_libs_7testing_assert_dict_equal(__pyx_v_a, __pyx_v_b, 0, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+    __pyx_t_3 = __pyx_f_6pandas_5_libs_7testing_assert_dict_equal(__pyx_v_a, __pyx_v_b, 0, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "pandas/_libs/testing.pyx":107
+    /* "pandas/_libs/testing.pyx":113
  *     assert isinstance(check_less_precise, (int, bool))
  * 
  *     if isinstance(a, dict) or isinstance(b, dict):             # <<<<<<<<<<<<<<
@@ -2266,11 +2283,11 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   }
 
-  /* "pandas/_libs/testing.pyx":110
+  /* "pandas/_libs/testing.pyx":116
  *         return assert_dict_equal(a, b)
  * 
  *     if isinstance(a, str) or isinstance(b, str):             # <<<<<<<<<<<<<<
- *         assert a == b, "%r != %r" % (a, b)
+ *         assert a == b, f"{a} != {b}"
  *         return True
  */
   __pyx_t_2 = PyUnicode_Check(__pyx_v_a); 
@@ -2286,24 +2303,24 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_L11_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "pandas/_libs/testing.pyx":111
+    /* "pandas/_libs/testing.pyx":117
  * 
  *     if isinstance(a, str) or isinstance(b, str):
- *         assert a == b, "%r != %r" % (a, b)             # <<<<<<<<<<<<<<
+ *         assert a == b, f"{a} != {b}"             # <<<<<<<<<<<<<<
  *         return True
  * 
  */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
     if (unlikely(!Py_OptimizeFlag)) {
-      __pyx_t_3 = PyObject_RichCompare(__pyx_v_a, __pyx_v_b, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 111, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_a, __pyx_v_b, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (unlikely(!__pyx_t_1)) {
-        __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_5 = 0;
         __pyx_t_6 = 127;
-        __pyx_t_7 = __Pyx_PyObject_FormatSimpleAndDecref(PyObject_Repr(__pyx_v_a), __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 111, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_a, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
         __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
@@ -2314,26 +2331,26 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_t_5 += 4;
         __Pyx_GIVEREF(__pyx_kp_u_);
         PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_);
-        __pyx_t_7 = __Pyx_PyObject_FormatSimpleAndDecref(PyObject_Repr(__pyx_v_b), __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 111, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_b, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
         __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
         __Pyx_GIVEREF(__pyx_t_7);
         PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_7);
         __pyx_t_7 = 0;
-        __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_3, 3, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 111, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_3, 3, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 117, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         PyErr_SetObject(PyExc_AssertionError, __pyx_t_7);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __PYX_ERR(0, 111, __pyx_L1_error)
+        __PYX_ERR(0, 117, __pyx_L1_error)
       }
     }
     #endif
 
-    /* "pandas/_libs/testing.pyx":112
+    /* "pandas/_libs/testing.pyx":118
  *     if isinstance(a, str) or isinstance(b, str):
- *         assert a == b, "%r != %r" % (a, b)
+ *         assert a == b, f"{a} != {b}"
  *         return True             # <<<<<<<<<<<<<<
  * 
  *     a_is_ndarray = isinstance(a, np.ndarray)
@@ -2343,48 +2360,48 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "pandas/_libs/testing.pyx":110
+    /* "pandas/_libs/testing.pyx":116
  *         return assert_dict_equal(a, b)
  * 
  *     if isinstance(a, str) or isinstance(b, str):             # <<<<<<<<<<<<<<
- *         assert a == b, "%r != %r" % (a, b)
+ *         assert a == b, f"{a} != {b}"
  *         return True
  */
   }
 
-  /* "pandas/_libs/testing.pyx":114
+  /* "pandas/_libs/testing.pyx":120
  *         return True
  * 
  *     a_is_ndarray = isinstance(a, np.ndarray)             # <<<<<<<<<<<<<<
  *     b_is_ndarray = isinstance(b, np.ndarray)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_1 = PyObject_IsInstance(__pyx_v_a, __pyx_t_3); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_1 = PyObject_IsInstance(__pyx_v_a, __pyx_t_3); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_a_is_ndarray = __pyx_t_1;
 
-  /* "pandas/_libs/testing.pyx":115
+  /* "pandas/_libs/testing.pyx":121
  * 
  *     a_is_ndarray = isinstance(a, np.ndarray)
  *     b_is_ndarray = isinstance(b, np.ndarray)             # <<<<<<<<<<<<<<
  * 
  *     if obj is None:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ndarray); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_1 = PyObject_IsInstance(__pyx_v_b, __pyx_t_7); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_1 = PyObject_IsInstance(__pyx_v_b, __pyx_t_7); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 121, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_v_b_is_ndarray = __pyx_t_1;
 
-  /* "pandas/_libs/testing.pyx":117
+  /* "pandas/_libs/testing.pyx":123
  *     b_is_ndarray = isinstance(b, np.ndarray)
  * 
  *     if obj is None:             # <<<<<<<<<<<<<<
@@ -2395,7 +2412,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/testing.pyx":118
+    /* "pandas/_libs/testing.pyx":124
  * 
  *     if obj is None:
  *         if a_is_ndarray or b_is_ndarray:             # <<<<<<<<<<<<<<
@@ -2413,7 +2430,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __pyx_L15_bool_binop_done:;
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":119
+      /* "pandas/_libs/testing.pyx":125
  *     if obj is None:
  *         if a_is_ndarray or b_is_ndarray:
  *             obj = 'numpy array'             # <<<<<<<<<<<<<<
@@ -2423,7 +2440,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       __Pyx_INCREF(__pyx_kp_u_numpy_array);
       __Pyx_DECREF_SET(__pyx_v_obj, __pyx_kp_u_numpy_array);
 
-      /* "pandas/_libs/testing.pyx":118
+      /* "pandas/_libs/testing.pyx":124
  * 
  *     if obj is None:
  *         if a_is_ndarray or b_is_ndarray:             # <<<<<<<<<<<<<<
@@ -2433,7 +2450,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       goto __pyx_L14;
     }
 
-    /* "pandas/_libs/testing.pyx":121
+    /* "pandas/_libs/testing.pyx":127
  *             obj = 'numpy array'
  *         else:
  *             obj = 'Iterable'             # <<<<<<<<<<<<<<
@@ -2446,7 +2463,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     }
     __pyx_L14:;
 
-    /* "pandas/_libs/testing.pyx":117
+    /* "pandas/_libs/testing.pyx":123
  *     b_is_ndarray = isinstance(b, np.ndarray)
  * 
  *     if obj is None:             # <<<<<<<<<<<<<<
@@ -2455,7 +2472,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   }
 
-  /* "pandas/_libs/testing.pyx":123
+  /* "pandas/_libs/testing.pyx":129
  *             obj = 'Iterable'
  * 
  *     if isiterable(a):             # <<<<<<<<<<<<<<
@@ -2465,46 +2482,46 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_t_2 = (__pyx_f_6pandas_5_libs_7testing_isiterable(__pyx_v_a) != 0);
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/testing.pyx":125
+    /* "pandas/_libs/testing.pyx":131
  *     if isiterable(a):
  * 
  *         if not isiterable(b):             # <<<<<<<<<<<<<<
- *             from pandas.util.testing import assert_class_equal
+ *             from pandas._testing import assert_class_equal
  *             # classes can't be the same, to raise error
  */
     __pyx_t_2 = ((!(__pyx_f_6pandas_5_libs_7testing_isiterable(__pyx_v_b) != 0)) != 0);
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":126
+      /* "pandas/_libs/testing.pyx":132
  * 
  *         if not isiterable(b):
- *             from pandas.util.testing import assert_class_equal             # <<<<<<<<<<<<<<
+ *             from pandas._testing import assert_class_equal             # <<<<<<<<<<<<<<
  *             # classes can't be the same, to raise error
  *             assert_class_equal(a, b, obj=obj)
  */
-      __pyx_t_7 = PyList_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __pyx_t_7 = PyList_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_n_s_assert_class_equal);
       __Pyx_GIVEREF(__pyx_n_s_assert_class_equal);
       PyList_SET_ITEM(__pyx_t_7, 0, __pyx_n_s_assert_class_equal);
-      __pyx_t_3 = __Pyx_Import(__pyx_n_s_pandas_util_testing, __pyx_t_7, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_Import(__pyx_n_s_pandas__testing, __pyx_t_7, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_assert_class_equal); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_assert_class_equal); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_t_7);
       __pyx_v_assert_class_equal = __pyx_t_7;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "pandas/_libs/testing.pyx":128
- *             from pandas.util.testing import assert_class_equal
+      /* "pandas/_libs/testing.pyx":134
+ *             from pandas._testing import assert_class_equal
  *             # classes can't be the same, to raise error
  *             assert_class_equal(a, b, obj=obj)             # <<<<<<<<<<<<<<
  * 
  *         assert has_length(a) and has_length(b), (
  */
-      __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 134, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_v_a);
       __Pyx_GIVEREF(__pyx_v_a);
@@ -2512,30 +2529,30 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       __Pyx_INCREF(__pyx_v_b);
       __Pyx_GIVEREF(__pyx_v_b);
       PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_b);
-      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 128, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 134, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_obj, __pyx_v_obj) < 0) __PYX_ERR(0, 128, __pyx_L1_error)
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_v_assert_class_equal, __pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 128, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_obj, __pyx_v_obj) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_v_assert_class_equal, __pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 134, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "pandas/_libs/testing.pyx":125
+      /* "pandas/_libs/testing.pyx":131
  *     if isiterable(a):
  * 
  *         if not isiterable(b):             # <<<<<<<<<<<<<<
- *             from pandas.util.testing import assert_class_equal
+ *             from pandas._testing import assert_class_equal
  *             # classes can't be the same, to raise error
  */
     }
 
-    /* "pandas/_libs/testing.pyx":130
+    /* "pandas/_libs/testing.pyx":136
  *             assert_class_equal(a, b, obj=obj)
  * 
  *         assert has_length(a) and has_length(b), (             # <<<<<<<<<<<<<<
- *             "Can't compare objects without length, one or both is invalid: "
- *             "(%r, %r)" % (a, b))
+ *             f"Can't compare objects without length, one or both is invalid: ({a}, {b})"
+ *         )
  */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
     if (unlikely(!Py_OptimizeFlag)) {
@@ -2550,14 +2567,14 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       __pyx_L19_bool_binop_done:;
       if (unlikely(!__pyx_t_2)) {
 
-        /* "pandas/_libs/testing.pyx":131
+        /* "pandas/_libs/testing.pyx":137
  * 
  *         assert has_length(a) and has_length(b), (
- *             "Can't compare objects without length, one or both is invalid: "             # <<<<<<<<<<<<<<
- *             "(%r, %r)" % (a, b))
+ *             f"Can't compare objects without length, one or both is invalid: ({a}, {b})"             # <<<<<<<<<<<<<<
+ *         )
  * 
  */
-        __pyx_t_8 = PyTuple_New(5); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 131, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(5); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 137, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __pyx_t_5 = 0;
         __pyx_t_6 = 127;
@@ -2565,15 +2582,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_t_5 += 63;
         __Pyx_GIVEREF(__pyx_kp_u_Can_t_compare_objects_without_le);
         PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_kp_u_Can_t_compare_objects_without_le);
-
-        /* "pandas/_libs/testing.pyx":132
- *         assert has_length(a) and has_length(b), (
- *             "Can't compare objects without length, one or both is invalid: "
- *             "(%r, %r)" % (a, b))             # <<<<<<<<<<<<<<
- * 
- *         if a_is_ndarray and b_is_ndarray:
- */
-        __pyx_t_7 = __Pyx_PyObject_FormatSimpleAndDecref(PyObject_Repr(__pyx_v_a), __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_a, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 137, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
         __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
@@ -2584,7 +2593,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_t_5 += 2;
         __Pyx_GIVEREF(__pyx_kp_u__2);
         PyTuple_SET_ITEM(__pyx_t_8, 2, __pyx_kp_u__2);
-        __pyx_t_7 = __Pyx_PyObject_FormatSimpleAndDecref(PyObject_Repr(__pyx_v_b), __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 132, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_b, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 137, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
         __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
@@ -2595,26 +2604,18 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_t_5 += 1;
         __Pyx_GIVEREF(__pyx_kp_u__3);
         PyTuple_SET_ITEM(__pyx_t_8, 4, __pyx_kp_u__3);
-
-        /* "pandas/_libs/testing.pyx":131
- * 
- *         assert has_length(a) and has_length(b), (
- *             "Can't compare objects without length, one or both is invalid: "             # <<<<<<<<<<<<<<
- *             "(%r, %r)" % (a, b))
- * 
- */
-        __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_8, 5, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 131, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_8, 5, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 137, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         PyErr_SetObject(PyExc_AssertionError, __pyx_t_7);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __PYX_ERR(0, 130, __pyx_L1_error)
+        __PYX_ERR(0, 136, __pyx_L1_error)
       }
     }
     #endif
 
-    /* "pandas/_libs/testing.pyx":134
- *             "(%r, %r)" % (a, b))
+    /* "pandas/_libs/testing.pyx":140
+ *         )
  * 
  *         if a_is_ndarray and b_is_ndarray:             # <<<<<<<<<<<<<<
  *             na, nb = a.size, b.size
@@ -2631,99 +2632,79 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __pyx_L22_bool_binop_done:;
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":135
+      /* "pandas/_libs/testing.pyx":141
  * 
  *         if a_is_ndarray and b_is_ndarray:
  *             na, nb = a.size, b.size             # <<<<<<<<<<<<<<
  *             if a.shape != b.shape:
- *                 from pandas.util.testing import raise_assert_detail
+ *                 from pandas._testing import raise_assert_detail
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 135, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 141, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_5 = __Pyx_PyIndex_AsSsize_t(__pyx_t_7); if (unlikely((__pyx_t_5 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyIndex_AsSsize_t(__pyx_t_7); if (unlikely((__pyx_t_5 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 141, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 135, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 141, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_9 = __Pyx_PyIndex_AsSsize_t(__pyx_t_7); if (unlikely((__pyx_t_9 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 135, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyIndex_AsSsize_t(__pyx_t_7); if (unlikely((__pyx_t_9 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 141, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_v_na = __pyx_t_5;
       __pyx_v_nb = __pyx_t_9;
 
-      /* "pandas/_libs/testing.pyx":136
+      /* "pandas/_libs/testing.pyx":142
  *         if a_is_ndarray and b_is_ndarray:
  *             na, nb = a.size, b.size
  *             if a.shape != b.shape:             # <<<<<<<<<<<<<<
- *                 from pandas.util.testing import raise_assert_detail
+ *                 from pandas._testing import raise_assert_detail
  *                 raise_assert_detail(
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 136, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_shape); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 136, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_shape); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_3 = PyObject_RichCompare(__pyx_t_7, __pyx_t_8, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 136, __pyx_L1_error)
+      __pyx_t_3 = PyObject_RichCompare(__pyx_t_7, __pyx_t_8, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 136, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_2) {
 
-        /* "pandas/_libs/testing.pyx":137
+        /* "pandas/_libs/testing.pyx":143
  *             na, nb = a.size, b.size
  *             if a.shape != b.shape:
- *                 from pandas.util.testing import raise_assert_detail             # <<<<<<<<<<<<<<
+ *                 from pandas._testing import raise_assert_detail             # <<<<<<<<<<<<<<
  *                 raise_assert_detail(
- *                     obj, '{0} shapes are different'.format(obj),
+ *                     obj, f'{obj} shapes are different', a.shape, b.shape)
  */
-        __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
+        __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_n_s_raise_assert_detail);
         __Pyx_GIVEREF(__pyx_n_s_raise_assert_detail);
         PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_raise_assert_detail);
-        __pyx_t_8 = __Pyx_Import(__pyx_n_s_pandas_util_testing, __pyx_t_3, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 137, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_Import(__pyx_n_s_pandas__testing, __pyx_t_3, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 143, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_8, __pyx_n_s_raise_assert_detail); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_8, __pyx_n_s_raise_assert_detail); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_3);
         __pyx_v_raise_assert_detail = __pyx_t_3;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "pandas/_libs/testing.pyx":139
- *                 from pandas.util.testing import raise_assert_detail
+        /* "pandas/_libs/testing.pyx":145
+ *                 from pandas._testing import raise_assert_detail
  *                 raise_assert_detail(
- *                     obj, '{0} shapes are different'.format(obj),             # <<<<<<<<<<<<<<
- *                     a.shape, b.shape)
- * 
- */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_0_shapes_are_different, __pyx_n_s_format); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 139, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_10 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-          __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_7);
-          if (likely(__pyx_t_10)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-            __Pyx_INCREF(__pyx_t_10);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_7, function);
-          }
-        }
-        __pyx_t_3 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_v_obj) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_obj);
-        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 139, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-        /* "pandas/_libs/testing.pyx":140
- *                 raise_assert_detail(
- *                     obj, '{0} shapes are different'.format(obj),
- *                     a.shape, b.shape)             # <<<<<<<<<<<<<<
+ *                     obj, f'{obj} shapes are different', a.shape, b.shape)             # <<<<<<<<<<<<<<
  * 
  *             if check_dtype and not is_dtype_equal(a.dtype, b.dtype):
  */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 140, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_obj, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_t_3, __pyx_kp_u_shapes_are_different); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 145, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_shape); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 140, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_shape); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 145, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_INCREF(__pyx_v_raise_assert_detail);
         __pyx_t_11 = __pyx_v_raise_assert_detail; __pyx_t_12 = NULL;
@@ -2740,28 +2721,28 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         }
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_11)) {
-          PyObject *__pyx_temp[5] = {__pyx_t_12, __pyx_v_obj, __pyx_t_3, __pyx_t_7, __pyx_t_10};
-          __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 4+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 138, __pyx_L1_error)
+          PyObject *__pyx_temp[5] = {__pyx_t_12, __pyx_v_obj, __pyx_t_7, __pyx_t_3, __pyx_t_10};
+          __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 4+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 144, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
           __Pyx_GOTREF(__pyx_t_8);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_11)) {
-          PyObject *__pyx_temp[5] = {__pyx_t_12, __pyx_v_obj, __pyx_t_3, __pyx_t_7, __pyx_t_10};
-          __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 4+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 138, __pyx_L1_error)
+          PyObject *__pyx_temp[5] = {__pyx_t_12, __pyx_v_obj, __pyx_t_7, __pyx_t_3, __pyx_t_10};
+          __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 4+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 144, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
           __Pyx_GOTREF(__pyx_t_8);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         } else
         #endif
         {
-          __pyx_t_14 = PyTuple_New(4+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 138, __pyx_L1_error)
+          __pyx_t_14 = PyTuple_New(4+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 144, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_14);
           if (__pyx_t_12) {
             __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_12); __pyx_t_12 = NULL;
@@ -2769,36 +2750,36 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
           __Pyx_INCREF(__pyx_v_obj);
           __Pyx_GIVEREF(__pyx_v_obj);
           PyTuple_SET_ITEM(__pyx_t_14, 0+__pyx_t_13, __pyx_v_obj);
-          __Pyx_GIVEREF(__pyx_t_3);
-          PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_13, __pyx_t_3);
           __Pyx_GIVEREF(__pyx_t_7);
-          PyTuple_SET_ITEM(__pyx_t_14, 2+__pyx_t_13, __pyx_t_7);
+          PyTuple_SET_ITEM(__pyx_t_14, 1+__pyx_t_13, __pyx_t_7);
+          __Pyx_GIVEREF(__pyx_t_3);
+          PyTuple_SET_ITEM(__pyx_t_14, 2+__pyx_t_13, __pyx_t_3);
           __Pyx_GIVEREF(__pyx_t_10);
           PyTuple_SET_ITEM(__pyx_t_14, 3+__pyx_t_13, __pyx_t_10);
-          __pyx_t_3 = 0;
           __pyx_t_7 = 0;
+          __pyx_t_3 = 0;
           __pyx_t_10 = 0;
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_14, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 138, __pyx_L1_error)
+          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_14, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 144, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         }
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "pandas/_libs/testing.pyx":136
+        /* "pandas/_libs/testing.pyx":142
  *         if a_is_ndarray and b_is_ndarray:
  *             na, nb = a.size, b.size
  *             if a.shape != b.shape:             # <<<<<<<<<<<<<<
- *                 from pandas.util.testing import raise_assert_detail
+ *                 from pandas._testing import raise_assert_detail
  *                 raise_assert_detail(
  */
       }
 
-      /* "pandas/_libs/testing.pyx":142
- *                     a.shape, b.shape)
+      /* "pandas/_libs/testing.pyx":147
+ *                     obj, f'{obj} shapes are different', a.shape, b.shape)
  * 
  *             if check_dtype and not is_dtype_equal(a.dtype, b.dtype):             # <<<<<<<<<<<<<<
- *                 from pandas.util.testing import assert_attr_equal
+ *                 from pandas._testing import assert_attr_equal
  *                 assert_attr_equal('dtype', a, b, obj=obj)
  */
       __pyx_t_1 = (__pyx_v_check_dtype != 0);
@@ -2807,19 +2788,19 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_t_2 = __pyx_t_1;
         goto __pyx_L26_bool_binop_done;
       }
-      __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_is_dtype_equal); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 142, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_is_dtype_equal); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 147, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_dtype); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 142, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_a, __pyx_n_s_dtype); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 147, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_dtype); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 142, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_b, __pyx_n_s_dtype); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 147, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_7 = NULL;
+      __pyx_t_3 = NULL;
       __pyx_t_13 = 0;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_11))) {
-        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_11);
-        if (likely(__pyx_t_7)) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_11);
+        if (likely(__pyx_t_3)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
-          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_3);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_11, function);
           __pyx_t_13 = 1;
@@ -2827,9 +2808,9 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       }
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_11)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_14, __pyx_t_10};
-        __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+        PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_t_14, __pyx_t_10};
+        __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -2837,68 +2818,68 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_11)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_14, __pyx_t_10};
-        __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+        PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_t_14, __pyx_t_10};
+        __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       } else
       #endif
       {
-        __pyx_t_3 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        if (__pyx_t_7) {
-          __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_7); __pyx_t_7 = NULL;
+        __pyx_t_7 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        if (__pyx_t_3) {
+          __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __pyx_t_3 = NULL;
         }
         __Pyx_GIVEREF(__pyx_t_14);
-        PyTuple_SET_ITEM(__pyx_t_3, 0+__pyx_t_13, __pyx_t_14);
+        PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_13, __pyx_t_14);
         __Pyx_GIVEREF(__pyx_t_10);
-        PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_13, __pyx_t_10);
+        PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_13, __pyx_t_10);
         __pyx_t_14 = 0;
         __pyx_t_10 = 0;
-        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 142, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_7, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 142, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 147, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_4 = ((!__pyx_t_1) != 0);
       __pyx_t_2 = __pyx_t_4;
       __pyx_L26_bool_binop_done:;
       if (__pyx_t_2) {
 
-        /* "pandas/_libs/testing.pyx":143
+        /* "pandas/_libs/testing.pyx":148
  * 
  *             if check_dtype and not is_dtype_equal(a.dtype, b.dtype):
- *                 from pandas.util.testing import assert_attr_equal             # <<<<<<<<<<<<<<
+ *                 from pandas._testing import assert_attr_equal             # <<<<<<<<<<<<<<
  *                 assert_attr_equal('dtype', a, b, obj=obj)
  * 
  */
-        __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 148, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_n_s_assert_attr_equal);
         __Pyx_GIVEREF(__pyx_n_s_assert_attr_equal);
         PyList_SET_ITEM(__pyx_t_8, 0, __pyx_n_s_assert_attr_equal);
-        __pyx_t_11 = __Pyx_Import(__pyx_n_s_pandas_util_testing, __pyx_t_8, 0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_Import(__pyx_n_s_pandas__testing, __pyx_t_8, 0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 148, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_ImportFrom(__pyx_t_11, __pyx_n_s_assert_attr_equal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 143, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_ImportFrom(__pyx_t_11, __pyx_n_s_assert_attr_equal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 148, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_t_8);
         __pyx_v_assert_attr_equal = __pyx_t_8;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-        /* "pandas/_libs/testing.pyx":144
+        /* "pandas/_libs/testing.pyx":149
  *             if check_dtype and not is_dtype_equal(a.dtype, b.dtype):
- *                 from pandas.util.testing import assert_attr_equal
+ *                 from pandas._testing import assert_attr_equal
  *                 assert_attr_equal('dtype', a, b, obj=obj)             # <<<<<<<<<<<<<<
  * 
  *             if array_equivalent(a, b, strict_nan=True):
  */
-        __pyx_t_11 = PyTuple_New(3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 144, __pyx_L1_error)
+        __pyx_t_11 = PyTuple_New(3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_INCREF(__pyx_n_u_dtype);
         __Pyx_GIVEREF(__pyx_n_u_dtype);
@@ -2909,34 +2890,34 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __Pyx_INCREF(__pyx_v_b);
         __Pyx_GIVEREF(__pyx_v_b);
         PyTuple_SET_ITEM(__pyx_t_11, 2, __pyx_v_b);
-        __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 144, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 149, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        if (PyDict_SetItem(__pyx_t_8, __pyx_n_s_obj, __pyx_v_obj) < 0) __PYX_ERR(0, 144, __pyx_L1_error)
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_v_assert_attr_equal, __pyx_t_11, __pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
+        if (PyDict_SetItem(__pyx_t_8, __pyx_n_s_obj, __pyx_v_obj) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_v_assert_attr_equal, __pyx_t_11, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 149, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "pandas/_libs/testing.pyx":142
- *                     a.shape, b.shape)
+        /* "pandas/_libs/testing.pyx":147
+ *                     obj, f'{obj} shapes are different', a.shape, b.shape)
  * 
  *             if check_dtype and not is_dtype_equal(a.dtype, b.dtype):             # <<<<<<<<<<<<<<
- *                 from pandas.util.testing import assert_attr_equal
+ *                 from pandas._testing import assert_attr_equal
  *                 assert_attr_equal('dtype', a, b, obj=obj)
  */
       }
 
-      /* "pandas/_libs/testing.pyx":146
+      /* "pandas/_libs/testing.pyx":151
  *                 assert_attr_equal('dtype', a, b, obj=obj)
  * 
  *             if array_equivalent(a, b, strict_nan=True):             # <<<<<<<<<<<<<<
  *                 return True
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_array_equivalent); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 146, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_array_equivalent); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 151, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_v_a);
       __Pyx_GIVEREF(__pyx_v_a);
@@ -2944,19 +2925,19 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       __Pyx_INCREF(__pyx_v_b);
       __Pyx_GIVEREF(__pyx_v_b);
       PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_v_b);
-      __pyx_t_11 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 146, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      if (PyDict_SetItem(__pyx_t_11, __pyx_n_s_strict_nan, Py_True) < 0) __PYX_ERR(0, 146, __pyx_L1_error)
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_8, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 146, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_11, __pyx_n_s_strict_nan, Py_True) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_8, __pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 146, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 151, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       if (__pyx_t_2) {
 
-        /* "pandas/_libs/testing.pyx":147
+        /* "pandas/_libs/testing.pyx":152
  * 
  *             if array_equivalent(a, b, strict_nan=True):
  *                 return True             # <<<<<<<<<<<<<<
@@ -2968,7 +2949,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_r = Py_True;
         goto __pyx_L0;
 
-        /* "pandas/_libs/testing.pyx":146
+        /* "pandas/_libs/testing.pyx":151
  *                 assert_attr_equal('dtype', a, b, obj=obj)
  * 
  *             if array_equivalent(a, b, strict_nan=True):             # <<<<<<<<<<<<<<
@@ -2977,8 +2958,8 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
       }
 
-      /* "pandas/_libs/testing.pyx":134
- *             "(%r, %r)" % (a, b))
+      /* "pandas/_libs/testing.pyx":140
+ *         )
  * 
  *         if a_is_ndarray and b_is_ndarray:             # <<<<<<<<<<<<<<
  *             na, nb = a.size, b.size
@@ -2987,7 +2968,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       goto __pyx_L21;
     }
 
-    /* "pandas/_libs/testing.pyx":150
+    /* "pandas/_libs/testing.pyx":155
  * 
  *         else:
  *             na, nb = len(a), len(b)             # <<<<<<<<<<<<<<
@@ -2995,85 +2976,85 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  *         if na != nb:
  */
     /*else*/ {
-      __pyx_t_9 = PyObject_Length(__pyx_v_a); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 150, __pyx_L1_error)
-      __pyx_t_5 = PyObject_Length(__pyx_v_b); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 150, __pyx_L1_error)
+      __pyx_t_9 = PyObject_Length(__pyx_v_a); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 155, __pyx_L1_error)
+      __pyx_t_5 = PyObject_Length(__pyx_v_b); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 155, __pyx_L1_error)
       __pyx_v_na = __pyx_t_9;
       __pyx_v_nb = __pyx_t_5;
     }
     __pyx_L21:;
 
-    /* "pandas/_libs/testing.pyx":152
+    /* "pandas/_libs/testing.pyx":157
  *             na, nb = len(a), len(b)
  * 
  *         if na != nb:             # <<<<<<<<<<<<<<
- *             from pandas.util.testing import raise_assert_detail
+ *             from pandas._testing import raise_assert_detail
  * 
  */
     __pyx_t_2 = ((__pyx_v_na != __pyx_v_nb) != 0);
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":153
+      /* "pandas/_libs/testing.pyx":158
  * 
  *         if na != nb:
- *             from pandas.util.testing import raise_assert_detail             # <<<<<<<<<<<<<<
+ *             from pandas._testing import raise_assert_detail             # <<<<<<<<<<<<<<
  * 
  *             # if we have a small diff set, print it
  */
-      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 153, __pyx_L1_error)
+      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_INCREF(__pyx_n_s_raise_assert_detail);
       __Pyx_GIVEREF(__pyx_n_s_raise_assert_detail);
       PyList_SET_ITEM(__pyx_t_10, 0, __pyx_n_s_raise_assert_detail);
-      __pyx_t_11 = __Pyx_Import(__pyx_n_s_pandas_util_testing, __pyx_t_10, 0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 153, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_Import(__pyx_n_s_pandas__testing, __pyx_t_10, 0); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_ImportFrom(__pyx_t_11, __pyx_n_s_raise_assert_detail); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 153, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_ImportFrom(__pyx_t_11, __pyx_n_s_raise_assert_detail); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_INCREF(__pyx_t_10);
       __Pyx_XDECREF_SET(__pyx_v_raise_assert_detail, __pyx_t_10);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-      /* "pandas/_libs/testing.pyx":156
+      /* "pandas/_libs/testing.pyx":161
  * 
  *             # if we have a small diff set, print it
  *             if abs(na - nb) < 10:             # <<<<<<<<<<<<<<
  *                 r = list(set(a) ^ set(b))
  *             else:
  */
-      __pyx_t_11 = PyInt_FromSsize_t((__pyx_v_na - __pyx_v_nb)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 156, __pyx_L1_error)
+      __pyx_t_11 = PyInt_FromSsize_t((__pyx_v_na - __pyx_v_nb)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_10 = __Pyx_PyNumber_Absolute(__pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 156, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyNumber_Absolute(__pyx_t_11); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = PyObject_RichCompare(__pyx_t_10, __pyx_int_10, Py_LT); __Pyx_XGOTREF(__pyx_t_11); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 156, __pyx_L1_error)
+      __pyx_t_11 = PyObject_RichCompare(__pyx_t_10, __pyx_int_10, Py_LT); __Pyx_XGOTREF(__pyx_t_11); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 156, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 161, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       if (__pyx_t_2) {
 
-        /* "pandas/_libs/testing.pyx":157
+        /* "pandas/_libs/testing.pyx":162
  *             # if we have a small diff set, print it
  *             if abs(na - nb) < 10:
  *                 r = list(set(a) ^ set(b))             # <<<<<<<<<<<<<<
  *             else:
  *                 r = None
  */
-        __pyx_t_11 = PySet_New(__pyx_v_a); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __pyx_t_11 = PySet_New(__pyx_v_a); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 162, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_10 = PySet_New(__pyx_v_b); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __pyx_t_10 = PySet_New(__pyx_v_b); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 162, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_8 = PyNumber_Xor(__pyx_t_11, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __pyx_t_8 = PyNumber_Xor(__pyx_t_11, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 162, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __pyx_t_10 = PySequence_List(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __pyx_t_10 = PySequence_List(__pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 162, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_v_r = ((PyObject*)__pyx_t_10);
         __pyx_t_10 = 0;
 
-        /* "pandas/_libs/testing.pyx":156
+        /* "pandas/_libs/testing.pyx":161
  * 
  *             # if we have a small diff set, print it
  *             if abs(na - nb) < 10:             # <<<<<<<<<<<<<<
@@ -3083,12 +3064,12 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         goto __pyx_L30;
       }
 
-      /* "pandas/_libs/testing.pyx":159
+      /* "pandas/_libs/testing.pyx":164
  *                 r = list(set(a) ^ set(b))
  *             else:
  *                 r = None             # <<<<<<<<<<<<<<
  * 
- *             raise_assert_detail(obj, '{0} length are different'.format(obj),
+ *             raise_assert_detail(obj, f"{obj} length are different", na, nb, r)
  */
       /*else*/ {
         __Pyx_INCREF(Py_None);
@@ -3096,50 +3077,30 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       }
       __pyx_L30:;
 
-      /* "pandas/_libs/testing.pyx":161
+      /* "pandas/_libs/testing.pyx":166
  *                 r = None
  * 
- *             raise_assert_detail(obj, '{0} length are different'.format(obj),             # <<<<<<<<<<<<<<
- *                                 na, nb, r)
+ *             raise_assert_detail(obj, f"{obj} length are different", na, nb, r)             # <<<<<<<<<<<<<<
  * 
+ *         for i in range(len(a)):
  */
-      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_0_length_are_different, __pyx_n_s_format); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 161, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_3 = NULL;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_11))) {
-        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_11);
-        if (likely(__pyx_t_3)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
-          __Pyx_INCREF(__pyx_t_3);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_11, function);
-        }
-      }
-      __pyx_t_8 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_11, __pyx_t_3, __pyx_v_obj) : __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_v_obj);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 161, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_obj, __pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 166, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-
-      /* "pandas/_libs/testing.pyx":162
- * 
- *             raise_assert_detail(obj, '{0} length are different'.format(obj),
- *                                 na, nb, r)             # <<<<<<<<<<<<<<
- * 
- *         for i in xrange(len(a)):
- */
-      __pyx_t_11 = PyInt_FromSsize_t(__pyx_v_na); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 162, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyUnicode_Concat(__pyx_t_8, __pyx_kp_u_length_are_different); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 166, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_3 = PyInt_FromSsize_t(__pyx_v_nb); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 162, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      __pyx_t_8 = PyInt_FromSsize_t(__pyx_v_na); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 166, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __pyx_t_7 = PyInt_FromSsize_t(__pyx_v_nb); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 166, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_v_raise_assert_detail);
-      __pyx_t_14 = __pyx_v_raise_assert_detail; __pyx_t_7 = NULL;
+      __pyx_t_14 = __pyx_v_raise_assert_detail; __pyx_t_3 = NULL;
       __pyx_t_13 = 0;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_14))) {
-        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_14);
-        if (likely(__pyx_t_7)) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_14);
+        if (likely(__pyx_t_3)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_14);
-          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_3);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_14, function);
           __pyx_t_13 = 1;
@@ -3147,78 +3108,78 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       }
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_14)) {
-        PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_v_obj, __pyx_t_8, __pyx_t_11, __pyx_t_3, __pyx_v_r};
-        __pyx_t_10 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 161, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+        PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_v_obj, __pyx_t_11, __pyx_t_8, __pyx_t_7, __pyx_v_r};
+        __pyx_t_10 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 166, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_10);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_14)) {
-        PyObject *__pyx_temp[6] = {__pyx_t_7, __pyx_v_obj, __pyx_t_8, __pyx_t_11, __pyx_t_3, __pyx_v_r};
-        __pyx_t_10 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 161, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+        PyObject *__pyx_temp[6] = {__pyx_t_3, __pyx_v_obj, __pyx_t_11, __pyx_t_8, __pyx_t_7, __pyx_v_r};
+        __pyx_t_10 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_13, 5+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 166, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_10);
-        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 161, __pyx_L1_error)
+        __pyx_t_12 = PyTuple_New(5+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 166, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        if (__pyx_t_7) {
-          __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_7); __pyx_t_7 = NULL;
+        if (__pyx_t_3) {
+          __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_3); __pyx_t_3 = NULL;
         }
         __Pyx_INCREF(__pyx_v_obj);
         __Pyx_GIVEREF(__pyx_v_obj);
         PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_13, __pyx_v_obj);
-        __Pyx_GIVEREF(__pyx_t_8);
-        PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_13, __pyx_t_8);
         __Pyx_GIVEREF(__pyx_t_11);
-        PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_13, __pyx_t_11);
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_12, 3+__pyx_t_13, __pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_13, __pyx_t_11);
+        __Pyx_GIVEREF(__pyx_t_8);
+        PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_13, __pyx_t_8);
+        __Pyx_GIVEREF(__pyx_t_7);
+        PyTuple_SET_ITEM(__pyx_t_12, 3+__pyx_t_13, __pyx_t_7);
         __Pyx_INCREF(__pyx_v_r);
         __Pyx_GIVEREF(__pyx_v_r);
         PyTuple_SET_ITEM(__pyx_t_12, 4+__pyx_t_13, __pyx_v_r);
-        __pyx_t_8 = 0;
         __pyx_t_11 = 0;
-        __pyx_t_3 = 0;
-        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_12, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 161, __pyx_L1_error)
+        __pyx_t_8 = 0;
+        __pyx_t_7 = 0;
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_12, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 166, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "pandas/_libs/testing.pyx":152
+      /* "pandas/_libs/testing.pyx":157
  *             na, nb = len(a), len(b)
  * 
  *         if na != nb:             # <<<<<<<<<<<<<<
- *             from pandas.util.testing import raise_assert_detail
+ *             from pandas._testing import raise_assert_detail
  * 
  */
     }
 
-    /* "pandas/_libs/testing.pyx":164
- *                                 na, nb, r)
+    /* "pandas/_libs/testing.pyx":168
+ *             raise_assert_detail(obj, f"{obj} length are different", na, nb, r)
  * 
- *         for i in xrange(len(a)):             # <<<<<<<<<<<<<<
+ *         for i in range(len(a)):             # <<<<<<<<<<<<<<
  *             try:
  *                 assert_almost_equal(a[i], b[i],
  */
-    __pyx_t_5 = PyObject_Length(__pyx_v_a); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 164, __pyx_L1_error)
+    __pyx_t_5 = PyObject_Length(__pyx_v_a); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 168, __pyx_L1_error)
     __pyx_t_9 = __pyx_t_5;
     for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_9; __pyx_t_15+=1) {
       __pyx_v_i = __pyx_t_15;
 
-      /* "pandas/_libs/testing.pyx":165
+      /* "pandas/_libs/testing.pyx":169
  * 
- *         for i in xrange(len(a)):
+ *         for i in range(len(a)):
  *             try:             # <<<<<<<<<<<<<<
  *                 assert_almost_equal(a[i], b[i],
  *                                     check_less_precise=check_less_precise)
@@ -3232,19 +3193,19 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __Pyx_XGOTREF(__pyx_t_18);
         /*try:*/ {
 
-          /* "pandas/_libs/testing.pyx":166
- *         for i in xrange(len(a)):
+          /* "pandas/_libs/testing.pyx":170
+ *         for i in range(len(a)):
  *             try:
  *                 assert_almost_equal(a[i], b[i],             # <<<<<<<<<<<<<<
  *                                     check_less_precise=check_less_precise)
  *             except AssertionError:
  */
-          __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_a, __pyx_v_i, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 166, __pyx_L33_error)
+          __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_a, __pyx_v_i, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 170, __pyx_L33_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_b, __pyx_v_i, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 166, __pyx_L33_error)
+          __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_b, __pyx_v_i, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 170, __pyx_L33_error)
           __Pyx_GOTREF(__pyx_t_14);
 
-          /* "pandas/_libs/testing.pyx":167
+          /* "pandas/_libs/testing.pyx":171
  *             try:
  *                 assert_almost_equal(a[i], b[i],
  *                                     check_less_precise=check_less_precise)             # <<<<<<<<<<<<<<
@@ -3253,15 +3214,15 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
           __pyx_t_19.__pyx_n = 1;
           __pyx_t_19.check_less_precise = __pyx_v_check_less_precise;
-          __pyx_t_12 = __pyx_f_6pandas_5_libs_7testing_assert_almost_equal(__pyx_t_10, __pyx_t_14, 0, &__pyx_t_19); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 166, __pyx_L33_error)
+          __pyx_t_12 = __pyx_f_6pandas_5_libs_7testing_assert_almost_equal(__pyx_t_10, __pyx_t_14, 0, &__pyx_t_19); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 170, __pyx_L33_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-          /* "pandas/_libs/testing.pyx":165
+          /* "pandas/_libs/testing.pyx":169
  * 
- *         for i in xrange(len(a)):
+ *         for i in range(len(a)):
  *             try:             # <<<<<<<<<<<<<<
  *                 assert_almost_equal(a[i], b[i],
  *                                     check_less_precise=check_less_precise)
@@ -3280,7 +3241,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "pandas/_libs/testing.pyx":168
+        /* "pandas/_libs/testing.pyx":172
  *                 assert_almost_equal(a[i], b[i],
  *                                     check_less_precise=check_less_precise)
  *             except AssertionError:             # <<<<<<<<<<<<<<
@@ -3290,12 +3251,12 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         __pyx_t_13 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_AssertionError);
         if (__pyx_t_13) {
           __Pyx_AddTraceback("pandas._libs.testing.assert_almost_equal", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_12, &__pyx_t_14, &__pyx_t_10) < 0) __PYX_ERR(0, 168, __pyx_L35_except_error)
+          if (__Pyx_GetException(&__pyx_t_12, &__pyx_t_14, &__pyx_t_10) < 0) __PYX_ERR(0, 172, __pyx_L35_except_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_GOTREF(__pyx_t_14);
           __Pyx_GOTREF(__pyx_t_10);
 
-          /* "pandas/_libs/testing.pyx":169
+          /* "pandas/_libs/testing.pyx":173
  *                                     check_less_precise=check_less_precise)
  *             except AssertionError:
  *                 is_unequal = True             # <<<<<<<<<<<<<<
@@ -3304,7 +3265,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
           __pyx_v_is_unequal = 1;
 
-          /* "pandas/_libs/testing.pyx":170
+          /* "pandas/_libs/testing.pyx":174
  *             except AssertionError:
  *                 is_unequal = True
  *                 diff += 1             # <<<<<<<<<<<<<<
@@ -3320,9 +3281,9 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
         goto __pyx_L35_except_error;
         __pyx_L35_except_error:;
 
-        /* "pandas/_libs/testing.pyx":165
+        /* "pandas/_libs/testing.pyx":169
  * 
- *         for i in xrange(len(a)):
+ *         for i in range(len(a)):
  *             try:             # <<<<<<<<<<<<<<
  *                 assert_almost_equal(a[i], b[i],
  *                                     check_less_precise=check_less_precise)
@@ -3341,236 +3302,194 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       }
     }
 
-    /* "pandas/_libs/testing.pyx":172
+    /* "pandas/_libs/testing.pyx":176
  *                 diff += 1
  * 
  *         if is_unequal:             # <<<<<<<<<<<<<<
- *             from pandas.util.testing import raise_assert_detail
- *             msg = '{0} values are different ({1} %)'.format(
+ *             from pandas._testing import raise_assert_detail
+ *             msg = (f"{obj} values are different "
  */
     __pyx_t_2 = (__pyx_v_is_unequal != 0);
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":173
+      /* "pandas/_libs/testing.pyx":177
  * 
  *         if is_unequal:
- *             from pandas.util.testing import raise_assert_detail             # <<<<<<<<<<<<<<
- *             msg = '{0} values are different ({1} %)'.format(
- *                 obj, np.round(diff * 100.0 / na, 5))
+ *             from pandas._testing import raise_assert_detail             # <<<<<<<<<<<<<<
+ *             msg = (f"{obj} values are different "
+ *                    f"({np.round(diff * 100.0 / na, 5)} %)")
  */
-      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_INCREF(__pyx_n_s_raise_assert_detail);
       __Pyx_GIVEREF(__pyx_n_s_raise_assert_detail);
       PyList_SET_ITEM(__pyx_t_10, 0, __pyx_n_s_raise_assert_detail);
-      __pyx_t_14 = __Pyx_Import(__pyx_n_s_pandas_util_testing, __pyx_t_10, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_Import(__pyx_n_s_pandas__testing, __pyx_t_10, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_ImportFrom(__pyx_t_14, __pyx_n_s_raise_assert_detail); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_ImportFrom(__pyx_t_14, __pyx_n_s_raise_assert_detail); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_INCREF(__pyx_t_10);
       __Pyx_XDECREF_SET(__pyx_v_raise_assert_detail, __pyx_t_10);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-      /* "pandas/_libs/testing.pyx":174
+      /* "pandas/_libs/testing.pyx":178
  *         if is_unequal:
- *             from pandas.util.testing import raise_assert_detail
- *             msg = '{0} values are different ({1} %)'.format(             # <<<<<<<<<<<<<<
- *                 obj, np.round(diff * 100.0 / na, 5))
- *             raise_assert_detail(obj, msg, lobj, robj)
+ *             from pandas._testing import raise_assert_detail
+ *             msg = (f"{obj} values are different "             # <<<<<<<<<<<<<<
+ *                    f"({np.round(diff * 100.0 / na, 5)} %)")
+ *             raise_assert_detail(obj, msg, lobj, robj, index_values=index_values)
  */
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_0_values_are_different_1, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 174, __pyx_L1_error)
+      __pyx_t_14 = PyTuple_New(4); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 178, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_5 = 0;
+      __pyx_t_6 = 127;
+      __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_v_obj, __pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 178, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) : __pyx_t_6;
+      __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10);
+      __Pyx_GIVEREF(__pyx_t_10);
+      PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_10);
+      __pyx_t_10 = 0;
+      __Pyx_INCREF(__pyx_kp_u_values_are_different);
+      __pyx_t_5 += 23;
+      __Pyx_GIVEREF(__pyx_kp_u_values_are_different);
+      PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_kp_u_values_are_different);
 
-      /* "pandas/_libs/testing.pyx":175
- *             from pandas.util.testing import raise_assert_detail
- *             msg = '{0} values are different ({1} %)'.format(
- *                 obj, np.round(diff * 100.0 / na, 5))             # <<<<<<<<<<<<<<
- *             raise_assert_detail(obj, msg, lobj, robj)
+      /* "pandas/_libs/testing.pyx":179
+ *             from pandas._testing import raise_assert_detail
+ *             msg = (f"{obj} values are different "
+ *                    f"({np.round(diff * 100.0 / na, 5)} %)")             # <<<<<<<<<<<<<<
+ *             raise_assert_detail(obj, msg, lobj, robj, index_values=index_values)
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_round); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_11);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_round); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_20 = (__pyx_v_diff * 100.0);
       if (unlikely(__pyx_v_na == 0)) {
         PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-        __PYX_ERR(0, 175, __pyx_L1_error)
+        __PYX_ERR(0, 179, __pyx_L1_error)
       }
-      __pyx_t_3 = PyFloat_FromDouble((__pyx_t_20 / ((double)__pyx_v_na))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_12 = PyFloat_FromDouble((__pyx_t_20 / ((double)__pyx_v_na))); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
       __pyx_t_8 = NULL;
       __pyx_t_13 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_11))) {
-        __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_11);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+        __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_7);
         if (likely(__pyx_t_8)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_11);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
           __Pyx_INCREF(__pyx_t_8);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_11, function);
+          __Pyx_DECREF_SET(__pyx_t_7, function);
           __pyx_t_13 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_11)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_3, __pyx_int_5};
-        __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 175, __pyx_L1_error)
+      if (PyFunction_Check(__pyx_t_7)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_12, __pyx_int_5};
+        __pyx_t_10 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 179, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_10);
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_11)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_3, __pyx_int_5};
-        __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_11, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 175, __pyx_L1_error)
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_12, __pyx_int_5};
+        __pyx_t_10 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 179, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_10);
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       } else
       #endif
       {
-        __pyx_t_7 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 175, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_11 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 179, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_11);
         if (__pyx_t_8) {
-          __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8); __pyx_t_8 = NULL;
+          __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_8); __pyx_t_8 = NULL;
         }
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_13, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_11, 0+__pyx_t_13, __pyx_t_12);
         __Pyx_INCREF(__pyx_int_5);
         __Pyx_GIVEREF(__pyx_int_5);
-        PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_13, __pyx_int_5);
-        __pyx_t_3 = 0;
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_7, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 175, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = NULL;
-      __pyx_t_13 = 0;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
-        __pyx_t_11 = PyMethod_GET_SELF(__pyx_t_10);
-        if (likely(__pyx_t_11)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
-          __Pyx_INCREF(__pyx_t_11);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_10, function);
-          __pyx_t_13 = 1;
-        }
-      }
-      #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_10)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_obj, __pyx_t_12};
-        __pyx_t_14 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 174, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_GOTREF(__pyx_t_14);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      } else
-      #endif
-      #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_v_obj, __pyx_t_12};
-        __pyx_t_14 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 174, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __Pyx_GOTREF(__pyx_t_14);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      } else
-      #endif
-      {
-        __pyx_t_7 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 174, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        if (__pyx_t_11) {
-          __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_11); __pyx_t_11 = NULL;
-        }
-        __Pyx_INCREF(__pyx_v_obj);
-        __Pyx_GIVEREF(__pyx_v_obj);
-        PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_13, __pyx_v_obj);
-        __Pyx_GIVEREF(__pyx_t_12);
-        PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_13, __pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_13, __pyx_int_5);
         __pyx_t_12 = 0;
-        __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 174, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_11, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 179, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_10);
+        __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       }
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_10, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 179, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_v_msg = __pyx_t_14;
-      __pyx_t_14 = 0;
+      __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
+      __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+      __Pyx_GIVEREF(__pyx_t_7);
+      PyTuple_SET_ITEM(__pyx_t_14, 2, __pyx_t_7);
+      __pyx_t_7 = 0;
+      __Pyx_INCREF(__pyx_kp_u__4);
+      __pyx_t_5 += 3;
+      __Pyx_GIVEREF(__pyx_kp_u__4);
+      PyTuple_SET_ITEM(__pyx_t_14, 3, __pyx_kp_u__4);
 
-      /* "pandas/_libs/testing.pyx":176
- *             msg = '{0} values are different ({1} %)'.format(
- *                 obj, np.round(diff * 100.0 / na, 5))
- *             raise_assert_detail(obj, msg, lobj, robj)             # <<<<<<<<<<<<<<
+      /* "pandas/_libs/testing.pyx":178
+ *         if is_unequal:
+ *             from pandas._testing import raise_assert_detail
+ *             msg = (f"{obj} values are different "             # <<<<<<<<<<<<<<
+ *                    f"({np.round(diff * 100.0 / na, 5)} %)")
+ *             raise_assert_detail(obj, msg, lobj, robj, index_values=index_values)
+ */
+      __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_14, 4, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 178, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_v_msg = ((PyObject*)__pyx_t_7);
+      __pyx_t_7 = 0;
+
+      /* "pandas/_libs/testing.pyx":180
+ *             msg = (f"{obj} values are different "
+ *                    f"({np.round(diff * 100.0 / na, 5)} %)")
+ *             raise_assert_detail(obj, msg, lobj, robj, index_values=index_values)             # <<<<<<<<<<<<<<
  * 
  *         return True
  */
-      __Pyx_INCREF(__pyx_v_raise_assert_detail);
-      __pyx_t_10 = __pyx_v_raise_assert_detail; __pyx_t_7 = NULL;
-      __pyx_t_13 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_10))) {
-        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_10);
-        if (likely(__pyx_t_7)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
-          __Pyx_INCREF(__pyx_t_7);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_10, function);
-          __pyx_t_13 = 1;
-        }
-      }
-      #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_10)) {
-        PyObject *__pyx_temp[5] = {__pyx_t_7, __pyx_v_obj, __pyx_v_msg, __pyx_v_lobj, __pyx_v_robj};
-        __pyx_t_14 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_13, 4+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 176, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_GOTREF(__pyx_t_14);
-      } else
-      #endif
-      #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
-        PyObject *__pyx_temp[5] = {__pyx_t_7, __pyx_v_obj, __pyx_v_msg, __pyx_v_lobj, __pyx_v_robj};
-        __pyx_t_14 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_13, 4+__pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 176, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_GOTREF(__pyx_t_14);
-      } else
-      #endif
-      {
-        __pyx_t_12 = PyTuple_New(4+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 176, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        if (__pyx_t_7) {
-          __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_7); __pyx_t_7 = NULL;
-        }
-        __Pyx_INCREF(__pyx_v_obj);
-        __Pyx_GIVEREF(__pyx_v_obj);
-        PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_13, __pyx_v_obj);
-        __Pyx_INCREF(__pyx_v_msg);
-        __Pyx_GIVEREF(__pyx_v_msg);
-        PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_13, __pyx_v_msg);
-        __Pyx_INCREF(__pyx_v_lobj);
-        __Pyx_GIVEREF(__pyx_v_lobj);
-        PyTuple_SET_ITEM(__pyx_t_12, 2+__pyx_t_13, __pyx_v_lobj);
-        __Pyx_INCREF(__pyx_v_robj);
-        __Pyx_GIVEREF(__pyx_v_robj);
-        PyTuple_SET_ITEM(__pyx_t_12, 3+__pyx_t_13, __pyx_v_robj);
-        __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 176, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __pyx_t_7 = PyTuple_New(4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 180, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_INCREF(__pyx_v_obj);
+      __Pyx_GIVEREF(__pyx_v_obj);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_obj);
+      __Pyx_INCREF(__pyx_v_msg);
+      __Pyx_GIVEREF(__pyx_v_msg);
+      PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_msg);
+      __Pyx_INCREF(__pyx_v_lobj);
+      __Pyx_GIVEREF(__pyx_v_lobj);
+      PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_v_lobj);
+      __Pyx_INCREF(__pyx_v_robj);
+      __Pyx_GIVEREF(__pyx_v_robj);
+      PyTuple_SET_ITEM(__pyx_t_7, 3, __pyx_v_robj);
+      __pyx_t_14 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 180, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      if (PyDict_SetItem(__pyx_t_14, __pyx_n_s_index_values, __pyx_v_index_values) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_v_raise_assert_detail, __pyx_t_7, __pyx_t_14); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 180, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "pandas/_libs/testing.pyx":172
+      /* "pandas/_libs/testing.pyx":176
  *                 diff += 1
  * 
  *         if is_unequal:             # <<<<<<<<<<<<<<
- *             from pandas.util.testing import raise_assert_detail
- *             msg = '{0} values are different ({1} %)'.format(
+ *             from pandas._testing import raise_assert_detail
+ *             msg = (f"{obj} values are different "
  */
     }
 
-    /* "pandas/_libs/testing.pyx":178
- *             raise_assert_detail(obj, msg, lobj, robj)
+    /* "pandas/_libs/testing.pyx":182
+ *             raise_assert_detail(obj, msg, lobj, robj, index_values=index_values)
  * 
  *         return True             # <<<<<<<<<<<<<<
  * 
@@ -3581,7 +3500,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "pandas/_libs/testing.pyx":123
+    /* "pandas/_libs/testing.pyx":129
  *             obj = 'Iterable'
  * 
  *     if isiterable(a):             # <<<<<<<<<<<<<<
@@ -3590,182 +3509,182 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
   }
 
-  /* "pandas/_libs/testing.pyx":180
+  /* "pandas/_libs/testing.pyx":184
  *         return True
  * 
  *     elif isiterable(b):             # <<<<<<<<<<<<<<
- *         from pandas.util.testing import assert_class_equal
+ *         from pandas._testing import assert_class_equal
  *         # classes can't be the same, to raise error
  */
   __pyx_t_2 = (__pyx_f_6pandas_5_libs_7testing_isiterable(__pyx_v_b) != 0);
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/testing.pyx":181
+    /* "pandas/_libs/testing.pyx":185
  * 
  *     elif isiterable(b):
- *         from pandas.util.testing import assert_class_equal             # <<<<<<<<<<<<<<
+ *         from pandas._testing import assert_class_equal             # <<<<<<<<<<<<<<
  *         # classes can't be the same, to raise error
  *         assert_class_equal(a, b, obj=obj)
  */
-    __pyx_t_14 = PyList_New(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_14);
+    __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
     __Pyx_INCREF(__pyx_n_s_assert_class_equal);
     __Pyx_GIVEREF(__pyx_n_s_assert_class_equal);
-    PyList_SET_ITEM(__pyx_t_14, 0, __pyx_n_s_assert_class_equal);
-    __pyx_t_10 = __Pyx_Import(__pyx_n_s_pandas_util_testing, __pyx_t_14, 0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __pyx_t_14 = __Pyx_ImportFrom(__pyx_t_10, __pyx_n_s_assert_class_equal); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 181, __pyx_L1_error)
+    PyList_SET_ITEM(__pyx_t_10, 0, __pyx_n_s_assert_class_equal);
+    __pyx_t_14 = __Pyx_Import(__pyx_n_s_pandas__testing, __pyx_t_10, 0); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 185, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __Pyx_INCREF(__pyx_t_14);
-    __pyx_v_assert_class_equal = __pyx_t_14;
-    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __pyx_t_10 = __Pyx_ImportFrom(__pyx_t_14, __pyx_n_s_assert_class_equal); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    __Pyx_INCREF(__pyx_t_10);
+    __pyx_v_assert_class_equal = __pyx_t_10;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-    /* "pandas/_libs/testing.pyx":183
- *         from pandas.util.testing import assert_class_equal
+    /* "pandas/_libs/testing.pyx":187
+ *         from pandas._testing import assert_class_equal
  *         # classes can't be the same, to raise error
  *         assert_class_equal(a, b, obj=obj)             # <<<<<<<<<<<<<<
  * 
- *     if a == b:
+ *     if isna(a) and isna(b):
  */
-    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
+    __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
     __Pyx_INCREF(__pyx_v_a);
     __Pyx_GIVEREF(__pyx_v_a);
-    PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_v_a);
+    PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_v_a);
     __Pyx_INCREF(__pyx_v_b);
     __Pyx_GIVEREF(__pyx_v_b);
-    PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_v_b);
-    __pyx_t_14 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_14);
-    if (PyDict_SetItem(__pyx_t_14, __pyx_n_s_obj, __pyx_v_obj) < 0) __PYX_ERR(0, 183, __pyx_L1_error)
-    __pyx_t_12 = __Pyx_PyObject_Call(__pyx_v_assert_class_equal, __pyx_t_10, __pyx_t_14); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_v_b);
+    __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
+    if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_obj, __pyx_v_obj) < 0) __PYX_ERR(0, 187, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_v_assert_class_equal, __pyx_t_14, __pyx_t_10); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 187, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "pandas/_libs/testing.pyx":180
+    /* "pandas/_libs/testing.pyx":184
  *         return True
  * 
  *     elif isiterable(b):             # <<<<<<<<<<<<<<
- *         from pandas.util.testing import assert_class_equal
+ *         from pandas._testing import assert_class_equal
  *         # classes can't be the same, to raise error
  */
   }
 
-  /* "pandas/_libs/testing.pyx":185
+  /* "pandas/_libs/testing.pyx":189
  *         assert_class_equal(a, b, obj=obj)
  * 
- *     if a == b:             # <<<<<<<<<<<<<<
- *         # object comparison
- *         return True
- */
-  __pyx_t_12 = PyObject_RichCompare(__pyx_v_a, __pyx_v_b, Py_EQ); __Pyx_XGOTREF(__pyx_t_12); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 185, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 185, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  if (__pyx_t_2) {
-
-    /* "pandas/_libs/testing.pyx":187
- *     if a == b:
- *         # object comparison
- *         return True             # <<<<<<<<<<<<<<
- *     if isna(a) and isna(b):
- *         # TODO: Should require same-dtype NA?
- */
-    __Pyx_XDECREF(__pyx_r);
-    __Pyx_INCREF(Py_True);
-    __pyx_r = Py_True;
-    goto __pyx_L0;
-
-    /* "pandas/_libs/testing.pyx":185
- *         assert_class_equal(a, b, obj=obj)
- * 
- *     if a == b:             # <<<<<<<<<<<<<<
- *         # object comparison
- *         return True
- */
-  }
-
-  /* "pandas/_libs/testing.pyx":188
- *         # object comparison
- *         return True
  *     if isna(a) and isna(b):             # <<<<<<<<<<<<<<
  *         # TODO: Should require same-dtype NA?
  *         # nan / None comparison
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_isna); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 188, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_14);
-  __pyx_t_10 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_14))) {
-    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_14);
-    if (likely(__pyx_t_10)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_14);
-      __Pyx_INCREF(__pyx_t_10);
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_isna); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_14 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_14 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_14)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_14);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_14, function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
     }
   }
-  __pyx_t_12 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_10, __pyx_v_a) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_v_a);
-  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-  if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 188, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_12);
-  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 188, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+  __pyx_t_7 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_14, __pyx_v_a) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_v_a);
+  __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (__pyx_t_4) {
   } else {
     __pyx_t_2 = __pyx_t_4;
-    goto __pyx_L46_bool_binop_done;
+    goto __pyx_L45_bool_binop_done;
   }
-  __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_isna); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 188, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_14);
-  __pyx_t_10 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_14))) {
-    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_14);
-    if (likely(__pyx_t_10)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_14);
-      __Pyx_INCREF(__pyx_t_10);
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_isna); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __pyx_t_14 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_10))) {
+    __pyx_t_14 = PyMethod_GET_SELF(__pyx_t_10);
+    if (likely(__pyx_t_14)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_14);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_14, function);
+      __Pyx_DECREF_SET(__pyx_t_10, function);
     }
   }
-  __pyx_t_12 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_10, __pyx_v_b) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_v_b);
-  __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-  if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 188, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_12);
-  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 188, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+  __pyx_t_7 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_14, __pyx_v_b) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_v_b);
+  __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 189, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_2 = __pyx_t_4;
-  __pyx_L46_bool_binop_done:;
+  __pyx_L45_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/testing.pyx":191
+    /* "pandas/_libs/testing.pyx":192
  *         # TODO: Should require same-dtype NA?
  *         # nan / None comparison
  *         return True             # <<<<<<<<<<<<<<
- *     if is_comparable_as_number(a) and is_comparable_as_number(b):
- *         if array_equivalent(a, b, strict_nan=True):
+ * 
+ *     if a == b:
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(Py_True);
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "pandas/_libs/testing.pyx":188
- *         # object comparison
- *         return True
+    /* "pandas/_libs/testing.pyx":189
+ *         assert_class_equal(a, b, obj=obj)
+ * 
  *     if isna(a) and isna(b):             # <<<<<<<<<<<<<<
  *         # TODO: Should require same-dtype NA?
  *         # nan / None comparison
  */
   }
 
-  /* "pandas/_libs/testing.pyx":192
- *         # nan / None comparison
+  /* "pandas/_libs/testing.pyx":194
  *         return True
+ * 
+ *     if a == b:             # <<<<<<<<<<<<<<
+ *         # object comparison
+ *         return True
+ */
+  __pyx_t_7 = PyObject_RichCompare(__pyx_v_a, __pyx_v_b, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 194, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 194, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (__pyx_t_2) {
+
+    /* "pandas/_libs/testing.pyx":196
+ *     if a == b:
+ *         # object comparison
+ *         return True             # <<<<<<<<<<<<<<
+ * 
+ *     if is_comparable_as_number(a) and is_comparable_as_number(b):
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_INCREF(Py_True);
+    __pyx_r = Py_True;
+    goto __pyx_L0;
+
+    /* "pandas/_libs/testing.pyx":194
+ *         return True
+ * 
+ *     if a == b:             # <<<<<<<<<<<<<<
+ *         # object comparison
+ *         return True
+ */
+  }
+
+  /* "pandas/_libs/testing.pyx":198
+ *         return True
+ * 
  *     if is_comparable_as_number(a) and is_comparable_as_number(b):             # <<<<<<<<<<<<<<
  *         if array_equivalent(a, b, strict_nan=True):
  *             # inf comparison
@@ -3781,36 +3700,36 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
   __pyx_L49_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/testing.pyx":193
- *         return True
+    /* "pandas/_libs/testing.pyx":199
+ * 
  *     if is_comparable_as_number(a) and is_comparable_as_number(b):
  *         if array_equivalent(a, b, strict_nan=True):             # <<<<<<<<<<<<<<
  *             # inf comparison
  *             return True
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_array_equivalent); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 193, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 193, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_14);
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_array_equivalent); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_10);
     __Pyx_INCREF(__pyx_v_a);
     __Pyx_GIVEREF(__pyx_v_a);
-    PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_v_a);
+    PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_v_a);
     __Pyx_INCREF(__pyx_v_b);
     __Pyx_GIVEREF(__pyx_v_b);
-    PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_v_b);
-    __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 193, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_strict_nan, Py_True) < 0) __PYX_ERR(0, 193, __pyx_L1_error)
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_14, __pyx_t_10); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 193, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 193, __pyx_L1_error)
+    PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_v_b);
+    __pyx_t_14 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
+    if (PyDict_SetItem(__pyx_t_14, __pyx_n_s_strict_nan, Py_True) < 0) __PYX_ERR(0, 199, __pyx_L1_error)
+    __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, __pyx_t_14); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+    __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 199, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":195
+      /* "pandas/_libs/testing.pyx":201
  *         if array_equivalent(a, b, strict_nan=True):
  *             # inf comparison
  *             return True             # <<<<<<<<<<<<<<
@@ -3822,8 +3741,8 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       __pyx_r = Py_True;
       goto __pyx_L0;
 
-      /* "pandas/_libs/testing.pyx":193
- *         return True
+      /* "pandas/_libs/testing.pyx":199
+ * 
  *     if is_comparable_as_number(a) and is_comparable_as_number(b):
  *         if array_equivalent(a, b, strict_nan=True):             # <<<<<<<<<<<<<<
  *             # inf comparison
@@ -3831,7 +3750,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
     }
 
-    /* "pandas/_libs/testing.pyx":197
+    /* "pandas/_libs/testing.pyx":203
  *             return True
  * 
  *         if check_less_precise is True:             # <<<<<<<<<<<<<<
@@ -3842,7 +3761,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __pyx_t_4 = (__pyx_t_2 != 0);
     if (__pyx_t_4) {
 
-      /* "pandas/_libs/testing.pyx":198
+      /* "pandas/_libs/testing.pyx":204
  * 
  *         if check_less_precise is True:
  *             decimal = 3             # <<<<<<<<<<<<<<
@@ -3851,7 +3770,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
       __pyx_v_decimal = 3;
 
-      /* "pandas/_libs/testing.pyx":197
+      /* "pandas/_libs/testing.pyx":203
  *             return True
  * 
  *         if check_less_precise is True:             # <<<<<<<<<<<<<<
@@ -3861,7 +3780,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       goto __pyx_L52;
     }
 
-    /* "pandas/_libs/testing.pyx":199
+    /* "pandas/_libs/testing.pyx":205
  *         if check_less_precise is True:
  *             decimal = 3
  *         elif check_less_precise is False:             # <<<<<<<<<<<<<<
@@ -3872,7 +3791,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
     __pyx_t_2 = (__pyx_t_4 != 0);
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":200
+      /* "pandas/_libs/testing.pyx":206
  *             decimal = 3
  *         elif check_less_precise is False:
  *             decimal = 5             # <<<<<<<<<<<<<<
@@ -3881,7 +3800,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  */
       __pyx_v_decimal = 5;
 
-      /* "pandas/_libs/testing.pyx":199
+      /* "pandas/_libs/testing.pyx":205
  *         if check_less_precise is True:
  *             decimal = 3
  *         elif check_less_precise is False:             # <<<<<<<<<<<<<<
@@ -3891,7 +3810,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
       goto __pyx_L52;
     }
 
-    /* "pandas/_libs/testing.pyx":202
+    /* "pandas/_libs/testing.pyx":208
  *             decimal = 5
  *         else:
  *             decimal = check_less_precise             # <<<<<<<<<<<<<<
@@ -3899,323 +3818,301 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
  *         fa, fb = a, b
  */
     /*else*/ {
-      __pyx_t_13 = __Pyx_PyInt_As_int(__pyx_v_check_less_precise); if (unlikely((__pyx_t_13 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 202, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyInt_As_int(__pyx_v_check_less_precise); if (unlikely((__pyx_t_13 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 208, __pyx_L1_error)
       __pyx_v_decimal = __pyx_t_13;
     }
     __pyx_L52:;
 
-    /* "pandas/_libs/testing.pyx":204
+    /* "pandas/_libs/testing.pyx":210
  *             decimal = check_less_precise
  * 
  *         fa, fb = a, b             # <<<<<<<<<<<<<<
  * 
  *         # case for zero
  */
-    __pyx_t_20 = __pyx_PyFloat_AsDouble(__pyx_v_a); if (unlikely((__pyx_t_20 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L1_error)
-    __pyx_t_21 = __pyx_PyFloat_AsDouble(__pyx_v_b); if (unlikely((__pyx_t_21 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 204, __pyx_L1_error)
+    __pyx_t_20 = __pyx_PyFloat_AsDouble(__pyx_v_a); if (unlikely((__pyx_t_20 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L1_error)
+    __pyx_t_21 = __pyx_PyFloat_AsDouble(__pyx_v_b); if (unlikely((__pyx_t_21 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L1_error)
     __pyx_v_fa = __pyx_t_20;
     __pyx_v_fb = __pyx_t_21;
 
-    /* "pandas/_libs/testing.pyx":207
+    /* "pandas/_libs/testing.pyx":213
  * 
  *         # case for zero
  *         if abs(fa) < 1e-5:             # <<<<<<<<<<<<<<
  *             if not decimal_almost_equal(fa, fb, decimal):
- *                 assert False, ('(very low values) expected %.5f but '
+ *                 assert False, (f'(very low values) expected {fb:.5f} '
  */
     __pyx_t_2 = ((fabs(__pyx_v_fa) < 1e-5) != 0);
     if (__pyx_t_2) {
 
-      /* "pandas/_libs/testing.pyx":208
+      /* "pandas/_libs/testing.pyx":214
  *         # case for zero
  *         if abs(fa) < 1e-5:
  *             if not decimal_almost_equal(fa, fb, decimal):             # <<<<<<<<<<<<<<
- *                 assert False, ('(very low values) expected %.5f but '
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'(very low values) expected {fb:.5f} '
+ *                                f'but got {fa:.5f}, with decimal {decimal}')
  */
       __pyx_t_2 = ((!(__pyx_f_6pandas_5_libs_7testing_decimal_almost_equal(__pyx_v_fa, __pyx_v_fb, __pyx_v_decimal) != 0)) != 0);
       if (__pyx_t_2) {
 
-        /* "pandas/_libs/testing.pyx":209
+        /* "pandas/_libs/testing.pyx":215
  *         if abs(fa) < 1e-5:
  *             if not decimal_almost_equal(fa, fb, decimal):
- *                 assert False, ('(very low values) expected %.5f but '             # <<<<<<<<<<<<<<
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'(very low values) expected {fb:.5f} '             # <<<<<<<<<<<<<<
+ *                                f'but got {fa:.5f}, with decimal {decimal}')
  *         else:
  */
         #ifndef CYTHON_WITHOUT_ASSERTIONS
         if (unlikely(!Py_OptimizeFlag)) {
           if (unlikely(!0)) {
-            __pyx_t_7 = PyTuple_New(6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 209, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
+            __pyx_t_11 = PyTuple_New(6); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 215, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_11);
             __pyx_t_5 = 0;
             __pyx_t_6 = 127;
             __Pyx_INCREF(__pyx_kp_u_very_low_values_expected);
             __pyx_t_5 += 27;
             __Pyx_GIVEREF(__pyx_kp_u_very_low_values_expected);
-            PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_u_very_low_values_expected);
-
-            /* "pandas/_libs/testing.pyx":210
- *             if not decimal_almost_equal(fa, fb, decimal):
- *                 assert False, ('(very low values) expected %.5f but '
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))             # <<<<<<<<<<<<<<
- *         else:
- *             if not decimal_almost_equal(1, fb / fa, decimal):
- */
-            __pyx_t_10 = PyFloat_FromDouble(__pyx_v_fb); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 210, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_10);
-            __pyx_t_14 = __Pyx_PyObject_Format(__pyx_t_10, __pyx_kp_u_5f); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 210, __pyx_L1_error)
+            PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_kp_u_very_low_values_expected);
+            __pyx_t_14 = PyFloat_FromDouble(__pyx_v_fb); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 215, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
-            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) : __pyx_t_6;
-            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14);
-            __Pyx_GIVEREF(__pyx_t_14);
-            PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_14);
-            __pyx_t_14 = 0;
-            __Pyx_INCREF(__pyx_kp_u_but_got);
-            __pyx_t_5 += 9;
-            __Pyx_GIVEREF(__pyx_kp_u_but_got);
-            PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_kp_u_but_got);
-            __pyx_t_14 = PyFloat_FromDouble(__pyx_v_fa); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 210, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_10 = __Pyx_PyObject_Format(__pyx_t_14, __pyx_kp_u_5f); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 210, __pyx_L1_error)
+            __pyx_t_10 = __Pyx_PyObject_Format(__pyx_t_14, __pyx_kp_u_5f); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 215, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) : __pyx_t_6;
             __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10);
             __Pyx_GIVEREF(__pyx_t_10);
-            PyTuple_SET_ITEM(__pyx_t_7, 3, __pyx_t_10);
+            PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_t_10);
             __pyx_t_10 = 0;
+            __Pyx_INCREF(__pyx_kp_u_but_got);
+            __pyx_t_5 += 9;
+            __Pyx_GIVEREF(__pyx_kp_u_but_got);
+            PyTuple_SET_ITEM(__pyx_t_11, 2, __pyx_kp_u_but_got);
+
+            /* "pandas/_libs/testing.pyx":216
+ *             if not decimal_almost_equal(fa, fb, decimal):
+ *                 assert False, (f'(very low values) expected {fb:.5f} '
+ *                                f'but got {fa:.5f}, with decimal {decimal}')             # <<<<<<<<<<<<<<
+ *         else:
+ *             if not decimal_almost_equal(1, fb / fa, decimal):
+ */
+            __pyx_t_10 = PyFloat_FromDouble(__pyx_v_fa); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 216, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __pyx_t_14 = __Pyx_PyObject_Format(__pyx_t_10, __pyx_kp_u_5f); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 216, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_14);
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) : __pyx_t_6;
+            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14);
+            __Pyx_GIVEREF(__pyx_t_14);
+            PyTuple_SET_ITEM(__pyx_t_11, 3, __pyx_t_14);
+            __pyx_t_14 = 0;
             __Pyx_INCREF(__pyx_kp_u_with_decimal);
             __pyx_t_5 += 15;
             __Pyx_GIVEREF(__pyx_kp_u_with_decimal);
-            PyTuple_SET_ITEM(__pyx_t_7, 4, __pyx_kp_u_with_decimal);
-            __pyx_t_10 = __Pyx_PyUnicode_From_int(__pyx_v_decimal, 0, ' ', 'd'); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 210, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_10);
-            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10);
-            __Pyx_GIVEREF(__pyx_t_10);
-            PyTuple_SET_ITEM(__pyx_t_7, 5, __pyx_t_10);
-            __pyx_t_10 = 0;
+            PyTuple_SET_ITEM(__pyx_t_11, 4, __pyx_kp_u_with_decimal);
+            __pyx_t_14 = __Pyx_PyUnicode_From_int(__pyx_v_decimal, 0, ' ', 'd'); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 216, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_14);
+            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14);
+            __Pyx_GIVEREF(__pyx_t_14);
+            PyTuple_SET_ITEM(__pyx_t_11, 5, __pyx_t_14);
+            __pyx_t_14 = 0;
 
-            /* "pandas/_libs/testing.pyx":209
+            /* "pandas/_libs/testing.pyx":215
  *         if abs(fa) < 1e-5:
  *             if not decimal_almost_equal(fa, fb, decimal):
- *                 assert False, ('(very low values) expected %.5f but '             # <<<<<<<<<<<<<<
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'(very low values) expected {fb:.5f} '             # <<<<<<<<<<<<<<
+ *                                f'but got {fa:.5f}, with decimal {decimal}')
  *         else:
  */
-            __pyx_t_10 = __Pyx_PyUnicode_Join(__pyx_t_7, 6, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 209, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_10);
-            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-            PyErr_SetObject(PyExc_AssertionError, __pyx_t_10);
-            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            __PYX_ERR(0, 209, __pyx_L1_error)
+            __pyx_t_14 = __Pyx_PyUnicode_Join(__pyx_t_11, 6, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 215, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_14);
+            __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+            PyErr_SetObject(PyExc_AssertionError, __pyx_t_14);
+            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+            __PYX_ERR(0, 215, __pyx_L1_error)
           }
         }
         #endif
 
-        /* "pandas/_libs/testing.pyx":208
+        /* "pandas/_libs/testing.pyx":214
  *         # case for zero
  *         if abs(fa) < 1e-5:
  *             if not decimal_almost_equal(fa, fb, decimal):             # <<<<<<<<<<<<<<
- *                 assert False, ('(very low values) expected %.5f but '
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'(very low values) expected {fb:.5f} '
+ *                                f'but got {fa:.5f}, with decimal {decimal}')
  */
       }
 
-      /* "pandas/_libs/testing.pyx":207
+      /* "pandas/_libs/testing.pyx":213
  * 
  *         # case for zero
  *         if abs(fa) < 1e-5:             # <<<<<<<<<<<<<<
  *             if not decimal_almost_equal(fa, fb, decimal):
- *                 assert False, ('(very low values) expected %.5f but '
+ *                 assert False, (f'(very low values) expected {fb:.5f} '
  */
       goto __pyx_L53;
     }
 
-    /* "pandas/_libs/testing.pyx":212
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))
+    /* "pandas/_libs/testing.pyx":218
+ *                                f'but got {fa:.5f}, with decimal {decimal}')
  *         else:
  *             if not decimal_almost_equal(1, fb / fa, decimal):             # <<<<<<<<<<<<<<
- *                 assert False, ('expected %.5f but got %.5f, '
- *                                'with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'expected {fb:.5f} but got {fa:.5f}, '
+ *                                f'with decimal {decimal}')
  */
     /*else*/ {
       if (unlikely(__pyx_v_fa == 0)) {
         PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-        __PYX_ERR(0, 212, __pyx_L1_error)
+        __PYX_ERR(0, 218, __pyx_L1_error)
       }
       __pyx_t_2 = ((!(__pyx_f_6pandas_5_libs_7testing_decimal_almost_equal(1.0, (__pyx_v_fb / __pyx_v_fa), __pyx_v_decimal) != 0)) != 0);
       if (__pyx_t_2) {
 
-        /* "pandas/_libs/testing.pyx":213
+        /* "pandas/_libs/testing.pyx":219
  *         else:
  *             if not decimal_almost_equal(1, fb / fa, decimal):
- *                 assert False, ('expected %.5f but got %.5f, '             # <<<<<<<<<<<<<<
- *                                'with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'expected {fb:.5f} but got {fa:.5f}, '             # <<<<<<<<<<<<<<
+ *                                f'with decimal {decimal}')
  *         return True
  */
         #ifndef CYTHON_WITHOUT_ASSERTIONS
         if (unlikely(!Py_OptimizeFlag)) {
           if (unlikely(!0)) {
-            __pyx_t_10 = PyTuple_New(6); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_10);
+            __pyx_t_14 = PyTuple_New(6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 219, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_14);
             __pyx_t_5 = 0;
             __pyx_t_6 = 127;
             __Pyx_INCREF(__pyx_kp_u_expected);
             __pyx_t_5 += 9;
             __Pyx_GIVEREF(__pyx_kp_u_expected);
-            PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_kp_u_expected);
-
-            /* "pandas/_libs/testing.pyx":214
- *             if not decimal_almost_equal(1, fb / fa, decimal):
- *                 assert False, ('expected %.5f but got %.5f, '
- *                                'with decimal %d' % (fb, fa, decimal))             # <<<<<<<<<<<<<<
- *         return True
- * 
- */
-            __pyx_t_7 = PyFloat_FromDouble(__pyx_v_fb); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 214, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
-            __pyx_t_14 = __Pyx_PyObject_Format(__pyx_t_7, __pyx_kp_u_5f); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 214, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_14);
-            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-            __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) : __pyx_t_6;
-            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14);
-            __Pyx_GIVEREF(__pyx_t_14);
-            PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_14);
-            __pyx_t_14 = 0;
+            PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_kp_u_expected);
+            __pyx_t_11 = PyFloat_FromDouble(__pyx_v_fb); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 219, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_11);
+            __pyx_t_10 = __Pyx_PyObject_Format(__pyx_t_11, __pyx_kp_u_5f); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 219, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+            __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) : __pyx_t_6;
+            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10);
+            __Pyx_GIVEREF(__pyx_t_10);
+            PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_10);
+            __pyx_t_10 = 0;
             __Pyx_INCREF(__pyx_kp_u_but_got);
             __pyx_t_5 += 9;
             __Pyx_GIVEREF(__pyx_kp_u_but_got);
-            PyTuple_SET_ITEM(__pyx_t_10, 2, __pyx_kp_u_but_got);
-            __pyx_t_14 = PyFloat_FromDouble(__pyx_v_fa); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 214, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_14);
-            __pyx_t_7 = __Pyx_PyObject_Format(__pyx_t_14, __pyx_kp_u_5f); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 214, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
-            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_6;
-            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
-            __Pyx_GIVEREF(__pyx_t_7);
-            PyTuple_SET_ITEM(__pyx_t_10, 3, __pyx_t_7);
-            __pyx_t_7 = 0;
+            PyTuple_SET_ITEM(__pyx_t_14, 2, __pyx_kp_u_but_got);
+            __pyx_t_10 = PyFloat_FromDouble(__pyx_v_fa); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 219, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_10);
+            __pyx_t_11 = __Pyx_PyObject_Format(__pyx_t_10, __pyx_kp_u_5f); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 219, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_11);
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_11) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_11) : __pyx_t_6;
+            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_11);
+            __Pyx_GIVEREF(__pyx_t_11);
+            PyTuple_SET_ITEM(__pyx_t_14, 3, __pyx_t_11);
+            __pyx_t_11 = 0;
             __Pyx_INCREF(__pyx_kp_u_with_decimal);
             __pyx_t_5 += 15;
             __Pyx_GIVEREF(__pyx_kp_u_with_decimal);
-            PyTuple_SET_ITEM(__pyx_t_10, 4, __pyx_kp_u_with_decimal);
-            __pyx_t_7 = __Pyx_PyUnicode_From_int(__pyx_v_decimal, 0, ' ', 'd'); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 214, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
-            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
-            __Pyx_GIVEREF(__pyx_t_7);
-            PyTuple_SET_ITEM(__pyx_t_10, 5, __pyx_t_7);
-            __pyx_t_7 = 0;
+            PyTuple_SET_ITEM(__pyx_t_14, 4, __pyx_kp_u_with_decimal);
 
-            /* "pandas/_libs/testing.pyx":213
+            /* "pandas/_libs/testing.pyx":220
+ *             if not decimal_almost_equal(1, fb / fa, decimal):
+ *                 assert False, (f'expected {fb:.5f} but got {fa:.5f}, '
+ *                                f'with decimal {decimal}')             # <<<<<<<<<<<<<<
+ *         return True
+ * 
+ */
+            __pyx_t_11 = __Pyx_PyUnicode_From_int(__pyx_v_decimal, 0, ' ', 'd'); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 220, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_11);
+            __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_11);
+            __Pyx_GIVEREF(__pyx_t_11);
+            PyTuple_SET_ITEM(__pyx_t_14, 5, __pyx_t_11);
+            __pyx_t_11 = 0;
+
+            /* "pandas/_libs/testing.pyx":219
  *         else:
  *             if not decimal_almost_equal(1, fb / fa, decimal):
- *                 assert False, ('expected %.5f but got %.5f, '             # <<<<<<<<<<<<<<
- *                                'with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'expected {fb:.5f} but got {fa:.5f}, '             # <<<<<<<<<<<<<<
+ *                                f'with decimal {decimal}')
  *         return True
  */
-            __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_10, 6, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 213, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
-            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            PyErr_SetObject(PyExc_AssertionError, __pyx_t_7);
-            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-            __PYX_ERR(0, 213, __pyx_L1_error)
+            __pyx_t_11 = __Pyx_PyUnicode_Join(__pyx_t_14, 6, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 219, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_11);
+            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+            PyErr_SetObject(PyExc_AssertionError, __pyx_t_11);
+            __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+            __PYX_ERR(0, 219, __pyx_L1_error)
           }
         }
         #endif
 
-        /* "pandas/_libs/testing.pyx":212
- *                                'got %.5f, with decimal %d' % (fb, fa, decimal))
+        /* "pandas/_libs/testing.pyx":218
+ *                                f'but got {fa:.5f}, with decimal {decimal}')
  *         else:
  *             if not decimal_almost_equal(1, fb / fa, decimal):             # <<<<<<<<<<<<<<
- *                 assert False, ('expected %.5f but got %.5f, '
- *                                'with decimal %d' % (fb, fa, decimal))
+ *                 assert False, (f'expected {fb:.5f} but got {fa:.5f}, '
+ *                                f'with decimal {decimal}')
  */
       }
     }
     __pyx_L53:;
 
-    /* "pandas/_libs/testing.pyx":215
- *                 assert False, ('expected %.5f but got %.5f, '
- *                                'with decimal %d' % (fb, fa, decimal))
+    /* "pandas/_libs/testing.pyx":221
+ *                 assert False, (f'expected {fb:.5f} but got {fa:.5f}, '
+ *                                f'with decimal {decimal}')
  *         return True             # <<<<<<<<<<<<<<
  * 
- *     raise AssertionError("{0} != {1}".format(a, b))
+ *     raise AssertionError(f"{a} != {b}")
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(Py_True);
     __pyx_r = Py_True;
     goto __pyx_L0;
 
-    /* "pandas/_libs/testing.pyx":192
- *         # nan / None comparison
+    /* "pandas/_libs/testing.pyx":198
  *         return True
+ * 
  *     if is_comparable_as_number(a) and is_comparable_as_number(b):             # <<<<<<<<<<<<<<
  *         if array_equivalent(a, b, strict_nan=True):
  *             # inf comparison
  */
   }
 
-  /* "pandas/_libs/testing.pyx":217
+  /* "pandas/_libs/testing.pyx":223
  *         return True
  * 
- *     raise AssertionError("{0} != {1}".format(a, b))             # <<<<<<<<<<<<<<
+ *     raise AssertionError(f"{a} != {b}")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_0_1, __pyx_n_s_format); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 217, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_14 = NULL;
-  __pyx_t_13 = 0;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
-    __pyx_t_14 = PyMethod_GET_SELF(__pyx_t_10);
-    if (likely(__pyx_t_14)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_10);
-      __Pyx_INCREF(__pyx_t_14);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_10, function);
-      __pyx_t_13 = 1;
-    }
-  }
-  #if CYTHON_FAST_PYCALL
-  if (PyFunction_Check(__pyx_t_10)) {
-    PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_v_a, __pyx_v_b};
-    __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 217, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __Pyx_GOTREF(__pyx_t_7);
-  } else
-  #endif
-  #if CYTHON_FAST_PYCCALL
-  if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
-    PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_v_a, __pyx_v_b};
-    __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_13, 2+__pyx_t_13); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 217, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-    __Pyx_GOTREF(__pyx_t_7);
-  } else
-  #endif
-  {
-    __pyx_t_12 = PyTuple_New(2+__pyx_t_13); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 217, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    if (__pyx_t_14) {
-      __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_14); __pyx_t_14 = NULL;
-    }
-    __Pyx_INCREF(__pyx_v_a);
-    __Pyx_GIVEREF(__pyx_v_a);
-    PyTuple_SET_ITEM(__pyx_t_12, 0+__pyx_t_13, __pyx_v_a);
-    __Pyx_INCREF(__pyx_v_b);
-    __Pyx_GIVEREF(__pyx_v_b);
-    PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_13, __pyx_v_b);
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 217, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-  __pyx_t_10 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_7); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 217, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __Pyx_Raise(__pyx_t_10, 0, 0, 0);
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-  __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_11 = PyTuple_New(3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __pyx_t_5 = 0;
+  __pyx_t_6 = 127;
+  __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_v_a, __pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_14);
+  __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) : __pyx_t_6;
+  __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14);
+  __Pyx_GIVEREF(__pyx_t_14);
+  PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_14);
+  __pyx_t_14 = 0;
+  __Pyx_INCREF(__pyx_kp_u_);
+  __pyx_t_5 += 4;
+  __Pyx_GIVEREF(__pyx_kp_u_);
+  PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_kp_u_);
+  __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_v_b, __pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_14);
+  __pyx_t_6 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) > __pyx_t_6) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) : __pyx_t_6;
+  __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14);
+  __Pyx_GIVEREF(__pyx_t_14);
+  PyTuple_SET_ITEM(__pyx_t_11, 2, __pyx_t_14);
+  __pyx_t_14 = 0;
+  __pyx_t_14 = __Pyx_PyUnicode_Join(__pyx_t_11, 3, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_14);
+  __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __pyx_t_11 = __Pyx_PyObject_CallOneArg(__pyx_builtin_AssertionError, __pyx_t_14); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_11);
+  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+  __Pyx_Raise(__pyx_t_11, 0, 0, 0);
+  __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+  __PYX_ERR(0, 223, __pyx_L1_error)
 
   /* "pandas/_libs/testing.pyx":65
  * 
@@ -4252,7 +4149,7 @@ static PyObject *__pyx_f_6pandas_5_libs_7testing_assert_almost_equal(PyObject *_
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6pandas_5_libs_7testing_2assert_almost_equal[] = "Check that left and right objects are almost equal.\n\n    Parameters\n    ----------\n    a : object\n    b : object\n    check_less_precise : bool or int, default False\n        Specify comparison precision.\n        5 digits (False) or 3 digits (True) after decimal points are\n        compared. If an integer, then this will be the number of decimal\n        points to compare\n    check_dtype: bool, default True\n        check dtype if both a and b are np.ndarray\n    obj : str, default None\n        Specify object name being compared, internally used to show\n        appropriate assertion message\n    lobj : str, default None\n        Specify left object name being compared, internally used to show\n        appropriate assertion message\n    robj : str, default None\n        Specify right object name being compared, internally used to show\n        appropriate assertion message\n    ";
+static char __pyx_doc_6pandas_5_libs_7testing_2assert_almost_equal[] = "\n    Check that left and right objects are almost equal.\n\n    Parameters\n    ----------\n    a : object\n    b : object\n    check_less_precise : bool or int, default False\n        Specify comparison precision.\n        5 digits (False) or 3 digits (True) after decimal points are\n        compared. If an integer, then this will be the number of decimal\n        points to compare\n    check_dtype: bool, default True\n        check dtype if both a and b are np.ndarray\n    obj : str, default None\n        Specify object name being compared, internally used to show\n        appropriate assertion message\n    lobj : str, default None\n        Specify left object name being compared, internally used to show\n        appropriate assertion message\n    robj : str, default None\n        Specify right object name being compared, internally used to show\n        appropriate assertion message\n    index_values : ndarray, default None\n        Specify shared index values of objects being compared, internally used\n        to show appropriate assertion message\n\n        .. versionadded:: 1.1.0\n\n    ";
 static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_a = 0;
   PyObject *__pyx_v_b = 0;
@@ -4261,6 +4158,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject 
   PyObject *__pyx_v_obj = 0;
   PyObject *__pyx_v_lobj = 0;
   PyObject *__pyx_v_robj = 0;
+  PyObject *__pyx_v_index_values = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4268,32 +4166,35 @@ static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("assert_almost_equal (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_a,&__pyx_n_s_b,&__pyx_n_s_check_less_precise,&__pyx_n_s_check_dtype,&__pyx_n_s_obj,&__pyx_n_s_lobj,&__pyx_n_s_robj,0};
-    PyObject* values[7] = {0,0,0,0,0,0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_a,&__pyx_n_s_b,&__pyx_n_s_check_less_precise,&__pyx_n_s_check_dtype,&__pyx_n_s_obj,&__pyx_n_s_lobj,&__pyx_n_s_robj,&__pyx_n_s_index_values,0};
+    PyObject* values[8] = {0,0,0,0,0,0,0,0};
 
     /* "pandas/_libs/testing.pyx":66
  * 
  * cpdef assert_almost_equal(a, b,
  *                           check_less_precise=False,             # <<<<<<<<<<<<<<
  *                           bint check_dtype=True,
- *                           obj=None, lobj=None, robj=None):
+ *                           obj=None, lobj=None, robj=None, index_values=None):
  */
     values[2] = ((PyObject *)Py_False);
 
     /* "pandas/_libs/testing.pyx":68
  *                           check_less_precise=False,
  *                           bint check_dtype=True,
- *                           obj=None, lobj=None, robj=None):             # <<<<<<<<<<<<<<
- *     """Check that left and right objects are almost equal.
- * 
+ *                           obj=None, lobj=None, robj=None, index_values=None):             # <<<<<<<<<<<<<<
+ *     """
+ *     Check that left and right objects are almost equal.
  */
     values[4] = ((PyObject *)Py_None);
     values[5] = ((PyObject *)Py_None);
     values[6] = ((PyObject *)Py_None);
+    values[7] = ((PyObject *)Py_None);
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
+        CYTHON_FALLTHROUGH;
         case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
         CYTHON_FALLTHROUGH;
         case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
@@ -4320,7 +4221,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_b)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("assert_almost_equal", 0, 2, 7, 1); __PYX_ERR(0, 65, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("assert_almost_equal", 0, 2, 8, 1); __PYX_ERR(0, 65, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -4352,12 +4253,20 @@ static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject 
           PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_robj);
           if (value) { values[6] = value; kw_args--; }
         }
+        CYTHON_FALLTHROUGH;
+        case  7:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_index_values);
+          if (value) { values[7] = value; kw_args--; }
+        }
       }
       if (unlikely(kw_args > 0)) {
         if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "assert_almost_equal") < 0)) __PYX_ERR(0, 65, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
+        CYTHON_FALLTHROUGH;
         case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
         CYTHON_FALLTHROUGH;
         case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
@@ -4385,24 +4294,25 @@ static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject 
  * cpdef assert_almost_equal(a, b,
  *                           check_less_precise=False,
  *                           bint check_dtype=True,             # <<<<<<<<<<<<<<
- *                           obj=None, lobj=None, robj=None):
- *     """Check that left and right objects are almost equal.
+ *                           obj=None, lobj=None, robj=None, index_values=None):
+ *     """
  */
       __pyx_v_check_dtype = ((int)1);
     }
     __pyx_v_obj = values[4];
     __pyx_v_lobj = values[5];
     __pyx_v_robj = values[6];
+    __pyx_v_index_values = values[7];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("assert_almost_equal", 0, 2, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 65, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("assert_almost_equal", 0, 2, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 65, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.testing.assert_almost_equal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(__pyx_self, __pyx_v_a, __pyx_v_b, __pyx_v_check_less_precise, __pyx_v_check_dtype, __pyx_v_obj, __pyx_v_lobj, __pyx_v_robj);
+  __pyx_r = __pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(__pyx_self, __pyx_v_a, __pyx_v_b, __pyx_v_check_less_precise, __pyx_v_check_dtype, __pyx_v_obj, __pyx_v_lobj, __pyx_v_robj, __pyx_v_index_values);
 
   /* "pandas/_libs/testing.pyx":65
  * 
@@ -4417,7 +4327,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_7testing_3assert_almost_equal(PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_check_less_precise, int __pyx_v_check_dtype, PyObject *__pyx_v_obj, PyObject *__pyx_v_lobj, PyObject *__pyx_v_robj) {
+static PyObject *__pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_check_less_precise, int __pyx_v_check_dtype, PyObject *__pyx_v_obj, PyObject *__pyx_v_lobj, PyObject *__pyx_v_robj, PyObject *__pyx_v_index_values) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4427,12 +4337,13 @@ static PyObject *__pyx_pf_6pandas_5_libs_7testing_2assert_almost_equal(CYTHON_UN
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("assert_almost_equal", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 5;
+  __pyx_t_2.__pyx_n = 6;
   __pyx_t_2.check_less_precise = __pyx_v_check_less_precise;
   __pyx_t_2.check_dtype = __pyx_v_check_dtype;
   __pyx_t_2.obj = __pyx_v_obj;
   __pyx_t_2.lobj = __pyx_v_lobj;
   __pyx_t_2.robj = __pyx_v_robj;
+  __pyx_t_2.index_values = __pyx_v_index_values;
   __pyx_t_1 = __pyx_f_6pandas_5_libs_7testing_assert_almost_equal(__pyx_v_a, __pyx_v_b, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
@@ -4499,10 +4410,6 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_1, __pyx_k_0_1, sizeof(__pyx_k_0_1), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_length_are_different, __pyx_k_0_length_are_different, sizeof(__pyx_k_0_length_are_different), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_shapes_are_different, __pyx_k_0_shapes_are_different, sizeof(__pyx_k_0_shapes_are_different), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_values_are_different_1, __pyx_k_0_values_are_different_1, sizeof(__pyx_k_0_values_are_different_1), 0, 1, 0, 0},
   {&__pyx_kp_u_5f, __pyx_k_5f, sizeof(__pyx_k_5f), 0, 1, 0, 0},
   {&__pyx_n_s_AssertionError, __pyx_k_AssertionError, sizeof(__pyx_k_AssertionError), 0, 0, 1, 1},
   {&__pyx_kp_u_Can_t_compare_objects_without_le, __pyx_k_Can_t_compare_objects_without_le, sizeof(__pyx_k_Can_t_compare_objects_without_le), 0, 1, 0, 0},
@@ -4510,6 +4417,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_Iterable, __pyx_k_Iterable, sizeof(__pyx_k_Iterable), 0, 1, 0, 1},
   {&__pyx_kp_u__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 1, 0, 0},
   {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
+  {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
   {&__pyx_n_s_a, __pyx_k_a, sizeof(__pyx_k_a), 0, 0, 1, 1},
   {&__pyx_n_s_array_equivalent, __pyx_k_array_equivalent, sizeof(__pyx_k_array_equivalent), 0, 0, 1, 1},
   {&__pyx_n_s_assert_attr_equal, __pyx_k_assert_attr_equal, sizeof(__pyx_k_assert_attr_equal), 0, 0, 1, 1},
@@ -4521,16 +4429,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_check_less_precise, __pyx_k_check_less_precise, sizeof(__pyx_k_check_less_precise), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_compare_keys, __pyx_k_compare_keys, sizeof(__pyx_k_compare_keys), 0, 0, 1, 1},
-  {&__pyx_n_u_d, __pyx_k_d, sizeof(__pyx_k_d), 0, 1, 0, 1},
   {&__pyx_n_s_dtype, __pyx_k_dtype, sizeof(__pyx_k_dtype), 0, 0, 1, 1},
   {&__pyx_n_u_dtype, __pyx_k_dtype, sizeof(__pyx_k_dtype), 0, 1, 0, 1},
   {&__pyx_kp_u_expected, __pyx_k_expected, sizeof(__pyx_k_expected), 0, 1, 0, 0},
   {&__pyx_n_s_float16, __pyx_k_float16, sizeof(__pyx_k_float16), 0, 0, 1, 1},
   {&__pyx_n_s_float32, __pyx_k_float32, sizeof(__pyx_k_float32), 0, 0, 1, 1},
   {&__pyx_n_s_float64, __pyx_k_float64, sizeof(__pyx_k_float64), 0, 0, 1, 1},
-  {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_u_getitem, __pyx_k_getitem, sizeof(__pyx_k_getitem), 0, 1, 0, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
+  {&__pyx_n_s_index_values, __pyx_k_index_values, sizeof(__pyx_k_index_values), 0, 0, 1, 1},
   {&__pyx_n_s_int16, __pyx_k_int16, sizeof(__pyx_k_int16), 0, 0, 1, 1},
   {&__pyx_n_s_int32, __pyx_k_int32, sizeof(__pyx_k_int32), 0, 0, 1, 1},
   {&__pyx_n_s_int64, __pyx_k_int64, sizeof(__pyx_k_int64), 0, 0, 1, 1},
@@ -4541,6 +4448,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_keys, __pyx_k_keys, sizeof(__pyx_k_keys), 0, 0, 1, 1},
   {&__pyx_n_u_keys, __pyx_k_keys, sizeof(__pyx_k_keys), 0, 1, 0, 1},
   {&__pyx_n_u_len, __pyx_k_len, sizeof(__pyx_k_len), 0, 1, 0, 1},
+  {&__pyx_kp_u_length_are_different, __pyx_k_length_are_different, sizeof(__pyx_k_length_are_different), 0, 1, 0, 0},
   {&__pyx_n_s_lobj, __pyx_k_lobj, sizeof(__pyx_k_lobj), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
@@ -4549,14 +4457,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_kp_u_numpy_array, __pyx_k_numpy_array, sizeof(__pyx_k_numpy_array), 0, 1, 0, 0},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
+  {&__pyx_n_s_pandas__testing, __pyx_k_pandas__testing, sizeof(__pyx_k_pandas__testing), 0, 0, 1, 1},
   {&__pyx_n_s_pandas_core_dtypes_common, __pyx_k_pandas_core_dtypes_common, sizeof(__pyx_k_pandas_core_dtypes_common), 0, 0, 1, 1},
   {&__pyx_n_s_pandas_core_dtypes_missing, __pyx_k_pandas_core_dtypes_missing, sizeof(__pyx_k_pandas_core_dtypes_missing), 0, 0, 1, 1},
-  {&__pyx_n_s_pandas_util_testing, __pyx_k_pandas_util_testing, sizeof(__pyx_k_pandas_util_testing), 0, 0, 1, 1},
   {&__pyx_n_s_raise_assert_detail, __pyx_k_raise_assert_detail, sizeof(__pyx_k_raise_assert_detail), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
   {&__pyx_n_s_robj, __pyx_k_robj, sizeof(__pyx_k_robj), 0, 0, 1, 1},
   {&__pyx_n_s_round, __pyx_k_round, sizeof(__pyx_k_round), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
+  {&__pyx_kp_u_shapes_are_different, __pyx_k_shapes_are_different, sizeof(__pyx_k_shapes_are_different), 0, 1, 0, 0},
   {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
   {&__pyx_n_s_strict_nan, __pyx_k_strict_nan, sizeof(__pyx_k_strict_nan), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -4564,18 +4473,14 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_uint32, __pyx_k_uint32, sizeof(__pyx_k_uint32), 0, 0, 1, 1},
   {&__pyx_n_s_uint64, __pyx_k_uint64, sizeof(__pyx_k_uint64), 0, 0, 1, 1},
   {&__pyx_n_s_uint8, __pyx_k_uint8, sizeof(__pyx_k_uint8), 0, 0, 1, 1},
+  {&__pyx_kp_u_values_are_different, __pyx_k_values_are_different, sizeof(__pyx_k_values_are_different), 0, 1, 0, 0},
   {&__pyx_kp_u_very_low_values_expected, __pyx_k_very_low_values_expected, sizeof(__pyx_k_very_low_values_expected), 0, 1, 0, 0},
   {&__pyx_kp_u_with_decimal, __pyx_k_with_decimal, sizeof(__pyx_k_with_decimal), 0, 1, 0, 0},
-  {&__pyx_n_s_xrange, __pyx_k_xrange, sizeof(__pyx_k_xrange), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  #if PY_MAJOR_VERSION >= 3
-  __pyx_builtin_xrange = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_xrange) __PYX_ERR(0, 164, __pyx_L1_error)
-  #else
-  __pyx_builtin_xrange = __Pyx_GetBuiltinName(__pyx_n_s_xrange); if (!__pyx_builtin_xrange) __PYX_ERR(0, 164, __pyx_L1_error)
-  #endif
-  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_builtin_AssertionError = __Pyx_GetBuiltinName(__pyx_n_s_AssertionError); if (!__pyx_builtin_AssertionError) __PYX_ERR(0, 172, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -5959,25 +5864,6 @@ bad:
     return -1;
 }
 
-/* PyObjectFormatAndDecref */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_FormatSimpleAndDecref(PyObject* s, PyObject* f) {
-    if (unlikely(!s)) return NULL;
-    if (likely(PyUnicode_CheckExact(s))) return s;
-    #if PY_MAJOR_VERSION < 3
-    if (likely(PyString_CheckExact(s))) {
-        PyObject *result = PyUnicode_FromEncodedObject(s, NULL, "strict");
-        Py_DECREF(s);
-        return result;
-    }
-    #endif
-    return __Pyx_PyObject_FormatAndDecref(s, f);
-}
-static CYTHON_INLINE PyObject* __Pyx_PyObject_FormatAndDecref(PyObject* s, PyObject* f) {
-    PyObject *result = PyObject_Format(s, f);
-    Py_DECREF(s);
-    return result;
-}
-
 /* JoinPyUnicode */
 static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
                                       CYTHON_UNUSED Py_UCS4 max_char) {
@@ -6180,35 +6066,6 @@ static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
     return value;
 }
 
-/* PyObjectCall2Args */
-static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2) {
-    PyObject *args, *result = NULL;
-    #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(function)) {
-        PyObject *args[2] = {arg1, arg2};
-        return __Pyx_PyFunction_FastCall(function, args, 2);
-    }
-    #endif
-    #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(function)) {
-        PyObject *args[2] = {arg1, arg2};
-        return __Pyx_PyCFunction_FastCall(function, args, 2);
-    }
-    #endif
-    args = PyTuple_New(2);
-    if (unlikely(!args)) goto done;
-    Py_INCREF(arg1);
-    PyTuple_SET_ITEM(args, 0, arg1);
-    Py_INCREF(arg2);
-    PyTuple_SET_ITEM(args, 1, arg2);
-    Py_INCREF(function);
-    result = __Pyx_PyObject_Call(function, args, NULL);
-    Py_DECREF(args);
-    Py_DECREF(function);
-done:
-    return result;
-}
-
 /* py_abs */
 #if CYTHON_USE_PYLONG_INTERNALS
 static PyObject *__Pyx_PyLong_AbsNeg(PyObject *n) {
@@ -6382,6 +6239,35 @@ bad:
     Py_XDECREF(local_value);
     Py_XDECREF(local_tb);
     return -1;
+}
+
+/* PyObjectCall2Args */
+static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2) {
+    PyObject *args, *result = NULL;
+    #if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(function)) {
+        PyObject *args[2] = {arg1, arg2};
+        return __Pyx_PyFunction_FastCall(function, args, 2);
+    }
+    #endif
+    #if CYTHON_FAST_PYCCALL
+    if (__Pyx_PyFastCFunction_Check(function)) {
+        PyObject *args[2] = {arg1, arg2};
+        return __Pyx_PyCFunction_FastCall(function, args, 2);
+    }
+    #endif
+    args = PyTuple_New(2);
+    if (unlikely(!args)) goto done;
+    Py_INCREF(arg1);
+    PyTuple_SET_ITEM(args, 0, arg1);
+    Py_INCREF(arg2);
+    PyTuple_SET_ITEM(args, 1, arg2);
+    Py_INCREF(function);
+    result = __Pyx_PyObject_Call(function, args, NULL);
+    Py_DECREF(args);
+    Py_DECREF(function);
+done:
+    return result;
 }
 
 /* PyObjectFormat */

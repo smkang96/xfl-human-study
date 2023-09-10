@@ -4,10 +4,6 @@ Template for each `dtype` helper function for hashtable
 WARNING: DO NOT edit .pxi FILE directly, .pxi is generated from .pxi.in
 """
 
-# ----------------------------------------------------------------------
-# VectorData
-# ----------------------------------------------------------------------
-
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
@@ -68,8 +64,6 @@ cpdef value_count_float64(float64_t[:] values, bint dropna):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
 def duplicated_float64(float64_t[:] values, object keep='first'):
     cdef:
         int ret = 0
@@ -85,7 +79,8 @@ def duplicated_float64(float64_t[:] values, object keep='first'):
 
     if keep == 'last':
         with nogil:
-            for i from n > i >= 0:
+            for i in range(n - 1, -1, -1):
+                # equivalent: range(n)[::-1], which cython doesn't like in nogil
                 kh_put_float64(table, values[i], &ret)
                 out[i] = ret == 0
     elif keep == 'first':
@@ -117,10 +112,7 @@ def duplicated_float64(float64_t[:] values, object keep='first'):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
-def ismember_float64(float64_t[:] arr, float64_t[:] values):
-
+def ismember_float64(const float64_t[:] arr, float64_t[:] values):
     """
     Return boolean of values in arr on an
     element by-element basis
@@ -222,8 +214,6 @@ cpdef value_count_uint64(uint64_t[:] values, bint dropna):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
 def duplicated_uint64(uint64_t[:] values, object keep='first'):
     cdef:
         int ret = 0
@@ -239,7 +229,8 @@ def duplicated_uint64(uint64_t[:] values, object keep='first'):
 
     if keep == 'last':
         with nogil:
-            for i from n > i >= 0:
+            for i in range(n - 1, -1, -1):
+                # equivalent: range(n)[::-1], which cython doesn't like in nogil
                 kh_put_uint64(table, values[i], &ret)
                 out[i] = ret == 0
     elif keep == 'first':
@@ -271,10 +262,7 @@ def duplicated_uint64(uint64_t[:] values, object keep='first'):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
-def ismember_uint64(uint64_t[:] arr, uint64_t[:] values):
-
+def ismember_uint64(const uint64_t[:] arr, uint64_t[:] values):
     """
     Return boolean of values in arr on an
     element by-element basis
@@ -372,8 +360,6 @@ cpdef value_count_object(ndarray[object] values, bint dropna):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
 def duplicated_object(ndarray[object] values, object keep='first'):
     cdef:
         int ret = 0
@@ -387,7 +373,8 @@ def duplicated_object(ndarray[object] values, object keep='first'):
         raise ValueError('keep must be either "first", "last" or False')
 
     if keep == 'last':
-        for i from n > i >= 0:
+        for i in range(n - 1, -1, -1):
+            # equivalent: range(n)[::-1], which cython doesn't like in nogil
             kh_put_pymap(table, <PyObject*>values[i], &ret)
             out[i] = ret == 0
     elif keep == 'first':
@@ -417,10 +404,7 @@ def duplicated_object(ndarray[object] values, object keep='first'):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
 def ismember_object(ndarray[object] arr, ndarray[object] values):
-
     """
     Return boolean of values in arr on an
     element by-element basis
@@ -520,8 +504,6 @@ cpdef value_count_int64(int64_t[:] values, bint dropna):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
 def duplicated_int64(int64_t[:] values, object keep='first'):
     cdef:
         int ret = 0
@@ -537,7 +519,8 @@ def duplicated_int64(int64_t[:] values, object keep='first'):
 
     if keep == 'last':
         with nogil:
-            for i from n > i >= 0:
+            for i in range(n - 1, -1, -1):
+                # equivalent: range(n)[::-1], which cython doesn't like in nogil
                 kh_put_int64(table, values[i], &ret)
                 out[i] = ret == 0
     elif keep == 'first':
@@ -569,10 +552,7 @@ def duplicated_int64(int64_t[:] values, object keep='first'):
 
 @cython.wraparound(False)
 @cython.boundscheck(False)
-
-
-def ismember_int64(int64_t[:] arr, int64_t[:] values):
-
+def ismember_int64(const int64_t[:] arr, int64_t[:] values):
     """
     Return boolean of values in arr on an
     element by-element basis

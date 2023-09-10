@@ -1,5 +1,3 @@
-import warnings
-
 import numpy as np
 
 from pandas.core.dtypes.common import is_integer, is_list_like
@@ -9,7 +7,6 @@ from pandas.core.dtypes.missing import isna, remove_na_arraylike
 import pandas.core.common as com
 
 from pandas.io.formats.printing import pprint_thing
-from pandas.plotting._matplotlib import converter
 from pandas.plotting._matplotlib.core import LinePlot, MPLPlot
 from pandas.plotting._matplotlib.tools import _flatten, _set_ticks_props, _subplots
 
@@ -30,11 +27,8 @@ class HistPlot(LinePlot):
             values = np.ravel(values)
             values = values[~isna(values)]
 
-            hist, self.bins = np.histogram(
-                values,
-                bins=self.bins,
-                range=self.kwds.get("range", None),
-                weights=self.kwds.get("weights", None),
+            _, self.bins = np.histogram(
+                values, bins=self.bins, range=self.kwds.get("range", None)
             )
 
         if is_list_like(self.bottom):
@@ -50,7 +44,7 @@ class HistPlot(LinePlot):
         bottom=0,
         column_num=0,
         stacking_id=None,
-        **kwds
+        **kwds,
     ):
         if column_num == 0:
             cls._initialize_stacker(ax, stacking_id, len(bins) - 1)
@@ -80,6 +74,14 @@ class HistPlot(LinePlot):
                 kwds["style"] = style
 
             kwds = self._make_plot_keywords(kwds, y)
+
+            # We allow weights to be a multi-dimensional array, e.g. a (10, 2) array,
+            # and each sub-array (10,) will be called in each iteration. If users only
+            # provide 1D array, we assume the same weights is used for all iterations
+            weights = kwds.get("weights", None)
+            if weights is not None and np.ndim(weights) != 1:
+                kwds["weights"] = weights[:, i]
+
             artists = self._plot(ax, y, column_num=i, stacking_id=stacking_id, **kwds)
             self._add_legend_handle(artists[0], label, index=i)
 
@@ -146,7 +148,7 @@ class KdePlot(HistPlot):
         ind=None,
         column_num=None,
         stacking_id=None,
-        **kwds
+        **kwds,
     ):
         from scipy.stats import gaussian_kde
 
@@ -178,17 +180,15 @@ def _grouped_plot(
     layout=None,
     rot=0,
     ax=None,
-    **kwargs
+    **kwargs,
 ):
 
     if figsize == "default":
         # allowed to specify mpl default with 'default'
-        warnings.warn(
-            "figsize='default' is deprecated. Specify figure " "size by tuple instead",
-            FutureWarning,
-            stacklevel=5,
+        raise ValueError(
+            "figsize='default' is no longer supported. "
+            "Specify figure size by tuple instead"
         )
-        figsize = None
 
     grouped = data.groupby(by)
     if column is not None:
@@ -227,7 +227,7 @@ def _grouped_hist(
     xrot=None,
     ylabelsize=None,
     yrot=None,
-    **kwargs
+    **kwargs,
 ):
     """
     Grouped histogram
@@ -255,8 +255,8 @@ def _grouped_hist(
     def plot_group(group, ax):
         ax.hist(group.dropna().values, bins=bins, **kwargs)
 
-    converter._WARN = False  # no warning for pandas plots
-    xrot = xrot or rot
+    if xrot is None:
+        xrot = rot
 
     fig, axes = _grouped_plot(
         plot_group,
@@ -292,15 +292,13 @@ def hist_series(
     yrot=None,
     figsize=None,
     bins=10,
-    **kwds
+    **kwds,
 ):
     import matplotlib.pyplot as plt
 
     if by is None:
         if kwds.get("layout", None) is not None:
-            raise ValueError(
-                "The 'layout' keyword is not supported when " "'by' is None"
-            )
+            raise ValueError("The 'layout' keyword is not supported when 'by' is None")
         # hack until the plotting interface is a bit more unified
         fig = kwds.pop(
             "figure", plt.gcf() if plt.get_fignums() else plt.figure(figsize=figsize)
@@ -325,8 +323,7 @@ def hist_series(
         if "figure" in kwds:
             raise ValueError(
                 "Cannot pass 'figure' when using the "
-                "'by' argument, since a new 'Figure' instance "
-                "will be created"
+                "'by' argument, since a new 'Figure' instance will be created"
             )
         axes = _grouped_hist(
             self,
@@ -339,7 +336,7 @@ def hist_series(
             xrot=xrot,
             ylabelsize=ylabelsize,
             yrot=yrot,
-            **kwds
+            **kwds,
         )
 
     if hasattr(axes, "ndim"):
@@ -363,9 +360,8 @@ def hist_frame(
     figsize=None,
     layout=None,
     bins=10,
-    **kwds
+    **kwds,
 ):
-    converter._WARN = False  # no warning for pandas plots
     if by is not None:
         axes = _grouped_hist(
             data,
@@ -382,7 +378,7 @@ def hist_frame(
             xrot=xrot,
             ylabelsize=ylabelsize,
             yrot=yrot,
-            **kwds
+            **kwds,
         )
         return axes
 
@@ -394,7 +390,7 @@ def hist_frame(
     naxes = len(data.columns)
 
     if naxes == 0:
-        raise ValueError("hist method requires numerical columns, " "nothing to plot.")
+        raise ValueError("hist method requires numerical columns, nothing to plot.")
 
     fig, axes = _subplots(
         naxes=naxes,

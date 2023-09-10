@@ -10,8 +10,11 @@
             ]
         ],
         "depends": [],
+        "extra_compile_args": [
+            "-Werror"
+        ],
         "include_dirs": [
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include"
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include"
         ],
         "language": "c",
         "name": "pandas._libs.properties",
@@ -836,7 +839,7 @@ static const char *__pyx_f[] = {
 struct __pyx_obj_6pandas_5_libs_10properties_CachedProperty;
 struct __pyx_obj_6pandas_5_libs_10properties_AxisProperty;
 
-/* "pandas/_libs/properties.pyx":7
+/* "pandas/_libs/properties.pyx":6
  * 
  * 
  * cdef class CachedProperty:             # <<<<<<<<<<<<<<
@@ -851,7 +854,7 @@ struct __pyx_obj_6pandas_5_libs_10properties_CachedProperty {
 };
 
 
-/* "pandas/_libs/properties.pyx":45
+/* "pandas/_libs/properties.pyx":44
  * 
  * 
  * cdef class AxisProperty:             # <<<<<<<<<<<<<<
@@ -1277,10 +1280,10 @@ int __pyx_module_is_main_pandas___libs__properties = 0;
 static PyObject *__pyx_builtin_AttributeError;
 static const char __pyx_k__2[] = "";
 static const char __pyx_k_doc[] = "__doc__";
+static const char __pyx_k_mgr[] = "_mgr";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_axes[] = "axes";
 static const char __pyx_k_axis[] = "axis";
-static const char __pyx_k_data[] = "_data";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_func[] = "func";
 static const char __pyx_k_main[] = "__main__";
@@ -1330,7 +1333,6 @@ static PyObject *__pyx_n_s_cache;
 static PyObject *__pyx_n_u_cache;
 static PyObject *__pyx_n_s_cache_readonly;
 static PyObject *__pyx_n_s_cline_in_traceback;
-static PyObject *__pyx_n_s_data;
 static PyObject *__pyx_n_s_dict;
 static PyObject *__pyx_n_u_doc;
 static PyObject *__pyx_n_s_doc_2;
@@ -1338,6 +1340,7 @@ static PyObject *__pyx_n_s_func;
 static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_main;
+static PyObject *__pyx_n_s_mgr;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_new;
 static PyObject *__pyx_n_s_pandas__libs_properties;
@@ -1387,7 +1390,7 @@ static PyObject *__pyx_codeobj__4;
 static PyObject *__pyx_codeobj__6;
 /* Late includes */
 
-/* "pandas/_libs/properties.pyx":12
+/* "pandas/_libs/properties.pyx":11
  *         object func, name, __doc__
  * 
  *     def __init__(self, func):             # <<<<<<<<<<<<<<
@@ -1424,7 +1427,7 @@ static int __pyx_pw_6pandas_5_libs_10properties_14CachedProperty_1__init__(PyObj
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 12, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 11, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
@@ -1435,7 +1438,7 @@ static int __pyx_pw_6pandas_5_libs_10properties_14CachedProperty_1__init__(PyObj
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 12, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.properties.CachedProperty.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1457,7 +1460,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty___init__(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "pandas/_libs/properties.pyx":13
+  /* "pandas/_libs/properties.pyx":12
  * 
  *     def __init__(self, func):
  *         self.func = func             # <<<<<<<<<<<<<<
@@ -1470,14 +1473,14 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty___init__(struct
   __Pyx_DECREF(__pyx_v_self->func);
   __pyx_v_self->func = __pyx_v_func;
 
-  /* "pandas/_libs/properties.pyx":14
+  /* "pandas/_libs/properties.pyx":13
  *     def __init__(self, func):
  *         self.func = func
  *         self.name = func.__name__             # <<<<<<<<<<<<<<
  *         self.__doc__ = getattr(func, '__doc__', None)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_func, __pyx_n_s_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_func, __pyx_n_s_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->name);
@@ -1485,14 +1488,14 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty___init__(struct
   __pyx_v_self->name = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pandas/_libs/properties.pyx":15
+  /* "pandas/_libs/properties.pyx":14
  *         self.func = func
  *         self.name = func.__name__
  *         self.__doc__ = getattr(func, '__doc__', None)             # <<<<<<<<<<<<<<
  * 
  *     def __get__(self, obj, typ):
  */
-  __pyx_t_1 = __Pyx_GetAttr3(__pyx_v_func, __pyx_n_u_doc, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetAttr3(__pyx_v_func, __pyx_n_u_doc, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->__doc__);
@@ -1500,7 +1503,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty___init__(struct
   __pyx_v_self->__doc__ = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pandas/_libs/properties.pyx":12
+  /* "pandas/_libs/properties.pyx":11
  *         object func, name, __doc__
  * 
  *     def __init__(self, func):             # <<<<<<<<<<<<<<
@@ -1520,7 +1523,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty___init__(struct
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":17
+/* "pandas/_libs/properties.pyx":16
  *         self.__doc__ = getattr(func, '__doc__', None)
  * 
  *     def __get__(self, obj, typ):             # <<<<<<<<<<<<<<
@@ -1561,7 +1564,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "pandas/_libs/properties.pyx":18
+  /* "pandas/_libs/properties.pyx":17
  * 
  *     def __get__(self, obj, typ):
  *         if obj is None:             # <<<<<<<<<<<<<<
@@ -1572,7 +1575,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/properties.pyx":20
+    /* "pandas/_libs/properties.pyx":19
  *         if obj is None:
  *             # accessed on the class, not the instance
  *             return self             # <<<<<<<<<<<<<<
@@ -1584,7 +1587,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
     __pyx_r = ((PyObject *)__pyx_v_self);
     goto __pyx_L0;
 
-    /* "pandas/_libs/properties.pyx":18
+    /* "pandas/_libs/properties.pyx":17
  * 
  *     def __get__(self, obj, typ):
  *         if obj is None:             # <<<<<<<<<<<<<<
@@ -1593,19 +1596,19 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
  */
   }
 
-  /* "pandas/_libs/properties.pyx":23
+  /* "pandas/_libs/properties.pyx":22
  * 
  *         # Get the cache or set a default one if needed
  *         cache = getattr(obj, '_cache', None)             # <<<<<<<<<<<<<<
  *         if cache is None:
  *             try:
  */
-  __pyx_t_3 = __Pyx_GetAttr3(__pyx_v_obj, __pyx_n_u_cache, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetAttr3(__pyx_v_obj, __pyx_n_u_cache, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_cache = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "pandas/_libs/properties.pyx":24
+  /* "pandas/_libs/properties.pyx":23
  *         # Get the cache or set a default one if needed
  *         cache = getattr(obj, '_cache', None)
  *         if cache is None:             # <<<<<<<<<<<<<<
@@ -1616,7 +1619,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
   __pyx_t_1 = (__pyx_t_2 != 0);
   if (__pyx_t_1) {
 
-    /* "pandas/_libs/properties.pyx":25
+    /* "pandas/_libs/properties.pyx":24
  *         cache = getattr(obj, '_cache', None)
  *         if cache is None:
  *             try:             # <<<<<<<<<<<<<<
@@ -1632,21 +1635,21 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
       __Pyx_XGOTREF(__pyx_t_6);
       /*try:*/ {
 
-        /* "pandas/_libs/properties.pyx":26
+        /* "pandas/_libs/properties.pyx":25
  *         if cache is None:
  *             try:
  *                 cache = obj._cache = {}             # <<<<<<<<<<<<<<
  *             except (AttributeError):
  *                 return self
  */
-        __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L5_error)
+        __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_3);
         __Pyx_DECREF_SET(__pyx_v_cache, __pyx_t_3);
-        if (__Pyx_PyObject_SetAttrStr(__pyx_v_obj, __pyx_n_s_cache, __pyx_t_3) < 0) __PYX_ERR(0, 26, __pyx_L5_error)
+        if (__Pyx_PyObject_SetAttrStr(__pyx_v_obj, __pyx_n_s_cache, __pyx_t_3) < 0) __PYX_ERR(0, 25, __pyx_L5_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "pandas/_libs/properties.pyx":25
+        /* "pandas/_libs/properties.pyx":24
  *         cache = getattr(obj, '_cache', None)
  *         if cache is None:
  *             try:             # <<<<<<<<<<<<<<
@@ -1661,7 +1664,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
       __pyx_L5_error:;
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "pandas/_libs/properties.pyx":27
+      /* "pandas/_libs/properties.pyx":26
  *             try:
  *                 cache = obj._cache = {}
  *             except (AttributeError):             # <<<<<<<<<<<<<<
@@ -1671,12 +1674,12 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
       __pyx_t_7 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_AttributeError);
       if (__pyx_t_7) {
         __Pyx_AddTraceback("pandas._libs.properties.CachedProperty.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_8, &__pyx_t_9) < 0) __PYX_ERR(0, 27, __pyx_L7_except_error)
+        if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_8, &__pyx_t_9) < 0) __PYX_ERR(0, 26, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_GOTREF(__pyx_t_9);
 
-        /* "pandas/_libs/properties.pyx":28
+        /* "pandas/_libs/properties.pyx":27
  *                 cache = obj._cache = {}
  *             except (AttributeError):
  *                 return self             # <<<<<<<<<<<<<<
@@ -1694,7 +1697,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
       goto __pyx_L7_except_error;
       __pyx_L7_except_error:;
 
-      /* "pandas/_libs/properties.pyx":25
+      /* "pandas/_libs/properties.pyx":24
  *         cache = getattr(obj, '_cache', None)
  *         if cache is None:
  *             try:             # <<<<<<<<<<<<<<
@@ -1715,7 +1718,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
       __pyx_L10_try_end:;
     }
 
-    /* "pandas/_libs/properties.pyx":24
+    /* "pandas/_libs/properties.pyx":23
  *         # Get the cache or set a default one if needed
  *         cache = getattr(obj, '_cache', None)
  *         if cache is None:             # <<<<<<<<<<<<<<
@@ -1724,7 +1727,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
  */
   }
 
-  /* "pandas/_libs/properties.pyx":30
+  /* "pandas/_libs/properties.pyx":29
  *                 return self
  * 
  *         if PyDict_Contains(cache, self.name):             # <<<<<<<<<<<<<<
@@ -1733,12 +1736,12 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
  */
   __pyx_t_9 = __pyx_v_self->name;
   __Pyx_INCREF(__pyx_t_9);
-  __pyx_t_7 = PyDict_Contains(__pyx_v_cache, __pyx_t_9); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_7 = PyDict_Contains(__pyx_v_cache, __pyx_t_9); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 29, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __pyx_t_1 = (__pyx_t_7 != 0);
   if (__pyx_t_1) {
 
-    /* "pandas/_libs/properties.pyx":32
+    /* "pandas/_libs/properties.pyx":31
  *         if PyDict_Contains(cache, self.name):
  *             # not necessary to Py_INCREF
  *             val = <object>PyDict_GetItem(cache, self.name)             # <<<<<<<<<<<<<<
@@ -1754,7 +1757,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
     __pyx_v_val = __pyx_t_9;
     __pyx_t_9 = 0;
 
-    /* "pandas/_libs/properties.pyx":30
+    /* "pandas/_libs/properties.pyx":29
  *                 return self
  * 
  *         if PyDict_Contains(cache, self.name):             # <<<<<<<<<<<<<<
@@ -1764,7 +1767,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
     goto __pyx_L13;
   }
 
-  /* "pandas/_libs/properties.pyx":34
+  /* "pandas/_libs/properties.pyx":33
  *             val = <object>PyDict_GetItem(cache, self.name)
  *         else:
  *             val = self.func(obj)             # <<<<<<<<<<<<<<
@@ -1785,13 +1788,13 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
     }
     __pyx_t_9 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_3, __pyx_v_obj) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_v_obj);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 34, __pyx_L1_error)
+    if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_v_val = __pyx_t_9;
     __pyx_t_9 = 0;
 
-    /* "pandas/_libs/properties.pyx":35
+    /* "pandas/_libs/properties.pyx":34
  *         else:
  *             val = self.func(obj)
  *             PyDict_SetItem(cache, self.name, val)             # <<<<<<<<<<<<<<
@@ -1800,12 +1803,12 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
  */
     __pyx_t_9 = __pyx_v_self->name;
     __Pyx_INCREF(__pyx_t_9);
-    __pyx_t_7 = PyDict_SetItem(__pyx_v_cache, __pyx_t_9, __pyx_v_val); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 35, __pyx_L1_error)
+    __pyx_t_7 = PyDict_SetItem(__pyx_v_cache, __pyx_t_9, __pyx_v_val); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 34, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
   __pyx_L13:;
 
-  /* "pandas/_libs/properties.pyx":36
+  /* "pandas/_libs/properties.pyx":35
  *             val = self.func(obj)
  *             PyDict_SetItem(cache, self.name, val)
  *         return val             # <<<<<<<<<<<<<<
@@ -1817,7 +1820,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
   __pyx_r = __pyx_v_val;
   goto __pyx_L0;
 
-  /* "pandas/_libs/properties.pyx":17
+  /* "pandas/_libs/properties.pyx":16
  *         self.__doc__ = getattr(func, '__doc__', None)
  * 
  *     def __get__(self, obj, typ):             # <<<<<<<<<<<<<<
@@ -1840,7 +1843,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_2__get__(
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":38
+/* "pandas/_libs/properties.pyx":37
  *         return val
  * 
  *     def __set__(self, obj, value):             # <<<<<<<<<<<<<<
@@ -1870,20 +1873,20 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty_4__set__(CYTHON
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "pandas/_libs/properties.pyx":39
+  /* "pandas/_libs/properties.pyx":38
  * 
  *     def __set__(self, obj, value):
  *         raise AttributeError("Can't set attribute")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_AttributeError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_AttributeError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 39, __pyx_L1_error)
+  __PYX_ERR(0, 38, __pyx_L1_error)
 
-  /* "pandas/_libs/properties.pyx":38
+  /* "pandas/_libs/properties.pyx":37
  *         return val
  * 
  *     def __set__(self, obj, value):             # <<<<<<<<<<<<<<
@@ -1900,7 +1903,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_14CachedProperty_4__set__(CYTHON
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":10
+/* "pandas/_libs/properties.pyx":9
  * 
  *     cdef readonly:
  *         object func, name, __doc__             # <<<<<<<<<<<<<<
@@ -2312,7 +2315,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_14CachedProperty_8__setsta
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":51
+/* "pandas/_libs/properties.pyx":50
  *         object __doc__
  * 
  *     def __init__(self, axis=0, doc=""):             # <<<<<<<<<<<<<<
@@ -2362,7 +2365,7 @@ static int __pyx_pw_6pandas_5_libs_10properties_12AxisProperty_1__init__(PyObjec
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 51, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 50, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2379,7 +2382,7 @@ static int __pyx_pw_6pandas_5_libs_10properties_12AxisProperty_1__init__(PyObjec
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 51, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 0, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 50, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.properties.AxisProperty.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2401,17 +2404,17 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty___init__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "pandas/_libs/properties.pyx":52
+  /* "pandas/_libs/properties.pyx":51
  * 
  *     def __init__(self, axis=0, doc=""):
  *         self.axis = axis             # <<<<<<<<<<<<<<
  *         self.__doc__ = doc
  * 
  */
-  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_axis); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyIndex_AsSsize_t(__pyx_v_axis); if (unlikely((__pyx_t_1 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L1_error)
   __pyx_v_self->axis = __pyx_t_1;
 
-  /* "pandas/_libs/properties.pyx":53
+  /* "pandas/_libs/properties.pyx":52
  *     def __init__(self, axis=0, doc=""):
  *         self.axis = axis
  *         self.__doc__ = doc             # <<<<<<<<<<<<<<
@@ -2424,7 +2427,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty___init__(struct _
   __Pyx_DECREF(__pyx_v_self->__doc__);
   __pyx_v_self->__doc__ = __pyx_v_doc;
 
-  /* "pandas/_libs/properties.pyx":51
+  /* "pandas/_libs/properties.pyx":50
  *         object __doc__
  * 
  *     def __init__(self, axis=0, doc=""):             # <<<<<<<<<<<<<<
@@ -2443,7 +2446,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty___init__(struct _
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":55
+/* "pandas/_libs/properties.pyx":54
  *         self.__doc__ = doc
  * 
  *     def __get__(self, obj, type):             # <<<<<<<<<<<<<<
@@ -2477,59 +2480,59 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_12AxisProperty_2__get__(st
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "pandas/_libs/properties.pyx":59
+  /* "pandas/_libs/properties.pyx":58
  *             list axes
  * 
  *         if obj is None:             # <<<<<<<<<<<<<<
- *             # Only instances have _data, not classes
+ *             # Only instances have _mgr, not classes
  *             return self
  */
   __pyx_t_1 = (__pyx_v_obj == Py_None);
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "pandas/_libs/properties.pyx":61
+    /* "pandas/_libs/properties.pyx":60
  *         if obj is None:
- *             # Only instances have _data, not classes
+ *             # Only instances have _mgr, not classes
  *             return self             # <<<<<<<<<<<<<<
  *         else:
- *             axes = obj._data.axes
+ *             axes = obj._mgr.axes
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(((PyObject *)__pyx_v_self));
     __pyx_r = ((PyObject *)__pyx_v_self);
     goto __pyx_L0;
 
-    /* "pandas/_libs/properties.pyx":59
+    /* "pandas/_libs/properties.pyx":58
  *             list axes
  * 
  *         if obj is None:             # <<<<<<<<<<<<<<
- *             # Only instances have _data, not classes
+ *             # Only instances have _mgr, not classes
  *             return self
  */
   }
 
-  /* "pandas/_libs/properties.pyx":63
+  /* "pandas/_libs/properties.pyx":62
  *             return self
  *         else:
- *             axes = obj._data.axes             # <<<<<<<<<<<<<<
+ *             axes = obj._mgr.axes             # <<<<<<<<<<<<<<
  *         return axes[self.axis]
  * 
  */
   /*else*/ {
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_obj, __pyx_n_s_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_obj, __pyx_n_s_mgr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_axes); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_axes); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (!(likely(PyList_CheckExact(__pyx_t_4))||((__pyx_t_4) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_4)->tp_name), 0))) __PYX_ERR(0, 63, __pyx_L1_error)
+    if (!(likely(PyList_CheckExact(__pyx_t_4))||((__pyx_t_4) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_4)->tp_name), 0))) __PYX_ERR(0, 62, __pyx_L1_error)
     __pyx_v_axes = ((PyObject*)__pyx_t_4);
     __pyx_t_4 = 0;
   }
 
-  /* "pandas/_libs/properties.pyx":64
+  /* "pandas/_libs/properties.pyx":63
  *         else:
- *             axes = obj._data.axes
+ *             axes = obj._mgr.axes
  *         return axes[self.axis]             # <<<<<<<<<<<<<<
  * 
  *     def __set__(self, obj, value):
@@ -2537,15 +2540,15 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_12AxisProperty_2__get__(st
   __Pyx_XDECREF(__pyx_r);
   if (unlikely(__pyx_v_axes == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 64, __pyx_L1_error)
+    __PYX_ERR(0, 63, __pyx_L1_error)
   }
-  __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_axes, __pyx_v_self->axis, Py_ssize_t, 1, PyInt_FromSsize_t, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_axes, __pyx_v_self->axis, Py_ssize_t, 1, PyInt_FromSsize_t, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "pandas/_libs/properties.pyx":55
+  /* "pandas/_libs/properties.pyx":54
  *         self.__doc__ = doc
  * 
  *     def __get__(self, obj, type):             # <<<<<<<<<<<<<<
@@ -2566,7 +2569,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_12AxisProperty_2__get__(st
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":66
+/* "pandas/_libs/properties.pyx":65
  *         return axes[self.axis]
  * 
  *     def __set__(self, obj, value):             # <<<<<<<<<<<<<<
@@ -2600,14 +2603,14 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4__set__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "pandas/_libs/properties.pyx":67
+  /* "pandas/_libs/properties.pyx":66
  * 
  *     def __set__(self, obj, value):
  *         obj._set_axis(self.axis, value)             # <<<<<<<<<<<<<<
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_obj, __pyx_n_s_set_axis); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_obj, __pyx_n_s_set_axis); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyInt_FromSsize_t(__pyx_v_self->axis); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_3 = PyInt_FromSsize_t(__pyx_v_self->axis); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -2624,7 +2627,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4__set__(struct _
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_t_3, __pyx_v_value};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2633,14 +2636,14 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4__set__(struct _
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_t_3, __pyx_v_value};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_4) {
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -2651,14 +2654,14 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4__set__(struct _
     __Pyx_GIVEREF(__pyx_v_value);
     PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_v_value);
     __pyx_t_3 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pandas/_libs/properties.pyx":66
+  /* "pandas/_libs/properties.pyx":65
  *         return axes[self.axis]
  * 
  *     def __set__(self, obj, value):             # <<<<<<<<<<<<<<
@@ -2681,7 +2684,7 @@ static int __pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4__set__(struct _
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":48
+/* "pandas/_libs/properties.pyx":47
  * 
  *     cdef readonly:
  *         Py_ssize_t axis             # <<<<<<<<<<<<<<
@@ -2711,7 +2714,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4axis___get
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_v_self->axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_v_self->axis); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2728,7 +2731,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_10properties_12AxisProperty_4axis___get
   return __pyx_r;
 }
 
-/* "pandas/_libs/properties.pyx":49
+/* "pandas/_libs/properties.pyx":48
  *     cdef readonly:
  *         Py_ssize_t axis
  *         object __doc__             # <<<<<<<<<<<<<<
@@ -4271,7 +4274,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_cache, __pyx_k_cache, sizeof(__pyx_k_cache), 0, 1, 0, 1},
   {&__pyx_n_s_cache_readonly, __pyx_k_cache_readonly, sizeof(__pyx_k_cache_readonly), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
-  {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
   {&__pyx_n_s_dict, __pyx_k_dict, sizeof(__pyx_k_dict), 0, 0, 1, 1},
   {&__pyx_n_u_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 1, 0, 1},
   {&__pyx_n_s_doc_2, __pyx_k_doc_2, sizeof(__pyx_k_doc_2), 0, 0, 1, 1},
@@ -4279,6 +4281,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
+  {&__pyx_n_s_mgr, __pyx_k_mgr, sizeof(__pyx_k_mgr), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_new, __pyx_k_new, sizeof(__pyx_k_new), 0, 0, 1, 1},
   {&__pyx_n_s_pandas__libs_properties, __pyx_k_pandas__libs_properties, sizeof(__pyx_k_pandas__libs_properties), 0, 0, 1, 1},
@@ -4302,7 +4305,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_AttributeError = __Pyx_GetBuiltinName(__pyx_n_s_AttributeError); if (!__pyx_builtin_AttributeError) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_builtin_AttributeError = __Pyx_GetBuiltinName(__pyx_n_s_AttributeError); if (!__pyx_builtin_AttributeError) __PYX_ERR(0, 26, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4312,14 +4315,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "pandas/_libs/properties.pyx":39
+  /* "pandas/_libs/properties.pyx":38
  * 
  *     def __set__(self, obj, value):
  *         raise AttributeError("Can't set attribute")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_Can_t_set_attribute); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_Can_t_set_attribute); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -4392,25 +4395,25 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_6pandas_5_libs_10properties_CachedProperty) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6pandas_5_libs_10properties_CachedProperty) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6pandas_5_libs_10properties_CachedProperty.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6pandas_5_libs_10properties_CachedProperty.tp_dictoffset && __pyx_type_6pandas_5_libs_10properties_CachedProperty.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6pandas_5_libs_10properties_CachedProperty.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CachedProperty, (PyObject *)&__pyx_type_6pandas_5_libs_10properties_CachedProperty) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6pandas_5_libs_10properties_CachedProperty) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CachedProperty, (PyObject *)&__pyx_type_6pandas_5_libs_10properties_CachedProperty) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6pandas_5_libs_10properties_CachedProperty) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __pyx_ptype_6pandas_5_libs_10properties_CachedProperty = &__pyx_type_6pandas_5_libs_10properties_CachedProperty;
-  if (PyType_Ready(&__pyx_type_6pandas_5_libs_10properties_AxisProperty) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6pandas_5_libs_10properties_AxisProperty) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6pandas_5_libs_10properties_AxisProperty.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6pandas_5_libs_10properties_AxisProperty.tp_dictoffset && __pyx_type_6pandas_5_libs_10properties_AxisProperty.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6pandas_5_libs_10properties_AxisProperty.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_AxisProperty, (PyObject *)&__pyx_type_6pandas_5_libs_10properties_AxisProperty) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6pandas_5_libs_10properties_AxisProperty) < 0) __PYX_ERR(0, 45, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_AxisProperty, (PyObject *)&__pyx_type_6pandas_5_libs_10properties_AxisProperty) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6pandas_5_libs_10properties_AxisProperty) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
   __pyx_ptype_6pandas_5_libs_10properties_AxisProperty = &__pyx_type_6pandas_5_libs_10properties_AxisProperty;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -4664,14 +4667,14 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "pandas/_libs/properties.pyx":42
+  /* "pandas/_libs/properties.pyx":41
  * 
  * 
  * cache_readonly = CachedProperty             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cache_readonly, ((PyObject *)__pyx_ptype_6pandas_5_libs_10properties_CachedProperty)) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cache_readonly, ((PyObject *)__pyx_ptype_6pandas_5_libs_10properties_CachedProperty)) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_CachedProperty(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
@@ -4698,7 +4701,7 @@ if (!__Pyx_RefNanny) {
   /* "pandas/_libs/properties.pyx":1
  * from cython import Py_ssize_t             # <<<<<<<<<<<<<<
  * 
- * from cpython.dict cimport (
+ * from cpython.dict cimport PyDict_Contains, PyDict_GetItem, PyDict_SetItem
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

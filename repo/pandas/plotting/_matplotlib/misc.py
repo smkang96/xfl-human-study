@@ -22,7 +22,7 @@ def scatter_matrix(
     density_kwds=None,
     hist_kwds=None,
     range_padding=0.05,
-    **kwds
+    **kwds,
 ):
     df = frame._get_numeric_data()
     n = df.columns.size
@@ -160,7 +160,7 @@ def radviz(frame, class_column, ax=None, color=None, colormap=None, **kwds):
             to_plot[kls][1],
             color=colors[i],
             label=pprint_thing(kls),
-            **kwds
+            **kwds,
         )
     ax.legend()
 
@@ -260,6 +260,7 @@ def bootstrap_plot(series, fig=None, size=50, samples=500, **kwds):
 
     import matplotlib.pyplot as plt
 
+    # TODO: is the failure mentioned below still relevant?
     # random.sample(ndarray, int) fails on python 3.3, sigh
     data = list(series.values)
     samplings = [random.sample(data, size) for _ in range(samples)]
@@ -315,7 +316,7 @@ def parallel_coordinates(
     axvlines=True,
     axvlines_kwds=None,
     sort_labels=False,
-    **kwds
+    **kwds,
 ):
     import matplotlib.pyplot as plt
 
@@ -395,7 +396,7 @@ def lag_plot(series, lag=1, ax=None, **kwds):
     if ax is None:
         ax = plt.gca()
     ax.set_xlabel("y(t)")
-    ax.set_ylabel("y(t + {lag})".format(lag=lag))
+    ax.set_ylabel(f"y(t + {lag})")
     ax.scatter(y1, y2, **kwds)
     return ax
 

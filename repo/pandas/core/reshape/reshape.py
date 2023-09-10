@@ -1,11 +1,12 @@
-from functools import partial
 import itertools
+from typing import List, Optional, Union
 
 import numpy as np
 
 import pandas._libs.algos as libalgos
 import pandas._libs.reshape as libreshape
 from pandas._libs.sparse import IntIndex
+from pandas.util._decorators import cache_readonly
 
 from pandas.core.dtypes.cast import maybe_promote
 from pandas.core.dtypes.common import (
@@ -22,10 +23,9 @@ from pandas.core.dtypes.missing import notna
 
 import pandas.core.algorithms as algos
 from pandas.core.arrays import SparseArray
-from pandas.core.arrays.categorical import _factorize_from_iterable
-from pandas.core.construction import extract_array
+from pandas.core.arrays.categorical import factorize_from_iterable
 from pandas.core.frame import DataFrame
-from pandas.core.index import Index, MultiIndex
+from pandas.core.indexes.api import Index, MultiIndex
 from pandas.core.series import Series
 from pandas.core.sorting import (
     compress_group_index,
@@ -41,14 +41,10 @@ class _Unstacker:
 
     Parameters
     ----------
-    values : ndarray
-        Values of DataFrame to "Unstack"
     index : object
         Pandas ``Index``
     level : int or str, default last level
         Level to "unstack". Accepts a name for the level.
-    value_columns : Index, optional
-        Pandas ``Index`` or ``MultiIndex`` object if unstacking a DataFrame
     fill_value : scalar, optional
         Default value to fill in missing values if subgroups do not have the
         same set of labels. By default, missing values will be replaced with
@@ -87,27 +83,12 @@ class _Unstacker:
     """
 
     def __init__(
-        self,
-        values,
-        index,
-        level=-1,
-        value_columns=None,
-        fill_value=None,
-        constructor=None,
+        self, index, level=-1, constructor=None,
     ):
-
-        if values.ndim == 1:
-            values = values[:, np.newaxis]
-        self.values = values
-        self.value_columns = value_columns
-        self.fill_value = fill_value
 
         if constructor is None:
             constructor = DataFrame
         self.constructor = constructor
-
-        if value_columns is None and values.shape[1] != 1:  # pragma: no cover
-            raise ValueError("must pass column labels for multi-column data")
 
         self.index = index.remove_unused_levels()
 
@@ -116,6 +97,7 @@ class _Unstacker:
         # when index includes `nan`, need to lift levels/strides by 1
         self.lift = 1 if -1 in self.index.codes[self.level] else 0
 
+        # Note: the "pop" below alters these in-place.
         self.new_index_levels = list(self.index.levels)
         self.new_index_names = list(self.index.names)
 
@@ -136,10 +118,10 @@ class _Unstacker:
         if num_rows > 0 and num_columns > 0 and num_cells <= 0:
             raise ValueError("Unstacked DataFrame is too big, causing int32 overflow")
 
-        self._make_sorted_values_labels()
         self._make_selectors()
 
-    def _make_sorted_values_labels(self):
+    @cache_readonly
+    def _indexer_and_to_sort(self):
         v = self.level
 
         codes = list(self.index.codes)
@@ -153,8 +135,18 @@ class _Unstacker:
         indexer = libalgos.groupsort_indexer(comp_index, ngroups)[0]
         indexer = ensure_platform_int(indexer)
 
-        self.sorted_values = algos.take_nd(self.values, indexer, axis=0)
-        self.sorted_labels = [l.take(indexer) for l in to_sort]
+        return indexer, to_sort
+
+    @cache_readonly
+    def sorted_labels(self):
+        indexer, to_sort = self._indexer_and_to_sort
+        return [l.take(indexer) for l in to_sort]
+
+    def _make_sorted_values(self, values: np.ndarray) -> np.ndarray:
+        indexer, _ = self._indexer_and_to_sort
+
+        sorted_values = algos.take_nd(values, indexer, axis=0)
+        return sorted_values
 
     def _make_selectors(self):
         new_levels = self.new_index_levels
@@ -182,15 +174,26 @@ class _Unstacker:
         self.unique_groups = obs_ids
         self.compressor = comp_index.searchsorted(np.arange(ngroups))
 
-    def get_result(self):
-        values, _ = self.get_new_values()
-        columns = self.get_new_columns()
-        index = self.get_new_index()
+    def get_result(self, values, value_columns, fill_value):
+
+        if values.ndim == 1:
+            values = values[:, np.newaxis]
+
+        if value_columns is None and values.shape[1] != 1:  # pragma: no cover
+            raise ValueError("must pass column labels for multi-column data")
+
+        values, _ = self.get_new_values(values, fill_value)
+        columns = self.get_new_columns(value_columns)
+        index = self.new_index
 
         return self.constructor(values, index=index, columns=columns)
 
-    def get_new_values(self):
-        values = self.values
+    def get_new_values(self, values, fill_value=None):
+
+        if values.ndim == 1:
+            values = values[:, np.newaxis]
+
+        sorted_values = self._make_sorted_values(values)
 
         # place the values
         length, width = self.full_shape
@@ -202,8 +205,11 @@ class _Unstacker:
 
         # we can simply reshape if we don't have a mask
         if mask_all and len(values):
+            # TODO: Under what circumstances can we rely on sorted_values
+            #  matching values?  When that holds, we can slice instead
+            #  of take (in particular for EAs)
             new_values = (
-                self.sorted_values.reshape(length, width, stride)
+                sorted_values.reshape(length, width, stride)
                 .swapaxes(1, 2)
                 .reshape(result_shape)
             )
@@ -215,14 +221,13 @@ class _Unstacker:
             dtype = values.dtype
             new_values = np.empty(result_shape, dtype=dtype)
         else:
-            dtype, fill_value = maybe_promote(values.dtype, self.fill_value)
+            dtype, fill_value = maybe_promote(values.dtype, fill_value)
             new_values = np.empty(result_shape, dtype=dtype)
             new_values.fill(fill_value)
 
         new_mask = np.zeros(result_shape, dtype=bool)
 
         name = np.dtype(dtype).name
-        sorted_values = self.sorted_values
 
         # we need to convert to a basic dtype
         # and possibly coerce an input to our output dtype
@@ -230,17 +235,14 @@ class _Unstacker:
         if needs_i8_conversion(values):
             sorted_values = sorted_values.view("i8")
             new_values = new_values.view("i8")
-            name = "int64"
         elif is_bool_dtype(values):
             sorted_values = sorted_values.astype("object")
             new_values = new_values.astype("object")
-            name = "object"
         else:
             sorted_values = sorted_values.astype(name, copy=False)
 
         # fill in our values & mask
-        f = getattr(libreshape, "unstack_{name}".format(name=name))
-        f(
+        libreshape.unstack(
             sorted_values,
             mask.view("u1"),
             stride,
@@ -256,25 +258,25 @@ class _Unstacker:
 
         return new_values, new_mask
 
-    def get_new_columns(self):
-        if self.value_columns is None:
+    def get_new_columns(self, value_columns):
+        if value_columns is None:
             if self.lift == 0:
-                return self.removed_level
+                return self.removed_level._shallow_copy(name=self.removed_name)
 
-            lev = self.removed_level
-            return lev.insert(0, lev._na_value)
+            lev = self.removed_level.insert(0, item=self.removed_level._na_value)
+            return lev.rename(self.removed_name)
 
         stride = len(self.removed_level) + self.lift
-        width = len(self.value_columns)
+        width = len(value_columns)
         propagator = np.repeat(np.arange(width), stride)
-        if isinstance(self.value_columns, MultiIndex):
-            new_levels = self.value_columns.levels + (self.removed_level_full,)
-            new_names = self.value_columns.names + (self.removed_name,)
+        if isinstance(value_columns, MultiIndex):
+            new_levels = value_columns.levels + (self.removed_level_full,)
+            new_names = value_columns.names + (self.removed_name,)
 
-            new_codes = [lab.take(propagator) for lab in self.value_columns.codes]
+            new_codes = [lab.take(propagator) for lab in value_columns.codes]
         else:
-            new_levels = [self.value_columns, self.removed_level_full]
-            new_names = [self.value_columns.name, self.removed_name]
+            new_levels = [value_columns, self.removed_level_full]
+            new_names = [value_columns.name, self.removed_name]
             new_codes = [propagator]
 
         # The two indices differ only if the unstacked level had unused items:
@@ -293,15 +295,17 @@ class _Unstacker:
             levels=new_levels, codes=new_codes, names=new_names, verify_integrity=False
         )
 
-    def get_new_index(self):
+    @cache_readonly
+    def new_index(self):
+        # Does not depend on values or value_columns
         result_codes = [lab.take(self.compressor) for lab in self.sorted_labels[:-1]]
 
         # construct the new index
         if len(self.new_index_levels) == 1:
-            lev, lab = self.new_index_levels[0], result_codes[0]
-            if (lab == -1).any():
-                lev = lev.insert(len(lev), lev._na_value)
-            return lev.take(lab)
+            level, level_codes = self.new_index_levels[0], result_codes[0]
+            if (level_codes == -1).any():
+                level = level.insert(len(level), level._na_value)
+            return level.take(level_codes).rename(self.new_index_names[0])
 
         return MultiIndex(
             levels=self.new_index_levels,
@@ -319,6 +323,10 @@ def _unstack_multiple(data, clocs, fill_value=None):
 
     index = data.index
 
+    # GH 19966 Make sure if MultiIndexed index has tuple name, they will be
+    # recognised as a whole
+    if clocs in index.names:
+        clocs = [clocs]
     clocs = [index._get_level_number(i) for i in clocs]
 
     rlocs = [i for i in range(index.nlevels) if i not in clocs]
@@ -336,7 +344,7 @@ def _unstack_multiple(data, clocs, fill_value=None):
     comp_ids, obs_ids = compress_group_index(group_index, sort=False)
     recons_codes = decons_obs_group_ids(comp_ids, obs_ids, shape, ccodes, xnull=False)
 
-    if rlocs == []:
+    if not rlocs:
         # Everything is in clocs, so the dummy df has a regular index
         dummy_index = Index(obs_ids, name="__placeholder__")
     else:
@@ -360,8 +368,8 @@ def _unstack_multiple(data, clocs, fill_value=None):
             result = data
             for i in range(len(clocs)):
                 val = clocs[i]
-                result = result.unstack(val)
-                clocs = [v if i > v else v - 1 for v in clocs]
+                result = result.unstack(val, fill_value=fill_value)
+                clocs = [v if v < val else v - 1 for v in clocs]
 
             return result
 
@@ -373,6 +381,7 @@ def _unstack_multiple(data, clocs, fill_value=None):
             unstcols = unstacked.index
         else:
             unstcols = unstacked.columns
+        assert isinstance(unstcols, MultiIndex)  # for mypy
         new_levels = [unstcols.levels[0]] + clevels
         new_names = [data.columns.name] + cnames
 
@@ -406,7 +415,7 @@ def unstack(obj, level, fill_value=None):
         level = obj.index._get_level_number(level)
 
     if isinstance(obj, DataFrame):
-        if isinstance(obj.index, MultiIndex):
+        if isinstance(obj.index, MultiIndex) or not obj._can_fast_transpose:
             return _unstack_frame(obj, level, fill_value=fill_value)
         else:
             return obj.T.stack(dropna=False)
@@ -414,32 +423,22 @@ def unstack(obj, level, fill_value=None):
         if is_extension_array_dtype(obj.dtype):
             return _unstack_extension_series(obj, level, fill_value)
         unstacker = _Unstacker(
-            obj.values,
-            obj.index,
-            level=level,
-            fill_value=fill_value,
-            constructor=obj._constructor_expanddim,
+            obj.index, level=level, constructor=obj._constructor_expanddim,
         )
-        return unstacker.get_result()
+        return unstacker.get_result(
+            obj.values, value_columns=None, fill_value=fill_value
+        )
 
 
 def _unstack_frame(obj, level, fill_value=None):
-    if obj._is_mixed_type:
-        unstacker = partial(
-            _Unstacker, index=obj.index, level=level, fill_value=fill_value
-        )
-        blocks = obj._data.unstack(unstacker, fill_value=fill_value)
-        return obj._constructor(blocks)
+    if not obj._can_fast_transpose:
+        unstacker = _Unstacker(obj.index, level=level)
+        mgr = obj._mgr.unstack(unstacker, fill_value=fill_value)
+        return obj._constructor(mgr)
     else:
-        unstacker = _Unstacker(
-            obj.values,
-            obj.index,
-            level=level,
-            value_columns=obj.columns,
-            fill_value=fill_value,
-            constructor=obj._constructor,
-        )
-        return unstacker.get_result()
+        return _Unstacker(
+            obj.index, level=level, constructor=obj._constructor,
+        ).get_result(obj._values, value_columns=obj.columns, fill_value=fill_value)
 
 
 def _unstack_extension_series(series, level, fill_value):
@@ -465,31 +464,10 @@ def _unstack_extension_series(series, level, fill_value):
         Each column of the DataFrame will have the same dtype as
         the input Series.
     """
-    # Implementation note: the basic idea is to
-    # 1. Do a regular unstack on a dummy array of integers
-    # 2. Followup with a columnwise take.
-    # We use the dummy take to discover newly-created missing values
-    # introduced by the reshape.
-    from pandas.core.reshape.concat import concat
-
-    dummy_arr = np.arange(len(series))
-    # fill_value=-1, since we will do a series.values.take later
-    result = _Unstacker(
-        dummy_arr, series.index, level=level, fill_value=-1
-    ).get_result()
-
-    out = []
-    values = extract_array(series, extract_numpy=False)
-
-    for col, indices in result.items():
-        out.append(
-            Series(
-                values.take(indices.values, allow_fill=True, fill_value=fill_value),
-                name=col,
-                index=result.index,
-            )
-        )
-    return concat(out, axis="columns", copy=False, keys=result.columns)
+    # Defer to the logic in ExtensionBlock._unstack
+    df = series.to_frame()
+    result = df.unstack(level=level, fill_value=fill_value)
+    return result.droplevel(level=0, axis=1)
 
 
 def stack(frame, level=-1, dropna=True):
@@ -505,7 +483,7 @@ def stack(frame, level=-1, dropna=True):
     def factorize(index):
         if index.is_unique:
             return index, np.arange(len(index))
-        codes, categories = _factorize_from_iterable(index)
+        codes, categories = factorize_from_iterable(index)
         return categories, codes
 
     N, K = frame.shape
@@ -539,9 +517,9 @@ def stack(frame, level=-1, dropna=True):
         )
 
     if frame._is_homogeneous_type:
-        # For homogeneous EAs, frame.values will coerce to object. So
+        # For homogeneous EAs, frame._values will coerce to object. So
         # we concatenate instead.
-        dtypes = list(frame.dtypes.values)
+        dtypes = list(frame.dtypes._values)
         dtype = dtypes[0]
 
         if is_extension_array_dtype(dtype):
@@ -552,11 +530,11 @@ def stack(frame, level=-1, dropna=True):
             new_values = _reorder_for_extension_array_stack(new_values, N, K)
         else:
             # homogeneous, non-EA
-            new_values = frame.values.ravel()
+            new_values = frame._values.ravel()
 
     else:
         # non-homogeneous
-        new_values = frame.values.ravel()
+        new_values = frame._values.ravel()
 
     if dropna:
         mask = notna(new_values)
@@ -661,7 +639,8 @@ def _stack_multi_columns(frame, level_num=-1, dropna=True):
         new_names = this.columns.names[:-1]
         new_columns = MultiIndex.from_tuples(unique_groups, names=new_names)
     else:
-        new_columns = unique_groups = this.columns.levels[0]
+        new_columns = this.columns.levels[0]._shallow_copy(name=this.columns.names[0])
+        unique_groups = new_columns
 
     # time to ravel the values
     new_data = {}
@@ -725,7 +704,7 @@ def _stack_multi_columns(frame, level_num=-1, dropna=True):
         new_names = list(this.index.names)
         new_codes = [lab.repeat(levsize) for lab in this.index.codes]
     else:
-        old_codes, old_levels = _factorize_from_iterable(this.index)
+        old_codes, old_levels = factorize_from_iterable(this.index)
         new_levels = [old_levels]
         new_codes = [old_codes.repeat(levsize)]
         new_names = [this.index.name]  # something better?
@@ -757,7 +736,7 @@ def get_dummies(
     sparse=False,
     drop_first=False,
     dtype=None,
-):
+) -> "DataFrame":
     """
     Convert categorical variable into dummy/indicator variables.
 
@@ -863,20 +842,20 @@ def get_dummies(
         # determine columns being encoded
         if columns is None:
             data_to_encode = data.select_dtypes(include=dtypes_to_encode)
+        elif not is_list_like(columns):
+            raise TypeError("Input must be a list-like for parameter `columns`")
         else:
             data_to_encode = data[columns]
 
         # validate prefixes and separator to avoid silently dropping cols
         def check_len(item, name):
-            len_msg = (
-                "Length of '{name}' ({len_item}) did not match the "
-                "length of the columns being encoded ({len_enc})."
-            )
 
             if is_list_like(item):
                 if not len(item) == data_to_encode.shape[1]:
-                    len_msg = len_msg.format(
-                        name=name, len_item=len(item), len_enc=data_to_encode.shape[1]
+                    len_msg = (
+                        f"Length of '{name}' ({len(item)}) did not match the "
+                        "length of the columns being encoded "
+                        f"({data_to_encode.shape[1]})."
                     )
                     raise ValueError(len_msg)
 
@@ -897,6 +876,7 @@ def get_dummies(
         elif isinstance(prefix_sep, dict):
             prefix_sep = [prefix_sep[col] for col in data_to_encode.columns]
 
+        with_dummies: List[DataFrame]
         if data_to_encode.shape == data.shape:
             # Encoding the entire df, do not prepend any dropped columns
             with_dummies = []
@@ -947,7 +927,7 @@ def _get_dummies_1d(
     from pandas.core.reshape.concat import concat
 
     # Series avoids inconsistent NaN handling
-    codes, levels = _factorize_from_iterable(Series(data))
+    codes, levels = factorize_from_iterable(Series(data))
 
     if dtype is None:
         dtype = np.uint8
@@ -956,7 +936,7 @@ def _get_dummies_1d(
     if is_object_dtype(dtype):
         raise ValueError("dtype=object is not a valid dtype for get_dummies")
 
-    def get_empty_frame(data):
+    def get_empty_frame(data) -> DataFrame:
         if isinstance(data, Series):
             index = data.index
         else:
@@ -981,14 +961,9 @@ def _get_dummies_1d(
     if prefix is None:
         dummy_cols = levels
     else:
+        dummy_cols = [f"{prefix}{prefix_sep}{level}" for level in levels]
 
-        # PY2 embedded unicode, gh-22084
-        def _make_col_name(prefix, prefix_sep, level):
-            fstr = "{prefix}{prefix_sep}{level}"
-            return fstr.format(prefix=prefix, prefix_sep=prefix_sep, level=level)
-
-        dummy_cols = [_make_col_name(prefix, prefix_sep, level) for level in levels]
-
+    index: Optional[Index]
     if isinstance(data, Series):
         index = data.index
     else:
@@ -996,6 +971,7 @@ def _get_dummies_1d(
 
     if sparse:
 
+        fill_value: Union[bool, float, int]
         if is_integer_dtype(dtype):
             fill_value = 0
         elif dtype == bool:
@@ -1005,7 +981,7 @@ def _get_dummies_1d(
 
         sparse_series = []
         N = len(data)
-        sp_indices = [[] for _ in range(len(dummy_cols))]
+        sp_indices: List[List] = [[] for _ in range(len(dummy_cols))]
         mask = codes != -1
         codes = codes[mask]
         n_idx = np.arange(N)[mask]
@@ -1044,43 +1020,7 @@ def _get_dummies_1d(
         return DataFrame(dummy_mat, index=index, columns=dummy_cols)
 
 
-def make_axis_dummies(frame, axis="minor", transform=None):
-    """
-    Construct 1-0 dummy variables corresponding to designated axis
-    labels
-
-    Parameters
-    ----------
-    frame : DataFrame
-    axis : {'major', 'minor'}, default 'minor'
-    transform : function, default None
-        Function to apply to axis labels first. For example, to
-        get "day of week" dummies in a time series regression
-        you might call::
-
-            make_axis_dummies(panel, axis='major',
-                              transform=lambda d: d.weekday())
-    Returns
-    -------
-    dummies : DataFrame
-        Column names taken from chosen axis
-    """
-    numbers = {"major": 0, "minor": 1}
-    num = numbers.get(axis, axis)
-
-    items = frame.index.levels[num]
-    codes = frame.index.codes[num]
-    if transform is not None:
-        mapped_items = items.map(transform)
-        codes, items = _factorize_from_iterable(mapped_items.take(codes))
-
-    values = np.eye(len(items), dtype=float)
-    values = values.take(codes, axis=0)
-
-    return DataFrame(values, columns=items, index=frame.index)
-
-
-def _reorder_for_extension_array_stack(arr, n_rows, n_columns):
+def _reorder_for_extension_array_stack(arr, n_rows: int, n_columns: int):
     """
     Re-orders the values when stacking multiple extension-arrays.
 

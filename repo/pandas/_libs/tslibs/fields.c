@@ -10,29 +10,25 @@
             ]
         ],
         "depends": [
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h",
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include/numpy/arrayscalars.h",
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h",
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h",
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include/numpy/ufuncobject.h",
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h",
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include/numpy/arrayscalars.h",
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h",
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h",
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include/numpy/ufuncobject.h",
             "pandas/_libs/tslibs/src/datetime/np_datetime.h",
             "pandas/_libs/tslibs/src/datetime/np_datetime_strings.h"
         ],
         "extra_compile_args": [
-            "-Wno-unused-function"
+            "-Werror"
         ],
         "include_dirs": [
             "./pandas/_libs/tslibs",
-            "pandas/_libs/tslibs/src",
-            "pandas/_libs/tslibs",
-            "/opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/numpy/core/include"
+            "/opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/numpy/core/include"
         ],
         "language": "c",
         "name": "pandas._libs.tslibs.fields",
         "sources": [
-            "pandas/_libs/tslibs/fields.pyx",
-            "pandas/_libs/tslibs/src/datetime/np_datetime.c",
-            "pandas/_libs/tslibs/src/datetime/np_datetime_strings.c"
+            "pandas/_libs/tslibs/fields.pyx"
         ]
     },
     "module_name": "pandas._libs.tslibs.fields"
@@ -991,7 +987,7 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
 #endif
 
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":775
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":775
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -1000,7 +996,7 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":776
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":776
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -1009,7 +1005,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":777
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":777
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -1018,7 +1014,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":778
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":778
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -1027,7 +1023,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":782
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":782
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -1036,7 +1032,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":783
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":783
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -1045,7 +1041,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":784
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":784
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -1054,7 +1050,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":785
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":785
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -1063,7 +1059,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":789
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":789
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -1072,7 +1068,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":790
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":790
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -1081,7 +1077,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":799
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -1090,7 +1086,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":800
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":800
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -1099,7 +1095,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":801
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":801
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -1108,7 +1104,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":803
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":803
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -1117,7 +1113,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":804
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":804
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -1126,7 +1122,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":805
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":805
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -1135,7 +1131,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":807
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":807
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -1144,7 +1140,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":808
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":808
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -1153,7 +1149,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":810
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":810
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -1162,7 +1158,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":811
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":811
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -1171,7 +1167,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":812
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":812
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -1211,7 +1207,7 @@ struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":814
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":814
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -1220,7 +1216,7 @@ struct __pyx_memoryviewslice_obj;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":815
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":815
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -1229,7 +1225,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":816
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":816
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -1238,7 +1234,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":818
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":818
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1246,9 +1242,25 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  * cdef inline object PyArray_MultiIterNew1(a):
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
+struct __pyx_ctuple_72af1____dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__etc;
+typedef struct __pyx_ctuple_72af1____dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__etc __pyx_ctuple_72af1____dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__etc;
+
+/* "pandas/_libs/tslibs/ccalendar.pxd":5
+ * from numpy cimport int64_t, int32_t
+ * 
+ * ctypedef (int32_t, int32_t, int32_t) iso_calendar_t             # <<<<<<<<<<<<<<
+ * 
+ * cdef int dayofweek(int y, int m, int d) nogil
+ */
+struct __pyx_ctuple_72af1____dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__etc {
+  __pyx_t_5numpy_int32_t f0;
+  __pyx_t_5numpy_int32_t f1;
+  __pyx_t_5numpy_int32_t f2;
+};
+typedef __pyx_ctuple_72af1____dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__and___dunderpyx_t_5numpy_int32_t__etc __pyx_t_6pandas_5_libs_6tslibs_9ccalendar_iso_calendar_t;
 struct __pyx_opt_args_6pandas_5_libs_6tslibs_7nattype_is_null_datetimelike;
 
-/* "pandas/_libs/tslibs/nattype.pxd":20
+/* "pandas/_libs/tslibs/nattype.pxd":18
  * 
  * cdef bint checknull_with_nat(object val)
  * cpdef bint is_null_datetimelike(object val, bint inat_is_null=*)             # <<<<<<<<<<<<<<
@@ -1258,7 +1270,7 @@ struct __pyx_opt_args_6pandas_5_libs_6tslibs_7nattype_is_null_datetimelike {
   int inat_is_null;
 };
 
-/* "pandas/_libs/tslibs/nattype.pxd":11
+/* "pandas/_libs/tslibs/nattype.pxd":9
  * 
  * 
  * cdef class _NaT(datetime):             # <<<<<<<<<<<<<<
@@ -1471,33 +1483,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject
 /* GetBuiltinName.proto */
 static PyObject *__Pyx_GetBuiltinName(PyObject *name);
 
-/* ArgTypeTest.proto */
-#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
-    ((likely((Py_TYPE(obj) == type) | (none_allowed && (obj == Py_None)))) ? 1 :\
-        __Pyx__ArgTypeTest(obj, type, name, exact))
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
-
-/* IsLittleEndian.proto */
-static CYTHON_INLINE int __Pyx_Is_Little_Endian(void);
-
-/* BufferFormatCheck.proto */
-static const char* __Pyx_BufFmt_CheckString(__Pyx_BufFmt_Context* ctx, const char* ts);
-static void __Pyx_BufFmt_Init(__Pyx_BufFmt_Context* ctx,
-                              __Pyx_BufFmt_StackElem* stack,
-                              __Pyx_TypeInfo* type);
-
-/* BufferGetAndValidate.proto */
-#define __Pyx_GetBufferAndValidate(buf, obj, dtype, flags, nd, cast, stack)\
-    ((obj == Py_None || obj == NULL) ?\
-    (__Pyx_ZeroBuffer(buf), 0) :\
-    __Pyx__GetBufferAndValidate(buf, obj, dtype, flags, nd, cast, stack))
-static int  __Pyx__GetBufferAndValidate(Py_buffer* buf, PyObject* obj,
-    __Pyx_TypeInfo* dtype, int flags, int nd, int cast, __Pyx_BufFmt_StackElem* stack);
-static void __Pyx_ZeroBuffer(Py_buffer* buf);
-static CYTHON_INLINE void __Pyx_SafeReleaseBuffer(Py_buffer* info);
-static Py_ssize_t __Pyx_minusones[] = { -1, -1, -1, -1, -1, -1, -1, -1 };
-static Py_ssize_t __Pyx_zeros[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-
 /* PyDictVersioning.proto */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 #define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
@@ -1555,6 +1540,27 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg
 /* ExtTypeTest.proto */
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
 
+/* IsLittleEndian.proto */
+static CYTHON_INLINE int __Pyx_Is_Little_Endian(void);
+
+/* BufferFormatCheck.proto */
+static const char* __Pyx_BufFmt_CheckString(__Pyx_BufFmt_Context* ctx, const char* ts);
+static void __Pyx_BufFmt_Init(__Pyx_BufFmt_Context* ctx,
+                              __Pyx_BufFmt_StackElem* stack,
+                              __Pyx_TypeInfo* type);
+
+/* BufferGetAndValidate.proto */
+#define __Pyx_GetBufferAndValidate(buf, obj, dtype, flags, nd, cast, stack)\
+    ((obj == Py_None || obj == NULL) ?\
+    (__Pyx_ZeroBuffer(buf), 0) :\
+    __Pyx__GetBufferAndValidate(buf, obj, dtype, flags, nd, cast, stack))
+static int  __Pyx__GetBufferAndValidate(Py_buffer* buf, PyObject* obj,
+    __Pyx_TypeInfo* dtype, int flags, int nd, int cast, __Pyx_BufFmt_StackElem* stack);
+static void __Pyx_ZeroBuffer(Py_buffer* buf);
+static CYTHON_INLINE void __Pyx_SafeReleaseBuffer(Py_buffer* info);
+static Py_ssize_t __Pyx_minusones[] = { -1, -1, -1, -1, -1, -1, -1, -1 };
+static Py_ssize_t __Pyx_zeros[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+
 /* BufferFallbackError.proto */
 static void __Pyx_RaiseBufferFallbackError(void);
 
@@ -1594,18 +1600,6 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
 #define __Pyx_ErrFetch(type, value, tb)  PyErr_Fetch(type, value, tb)
 #endif
 
-/* DictGetItem.proto */
-#if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
-static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key);
-#define __Pyx_PyObject_Dict_GetItem(obj, name)\
-    (likely(PyDict_CheckExact(obj)) ?\
-     __Pyx_PyDict_GetItem(obj, name) : PyObject_GetItem(obj, name))
-#else
-#define __Pyx_PyDict_GetItem(d, key) PyObject_GetItem(d, key)
-#define __Pyx_PyObject_Dict_GetItem(obj, name)  PyObject_GetItem(obj, name)
-#endif
-
-#define __Pyx_BufPtrStrided1d(type, buf, i0, s0) (type)((char*)buf + i0 * s0)
 /* MemviewSliceInit.proto */
 #define __Pyx_BUF_MAX_NDIMS %(BUF_MAX_NDIMS)d
 #define __Pyx_MEMVIEW_DIRECT   1
@@ -1632,6 +1626,18 @@ static CYTHON_INLINE int __pyx_sub_acquisition_count_locked(
 static CYTHON_INLINE void __Pyx_INC_MEMVIEW(__Pyx_memviewslice *, int, int);
 static CYTHON_INLINE void __Pyx_XDEC_MEMVIEW(__Pyx_memviewslice *, int, int);
 
+/* DictGetItem.proto */
+#if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
+static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key);
+#define __Pyx_PyObject_Dict_GetItem(obj, name)\
+    (likely(PyDict_CheckExact(obj)) ?\
+     __Pyx_PyDict_GetItem(obj, name) : PyObject_GetItem(obj, name))
+#else
+#define __Pyx_PyDict_GetItem(d, key) PyObject_GetItem(d, key)
+#define __Pyx_PyObject_Dict_GetItem(obj, name)  PyObject_GetItem(obj, name)
+#endif
+
+#define __Pyx_BufPtrStrided1d(type, buf, i0, s0) (type)((char*)buf + i0 * s0)
 /* RaiseArgTupleInvalid.proto */
 static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
     Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
@@ -1698,6 +1704,32 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
+/* PyObjectFormatSimple.proto */
+#if CYTHON_COMPILING_IN_PYPY
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        PyObject_Format(s, f))
+#elif PY_MAJOR_VERSION < 3
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        likely(PyString_CheckExact(s)) ? PyUnicode_FromEncodedObject(s, NULL, "strict") :\
+        PyObject_Format(s, f))
+#elif CYTHON_USE_TYPE_SLOTS
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        likely(PyLong_CheckExact(s)) ? PyLong_Type.tp_str(s) :\
+        likely(PyFloat_CheckExact(s)) ? PyFloat_Type.tp_str(s) :\
+        PyObject_Format(s, f))
+#else
+    #define __Pyx_PyObject_FormatSimple(s, f) (\
+        likely(PyUnicode_CheckExact(s)) ? (Py_INCREF(s), s) :\
+        PyObject_Format(s, f))
+#endif
+
+/* JoinPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char);
+
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
@@ -1741,6 +1773,12 @@ static CYTHON_INLINE long __Pyx_div_long(long, long);
 
 /* PyIntCompare.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, long intval, long inplace);
+
+/* ArgTypeTest.proto */
+#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
+    ((likely((Py_TYPE(obj) == type) | (none_allowed && (obj == Py_None)))) ? 1 :\
+        __Pyx__ArgTypeTest(obj, type, name, exact))
+static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
 /* RaiseTooManyValuesToUnpack.proto */
 static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected);
@@ -2223,6 +2261,7 @@ static int (*__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek)(int, int, int)
 static int (*__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear)(__pyx_t_5numpy_int64_t); /*proto*/
 static __pyx_t_5numpy_int32_t (*__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_days_in_month)(int, Py_ssize_t, int __pyx_skip_dispatch); /*proto*/
 static __pyx_t_5numpy_int32_t (*__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_week_of_year)(int, int, int, int __pyx_skip_dispatch); /*proto*/
+static __pyx_t_6pandas_5_libs_6tslibs_9ccalendar_iso_calendar_t (*__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_iso_calendar)(int, int, int, int __pyx_skip_dispatch); /*proto*/
 static __pyx_t_5numpy_int32_t (*__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_day_of_year)(int, int, int, int __pyx_skip_dispatch); /*proto*/
 
 /* Module declarations from 'datetime' */
@@ -2299,6 +2338,7 @@ static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int64_t = { "int64_t", NU
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int32_t = { "int32_t", NULL, sizeof(__pyx_t_5numpy_int32_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_5numpy_int32_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_5numpy_int32_t), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_object = { "Python object", NULL, sizeof(PyObject *), { 0 }, 0, 'O', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int8_t = { "int8_t", NULL, sizeof(__pyx_t_5numpy_int8_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_5numpy_int8_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_5numpy_int8_t), 0 };
+static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t = { "uint32_t", NULL, sizeof(__pyx_t_5numpy_uint32_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_5numpy_uint32_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_5numpy_uint32_t), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int64_t__const__ = { "const int64_t", NULL, sizeof(__pyx_t_5numpy_int64_t const ), { 0 }, 0, IS_UNSIGNED(__pyx_t_5numpy_int64_t const ) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_5numpy_int64_t const ), 0 };
 #define __Pyx_MODULE_NAME "pandas._libs.tslibs.fields"
 extern int __pyx_module_is_main_pandas___libs__tslibs__fields;
@@ -2337,7 +2377,9 @@ static const char __pyx_k_id[] = "id";
 static const char __pyx_k_ms[] = "ms";
 static const char __pyx_k_np[] = "np";
 static const char __pyx_k_ns[] = "ns";
+static const char __pyx_k_u4[] = "u4";
 static const char __pyx_k_us[] = "us";
+static const char __pyx_k_day[] = "day";
 static const char __pyx_k_dim[] = "dim";
 static const char __pyx_k_dom[] = "dom";
 static const char __pyx_k_dow[] = "dow";
@@ -2366,7 +2408,10 @@ static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_view[] = "view";
+static const char __pyx_k_week[] = "week";
+static const char __pyx_k_year[] = "year";
 static const char __pyx_k_ASCII[] = "ASCII";
+static const char __pyx_k_Field[] = "Field ";
 static const char __pyx_k_array[] = "array";
 static const char __pyx_k_class[] = "__class__";
 static const char __pyx_k_count[] = "count";
@@ -2406,6 +2451,7 @@ static const char __pyx_k_fortran[] = "fortran";
 static const char __pyx_k_freqstr[] = "freqstr";
 static const char __pyx_k_memview[] = "memview";
 static const char __pyx_k_minutes[] = "minutes";
+static const char __pyx_k_ret_val[] = "ret_val";
 static const char __pyx_k_seconds[] = "seconds";
 static const char __pyx_k_tdindex[] = "tdindex";
 static const char __pyx_k_Ellipsis[] = "Ellipsis";
@@ -2422,6 +2468,8 @@ static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_end_month[] = "end_month";
 static const char __pyx_k_enumerate[] = "enumerate";
 static const char __pyx_k_f_weekday[] = "f_weekday";
+static const char __pyx_k_iso_weeks[] = "iso_weeks";
+static const char __pyx_k_iso_years[] = "iso_years";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_IndexError[] = "IndexError";
@@ -2448,8 +2496,8 @@ static const char __pyx_k_microseconds[] = "microseconds";
 static const char __pyx_k_month_offset[] = "_month_offset";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_stringsource[] = "stringsource";
-static const char __pyx_k_weekday_name[] = "weekday_name";
 static const char __pyx_k_is_year_start[] = "is_year_start";
+static const char __pyx_k_not_supported[] = " not supported";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
 static const char __pyx_k_get_date_field[] = "get_date_field";
@@ -2471,13 +2519,12 @@ static const char __pyx_k_get_date_name_field[] = "get_date_name_field";
 static const char __pyx_k_get_start_end_field[] = "get_start_end_field";
 static const char __pyx_k_get_timedelta_field[] = "get_timedelta_field";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
-static const char __pyx_k_Field_s_not_supported[] = "Field %s not supported";
 static const char __pyx_k_contiguous_and_direct[] = "<contiguous and direct>";
 static const char __pyx_k_MemoryView_of_r_object[] = "<MemoryView of %r object>";
 static const char __pyx_k_MemoryView_of_r_at_0x_x[] = "<MemoryView of %r at 0x%x>";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
 static const char __pyx_k_Cannot_index_with_type_s[] = "Cannot index with type '%s'";
-static const char __pyx_k_Field_field_not_supported[] = "Field {field} not supported";
+static const char __pyx_k_build_isocalendar_sarray[] = "build_isocalendar_sarray";
 static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %d: %d.";
 static const char __pyx_k_pandas__libs_tslibs_fields[] = "pandas._libs.tslibs.fields";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
@@ -2493,7 +2540,7 @@ static const char __pyx_k_Buffer_view_does_not_expose_stri[] = "Buffer view does
 static const char __pyx_k_Can_only_create_a_buffer_that_is[] = "Can only create a buffer that is contiguous in memory.";
 static const char __pyx_k_Cannot_assign_to_read_only_memor[] = "Cannot assign to read-only memoryview";
 static const char __pyx_k_Cannot_create_writable_memory_vi[] = "Cannot create writable memory view from read-only memoryview";
-static const char __pyx_k_Custom_business_days_is_not_supp[] = "Custom business days is not supported by {field}";
+static const char __pyx_k_Custom_business_days_is_not_supp[] = "Custom business days is not supported by ";
 static const char __pyx_k_Empty_shape_tuple_for_cython_arr[] = "Empty shape tuple for cython.array";
 static const char __pyx_k_Format_string_allocated_too_shor[] = "Format string allocated too short, see comment in numpy.pxd";
 static const char __pyx_k_Incompatible_checksums_s_vs_0xb0[] = "Incompatible checksums (%s vs 0xb068931 = (name))";
@@ -2523,8 +2570,7 @@ static PyObject *__pyx_n_s_DAYS_FULL;
 static PyObject *__pyx_n_s_DAY_SECONDS;
 static PyObject *__pyx_n_s_Ellipsis;
 static PyObject *__pyx_kp_s_Empty_shape_tuple_for_cython_arr;
-static PyObject *__pyx_kp_u_Field_field_not_supported;
-static PyObject *__pyx_kp_u_Field_s_not_supported;
+static PyObject *__pyx_kp_u_Field;
 static PyObject *__pyx_kp_u_Format_string_allocated_too_shor;
 static PyObject *__pyx_kp_u_Format_string_allocated_too_shor_2;
 static PyObject *__pyx_n_s_ImportError;
@@ -2554,6 +2600,7 @@ static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_s_array;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_build_field_sarray;
+static PyObject *__pyx_n_s_build_isocalendar_sarray;
 static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_u_c;
 static PyObject *__pyx_n_s_capitalize;
@@ -2562,6 +2609,7 @@ static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
 static PyObject *__pyx_kp_s_contiguous_and_indirect;
 static PyObject *__pyx_n_s_count;
+static PyObject *__pyx_n_u_day;
 static PyObject *__pyx_n_u_day_name;
 static PyObject *__pyx_n_s_days;
 static PyObject *__pyx_n_u_days;
@@ -2615,6 +2663,8 @@ static PyObject *__pyx_n_u_is_quarter_start;
 static PyObject *__pyx_n_u_is_year_end;
 static PyObject *__pyx_n_u_is_year_start;
 static PyObject *__pyx_n_s_isleap;
+static PyObject *__pyx_n_s_iso_weeks;
+static PyObject *__pyx_n_s_iso_years;
 static PyObject *__pyx_n_s_itemsize;
 static PyObject *__pyx_kp_s_itemsize_0_for_cython_array;
 static PyObject *__pyx_n_s_ldom;
@@ -2646,6 +2696,7 @@ static PyObject *__pyx_kp_u_ndarray_is_not_Fortran_contiguou;
 static PyObject *__pyx_n_s_ndim;
 static PyObject *__pyx_n_s_new;
 static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
+static PyObject *__pyx_kp_u_not_supported;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_u_ns;
 static PyObject *__pyx_n_s_numpy;
@@ -2673,6 +2724,7 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
+static PyObject *__pyx_n_s_ret_val;
 static PyObject *__pyx_n_u_s;
 static PyObject *__pyx_n_s_sa_dtype;
 static PyObject *__pyx_n_s_seconds;
@@ -2694,6 +2746,7 @@ static PyObject *__pyx_n_s_tdindex;
 static PyObject *__pyx_n_s_tds;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_u_u;
+static PyObject *__pyx_n_u_u4;
 static PyObject *__pyx_kp_s_unable_to_allocate_array_data;
 static PyObject *__pyx_kp_s_unable_to_allocate_shape_and_str;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
@@ -2701,17 +2754,19 @@ static PyObject *__pyx_n_s_unpack;
 static PyObject *__pyx_n_s_update;
 static PyObject *__pyx_n_u_us;
 static PyObject *__pyx_n_s_view;
-static PyObject *__pyx_n_u_weekday_name;
+static PyObject *__pyx_n_u_week;
 static PyObject *__pyx_n_u_woy;
+static PyObject *__pyx_n_u_year;
 static PyObject *__pyx_n_s_years;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_dtindex); /* proto */
+static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex); /* proto */
 static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex); /* proto */
 static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex, PyObject *__pyx_v_field, PyObject *__pyx_v_locale); /* proto */
 static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex, PyObject *__pyx_v_field, PyObject *__pyx_v_freqstr, int __pyx_v_month_kw); /* proto */
 static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex, PyObject *__pyx_v_field); /* proto */
 static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_tdindex, PyObject *__pyx_v_field); /* proto */
 static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_12isleapyear_arr(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_years); /* proto */
+static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_14build_isocalendar_sarray(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex); /* proto */
 static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
@@ -2803,7 +2858,7 @@ static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__7;
-static PyObject *__pyx_slice__31;
+static PyObject *__pyx_slice__34;
 static PyObject *__pyx_tuple__10;
 static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_tuple__12;
@@ -2825,65 +2880,73 @@ static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__29;
 static PyObject *__pyx_tuple__30;
+static PyObject *__pyx_tuple__31;
 static PyObject *__pyx_tuple__32;
 static PyObject *__pyx_tuple__33;
-static PyObject *__pyx_tuple__34;
 static PyObject *__pyx_tuple__35;
+static PyObject *__pyx_tuple__36;
 static PyObject *__pyx_tuple__37;
-static PyObject *__pyx_tuple__39;
-static PyObject *__pyx_tuple__41;
-static PyObject *__pyx_tuple__43;
-static PyObject *__pyx_tuple__45;
-static PyObject *__pyx_tuple__47;
+static PyObject *__pyx_tuple__38;
+static PyObject *__pyx_tuple__40;
+static PyObject *__pyx_tuple__42;
+static PyObject *__pyx_tuple__44;
+static PyObject *__pyx_tuple__46;
 static PyObject *__pyx_tuple__48;
-static PyObject *__pyx_tuple__49;
 static PyObject *__pyx_tuple__50;
-static PyObject *__pyx_tuple__51;
 static PyObject *__pyx_tuple__52;
-static PyObject *__pyx_codeobj__36;
-static PyObject *__pyx_codeobj__38;
-static PyObject *__pyx_codeobj__40;
-static PyObject *__pyx_codeobj__42;
-static PyObject *__pyx_codeobj__44;
-static PyObject *__pyx_codeobj__46;
-static PyObject *__pyx_codeobj__53;
+static PyObject *__pyx_tuple__53;
+static PyObject *__pyx_tuple__54;
+static PyObject *__pyx_tuple__55;
+static PyObject *__pyx_tuple__56;
+static PyObject *__pyx_tuple__57;
+static PyObject *__pyx_codeobj__39;
+static PyObject *__pyx_codeobj__41;
+static PyObject *__pyx_codeobj__43;
+static PyObject *__pyx_codeobj__45;
+static PyObject *__pyx_codeobj__47;
+static PyObject *__pyx_codeobj__49;
+static PyObject *__pyx_codeobj__51;
+static PyObject *__pyx_codeobj__58;
 /* Late includes */
 
 /* "pandas/_libs/tslibs/fields.pyx":25
  * 
  * 
- * def get_time_micros(ndarray[int64_t] dtindex):             # <<<<<<<<<<<<<<
+ * def get_time_micros(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
  *     """
  *     Return the number of microseconds in the time component of a
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_1get_time_micros(PyObject *__pyx_self, PyObject *__pyx_v_dtindex); /*proto*/
+static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_1get_time_micros(PyObject *__pyx_self, PyObject *__pyx_arg_dtindex); /*proto*/
 static char __pyx_doc_6pandas_5_libs_6tslibs_6fields_get_time_micros[] = "\n    Return the number of microseconds in the time component of a\n    nanosecond timestamp.\n\n    Parameters\n    ----------\n    dtindex : ndarray[int64_t]\n\n    Returns\n    -------\n    micros : ndarray[int64_t]\n    ";
 static PyMethodDef __pyx_mdef_6pandas_5_libs_6tslibs_6fields_1get_time_micros = {"get_time_micros", (PyCFunction)__pyx_pw_6pandas_5_libs_6tslibs_6fields_1get_time_micros, METH_O, __pyx_doc_6pandas_5_libs_6tslibs_6fields_get_time_micros};
-static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_1get_time_micros(PyObject *__pyx_self, PyObject *__pyx_v_dtindex) {
+static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_1get_time_micros(PyObject *__pyx_self, PyObject *__pyx_arg_dtindex) {
+  __Pyx_memviewslice __pyx_v_dtindex = { 0, 0, { 0 }, { 0 }, { 0 } };
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_time_micros (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_dtindex), __pyx_ptype_5numpy_ndarray, 1, "dtindex", 0))) __PYX_ERR(0, 25, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(__pyx_self, ((PyArrayObject *)__pyx_v_dtindex));
+  assert(__pyx_arg_dtindex); {
+    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(__pyx_arg_dtindex, 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 25, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pandas._libs.tslibs.fields.get_time_micros", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(__pyx_self, __pyx_v_dtindex);
 
   /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __pyx_r = NULL;
-  __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_dtindex) {
+static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex) {
   PyArrayObject *__pyx_v_micros = 0;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_dtindex;
-  __Pyx_Buffer __pyx_pybuffer_dtindex;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_micros;
   __Pyx_Buffer __pyx_pybuffer_micros;
   PyObject *__pyx_r = NULL;
@@ -2906,20 +2969,11 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_
   __pyx_pybuffer_micros.refcount = 0;
   __pyx_pybuffernd_micros.data = NULL;
   __pyx_pybuffernd_micros.rcbuffer = &__pyx_pybuffer_micros;
-  __pyx_pybuffer_dtindex.pybuffer.buf = NULL;
-  __pyx_pybuffer_dtindex.refcount = 0;
-  __pyx_pybuffernd_dtindex.data = NULL;
-  __pyx_pybuffernd_dtindex.rcbuffer = &__pyx_pybuffer_dtindex;
-  {
-    __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_dtindex.rcbuffer->pybuffer, (PyObject*)__pyx_v_dtindex, &__Pyx_TypeInfo_nn___pyx_t_5numpy_int64_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 25, __pyx_L1_error)
-  }
-  __pyx_pybuffernd_dtindex.diminfo[0].strides = __pyx_pybuffernd_dtindex.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_dtindex.diminfo[0].shape = __pyx_pybuffernd_dtindex.rcbuffer->pybuffer.shape[0];
 
   /* "pandas/_libs/tslibs/fields.pyx":41
  *         ndarray[int64_t] micros
  * 
- *     micros = np.mod(dtindex, DAY_SECONDS * 1000000000, dtype=np.int64)             # <<<<<<<<<<<<<<
+ *     micros = np.mod(dtindex, DAY_SECONDS * 1_000_000_000, dtype=np.int64)             # <<<<<<<<<<<<<<
  *     micros //= 1000
  *     return micros
  */
@@ -2928,33 +2982,35 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_mod); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DAY_SECONDS); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_dtindex, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_5numpy_int64_t__const__, (int (*)(char *, PyObject *)) NULL, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyNumber_Multiply(__pyx_t_1, __pyx_int_1000000000); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DAY_SECONDS); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_INCREF(((PyObject *)__pyx_v_dtindex));
-  __Pyx_GIVEREF(((PyObject *)__pyx_v_dtindex));
-  PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)__pyx_v_dtindex));
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_3);
-  __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_Multiply(__pyx_t_3, __pyx_int_1000000000); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_int64); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_4);
+  __pyx_t_1 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_int64); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 41, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
@@ -2980,7 +3036,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_
 
   /* "pandas/_libs/tslibs/fields.pyx":42
  * 
- *     micros = np.mod(dtindex, DAY_SECONDS * 1000000000, dtype=np.int64)
+ *     micros = np.mod(dtindex, DAY_SECONDS * 1_000_000_000, dtype=np.int64)
  *     micros //= 1000             # <<<<<<<<<<<<<<
  *     return micros
  * 
@@ -3011,7 +3067,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_
   __pyx_t_5 = 0;
 
   /* "pandas/_libs/tslibs/fields.pyx":43
- *     micros = np.mod(dtindex, DAY_SECONDS * 1000000000, dtype=np.int64)
+ *     micros = np.mod(dtindex, DAY_SECONDS * 1_000_000_000, dtype=np.int64)
  *     micros //= 1000
  *     return micros             # <<<<<<<<<<<<<<
  * 
@@ -3025,7 +3081,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_
   /* "pandas/_libs/tslibs/fields.pyx":25
  * 
  * 
- * def get_time_micros(ndarray[int64_t] dtindex):             # <<<<<<<<<<<<<<
+ * def get_time_micros(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
  *     """
  *     Return the number of microseconds in the time component of a
  */
@@ -3041,16 +3097,15 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_get_time_micros(CYTHON_
     __Pyx_PyThreadState_declare
     __Pyx_PyThreadState_assign
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dtindex.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_micros.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
   __Pyx_AddTraceback("pandas._libs.tslibs.fields.get_time_micros", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dtindex.rcbuffer->pybuffer);
   __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_micros.rcbuffer->pybuffer);
   __pyx_L2:;
+  __PYX_XDEC_MEMVIEW(&__pyx_v_dtindex, 1);
   __Pyx_XDECREF((PyObject *)__pyx_v_micros);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -3190,9 +3245,9 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
   /* "pandas/_libs/tslibs/fields.pyx":57
  *         ndarray[int32_t] years, months, days, hours, minutes, seconds, mus
  * 
- *     sa_dtype = [('Y', 'i4'),  # year             # <<<<<<<<<<<<<<
- *                 ('M', 'i4'),  # month
- *                 ('D', 'i4'),  # day
+ *     sa_dtype = [             # <<<<<<<<<<<<<<
+ *         ("Y", "i4"),  # year
+ *         ("M", "i4"),  # month
  */
   __pyx_t_2 = PyList_New(7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3220,29 +3275,29 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
   __pyx_v_sa_dtype = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":65
- *                 ('u', 'i4')]  # microsecond
+  /* "pandas/_libs/tslibs/fields.pyx":67
+ *     ]
  * 
  *     out = np.empty(count, dtype=sa_dtype)             # <<<<<<<<<<<<<<
  * 
  *     years = out['Y']
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_v_sa_dtype) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 65, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_v_sa_dtype) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3250,16 +3305,16 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
   __pyx_v_out = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":67
+  /* "pandas/_libs/tslibs/fields.pyx":69
  *     out = np.empty(count, dtype=sa_dtype)
  * 
  *     years = out['Y']             # <<<<<<<<<<<<<<
  *     months = out['M']
  *     days = out['D']
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_Y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_Y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 67, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 69, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3276,22 +3331,22 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_years.diminfo[0].strides = __pyx_pybuffernd_years.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_years.diminfo[0].shape = __pyx_pybuffernd_years.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 67, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 69, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_years = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":68
+  /* "pandas/_libs/tslibs/fields.pyx":70
  * 
  *     years = out['Y']
  *     months = out['M']             # <<<<<<<<<<<<<<
  *     days = out['D']
  *     hours = out['h']
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_M); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_M); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 68, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 70, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3308,22 +3363,22 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_10 = __pyx_t_9 = __pyx_t_8 = 0;
     }
     __pyx_pybuffernd_months.diminfo[0].strides = __pyx_pybuffernd_months.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_months.diminfo[0].shape = __pyx_pybuffernd_months.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 68, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_months = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":69
+  /* "pandas/_libs/tslibs/fields.pyx":71
  *     years = out['Y']
  *     months = out['M']
  *     days = out['D']             # <<<<<<<<<<<<<<
  *     hours = out['h']
  *     minutes = out['m']
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_D); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_D); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 69, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 71, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3340,22 +3395,22 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_days.diminfo[0].strides = __pyx_pybuffernd_days.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_days.diminfo[0].shape = __pyx_pybuffernd_days.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 69, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 71, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_days = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":70
+  /* "pandas/_libs/tslibs/fields.pyx":72
  *     months = out['M']
  *     days = out['D']
  *     hours = out['h']             # <<<<<<<<<<<<<<
  *     minutes = out['m']
  *     seconds = out['s']
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_h); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 72, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3372,22 +3427,22 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_10 = __pyx_t_9 = __pyx_t_8 = 0;
     }
     __pyx_pybuffernd_hours.diminfo[0].strides = __pyx_pybuffernd_hours.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_hours.diminfo[0].shape = __pyx_pybuffernd_hours.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 70, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 72, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_hours = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":71
+  /* "pandas/_libs/tslibs/fields.pyx":73
  *     days = out['D']
  *     hours = out['h']
  *     minutes = out['m']             # <<<<<<<<<<<<<<
  *     seconds = out['s']
  *     mus = out['u']
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_m); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_m); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 71, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 73, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3404,22 +3459,22 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_minutes.diminfo[0].strides = __pyx_pybuffernd_minutes.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_minutes.diminfo[0].shape = __pyx_pybuffernd_minutes.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 71, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_minutes = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":72
+  /* "pandas/_libs/tslibs/fields.pyx":74
  *     hours = out['h']
  *     minutes = out['m']
  *     seconds = out['s']             # <<<<<<<<<<<<<<
  *     mus = out['u']
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_s); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_s); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 74, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3436,22 +3491,22 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_10 = __pyx_t_9 = __pyx_t_8 = 0;
     }
     __pyx_pybuffernd_seconds.diminfo[0].strides = __pyx_pybuffernd_seconds.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_seconds.diminfo[0].shape = __pyx_pybuffernd_seconds.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 72, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 74, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_seconds = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":73
+  /* "pandas/_libs/tslibs/fields.pyx":75
  *     minutes = out['m']
  *     seconds = out['s']
  *     mus = out['u']             # <<<<<<<<<<<<<<
  * 
  *     for i in range(count):
  */
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_u); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_u); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 75, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3468,13 +3523,13 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_mus.diminfo[0].strides = __pyx_pybuffernd_mus.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_mus.diminfo[0].shape = __pyx_pybuffernd_mus.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 75, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_mus = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":75
+  /* "pandas/_libs/tslibs/fields.pyx":77
  *     mus = out['u']
  * 
  *     for i in range(count):             # <<<<<<<<<<<<<<
@@ -3486,7 +3541,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
   for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
     __pyx_v_i = __pyx_t_13;
 
-    /* "pandas/_libs/tslibs/fields.pyx":76
+    /* "pandas/_libs/tslibs/fields.pyx":78
  * 
  *     for i in range(count):
  *         dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -3496,7 +3551,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_14 = __pyx_v_i;
     __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_14 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-    /* "pandas/_libs/tslibs/fields.pyx":77
+    /* "pandas/_libs/tslibs/fields.pyx":79
  *     for i in range(count):
  *         dt64_to_dtstruct(dtindex[i], &dts)
  *         years[i] = dts.year             # <<<<<<<<<<<<<<
@@ -3507,7 +3562,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_14 = __pyx_v_i;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_years.rcbuffer->pybuffer.buf, __pyx_t_14, __pyx_pybuffernd_years.diminfo[0].strides) = __pyx_t_15;
 
-    /* "pandas/_libs/tslibs/fields.pyx":78
+    /* "pandas/_libs/tslibs/fields.pyx":80
  *         dt64_to_dtstruct(dtindex[i], &dts)
  *         years[i] = dts.year
  *         months[i] = dts.month             # <<<<<<<<<<<<<<
@@ -3518,7 +3573,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_17 = __pyx_v_i;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_months.rcbuffer->pybuffer.buf, __pyx_t_17, __pyx_pybuffernd_months.diminfo[0].strides) = __pyx_t_16;
 
-    /* "pandas/_libs/tslibs/fields.pyx":79
+    /* "pandas/_libs/tslibs/fields.pyx":81
  *         years[i] = dts.year
  *         months[i] = dts.month
  *         days[i] = dts.day             # <<<<<<<<<<<<<<
@@ -3529,7 +3584,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_18 = __pyx_v_i;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_days.rcbuffer->pybuffer.buf, __pyx_t_18, __pyx_pybuffernd_days.diminfo[0].strides) = __pyx_t_16;
 
-    /* "pandas/_libs/tslibs/fields.pyx":80
+    /* "pandas/_libs/tslibs/fields.pyx":82
  *         months[i] = dts.month
  *         days[i] = dts.day
  *         hours[i] = dts.hour             # <<<<<<<<<<<<<<
@@ -3540,7 +3595,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_19 = __pyx_v_i;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_hours.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_hours.diminfo[0].strides) = __pyx_t_16;
 
-    /* "pandas/_libs/tslibs/fields.pyx":81
+    /* "pandas/_libs/tslibs/fields.pyx":83
  *         days[i] = dts.day
  *         hours[i] = dts.hour
  *         minutes[i] = dts.min             # <<<<<<<<<<<<<<
@@ -3551,7 +3606,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_20 = __pyx_v_i;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_minutes.rcbuffer->pybuffer.buf, __pyx_t_20, __pyx_pybuffernd_minutes.diminfo[0].strides) = __pyx_t_16;
 
-    /* "pandas/_libs/tslibs/fields.pyx":82
+    /* "pandas/_libs/tslibs/fields.pyx":84
  *         hours[i] = dts.hour
  *         minutes[i] = dts.min
  *         seconds[i] = dts.sec             # <<<<<<<<<<<<<<
@@ -3562,7 +3617,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     __pyx_t_21 = __pyx_v_i;
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_seconds.rcbuffer->pybuffer.buf, __pyx_t_21, __pyx_pybuffernd_seconds.diminfo[0].strides) = __pyx_t_16;
 
-    /* "pandas/_libs/tslibs/fields.pyx":83
+    /* "pandas/_libs/tslibs/fields.pyx":85
  *         minutes[i] = dts.min
  *         seconds[i] = dts.sec
  *         mus[i] = dts.us             # <<<<<<<<<<<<<<
@@ -3574,7 +3629,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_mus.rcbuffer->pybuffer.buf, __pyx_t_22, __pyx_pybuffernd_mus.diminfo[0].strides) = __pyx_t_16;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":85
+  /* "pandas/_libs/tslibs/fields.pyx":87
  *         mus[i] = dts.us
  * 
  *     return out             # <<<<<<<<<<<<<<
@@ -3639,7 +3694,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
   return __pyx_r;
 }
 
-/* "pandas/_libs/tslibs/fields.pyx":90
+/* "pandas/_libs/tslibs/fields.pyx":92
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_name_field(const int64_t[:] dtindex, object field, object locale=None):             # <<<<<<<<<<<<<<
@@ -3649,7 +3704,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_2build_field_sarray(CYT
 
 /* Python wrapper */
 static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_5get_date_name_field(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_6pandas_5_libs_6tslibs_6fields_4get_date_name_field[] = "\n    Given a int64-based datetime index, return array of strings of date\n    name based on requested field (e.g. weekday_name)\n    ";
+static char __pyx_doc_6pandas_5_libs_6tslibs_6fields_4get_date_name_field[] = "\n    Given a int64-based datetime index, return array of strings of date\n    name based on requested field (e.g. day_name)\n    ";
 static PyMethodDef __pyx_mdef_6pandas_5_libs_6tslibs_6fields_5get_date_name_field = {"get_date_name_field", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6pandas_5_libs_6tslibs_6fields_5get_date_name_field, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6pandas_5_libs_6tslibs_6fields_4get_date_name_field};
 static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_5get_date_name_field(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   __Pyx_memviewslice __pyx_v_dtindex = { 0, 0, { 0 }, { 0 }, { 0 } };
@@ -3687,7 +3742,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_5get_date_name_field(Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_field)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_date_name_field", 0, 2, 3, 1); __PYX_ERR(0, 90, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_date_name_field", 0, 2, 3, 1); __PYX_ERR(0, 92, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -3697,7 +3752,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_5get_date_name_field(Py
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_date_name_field") < 0)) __PYX_ERR(0, 90, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_date_name_field") < 0)) __PYX_ERR(0, 92, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3709,13 +3764,13 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_5get_date_name_field(Py
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 90, __pyx_L3_error)
+    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 92, __pyx_L3_error)
     __pyx_v_field = values[1];
     __pyx_v_locale = values[2];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_date_name_field", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 90, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_date_name_field", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 92, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.tslibs.fields.get_date_name_field", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3762,6 +3817,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
   Py_ssize_t __pyx_t_19;
   Py_ssize_t __pyx_t_20;
   Py_ssize_t __pyx_t_21;
+  Py_UCS4 __pyx_t_22;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3775,7 +3831,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
   __pyx_pybuffernd_names.data = NULL;
   __pyx_pybuffernd_names.rcbuffer = &__pyx_pybuffer_names;
 
-  /* "pandas/_libs/tslibs/fields.pyx":96
+  /* "pandas/_libs/tslibs/fields.pyx":98
  *     """
  *     cdef:
  *         Py_ssize_t i, count = len(dtindex)             # <<<<<<<<<<<<<<
@@ -3785,34 +3841,34 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_dtindex); 
   __pyx_v_count = __pyx_t_1;
 
-  /* "pandas/_libs/tslibs/fields.pyx":101
+  /* "pandas/_libs/tslibs/fields.pyx":103
  *         int dow
  * 
  *     out = np.empty(count, dtype=object)             # <<<<<<<<<<<<<<
  * 
- *     if field == 'day_name' or field == 'weekday_name':
+ *     if field == 'day_name':
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_builtin_object) < 0) __PYX_ERR(0, 101, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 101, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_builtin_object) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 101, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 103, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3829,33 +3885,25 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 101, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 103, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_out = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":103
+  /* "pandas/_libs/tslibs/fields.pyx":105
  *     out = np.empty(count, dtype=object)
  * 
- *     if field == 'day_name' or field == 'weekday_name':             # <<<<<<<<<<<<<<
+ *     if field == 'day_name':             # <<<<<<<<<<<<<<
  *         if locale is None:
  *             names = np.array(DAYS_FULL, dtype=np.object_)
  */
-  __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_day_name, Py_EQ)); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 103, __pyx_L1_error)
-  if (!__pyx_t_12) {
-  } else {
-    __pyx_t_11 = __pyx_t_12;
-    goto __pyx_L4_bool_binop_done;
-  }
-  __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_weekday_name, Py_EQ)); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __pyx_t_11 = __pyx_t_12;
-  __pyx_L4_bool_binop_done:;
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_day_name, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 105, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":104
+    /* "pandas/_libs/tslibs/fields.pyx":106
  * 
- *     if field == 'day_name' or field == 'weekday_name':
+ *     if field == 'day_name':
  *         if locale is None:             # <<<<<<<<<<<<<<
  *             names = np.array(DAYS_FULL, dtype=np.object_)
  *         else:
@@ -3864,40 +3912,40 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
     __pyx_t_12 = (__pyx_t_11 != 0);
     if (__pyx_t_12) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":105
- *     if field == 'day_name' or field == 'weekday_name':
+      /* "pandas/_libs/tslibs/fields.pyx":107
+ *     if field == 'day_name':
  *         if locale is None:
  *             names = np.array(DAYS_FULL, dtype=np.object_)             # <<<<<<<<<<<<<<
  *         else:
  *             names = np.array(get_locale_names('f_weekday', locale),
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_array); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_array); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DAYS_FULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DAYS_FULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_5);
       __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_object_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_object_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_13) < 0) __PYX_ERR(0, 105, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_13) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 105, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (!(likely(((__pyx_t_13) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_13, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 105, __pyx_L1_error)
+      if (!(likely(((__pyx_t_13) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_13, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 107, __pyx_L1_error)
       __pyx_t_6 = ((PyArrayObject *)__pyx_t_13);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3914,23 +3962,23 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
           __pyx_t_10 = __pyx_t_9 = __pyx_t_8 = 0;
         }
         __pyx_pybuffernd_names.diminfo[0].strides = __pyx_pybuffernd_names.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_names.diminfo[0].shape = __pyx_pybuffernd_names.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 105, __pyx_L1_error)
+        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 107, __pyx_L1_error)
       }
       __pyx_t_6 = 0;
       __pyx_v_names = ((PyArrayObject *)__pyx_t_13);
       __pyx_t_13 = 0;
 
-      /* "pandas/_libs/tslibs/fields.pyx":104
+      /* "pandas/_libs/tslibs/fields.pyx":106
  * 
- *     if field == 'day_name' or field == 'weekday_name':
+ *     if field == 'day_name':
  *         if locale is None:             # <<<<<<<<<<<<<<
  *             names = np.array(DAYS_FULL, dtype=np.object_)
  *         else:
  */
-      goto __pyx_L6;
+      goto __pyx_L4;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":107
+    /* "pandas/_libs/tslibs/fields.pyx":109
  *             names = np.array(DAYS_FULL, dtype=np.object_)
  *         else:
  *             names = np.array(get_locale_names('f_weekday', locale),             # <<<<<<<<<<<<<<
@@ -3938,12 +3986,12 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
  *         for i in range(count):
  */
     /*else*/ {
-      __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 107, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_array); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 107, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_array); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_get_locale_names); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_get_locale_names); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_2 = NULL;
       __pyx_t_7 = 0;
@@ -3960,7 +4008,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_n_u_f_weekday, __pyx_v_locale};
-        __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 107, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_13);
       } else
@@ -3968,13 +4016,13 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_n_u_f_weekday, __pyx_v_locale};
-        __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 107, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_13);
       } else
       #endif
       {
-        __pyx_t_3 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         if (__pyx_t_2) {
           __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -3985,47 +4033,47 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
         __Pyx_INCREF(__pyx_v_locale);
         __Pyx_GIVEREF(__pyx_v_locale);
         PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_7, __pyx_v_locale);
-        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 107, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 109, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_13);
       PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_13);
       __pyx_t_13 = 0;
 
-      /* "pandas/_libs/tslibs/fields.pyx":108
+      /* "pandas/_libs/tslibs/fields.pyx":110
  *         else:
  *             names = np.array(get_locale_names('f_weekday', locale),
  *                              dtype=np.object_)             # <<<<<<<<<<<<<<
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:
  */
-      __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 108, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_object_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_object_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "pandas/_libs/tslibs/fields.pyx":107
+      /* "pandas/_libs/tslibs/fields.pyx":109
  *             names = np.array(DAYS_FULL, dtype=np.object_)
  *         else:
  *             names = np.array(get_locale_names('f_weekday', locale),             # <<<<<<<<<<<<<<
  *                              dtype=np.object_)
  *         for i in range(count):
  */
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, __pyx_t_13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 107, __pyx_L1_error)
+      if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 109, __pyx_L1_error)
       __pyx_t_6 = ((PyArrayObject *)__pyx_t_2);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4042,15 +4090,15 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
           __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
         }
         __pyx_pybuffernd_names.diminfo[0].strides = __pyx_pybuffernd_names.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_names.diminfo[0].shape = __pyx_pybuffernd_names.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 107, __pyx_L1_error)
+        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 109, __pyx_L1_error)
       }
       __pyx_t_6 = 0;
       __pyx_v_names = ((PyArrayObject *)__pyx_t_2);
       __pyx_t_2 = 0;
     }
-    __pyx_L6:;
+    __pyx_L4:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":109
+    /* "pandas/_libs/tslibs/fields.pyx":111
  *             names = np.array(get_locale_names('f_weekday', locale),
  *                              dtype=np.object_)
  *         for i in range(count):             # <<<<<<<<<<<<<<
@@ -4062,7 +4110,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
     for (__pyx_t_16 = 0; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
       __pyx_v_i = __pyx_t_16;
 
-      /* "pandas/_libs/tslibs/fields.pyx":110
+      /* "pandas/_libs/tslibs/fields.pyx":112
  *                              dtype=np.object_)
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -4073,16 +4121,16 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_12 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_17 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
       if (__pyx_t_12) {
 
-        /* "pandas/_libs/tslibs/fields.pyx":111
+        /* "pandas/_libs/tslibs/fields.pyx":113
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:
  *                 out[i] = np.nan             # <<<<<<<<<<<<<<
  *                 continue
  * 
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_nan); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 111, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_nan); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 113, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_17 = __pyx_v_i;
@@ -4093,16 +4141,16 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
         __Pyx_GIVEREF(*__pyx_t_18);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-        /* "pandas/_libs/tslibs/fields.pyx":112
+        /* "pandas/_libs/tslibs/fields.pyx":114
  *             if dtindex[i] == NPY_NAT:
  *                 out[i] = np.nan
  *                 continue             # <<<<<<<<<<<<<<
  * 
  *             dt64_to_dtstruct(dtindex[i], &dts)
  */
-        goto __pyx_L7_continue;
+        goto __pyx_L5_continue;
 
-        /* "pandas/_libs/tslibs/fields.pyx":110
+        /* "pandas/_libs/tslibs/fields.pyx":112
  *                              dtype=np.object_)
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -4111,7 +4159,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
  */
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":114
+      /* "pandas/_libs/tslibs/fields.pyx":116
  *                 continue
  * 
  *             dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -4121,7 +4169,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_19 = __pyx_v_i;
       __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_19 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-      /* "pandas/_libs/tslibs/fields.pyx":115
+      /* "pandas/_libs/tslibs/fields.pyx":117
  * 
  *             dt64_to_dtstruct(dtindex[i], &dts)
  *             dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -4130,7 +4178,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
  */
       __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-      /* "pandas/_libs/tslibs/fields.pyx":116
+      /* "pandas/_libs/tslibs/fields.pyx":118
  *             dt64_to_dtstruct(dtindex[i], &dts)
  *             dow = dayofweek(dts.year, dts.month, dts.day)
  *             out[i] = names[dow].capitalize()             # <<<<<<<<<<<<<<
@@ -4140,7 +4188,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_19 = __pyx_v_dow;
       __pyx_t_2 = (PyObject *) *__Pyx_BufPtrStrided1d(PyObject **, __pyx_pybuffernd_names.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_names.diminfo[0].strides);
       __Pyx_INCREF((PyObject*)__pyx_t_2);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_capitalize); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 116, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_capitalize); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -4155,7 +4203,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       }
       __pyx_t_13 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 116, __pyx_L1_error)
+      if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_19 = __pyx_v_i;
@@ -4165,30 +4213,30 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       *__pyx_t_18 = __pyx_t_13;
       __Pyx_GIVEREF(*__pyx_t_18);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_L7_continue:;
+      __pyx_L5_continue:;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":103
+    /* "pandas/_libs/tslibs/fields.pyx":105
  *     out = np.empty(count, dtype=object)
  * 
- *     if field == 'day_name' or field == 'weekday_name':             # <<<<<<<<<<<<<<
+ *     if field == 'day_name':             # <<<<<<<<<<<<<<
  *         if locale is None:
  *             names = np.array(DAYS_FULL, dtype=np.object_)
  */
     goto __pyx_L3;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":118
+  /* "pandas/_libs/tslibs/fields.pyx":120
  *             out[i] = names[dow].capitalize()
  * 
  *     elif field == 'month_name':             # <<<<<<<<<<<<<<
  *         if locale is None:
  *             names = np.array(MONTHS_FULL, dtype=np.object_)
  */
-  __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_month_name, Py_EQ)); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_month_name, Py_EQ)); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
   if (likely(__pyx_t_12)) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":119
+    /* "pandas/_libs/tslibs/fields.pyx":121
  * 
  *     elif field == 'month_name':
  *         if locale is None:             # <<<<<<<<<<<<<<
@@ -4199,40 +4247,40 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
     __pyx_t_11 = (__pyx_t_12 != 0);
     if (__pyx_t_11) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":120
+      /* "pandas/_libs/tslibs/fields.pyx":122
  *     elif field == 'month_name':
  *         if locale is None:
  *             names = np.array(MONTHS_FULL, dtype=np.object_)             # <<<<<<<<<<<<<<
  *         else:
  *             names = np.array(get_locale_names('f_month', locale),
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_np); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_array); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_MONTHS_FULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_MONTHS_FULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GIVEREF(__pyx_t_13);
       PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_13);
       __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_object_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_object_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 120, __pyx_L1_error)
+      if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 122, __pyx_L1_error)
       __pyx_t_6 = ((PyArrayObject *)__pyx_t_3);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4249,23 +4297,23 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
           __pyx_t_10 = __pyx_t_9 = __pyx_t_8 = 0;
         }
         __pyx_pybuffernd_names.diminfo[0].strides = __pyx_pybuffernd_names.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_names.diminfo[0].shape = __pyx_pybuffernd_names.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 122, __pyx_L1_error)
       }
       __pyx_t_6 = 0;
       __pyx_v_names = ((PyArrayObject *)__pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "pandas/_libs/tslibs/fields.pyx":119
+      /* "pandas/_libs/tslibs/fields.pyx":121
  * 
  *     elif field == 'month_name':
  *         if locale is None:             # <<<<<<<<<<<<<<
  *             names = np.array(MONTHS_FULL, dtype=np.object_)
  *         else:
  */
-      goto __pyx_L10;
+      goto __pyx_L8;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":122
+    /* "pandas/_libs/tslibs/fields.pyx":124
  *             names = np.array(MONTHS_FULL, dtype=np.object_)
  *         else:
  *             names = np.array(get_locale_names('f_month', locale),             # <<<<<<<<<<<<<<
@@ -4273,12 +4321,12 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
  *         for i in range(count):
  */
     /*else*/ {
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_array); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_get_locale_names); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_get_locale_names); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_4 = NULL;
       __pyx_t_7 = 0;
@@ -4295,7 +4343,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_2)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_n_u_f_month, __pyx_v_locale};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
@@ -4303,13 +4351,13 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_n_u_f_month, __pyx_v_locale};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else
       #endif
       {
-        __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         if (__pyx_t_4) {
           __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -4320,47 +4368,47 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
         __Pyx_INCREF(__pyx_v_locale);
         __Pyx_GIVEREF(__pyx_v_locale);
         PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_v_locale);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "pandas/_libs/tslibs/fields.pyx":123
+      /* "pandas/_libs/tslibs/fields.pyx":125
  *         else:
  *             names = np.array(get_locale_names('f_month', locale),
  *                              dtype=np.object_)             # <<<<<<<<<<<<<<
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:
  */
-      __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 125, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 125, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_object_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_object_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 125, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 125, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "pandas/_libs/tslibs/fields.pyx":122
+      /* "pandas/_libs/tslibs/fields.pyx":124
  *             names = np.array(MONTHS_FULL, dtype=np.object_)
  *         else:
  *             names = np.array(get_locale_names('f_month', locale),             # <<<<<<<<<<<<<<
  *                              dtype=np.object_)
  *         for i in range(count):
  */
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 122, __pyx_L1_error)
+      if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 124, __pyx_L1_error)
       __pyx_t_6 = ((PyArrayObject *)__pyx_t_4);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4377,15 +4425,15 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
           __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
         }
         __pyx_pybuffernd_names.diminfo[0].strides = __pyx_pybuffernd_names.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_names.diminfo[0].shape = __pyx_pybuffernd_names.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 122, __pyx_L1_error)
+        if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 124, __pyx_L1_error)
       }
       __pyx_t_6 = 0;
       __pyx_v_names = ((PyArrayObject *)__pyx_t_4);
       __pyx_t_4 = 0;
     }
-    __pyx_L10:;
+    __pyx_L8:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":124
+    /* "pandas/_libs/tslibs/fields.pyx":126
  *             names = np.array(get_locale_names('f_month', locale),
  *                              dtype=np.object_)
  *         for i in range(count):             # <<<<<<<<<<<<<<
@@ -4397,7 +4445,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
     for (__pyx_t_16 = 0; __pyx_t_16 < __pyx_t_15; __pyx_t_16+=1) {
       __pyx_v_i = __pyx_t_16;
 
-      /* "pandas/_libs/tslibs/fields.pyx":125
+      /* "pandas/_libs/tslibs/fields.pyx":127
  *                              dtype=np.object_)
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -4408,16 +4456,16 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_20 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
       if (__pyx_t_11) {
 
-        /* "pandas/_libs/tslibs/fields.pyx":126
+        /* "pandas/_libs/tslibs/fields.pyx":128
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:
  *                 out[i] = np.nan             # <<<<<<<<<<<<<<
  *                 continue
  * 
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_nan); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_nan); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_t_20 = __pyx_v_i;
@@ -4428,16 +4476,16 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
         __Pyx_GIVEREF(*__pyx_t_18);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "pandas/_libs/tslibs/fields.pyx":127
+        /* "pandas/_libs/tslibs/fields.pyx":129
  *             if dtindex[i] == NPY_NAT:
  *                 out[i] = np.nan
  *                 continue             # <<<<<<<<<<<<<<
  * 
  *             dt64_to_dtstruct(dtindex[i], &dts)
  */
-        goto __pyx_L11_continue;
+        goto __pyx_L9_continue;
 
-        /* "pandas/_libs/tslibs/fields.pyx":125
+        /* "pandas/_libs/tslibs/fields.pyx":127
  *                              dtype=np.object_)
  *         for i in range(count):
  *             if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -4446,7 +4494,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
  */
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":129
+      /* "pandas/_libs/tslibs/fields.pyx":131
  *                 continue
  * 
  *             dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -4456,7 +4504,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_21 = __pyx_v_i;
       __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_21 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-      /* "pandas/_libs/tslibs/fields.pyx":130
+      /* "pandas/_libs/tslibs/fields.pyx":132
  * 
  *             dt64_to_dtstruct(dtindex[i], &dts)
  *             out[i] = names[dts.month].capitalize()             # <<<<<<<<<<<<<<
@@ -4466,7 +4514,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       __pyx_t_21 = __pyx_v_dts.month;
       __pyx_t_4 = (PyObject *) *__Pyx_BufPtrStrided1d(PyObject **, __pyx_pybuffernd_names.rcbuffer->pybuffer.buf, __pyx_t_21, __pyx_pybuffernd_names.diminfo[0].strides);
       __Pyx_INCREF((PyObject*)__pyx_t_4);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_capitalize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_capitalize); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_4 = NULL;
@@ -4481,7 +4529,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       }
       __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 132, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_21 = __pyx_v_i;
@@ -4491,10 +4539,10 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
       *__pyx_t_18 = __pyx_t_3;
       __Pyx_GIVEREF(*__pyx_t_18);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_L11_continue:;
+      __pyx_L9_continue:;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":118
+    /* "pandas/_libs/tslibs/fields.pyx":120
  *             out[i] = names[dow].capitalize()
  * 
  *     elif field == 'month_name':             # <<<<<<<<<<<<<<
@@ -4504,34 +4552,47 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
     goto __pyx_L3;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":133
+  /* "pandas/_libs/tslibs/fields.pyx":135
  * 
  *     else:
- *         raise ValueError("Field {field} not supported".format(field=field))             # <<<<<<<<<<<<<<
+ *         raise ValueError(f"Field {field} not supported")             # <<<<<<<<<<<<<<
  * 
  *     return out
  */
   /*else*/ {
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Field_field_not_supported, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_14 = 0;
+    __pyx_t_22 = 127;
+    __Pyx_INCREF(__pyx_kp_u_Field);
+    __pyx_t_14 += 6;
+    __Pyx_GIVEREF(__pyx_kp_u_Field);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_Field);
+    __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_field, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_field, __pyx_v_field) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 133, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_22 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_22) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_22;
+    __pyx_t_14 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
+    __Pyx_GIVEREF(__pyx_t_2);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+    __pyx_t_2 = 0;
+    __Pyx_INCREF(__pyx_kp_u_not_supported);
+    __pyx_t_14 += 14;
+    __Pyx_GIVEREF(__pyx_kp_u_not_supported);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_not_supported);
+    __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_3, 3, __pyx_t_14, __pyx_t_22); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 133, __pyx_L1_error)
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(0, 135, __pyx_L1_error)
   }
   __pyx_L3:;
 
-  /* "pandas/_libs/tslibs/fields.pyx":135
- *         raise ValueError("Field {field} not supported".format(field=field))
+  /* "pandas/_libs/tslibs/fields.pyx":137
+ *         raise ValueError(f"Field {field} not supported")
  * 
  *     return out             # <<<<<<<<<<<<<<
  * 
@@ -4542,7 +4603,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
   __pyx_r = ((PyObject *)__pyx_v_out);
   goto __pyx_L0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":90
+  /* "pandas/_libs/tslibs/fields.pyx":92
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_name_field(const int64_t[:] dtindex, object field, object locale=None):             # <<<<<<<<<<<<<<
@@ -4579,7 +4640,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_4get_date_name_field(CY
   return __pyx_r;
 }
 
-/* "pandas/_libs/tslibs/fields.pyx":140
+/* "pandas/_libs/tslibs/fields.pyx":142
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_start_end_field(const int64_t[:] dtindex, object field,             # <<<<<<<<<<<<<<
@@ -4606,7 +4667,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_7get_start_end_field(Py
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_dtindex,&__pyx_n_s_field,&__pyx_n_s_freqstr,&__pyx_n_s_month_kw,0};
     PyObject* values[4] = {0,0,0,0};
 
-    /* "pandas/_libs/tslibs/fields.pyx":141
+    /* "pandas/_libs/tslibs/fields.pyx":143
  * @cython.boundscheck(False)
  * def get_start_end_field(const int64_t[:] dtindex, object field,
  *                         object freqstr=None, int month_kw=12):             # <<<<<<<<<<<<<<
@@ -4638,7 +4699,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_7get_start_end_field(Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_field)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_start_end_field", 0, 2, 4, 1); __PYX_ERR(0, 140, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_start_end_field", 0, 2, 4, 1); __PYX_ERR(0, 142, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -4654,7 +4715,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_7get_start_end_field(Py
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_start_end_field") < 0)) __PYX_ERR(0, 140, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_start_end_field") < 0)) __PYX_ERR(0, 142, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -4668,18 +4729,18 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_7get_start_end_field(Py
         default: goto __pyx_L5_argtuple_error;
       }
     }
-    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 140, __pyx_L3_error)
+    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 142, __pyx_L3_error)
     __pyx_v_field = values[1];
     __pyx_v_freqstr = values[2];
     if (values[3]) {
-      __pyx_v_month_kw = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_month_kw == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 141, __pyx_L3_error)
+      __pyx_v_month_kw = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_month_kw == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L3_error)
     } else {
       __pyx_v_month_kw = ((int)12);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_start_end_field", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 140, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_start_end_field", 0, 2, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 142, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.tslibs.fields.get_start_end_field", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4687,7 +4748,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_7get_start_end_field(Py
   __pyx_L4_argument_unpacking_done:;
   __pyx_r = __pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(__pyx_self, __pyx_v_dtindex, __pyx_v_field, __pyx_v_freqstr, __pyx_v_month_kw);
 
-  /* "pandas/_libs/tslibs/fields.pyx":140
+  /* "pandas/_libs/tslibs/fields.pyx":142
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_start_end_field(const int64_t[:] dtindex, object field,             # <<<<<<<<<<<<<<
@@ -4765,6 +4826,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   Py_ssize_t __pyx_t_42;
   Py_ssize_t __pyx_t_43;
   Py_ssize_t __pyx_t_44;
+  Py_UCS4 __pyx_t_45;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4778,7 +4840,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   __pyx_pybuffernd__month_offset.data = NULL;
   __pyx_pybuffernd__month_offset.rcbuffer = &__pyx_pybuffer__month_offset;
 
-  /* "pandas/_libs/tslibs/fields.pyx":149
+  /* "pandas/_libs/tslibs/fields.pyx":151
  *     cdef:
  *         Py_ssize_t i
  *         int count = len(dtindex)             # <<<<<<<<<<<<<<
@@ -4788,7 +4850,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_dtindex); 
   __pyx_v_count = __pyx_t_1;
 
-  /* "pandas/_libs/tslibs/fields.pyx":150
+  /* "pandas/_libs/tslibs/fields.pyx":152
  *         Py_ssize_t i
  *         int count = len(dtindex)
  *         bint is_business = 0             # <<<<<<<<<<<<<<
@@ -4797,7 +4859,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
   __pyx_v_is_business = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":151
+  /* "pandas/_libs/tslibs/fields.pyx":153
  *         int count = len(dtindex)
  *         bint is_business = 0
  *         int end_month = 12             # <<<<<<<<<<<<<<
@@ -4806,7 +4868,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
   __pyx_v_end_month = 12;
 
-  /* "pandas/_libs/tslibs/fields.pyx":152
+  /* "pandas/_libs/tslibs/fields.pyx":154
  *         bint is_business = 0
  *         int end_month = 12
  *         int start_month = 1             # <<<<<<<<<<<<<<
@@ -4815,27 +4877,27 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
   __pyx_v_start_month = 1;
 
-  /* "pandas/_libs/tslibs/fields.pyx":159
+  /* "pandas/_libs/tslibs/fields.pyx":161
  *         int mo_off, dom, doy, dow, ldom
  * 
  *     _month_offset = np.array(             # <<<<<<<<<<<<<<
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],
+ *         [
+ *             [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":160
- * 
+  /* "pandas/_libs/tslibs/fields.pyx":163
  *     _month_offset = np.array(
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],             # <<<<<<<<<<<<<<
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],
- *         dtype=np.int32)
+ *         [
+ *             [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],             # <<<<<<<<<<<<<<
+ *             [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366],
+ *         ],
  */
-  __pyx_t_2 = PyList_New(13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(13); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
@@ -4877,14 +4939,14 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   __Pyx_GIVEREF(__pyx_int_365);
   PyList_SET_ITEM(__pyx_t_2, 12, __pyx_int_365);
 
-  /* "pandas/_libs/tslibs/fields.pyx":161
- *     _month_offset = np.array(
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],             # <<<<<<<<<<<<<<
- *         dtype=np.int32)
- * 
+  /* "pandas/_libs/tslibs/fields.pyx":164
+ *         [
+ *             [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
+ *             [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366],             # <<<<<<<<<<<<<<
+ *         ],
+ *         dtype=np.int32,
  */
-  __pyx_t_4 = PyList_New(13); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_4 = PyList_New(13); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
@@ -4926,14 +4988,14 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   __Pyx_GIVEREF(__pyx_int_366);
   PyList_SET_ITEM(__pyx_t_4, 12, __pyx_int_366);
 
-  /* "pandas/_libs/tslibs/fields.pyx":160
+  /* "pandas/_libs/tslibs/fields.pyx":162
  * 
  *     _month_offset = np.array(
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],             # <<<<<<<<<<<<<<
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],
- *         dtype=np.int32)
+ *         [             # <<<<<<<<<<<<<<
+ *             [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
+ *             [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366],
  */
-  __pyx_t_5 = PyList_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_5 = PyList_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_5, 0, __pyx_t_2);
@@ -4942,49 +5004,49 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   __pyx_t_2 = 0;
   __pyx_t_4 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":159
+  /* "pandas/_libs/tslibs/fields.pyx":161
  *         int mo_off, dom, doy, dow, ldom
  * 
  *     _month_offset = np.array(             # <<<<<<<<<<<<<<
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],
+ *         [
+ *             [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
  */
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":162
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],
- *         dtype=np.int32)             # <<<<<<<<<<<<<<
+  /* "pandas/_libs/tslibs/fields.pyx":166
+ *             [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366],
+ *         ],
+ *         dtype=np.int32,             # <<<<<<<<<<<<<<
+ *     )
  * 
- *     out = np.zeros(count, dtype='int8')
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_int32); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_int32); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":159
+  /* "pandas/_libs/tslibs/fields.pyx":161
  *         int mo_off, dom, doy, dow, ldom
  * 
  *     _month_offset = np.array(             # <<<<<<<<<<<<<<
- *         [[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
- *          [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366]],
+ *         [
+ *             [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365],
  */
-  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 161, __pyx_L1_error)
   __pyx_t_7 = ((PyArrayObject *)__pyx_t_6);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -5001,40 +5063,40 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       __pyx_t_9 = __pyx_t_10 = __pyx_t_11 = 0;
     }
     __pyx_pybuffernd__month_offset.diminfo[0].strides = __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd__month_offset.diminfo[0].shape = __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd__month_offset.diminfo[1].strides = __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd__month_offset.diminfo[1].shape = __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 159, __pyx_L1_error)
+    if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 161, __pyx_L1_error)
   }
   __pyx_t_7 = 0;
   __pyx_v__month_offset = ((PyArrayObject *)__pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":164
- *         dtype=np.int32)
+  /* "pandas/_libs/tslibs/fields.pyx":169
+ *     )
  * 
  *     out = np.zeros(count, dtype='int8')             # <<<<<<<<<<<<<<
  * 
  *     if freqstr:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_From_int(__pyx_v_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_6);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6);
   __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_dtype, __pyx_n_u_int8) < 0) __PYX_ERR(0, 164, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 164, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_dtype, __pyx_n_u_int8) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 164, __pyx_L1_error)
+  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 169, __pyx_L1_error)
   __pyx_t_12 = ((PyArrayObject *)__pyx_t_3);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -5051,112 +5113,100 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       __pyx_t_11 = __pyx_t_10 = __pyx_t_9 = 0;
     }
     __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 164, __pyx_L1_error)
+    if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(0, 169, __pyx_L1_error)
   }
   __pyx_t_12 = 0;
   __pyx_v_out = ((PyArrayObject *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":166
+  /* "pandas/_libs/tslibs/fields.pyx":171
  *     out = np.zeros(count, dtype='int8')
  * 
  *     if freqstr:             # <<<<<<<<<<<<<<
  *         if freqstr == 'C':
- *             raise ValueError("Custom business days is not supported by {field}"
+ *             raise ValueError(f"Custom business days is not supported by {field}")
  */
-  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_freqstr); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_freqstr); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 171, __pyx_L1_error)
   if (__pyx_t_13) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":167
+    /* "pandas/_libs/tslibs/fields.pyx":172
  * 
  *     if freqstr:
  *         if freqstr == 'C':             # <<<<<<<<<<<<<<
- *             raise ValueError("Custom business days is not supported by {field}"
- *                              .format(field=field))
+ *             raise ValueError(f"Custom business days is not supported by {field}")
+ *         is_business = freqstr[0] == 'B'
  */
-    __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_freqstr, __pyx_n_u_C, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 167, __pyx_L1_error)
+    __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_freqstr, __pyx_n_u_C, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 172, __pyx_L1_error)
     if (unlikely(__pyx_t_13)) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":169
+      /* "pandas/_libs/tslibs/fields.pyx":173
+ *     if freqstr:
  *         if freqstr == 'C':
- *             raise ValueError("Custom business days is not supported by {field}"
- *                              .format(field=field))             # <<<<<<<<<<<<<<
+ *             raise ValueError(f"Custom business days is not supported by {field}")             # <<<<<<<<<<<<<<
  *         is_business = freqstr[0] == 'B'
  * 
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Custom_business_days_is_not_supp, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 169, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_field, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 169, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_kp_u_Custom_business_days_is_not_supp, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 173, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_field, __pyx_v_field) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 169, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __PYX_ERR(0, 173, __pyx_L1_error)
 
-      /* "pandas/_libs/tslibs/fields.pyx":168
- *     if freqstr:
- *         if freqstr == 'C':
- *             raise ValueError("Custom business days is not supported by {field}"             # <<<<<<<<<<<<<<
- *                              .format(field=field))
- *         is_business = freqstr[0] == 'B'
- */
-      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 168, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_Raise(__pyx_t_6, 0, 0, 0);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __PYX_ERR(0, 168, __pyx_L1_error)
-
-      /* "pandas/_libs/tslibs/fields.pyx":167
+      /* "pandas/_libs/tslibs/fields.pyx":172
  * 
  *     if freqstr:
  *         if freqstr == 'C':             # <<<<<<<<<<<<<<
- *             raise ValueError("Custom business days is not supported by {field}"
- *                              .format(field=field))
+ *             raise ValueError(f"Custom business days is not supported by {field}")
+ *         is_business = freqstr[0] == 'B'
  */
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":170
- *             raise ValueError("Custom business days is not supported by {field}"
- *                              .format(field=field))
+    /* "pandas/_libs/tslibs/fields.pyx":174
+ *         if freqstr == 'C':
+ *             raise ValueError(f"Custom business days is not supported by {field}")
  *         is_business = freqstr[0] == 'B'             # <<<<<<<<<<<<<<
  * 
  *         # YearBegin(), BYearBegin() use month = starting month of year.
  */
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_freqstr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_6, __pyx_n_u_B, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 170, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_freqstr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_6 = PyObject_RichCompare(__pyx_t_3, __pyx_n_u_B, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_13 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_13 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 170, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_v_is_business = __pyx_t_13;
 
-    /* "pandas/_libs/tslibs/fields.pyx":177
+    /* "pandas/_libs/tslibs/fields.pyx":181
  *         # month of year.
  * 
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (             # <<<<<<<<<<<<<<
  *                 freqstr[1:3] in ['MS', 'QS', 'AS']):
  *             end_month = 12 if month_kw == 1 else month_kw - 1
  */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_freqstr, 0, 2, NULL, NULL, &__pyx_slice__8, 1, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 177, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_15 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_n_u_MS, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 177, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_freqstr, 0, 2, NULL, NULL, &__pyx_slice__8, 1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_15 = (__Pyx_PyUnicode_Equals(__pyx_t_6, __pyx_n_u_MS, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 181, __pyx_L1_error)
     if (!__pyx_t_15) {
     } else {
       __pyx_t_14 = __pyx_t_15;
       goto __pyx_L8_bool_binop_done;
     }
-    __pyx_t_15 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_n_u_QS, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 177, __pyx_L1_error)
+    __pyx_t_15 = (__Pyx_PyUnicode_Equals(__pyx_t_6, __pyx_n_u_QS, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 181, __pyx_L1_error)
     if (!__pyx_t_15) {
     } else {
       __pyx_t_14 = __pyx_t_15;
       goto __pyx_L8_bool_binop_done;
     }
-    __pyx_t_15 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_n_u_AS, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 177, __pyx_L1_error)
+    __pyx_t_15 = (__Pyx_PyUnicode_Equals(__pyx_t_6, __pyx_n_u_AS, Py_EQ)); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 181, __pyx_L1_error)
     __pyx_t_14 = __pyx_t_15;
     __pyx_L8_bool_binop_done:;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_15 = (__pyx_t_14 != 0);
     if (!__pyx_t_15) {
     } else {
@@ -5164,36 +5214,36 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L6_bool_binop_done;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":178
+    /* "pandas/_libs/tslibs/fields.pyx":182
  * 
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (
  *                 freqstr[1:3] in ['MS', 'QS', 'AS']):             # <<<<<<<<<<<<<<
  *             end_month = 12 if month_kw == 1 else month_kw - 1
  *             start_month = month_kw
  */
-    __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_freqstr, 1, 3, NULL, NULL, &__pyx_slice__9, 1, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 178, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_14 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_n_u_MS, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_freqstr, 1, 3, NULL, NULL, &__pyx_slice__9, 1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_14 = (__Pyx_PyUnicode_Equals(__pyx_t_6, __pyx_n_u_MS, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
     if (!__pyx_t_14) {
     } else {
       __pyx_t_15 = __pyx_t_14;
       goto __pyx_L11_bool_binop_done;
     }
-    __pyx_t_14 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_n_u_QS, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_14 = (__Pyx_PyUnicode_Equals(__pyx_t_6, __pyx_n_u_QS, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
     if (!__pyx_t_14) {
     } else {
       __pyx_t_15 = __pyx_t_14;
       goto __pyx_L11_bool_binop_done;
     }
-    __pyx_t_14 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_n_u_AS, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 178, __pyx_L1_error)
+    __pyx_t_14 = (__Pyx_PyUnicode_Equals(__pyx_t_6, __pyx_n_u_AS, Py_EQ)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
     __pyx_t_15 = __pyx_t_14;
     __pyx_L11_bool_binop_done:;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_14 = (__pyx_t_15 != 0);
     __pyx_t_13 = __pyx_t_14;
     __pyx_L6_bool_binop_done:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":177
+    /* "pandas/_libs/tslibs/fields.pyx":181
  *         # month of year.
  * 
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (             # <<<<<<<<<<<<<<
@@ -5202,7 +5252,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":179
+      /* "pandas/_libs/tslibs/fields.pyx":183
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (
  *                 freqstr[1:3] in ['MS', 'QS', 'AS']):
  *             end_month = 12 if month_kw == 1 else month_kw - 1             # <<<<<<<<<<<<<<
@@ -5216,7 +5266,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       }
       __pyx_v_end_month = __pyx_t_16;
 
-      /* "pandas/_libs/tslibs/fields.pyx":180
+      /* "pandas/_libs/tslibs/fields.pyx":184
  *                 freqstr[1:3] in ['MS', 'QS', 'AS']):
  *             end_month = 12 if month_kw == 1 else month_kw - 1
  *             start_month = month_kw             # <<<<<<<<<<<<<<
@@ -5225,7 +5275,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
       __pyx_v_start_month = __pyx_v_month_kw;
 
-      /* "pandas/_libs/tslibs/fields.pyx":177
+      /* "pandas/_libs/tslibs/fields.pyx":181
  *         # month of year.
  * 
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (             # <<<<<<<<<<<<<<
@@ -5235,7 +5285,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L5;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":182
+    /* "pandas/_libs/tslibs/fields.pyx":186
  *             start_month = month_kw
  *         else:
  *             end_month = month_kw             # <<<<<<<<<<<<<<
@@ -5245,7 +5295,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     /*else*/ {
       __pyx_v_end_month = __pyx_v_month_kw;
 
-      /* "pandas/_libs/tslibs/fields.pyx":183
+      /* "pandas/_libs/tslibs/fields.pyx":187
  *         else:
  *             end_month = month_kw
  *             start_month = (end_month % 12) + 1             # <<<<<<<<<<<<<<
@@ -5256,17 +5306,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L5:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":166
+    /* "pandas/_libs/tslibs/fields.pyx":171
  *     out = np.zeros(count, dtype='int8')
  * 
  *     if freqstr:             # <<<<<<<<<<<<<<
  *         if freqstr == 'C':
- *             raise ValueError("Custom business days is not supported by {field}"
+ *             raise ValueError(f"Custom business days is not supported by {field}")
  */
     goto __pyx_L3;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":185
+  /* "pandas/_libs/tslibs/fields.pyx":189
  *             start_month = (end_month % 12) + 1
  *     else:
  *         end_month = 12             # <<<<<<<<<<<<<<
@@ -5276,7 +5326,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   /*else*/ {
     __pyx_v_end_month = 12;
 
-    /* "pandas/_libs/tslibs/fields.pyx":186
+    /* "pandas/_libs/tslibs/fields.pyx":190
  *     else:
  *         end_month = 12
  *         start_month = 1             # <<<<<<<<<<<<<<
@@ -5287,17 +5337,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   }
   __pyx_L3:;
 
-  /* "pandas/_libs/tslibs/fields.pyx":188
+  /* "pandas/_libs/tslibs/fields.pyx":192
  *         start_month = 1
  * 
  *     if field == 'is_month_start':             # <<<<<<<<<<<<<<
  *         if is_business:
  *             for i in range(count):
  */
-  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_month_start, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 188, __pyx_L1_error)
+  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_month_start, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 192, __pyx_L1_error)
   if (__pyx_t_13) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":189
+    /* "pandas/_libs/tslibs/fields.pyx":193
  * 
  *     if field == 'is_month_start':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -5307,7 +5357,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     __pyx_t_13 = (__pyx_v_is_business != 0);
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":190
+      /* "pandas/_libs/tslibs/fields.pyx":194
  *     if field == 'is_month_start':
  *         if is_business:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -5319,7 +5369,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":191
+        /* "pandas/_libs/tslibs/fields.pyx":195
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5330,7 +5380,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_19 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":192
+          /* "pandas/_libs/tslibs/fields.pyx":196
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -5340,7 +5390,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_19 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":193
+          /* "pandas/_libs/tslibs/fields.pyx":197
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -5349,7 +5399,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L16_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":191
+          /* "pandas/_libs/tslibs/fields.pyx":195
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5358,7 +5408,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":195
+        /* "pandas/_libs/tslibs/fields.pyx":199
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -5368,7 +5418,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_20 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_20 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":196
+        /* "pandas/_libs/tslibs/fields.pyx":200
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -5378,7 +5428,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":197
+        /* "pandas/_libs/tslibs/fields.pyx":201
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day
  *                 dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -5387,7 +5437,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-        /* "pandas/_libs/tslibs/fields.pyx":199
+        /* "pandas/_libs/tslibs/fields.pyx":203
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (dom == 1 and dow < 5) or (dom <= 3 and dow == 0):             # <<<<<<<<<<<<<<
@@ -5417,7 +5467,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L20_bool_binop_done:;
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":200
+          /* "pandas/_libs/tslibs/fields.pyx":204
  * 
  *                 if (dom == 1 and dow < 5) or (dom <= 3 and dow == 0):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -5427,7 +5477,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_20 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_20, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":199
+          /* "pandas/_libs/tslibs/fields.pyx":203
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (dom == 1 and dow < 5) or (dom <= 3 and dow == 0):             # <<<<<<<<<<<<<<
@@ -5438,7 +5488,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L16_continue:;
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":189
+      /* "pandas/_libs/tslibs/fields.pyx":193
  * 
  *     if field == 'is_month_start':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -5448,7 +5498,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L15;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":203
+    /* "pandas/_libs/tslibs/fields.pyx":207
  * 
  *         else:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -5461,7 +5511,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":204
+        /* "pandas/_libs/tslibs/fields.pyx":208
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5472,7 +5522,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_22 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":205
+          /* "pandas/_libs/tslibs/fields.pyx":209
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -5482,7 +5532,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_22 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_22, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":206
+          /* "pandas/_libs/tslibs/fields.pyx":210
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -5491,7 +5541,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L24_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":204
+          /* "pandas/_libs/tslibs/fields.pyx":208
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5500,7 +5550,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":208
+        /* "pandas/_libs/tslibs/fields.pyx":212
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -5510,7 +5560,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_23 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_23 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":209
+        /* "pandas/_libs/tslibs/fields.pyx":213
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -5520,7 +5570,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":211
+        /* "pandas/_libs/tslibs/fields.pyx":215
  *                 dom = dts.day
  * 
  *                 if dom == 1:             # <<<<<<<<<<<<<<
@@ -5530,7 +5580,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = ((__pyx_v_dom == 1) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":212
+          /* "pandas/_libs/tslibs/fields.pyx":216
  * 
  *                 if dom == 1:
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -5540,7 +5590,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_23 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":211
+          /* "pandas/_libs/tslibs/fields.pyx":215
  *                 dom = dts.day
  * 
  *                 if dom == 1:             # <<<<<<<<<<<<<<
@@ -5553,7 +5603,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L15:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":188
+    /* "pandas/_libs/tslibs/fields.pyx":192
  *         start_month = 1
  * 
  *     if field == 'is_month_start':             # <<<<<<<<<<<<<<
@@ -5563,17 +5613,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     goto __pyx_L14;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":214
+  /* "pandas/_libs/tslibs/fields.pyx":218
  *                     out[i] = 1
  * 
  *     elif field == 'is_month_end':             # <<<<<<<<<<<<<<
  *         if is_business:
  *             for i in range(count):
  */
-  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_month_end, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_month_end, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 218, __pyx_L1_error)
   if (__pyx_t_13) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":215
+    /* "pandas/_libs/tslibs/fields.pyx":219
  * 
  *     elif field == 'is_month_end':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -5583,7 +5633,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     __pyx_t_13 = (__pyx_v_is_business != 0);
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":216
+      /* "pandas/_libs/tslibs/fields.pyx":220
  *     elif field == 'is_month_end':
  *         if is_business:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -5595,7 +5645,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":217
+        /* "pandas/_libs/tslibs/fields.pyx":221
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5606,7 +5656,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_24 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":218
+          /* "pandas/_libs/tslibs/fields.pyx":222
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -5616,7 +5666,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_24 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":219
+          /* "pandas/_libs/tslibs/fields.pyx":223
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -5625,7 +5675,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L29_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":217
+          /* "pandas/_libs/tslibs/fields.pyx":221
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5634,7 +5684,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":221
+        /* "pandas/_libs/tslibs/fields.pyx":225
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -5644,7 +5694,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_25 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_25 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":222
+        /* "pandas/_libs/tslibs/fields.pyx":226
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)             # <<<<<<<<<<<<<<
@@ -5653,7 +5703,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_isleap = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear(__pyx_v_dts.year);
 
-        /* "pandas/_libs/tslibs/fields.pyx":223
+        /* "pandas/_libs/tslibs/fields.pyx":227
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]             # <<<<<<<<<<<<<<
@@ -5664,7 +5714,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_26 = (__pyx_v_dts.month - 1);
         __pyx_v_mo_off = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":224
+        /* "pandas/_libs/tslibs/fields.pyx":228
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -5674,7 +5724,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":225
+        /* "pandas/_libs/tslibs/fields.pyx":229
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day
  *                 doy = mo_off + dom             # <<<<<<<<<<<<<<
@@ -5683,7 +5733,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_doy = (__pyx_v_mo_off + __pyx_v_dom);
 
-        /* "pandas/_libs/tslibs/fields.pyx":226
+        /* "pandas/_libs/tslibs/fields.pyx":230
  *                 dom = dts.day
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]             # <<<<<<<<<<<<<<
@@ -5694,7 +5744,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_25 = __pyx_v_dts.month;
         __pyx_v_ldom = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_25, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":227
+        /* "pandas/_libs/tslibs/fields.pyx":231
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]
  *                 dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -5703,7 +5753,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-        /* "pandas/_libs/tslibs/fields.pyx":229
+        /* "pandas/_libs/tslibs/fields.pyx":233
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (ldom == doy and dow < 5) or (             # <<<<<<<<<<<<<<
@@ -5723,7 +5773,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         }
         __pyx_L34_next_or:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":230
+        /* "pandas/_libs/tslibs/fields.pyx":234
  * 
  *                 if (ldom == doy and dow < 5) or (
  *                         dow == 4 and (ldom - doy <= 2)):             # <<<<<<<<<<<<<<
@@ -5740,7 +5790,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = __pyx_t_14;
         __pyx_L33_bool_binop_done:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":229
+        /* "pandas/_libs/tslibs/fields.pyx":233
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (ldom == doy and dow < 5) or (             # <<<<<<<<<<<<<<
@@ -5749,7 +5799,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":231
+          /* "pandas/_libs/tslibs/fields.pyx":235
  *                 if (ldom == doy and dow < 5) or (
  *                         dow == 4 and (ldom - doy <= 2)):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -5759,7 +5809,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_25 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":229
+          /* "pandas/_libs/tslibs/fields.pyx":233
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (ldom == doy and dow < 5) or (             # <<<<<<<<<<<<<<
@@ -5770,7 +5820,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L29_continue:;
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":215
+      /* "pandas/_libs/tslibs/fields.pyx":219
  * 
  *     elif field == 'is_month_end':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -5780,7 +5830,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L28;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":234
+    /* "pandas/_libs/tslibs/fields.pyx":238
  * 
  *         else:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -5793,7 +5843,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":235
+        /* "pandas/_libs/tslibs/fields.pyx":239
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5804,7 +5854,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_26 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":236
+          /* "pandas/_libs/tslibs/fields.pyx":240
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -5814,7 +5864,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_26 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":237
+          /* "pandas/_libs/tslibs/fields.pyx":241
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -5823,7 +5873,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L37_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":235
+          /* "pandas/_libs/tslibs/fields.pyx":239
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5832,7 +5882,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":239
+        /* "pandas/_libs/tslibs/fields.pyx":243
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -5842,7 +5892,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_27 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_27 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":240
+        /* "pandas/_libs/tslibs/fields.pyx":244
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)             # <<<<<<<<<<<<<<
@@ -5851,7 +5901,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_isleap = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear(__pyx_v_dts.year);
 
-        /* "pandas/_libs/tslibs/fields.pyx":241
+        /* "pandas/_libs/tslibs/fields.pyx":245
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]             # <<<<<<<<<<<<<<
@@ -5862,7 +5912,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_28 = (__pyx_v_dts.month - 1);
         __pyx_v_mo_off = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_28, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":242
+        /* "pandas/_libs/tslibs/fields.pyx":246
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -5872,7 +5922,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":243
+        /* "pandas/_libs/tslibs/fields.pyx":247
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day
  *                 doy = mo_off + dom             # <<<<<<<<<<<<<<
@@ -5881,7 +5931,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_doy = (__pyx_v_mo_off + __pyx_v_dom);
 
-        /* "pandas/_libs/tslibs/fields.pyx":244
+        /* "pandas/_libs/tslibs/fields.pyx":248
  *                 dom = dts.day
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]             # <<<<<<<<<<<<<<
@@ -5892,7 +5942,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_27 = __pyx_v_dts.month;
         __pyx_v_ldom = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_28, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_27, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":246
+        /* "pandas/_libs/tslibs/fields.pyx":250
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if ldom == doy:             # <<<<<<<<<<<<<<
@@ -5902,7 +5952,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = ((__pyx_v_ldom == __pyx_v_doy) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":247
+          /* "pandas/_libs/tslibs/fields.pyx":251
  * 
  *                 if ldom == doy:
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -5912,7 +5962,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_27 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":246
+          /* "pandas/_libs/tslibs/fields.pyx":250
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if ldom == doy:             # <<<<<<<<<<<<<<
@@ -5925,7 +5975,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L28:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":214
+    /* "pandas/_libs/tslibs/fields.pyx":218
  *                     out[i] = 1
  * 
  *     elif field == 'is_month_end':             # <<<<<<<<<<<<<<
@@ -5935,17 +5985,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     goto __pyx_L14;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":249
+  /* "pandas/_libs/tslibs/fields.pyx":253
  *                     out[i] = 1
  * 
  *     elif field == 'is_quarter_start':             # <<<<<<<<<<<<<<
  *         if is_business:
  *             for i in range(count):
  */
-  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_quarter_start, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 249, __pyx_L1_error)
+  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_quarter_start, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 253, __pyx_L1_error)
   if (__pyx_t_13) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":250
+    /* "pandas/_libs/tslibs/fields.pyx":254
  * 
  *     elif field == 'is_quarter_start':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -5955,7 +6005,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     __pyx_t_13 = (__pyx_v_is_business != 0);
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":251
+      /* "pandas/_libs/tslibs/fields.pyx":255
  *     elif field == 'is_quarter_start':
  *         if is_business:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -5967,7 +6017,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":252
+        /* "pandas/_libs/tslibs/fields.pyx":256
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -5978,7 +6028,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_28 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":253
+          /* "pandas/_libs/tslibs/fields.pyx":257
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -5988,7 +6038,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_28 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_28, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":254
+          /* "pandas/_libs/tslibs/fields.pyx":258
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -5997,7 +6047,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L42_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":252
+          /* "pandas/_libs/tslibs/fields.pyx":256
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6006,7 +6056,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":256
+        /* "pandas/_libs/tslibs/fields.pyx":260
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -6016,7 +6066,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_29 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_29 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":257
+        /* "pandas/_libs/tslibs/fields.pyx":261
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -6026,7 +6076,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":258
+        /* "pandas/_libs/tslibs/fields.pyx":262
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day
  *                 dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -6035,7 +6085,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-        /* "pandas/_libs/tslibs/fields.pyx":260
+        /* "pandas/_libs/tslibs/fields.pyx":264
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and (             # <<<<<<<<<<<<<<
@@ -6049,7 +6099,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           goto __pyx_L46_bool_binop_done;
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":261
+        /* "pandas/_libs/tslibs/fields.pyx":265
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and (
  *                         (dom == 1 and dow < 5) or (dom <= 3 and dow == 0)):             # <<<<<<<<<<<<<<
@@ -6078,7 +6128,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = __pyx_t_14;
         __pyx_L46_bool_binop_done:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":260
+        /* "pandas/_libs/tslibs/fields.pyx":264
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and (             # <<<<<<<<<<<<<<
@@ -6087,7 +6137,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":262
+          /* "pandas/_libs/tslibs/fields.pyx":266
  *                 if ((dts.month - start_month) % 3 == 0) and (
  *                         (dom == 1 and dow < 5) or (dom <= 3 and dow == 0)):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -6097,7 +6147,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_29 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":260
+          /* "pandas/_libs/tslibs/fields.pyx":264
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and (             # <<<<<<<<<<<<<<
@@ -6108,7 +6158,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L42_continue:;
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":250
+      /* "pandas/_libs/tslibs/fields.pyx":254
  * 
  *     elif field == 'is_quarter_start':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -6118,7 +6168,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L41;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":265
+    /* "pandas/_libs/tslibs/fields.pyx":269
  * 
  *         else:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -6131,7 +6181,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":266
+        /* "pandas/_libs/tslibs/fields.pyx":270
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6142,7 +6192,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_30 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":267
+          /* "pandas/_libs/tslibs/fields.pyx":271
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -6152,7 +6202,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_30 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_30, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":268
+          /* "pandas/_libs/tslibs/fields.pyx":272
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -6161,7 +6211,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L51_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":266
+          /* "pandas/_libs/tslibs/fields.pyx":270
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6170,7 +6220,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":270
+        /* "pandas/_libs/tslibs/fields.pyx":274
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -6180,7 +6230,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_31 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_31 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":271
+        /* "pandas/_libs/tslibs/fields.pyx":275
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -6190,7 +6240,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":273
+        /* "pandas/_libs/tslibs/fields.pyx":277
  *                 dom = dts.day
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and dom == 1:             # <<<<<<<<<<<<<<
@@ -6208,7 +6258,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L55_bool_binop_done:;
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":274
+          /* "pandas/_libs/tslibs/fields.pyx":278
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and dom == 1:
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -6218,7 +6268,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_31 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":273
+          /* "pandas/_libs/tslibs/fields.pyx":277
  *                 dom = dts.day
  * 
  *                 if ((dts.month - start_month) % 3 == 0) and dom == 1:             # <<<<<<<<<<<<<<
@@ -6231,7 +6281,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L41:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":249
+    /* "pandas/_libs/tslibs/fields.pyx":253
  *                     out[i] = 1
  * 
  *     elif field == 'is_quarter_start':             # <<<<<<<<<<<<<<
@@ -6241,17 +6291,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     goto __pyx_L14;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":276
+  /* "pandas/_libs/tslibs/fields.pyx":280
  *                     out[i] = 1
  * 
  *     elif field == 'is_quarter_end':             # <<<<<<<<<<<<<<
  *         if is_business:
  *             for i in range(count):
  */
-  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_quarter_end, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 276, __pyx_L1_error)
+  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_quarter_end, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 280, __pyx_L1_error)
   if (__pyx_t_13) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":277
+    /* "pandas/_libs/tslibs/fields.pyx":281
  * 
  *     elif field == 'is_quarter_end':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -6261,7 +6311,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     __pyx_t_13 = (__pyx_v_is_business != 0);
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":278
+      /* "pandas/_libs/tslibs/fields.pyx":282
  *     elif field == 'is_quarter_end':
  *         if is_business:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -6273,7 +6323,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":279
+        /* "pandas/_libs/tslibs/fields.pyx":283
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6284,7 +6334,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_32 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":280
+          /* "pandas/_libs/tslibs/fields.pyx":284
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -6294,7 +6344,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_32 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_32, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":281
+          /* "pandas/_libs/tslibs/fields.pyx":285
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -6303,7 +6353,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L58_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":279
+          /* "pandas/_libs/tslibs/fields.pyx":283
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6312,7 +6362,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":283
+        /* "pandas/_libs/tslibs/fields.pyx":287
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -6322,7 +6372,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_33 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_33 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":284
+        /* "pandas/_libs/tslibs/fields.pyx":288
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)             # <<<<<<<<<<<<<<
@@ -6331,7 +6381,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_isleap = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear(__pyx_v_dts.year);
 
-        /* "pandas/_libs/tslibs/fields.pyx":285
+        /* "pandas/_libs/tslibs/fields.pyx":289
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]             # <<<<<<<<<<<<<<
@@ -6342,7 +6392,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_34 = (__pyx_v_dts.month - 1);
         __pyx_v_mo_off = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_34, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":286
+        /* "pandas/_libs/tslibs/fields.pyx":290
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -6352,7 +6402,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":287
+        /* "pandas/_libs/tslibs/fields.pyx":291
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day
  *                 doy = mo_off + dom             # <<<<<<<<<<<<<<
@@ -6361,7 +6411,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_doy = (__pyx_v_mo_off + __pyx_v_dom);
 
-        /* "pandas/_libs/tslibs/fields.pyx":288
+        /* "pandas/_libs/tslibs/fields.pyx":292
  *                 dom = dts.day
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]             # <<<<<<<<<<<<<<
@@ -6372,7 +6422,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_33 = __pyx_v_dts.month;
         __pyx_v_ldom = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_34, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_33, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":289
+        /* "pandas/_libs/tslibs/fields.pyx":293
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]
  *                 dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -6381,7 +6431,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-        /* "pandas/_libs/tslibs/fields.pyx":291
+        /* "pandas/_libs/tslibs/fields.pyx":295
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (             # <<<<<<<<<<<<<<
@@ -6395,7 +6445,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           goto __pyx_L62_bool_binop_done;
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":292
+        /* "pandas/_libs/tslibs/fields.pyx":296
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (
  *                         (ldom == doy and dow < 5) or (             # <<<<<<<<<<<<<<
@@ -6415,7 +6465,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         }
         __pyx_L64_next_or:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":293
+        /* "pandas/_libs/tslibs/fields.pyx":297
  *                 if ((dts.month - end_month) % 3 == 0) and (
  *                         (ldom == doy and dow < 5) or (
  *                             dow == 4 and (ldom - doy <= 2))):             # <<<<<<<<<<<<<<
@@ -6432,7 +6482,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = __pyx_t_14;
         __pyx_L62_bool_binop_done:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":291
+        /* "pandas/_libs/tslibs/fields.pyx":295
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (             # <<<<<<<<<<<<<<
@@ -6441,7 +6491,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":294
+          /* "pandas/_libs/tslibs/fields.pyx":298
  *                         (ldom == doy and dow < 5) or (
  *                             dow == 4 and (ldom - doy <= 2))):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -6451,7 +6501,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_33 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":291
+          /* "pandas/_libs/tslibs/fields.pyx":295
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (             # <<<<<<<<<<<<<<
@@ -6462,7 +6512,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L58_continue:;
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":277
+      /* "pandas/_libs/tslibs/fields.pyx":281
  * 
  *     elif field == 'is_quarter_end':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -6472,7 +6522,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L57;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":297
+    /* "pandas/_libs/tslibs/fields.pyx":301
  * 
  *         else:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -6485,7 +6535,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":298
+        /* "pandas/_libs/tslibs/fields.pyx":302
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6496,7 +6546,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_34 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":299
+          /* "pandas/_libs/tslibs/fields.pyx":303
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -6506,7 +6556,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_34 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_34, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":300
+          /* "pandas/_libs/tslibs/fields.pyx":304
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -6515,7 +6565,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L67_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":298
+          /* "pandas/_libs/tslibs/fields.pyx":302
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6524,7 +6574,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":302
+        /* "pandas/_libs/tslibs/fields.pyx":306
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -6534,7 +6584,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_35 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_35 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":303
+        /* "pandas/_libs/tslibs/fields.pyx":307
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)             # <<<<<<<<<<<<<<
@@ -6543,7 +6593,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_isleap = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear(__pyx_v_dts.year);
 
-        /* "pandas/_libs/tslibs/fields.pyx":304
+        /* "pandas/_libs/tslibs/fields.pyx":308
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]             # <<<<<<<<<<<<<<
@@ -6554,7 +6604,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_36 = (__pyx_v_dts.month - 1);
         __pyx_v_mo_off = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_35, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_36, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":305
+        /* "pandas/_libs/tslibs/fields.pyx":309
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -6564,7 +6614,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":306
+        /* "pandas/_libs/tslibs/fields.pyx":310
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day
  *                 doy = mo_off + dom             # <<<<<<<<<<<<<<
@@ -6573,7 +6623,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_doy = (__pyx_v_mo_off + __pyx_v_dom);
 
-        /* "pandas/_libs/tslibs/fields.pyx":307
+        /* "pandas/_libs/tslibs/fields.pyx":311
  *                 dom = dts.day
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]             # <<<<<<<<<<<<<<
@@ -6584,7 +6634,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_35 = __pyx_v_dts.month;
         __pyx_v_ldom = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_35, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":309
+        /* "pandas/_libs/tslibs/fields.pyx":313
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (ldom == doy):             # <<<<<<<<<<<<<<
@@ -6602,7 +6652,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L71_bool_binop_done:;
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":310
+          /* "pandas/_libs/tslibs/fields.pyx":314
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (ldom == doy):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -6612,7 +6662,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_35 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_35, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":309
+          /* "pandas/_libs/tslibs/fields.pyx":313
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if ((dts.month - end_month) % 3 == 0) and (ldom == doy):             # <<<<<<<<<<<<<<
@@ -6625,7 +6675,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L57:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":276
+    /* "pandas/_libs/tslibs/fields.pyx":280
  *                     out[i] = 1
  * 
  *     elif field == 'is_quarter_end':             # <<<<<<<<<<<<<<
@@ -6635,17 +6685,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     goto __pyx_L14;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":312
+  /* "pandas/_libs/tslibs/fields.pyx":316
  *                     out[i] = 1
  * 
  *     elif field == 'is_year_start':             # <<<<<<<<<<<<<<
  *         if is_business:
  *             for i in range(count):
  */
-  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_year_start, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_year_start, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 316, __pyx_L1_error)
   if (__pyx_t_13) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":313
+    /* "pandas/_libs/tslibs/fields.pyx":317
  * 
  *     elif field == 'is_year_start':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -6655,7 +6705,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     __pyx_t_13 = (__pyx_v_is_business != 0);
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":314
+      /* "pandas/_libs/tslibs/fields.pyx":318
  *     elif field == 'is_year_start':
  *         if is_business:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -6667,7 +6717,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":315
+        /* "pandas/_libs/tslibs/fields.pyx":319
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6678,7 +6728,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_36 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":316
+          /* "pandas/_libs/tslibs/fields.pyx":320
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -6688,7 +6738,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_36 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":317
+          /* "pandas/_libs/tslibs/fields.pyx":321
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -6697,7 +6747,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L74_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":315
+          /* "pandas/_libs/tslibs/fields.pyx":319
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6706,7 +6756,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":319
+        /* "pandas/_libs/tslibs/fields.pyx":323
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -6716,7 +6766,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_37 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_37 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":320
+        /* "pandas/_libs/tslibs/fields.pyx":324
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -6726,7 +6776,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":321
+        /* "pandas/_libs/tslibs/fields.pyx":325
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day
  *                 dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -6735,7 +6785,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-        /* "pandas/_libs/tslibs/fields.pyx":323
+        /* "pandas/_libs/tslibs/fields.pyx":327
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (dts.month == start_month) and (             # <<<<<<<<<<<<<<
@@ -6749,7 +6799,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           goto __pyx_L78_bool_binop_done;
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":324
+        /* "pandas/_libs/tslibs/fields.pyx":328
  * 
  *                 if (dts.month == start_month) and (
  *                         (dom == 1 and dow < 5) or (dom <= 3 and dow == 0)):             # <<<<<<<<<<<<<<
@@ -6778,7 +6828,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = __pyx_t_14;
         __pyx_L78_bool_binop_done:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":323
+        /* "pandas/_libs/tslibs/fields.pyx":327
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (dts.month == start_month) and (             # <<<<<<<<<<<<<<
@@ -6787,7 +6837,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":325
+          /* "pandas/_libs/tslibs/fields.pyx":329
  *                 if (dts.month == start_month) and (
  *                         (dom == 1 and dow < 5) or (dom <= 3 and dow == 0)):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -6797,7 +6847,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_37 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":323
+          /* "pandas/_libs/tslibs/fields.pyx":327
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  * 
  *                 if (dts.month == start_month) and (             # <<<<<<<<<<<<<<
@@ -6808,7 +6858,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L74_continue:;
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":313
+      /* "pandas/_libs/tslibs/fields.pyx":317
  * 
  *     elif field == 'is_year_start':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -6818,7 +6868,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L73;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":328
+    /* "pandas/_libs/tslibs/fields.pyx":332
  * 
  *         else:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -6831,7 +6881,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":329
+        /* "pandas/_libs/tslibs/fields.pyx":333
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6842,7 +6892,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_38 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":330
+          /* "pandas/_libs/tslibs/fields.pyx":334
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -6852,7 +6902,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_38 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":331
+          /* "pandas/_libs/tslibs/fields.pyx":335
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -6861,7 +6911,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L83_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":329
+          /* "pandas/_libs/tslibs/fields.pyx":333
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6870,7 +6920,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":333
+        /* "pandas/_libs/tslibs/fields.pyx":337
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -6880,7 +6930,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_39 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_39 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":334
+        /* "pandas/_libs/tslibs/fields.pyx":338
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -6890,7 +6940,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":336
+        /* "pandas/_libs/tslibs/fields.pyx":340
  *                 dom = dts.day
  * 
  *                 if (dts.month == start_month) and dom == 1:             # <<<<<<<<<<<<<<
@@ -6908,7 +6958,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L87_bool_binop_done:;
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":337
+          /* "pandas/_libs/tslibs/fields.pyx":341
  * 
  *                 if (dts.month == start_month) and dom == 1:
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -6918,7 +6968,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_39 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_39, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":336
+          /* "pandas/_libs/tslibs/fields.pyx":340
  *                 dom = dts.day
  * 
  *                 if (dts.month == start_month) and dom == 1:             # <<<<<<<<<<<<<<
@@ -6931,7 +6981,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L73:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":312
+    /* "pandas/_libs/tslibs/fields.pyx":316
  *                     out[i] = 1
  * 
  *     elif field == 'is_year_start':             # <<<<<<<<<<<<<<
@@ -6941,17 +6991,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     goto __pyx_L14;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":339
+  /* "pandas/_libs/tslibs/fields.pyx":343
  *                     out[i] = 1
  * 
  *     elif field == 'is_year_end':             # <<<<<<<<<<<<<<
  *         if is_business:
  *             for i in range(count):
  */
-  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_year_end, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 339, __pyx_L1_error)
+  __pyx_t_13 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_year_end, Py_EQ)); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 343, __pyx_L1_error)
   if (likely(__pyx_t_13)) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":340
+    /* "pandas/_libs/tslibs/fields.pyx":344
  * 
  *     elif field == 'is_year_end':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -6961,7 +7011,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     __pyx_t_13 = (__pyx_v_is_business != 0);
     if (__pyx_t_13) {
 
-      /* "pandas/_libs/tslibs/fields.pyx":341
+      /* "pandas/_libs/tslibs/fields.pyx":345
  *     elif field == 'is_year_end':
  *         if is_business:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -6973,7 +7023,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":342
+        /* "pandas/_libs/tslibs/fields.pyx":346
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -6984,7 +7034,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_40 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":343
+          /* "pandas/_libs/tslibs/fields.pyx":347
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -6994,7 +7044,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_40 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":344
+          /* "pandas/_libs/tslibs/fields.pyx":348
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -7003,7 +7053,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L90_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":342
+          /* "pandas/_libs/tslibs/fields.pyx":346
  *         if is_business:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7012,7 +7062,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":346
+        /* "pandas/_libs/tslibs/fields.pyx":350
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -7022,7 +7072,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_41 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_41 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":347
+        /* "pandas/_libs/tslibs/fields.pyx":351
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)             # <<<<<<<<<<<<<<
@@ -7031,7 +7081,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_isleap = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear(__pyx_v_dts.year);
 
-        /* "pandas/_libs/tslibs/fields.pyx":348
+        /* "pandas/_libs/tslibs/fields.pyx":352
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -7041,7 +7091,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":349
+        /* "pandas/_libs/tslibs/fields.pyx":353
  *                 isleap = is_leapyear(dts.year)
  *                 dom = dts.day
  *                 mo_off = _month_offset[isleap, dts.month - 1]             # <<<<<<<<<<<<<<
@@ -7052,7 +7102,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_42 = (__pyx_v_dts.month - 1);
         __pyx_v_mo_off = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_41, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_42, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":350
+        /* "pandas/_libs/tslibs/fields.pyx":354
  *                 dom = dts.day
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 doy = mo_off + dom             # <<<<<<<<<<<<<<
@@ -7061,7 +7111,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_doy = (__pyx_v_mo_off + __pyx_v_dom);
 
-        /* "pandas/_libs/tslibs/fields.pyx":351
+        /* "pandas/_libs/tslibs/fields.pyx":355
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 doy = mo_off + dom
  *                 dow = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -7070,7 +7120,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_dow = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_dayofweek(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day);
 
-        /* "pandas/_libs/tslibs/fields.pyx":352
+        /* "pandas/_libs/tslibs/fields.pyx":356
  *                 doy = mo_off + dom
  *                 dow = dayofweek(dts.year, dts.month, dts.day)
  *                 ldom = _month_offset[isleap, dts.month]             # <<<<<<<<<<<<<<
@@ -7081,7 +7131,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_41 = __pyx_v_dts.month;
         __pyx_v_ldom = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_42, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_41, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":354
+        /* "pandas/_libs/tslibs/fields.pyx":358
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if (dts.month == end_month) and (             # <<<<<<<<<<<<<<
@@ -7095,7 +7145,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           goto __pyx_L94_bool_binop_done;
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":355
+        /* "pandas/_libs/tslibs/fields.pyx":359
  * 
  *                 if (dts.month == end_month) and (
  *                         (ldom == doy and dow < 5) or (             # <<<<<<<<<<<<<<
@@ -7115,7 +7165,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         }
         __pyx_L96_next_or:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":356
+        /* "pandas/_libs/tslibs/fields.pyx":360
  *                 if (dts.month == end_month) and (
  *                         (ldom == doy and dow < 5) or (
  *                             dow == 4 and (ldom - doy <= 2))):             # <<<<<<<<<<<<<<
@@ -7132,7 +7182,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = __pyx_t_14;
         __pyx_L94_bool_binop_done:;
 
-        /* "pandas/_libs/tslibs/fields.pyx":354
+        /* "pandas/_libs/tslibs/fields.pyx":358
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if (dts.month == end_month) and (             # <<<<<<<<<<<<<<
@@ -7141,7 +7191,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":357
+          /* "pandas/_libs/tslibs/fields.pyx":361
  *                         (ldom == doy and dow < 5) or (
  *                             dow == 4 and (ldom - doy <= 2))):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -7151,7 +7201,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_41 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_41, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":354
+          /* "pandas/_libs/tslibs/fields.pyx":358
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if (dts.month == end_month) and (             # <<<<<<<<<<<<<<
@@ -7162,7 +7212,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L90_continue:;
       }
 
-      /* "pandas/_libs/tslibs/fields.pyx":340
+      /* "pandas/_libs/tslibs/fields.pyx":344
  * 
  *     elif field == 'is_year_end':
  *         if is_business:             # <<<<<<<<<<<<<<
@@ -7172,7 +7222,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       goto __pyx_L89;
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":360
+    /* "pandas/_libs/tslibs/fields.pyx":364
  * 
  *         else:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -7185,7 +7235,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
       for (__pyx_t_18 = 0; __pyx_t_18 < __pyx_t_17; __pyx_t_18+=1) {
         __pyx_v_i = __pyx_t_18;
 
-        /* "pandas/_libs/tslibs/fields.pyx":361
+        /* "pandas/_libs/tslibs/fields.pyx":365
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7196,7 +7246,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_13 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_42 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":362
+          /* "pandas/_libs/tslibs/fields.pyx":366
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0             # <<<<<<<<<<<<<<
@@ -7206,7 +7256,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_42 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_42, __pyx_pybuffernd_out.diminfo[0].strides) = 0;
 
-          /* "pandas/_libs/tslibs/fields.pyx":363
+          /* "pandas/_libs/tslibs/fields.pyx":367
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = 0
  *                     continue             # <<<<<<<<<<<<<<
@@ -7215,7 +7265,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
           goto __pyx_L99_continue;
 
-          /* "pandas/_libs/tslibs/fields.pyx":361
+          /* "pandas/_libs/tslibs/fields.pyx":365
  *         else:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7224,7 +7274,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":365
+        /* "pandas/_libs/tslibs/fields.pyx":369
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -7234,7 +7284,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_43 = __pyx_v_i;
         __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_43 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-        /* "pandas/_libs/tslibs/fields.pyx":366
+        /* "pandas/_libs/tslibs/fields.pyx":370
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)             # <<<<<<<<<<<<<<
@@ -7243,7 +7293,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_isleap = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear(__pyx_v_dts.year);
 
-        /* "pandas/_libs/tslibs/fields.pyx":367
+        /* "pandas/_libs/tslibs/fields.pyx":371
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]             # <<<<<<<<<<<<<<
@@ -7254,7 +7304,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_44 = (__pyx_v_dts.month - 1);
         __pyx_v_mo_off = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_43, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_44, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":368
+        /* "pandas/_libs/tslibs/fields.pyx":372
  *                 isleap = is_leapyear(dts.year)
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day             # <<<<<<<<<<<<<<
@@ -7264,7 +7314,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_21 = __pyx_v_dts.day;
         __pyx_v_dom = __pyx_t_21;
 
-        /* "pandas/_libs/tslibs/fields.pyx":369
+        /* "pandas/_libs/tslibs/fields.pyx":373
  *                 mo_off = _month_offset[isleap, dts.month - 1]
  *                 dom = dts.day
  *                 doy = mo_off + dom             # <<<<<<<<<<<<<<
@@ -7273,7 +7323,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
  */
         __pyx_v_doy = (__pyx_v_mo_off + __pyx_v_dom);
 
-        /* "pandas/_libs/tslibs/fields.pyx":370
+        /* "pandas/_libs/tslibs/fields.pyx":374
  *                 dom = dts.day
  *                 doy = mo_off + dom
  *                 ldom = _month_offset[isleap, dts.month]             # <<<<<<<<<<<<<<
@@ -7284,7 +7334,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_t_43 = __pyx_v_dts.month;
         __pyx_v_ldom = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd__month_offset.rcbuffer->pybuffer.buf, __pyx_t_44, __pyx_pybuffernd__month_offset.diminfo[0].strides, __pyx_t_43, __pyx_pybuffernd__month_offset.diminfo[1].strides));
 
-        /* "pandas/_libs/tslibs/fields.pyx":372
+        /* "pandas/_libs/tslibs/fields.pyx":376
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if (dts.month == end_month) and (ldom == doy):             # <<<<<<<<<<<<<<
@@ -7302,7 +7352,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
         __pyx_L103_bool_binop_done:;
         if (__pyx_t_13) {
 
-          /* "pandas/_libs/tslibs/fields.pyx":373
+          /* "pandas/_libs/tslibs/fields.pyx":377
  * 
  *                 if (dts.month == end_month) and (ldom == doy):
  *                     out[i] = 1             # <<<<<<<<<<<<<<
@@ -7312,7 +7362,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
           __pyx_t_43 = __pyx_v_i;
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int8_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_43, __pyx_pybuffernd_out.diminfo[0].strides) = 1;
 
-          /* "pandas/_libs/tslibs/fields.pyx":372
+          /* "pandas/_libs/tslibs/fields.pyx":376
  *                 ldom = _month_offset[isleap, dts.month]
  * 
  *                 if (dts.month == end_month) and (ldom == doy):             # <<<<<<<<<<<<<<
@@ -7325,7 +7375,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     }
     __pyx_L89:;
 
-    /* "pandas/_libs/tslibs/fields.pyx":339
+    /* "pandas/_libs/tslibs/fields.pyx":343
  *                     out[i] = 1
  * 
  *     elif field == 'is_year_end':             # <<<<<<<<<<<<<<
@@ -7335,41 +7385,54 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
     goto __pyx_L14;
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":376
+  /* "pandas/_libs/tslibs/fields.pyx":380
  * 
  *     else:
- *         raise ValueError("Field {field} not supported".format(field=field))             # <<<<<<<<<<<<<<
+ *         raise ValueError(f"Field {field} not supported")             # <<<<<<<<<<<<<<
  * 
  *     return out.view(bool)
  */
   /*else*/ {
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Field_field_not_supported, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 376, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 380, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_field, __pyx_v_field) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_empty_tuple, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_18 = 0;
+    __pyx_t_45 = 127;
+    __Pyx_INCREF(__pyx_kp_u_Field);
+    __pyx_t_18 += 6;
+    __Pyx_GIVEREF(__pyx_kp_u_Field);
+    PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_kp_u_Field);
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_v_field, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 380, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_45 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_45) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_45;
+    __pyx_t_18 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3);
+    __Pyx_GIVEREF(__pyx_t_3);
+    PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_3);
+    __pyx_t_3 = 0;
+    __Pyx_INCREF(__pyx_kp_u_not_supported);
+    __pyx_t_18 += 14;
+    __Pyx_GIVEREF(__pyx_kp_u_not_supported);
+    PyTuple_SET_ITEM(__pyx_t_6, 2, __pyx_kp_u_not_supported);
+    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_6, 3, __pyx_t_18, __pyx_t_45); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 380, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 380, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_6, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __PYX_ERR(0, 376, __pyx_L1_error)
+    __PYX_ERR(0, 380, __pyx_L1_error)
   }
   __pyx_L14:;
 
-  /* "pandas/_libs/tslibs/fields.pyx":378
- *         raise ValueError("Field {field} not supported".format(field=field))
+  /* "pandas/_libs/tslibs/fields.pyx":382
+ *         raise ValueError(f"Field {field} not supported")
  * 
  *     return out.view(bool)             # <<<<<<<<<<<<<<
  * 
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_out), __pyx_n_s_view); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_out), __pyx_n_s_view); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -7383,14 +7446,14 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   }
   __pyx_t_6 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, ((PyObject*)&PyBool_Type)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject*)&PyBool_Type));
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_6;
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":140
+  /* "pandas/_libs/tslibs/fields.pyx":142
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_start_end_field(const int64_t[:] dtindex, object field,             # <<<<<<<<<<<<<<
@@ -7427,7 +7490,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_6get_start_end_field(CY
   return __pyx_r;
 }
 
-/* "pandas/_libs/tslibs/fields.pyx":383
+/* "pandas/_libs/tslibs/fields.pyx":387
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_field(const int64_t[:] dtindex, object field):             # <<<<<<<<<<<<<<
@@ -7471,11 +7534,11 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_9get_date_field(PyObjec
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_field)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_date_field", 1, 2, 2, 1); __PYX_ERR(0, 383, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_date_field", 1, 2, 2, 1); __PYX_ERR(0, 387, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_date_field") < 0)) __PYX_ERR(0, 383, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_date_field") < 0)) __PYX_ERR(0, 387, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7483,12 +7546,12 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_9get_date_field(PyObjec
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 383, __pyx_L3_error)
+    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 387, __pyx_L3_error)
     __pyx_v_field = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_date_field", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 383, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_date_field", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 387, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.tslibs.fields.get_date_field", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -7554,6 +7617,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
   Py_ssize_t __pyx_t_42;
   Py_ssize_t __pyx_t_43;
   PyObject *__pyx_t_44 = NULL;
+  Py_UCS4 __pyx_t_45;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -7563,7 +7627,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
   __pyx_pybuffernd_out.data = NULL;
   __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
 
-  /* "pandas/_libs/tslibs/fields.pyx":389
+  /* "pandas/_libs/tslibs/fields.pyx":393
  *     """
  *     cdef:
  *         Py_ssize_t i, count = len(dtindex)             # <<<<<<<<<<<<<<
@@ -7573,34 +7637,34 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_dtindex); 
   __pyx_v_count = __pyx_t_1;
 
-  /* "pandas/_libs/tslibs/fields.pyx":393
+  /* "pandas/_libs/tslibs/fields.pyx":397
  *         npy_datetimestruct dts
  * 
  *     out = np.empty(count, dtype='i4')             # <<<<<<<<<<<<<<
  * 
  *     if field == 'Y':
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 393, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 393, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_n_u_i4) < 0) __PYX_ERR(0, 393, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 393, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_n_u_i4) < 0) __PYX_ERR(0, 397, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 393, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 397, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -7617,23 +7681,23 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 393, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 397, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_out = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":395
+  /* "pandas/_libs/tslibs/fields.pyx":399
  *     out = np.empty(count, dtype='i4')
  * 
  *     if field == 'Y':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_Y, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 395, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_Y, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":396
+    /* "pandas/_libs/tslibs/fields.pyx":400
  * 
  *     if field == 'Y':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -7648,7 +7712,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":397
+          /* "pandas/_libs/tslibs/fields.pyx":401
  *     if field == 'Y':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -7660,7 +7724,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":398
+            /* "pandas/_libs/tslibs/fields.pyx":402
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7671,7 +7735,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_15 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":399
+              /* "pandas/_libs/tslibs/fields.pyx":403
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -7681,7 +7745,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_15 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_15, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":400
+              /* "pandas/_libs/tslibs/fields.pyx":404
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -7690,7 +7754,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L7_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":398
+              /* "pandas/_libs/tslibs/fields.pyx":402
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7699,7 +7763,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":402
+            /* "pandas/_libs/tslibs/fields.pyx":406
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -7709,7 +7773,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_16 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_16 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":403
+            /* "pandas/_libs/tslibs/fields.pyx":407
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.year             # <<<<<<<<<<<<<<
@@ -7723,7 +7787,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":396
+        /* "pandas/_libs/tslibs/fields.pyx":400
  * 
  *     if field == 'Y':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -7742,7 +7806,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":404
+    /* "pandas/_libs/tslibs/fields.pyx":408
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.year
  *         return out             # <<<<<<<<<<<<<<
@@ -7754,7 +7818,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":395
+    /* "pandas/_libs/tslibs/fields.pyx":399
  *     out = np.empty(count, dtype='i4')
  * 
  *     if field == 'Y':             # <<<<<<<<<<<<<<
@@ -7763,17 +7827,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":406
+  /* "pandas/_libs/tslibs/fields.pyx":410
  *         return out
  * 
  *     elif field == 'M':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_M, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_M, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 410, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":407
+    /* "pandas/_libs/tslibs/fields.pyx":411
  * 
  *     elif field == 'M':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -7788,7 +7852,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":408
+          /* "pandas/_libs/tslibs/fields.pyx":412
  *     elif field == 'M':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -7800,7 +7864,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":409
+            /* "pandas/_libs/tslibs/fields.pyx":413
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7811,7 +7875,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_18 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":410
+              /* "pandas/_libs/tslibs/fields.pyx":414
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -7821,7 +7885,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_18 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_18, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":411
+              /* "pandas/_libs/tslibs/fields.pyx":415
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -7830,7 +7894,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L13_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":409
+              /* "pandas/_libs/tslibs/fields.pyx":413
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7839,7 +7903,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":413
+            /* "pandas/_libs/tslibs/fields.pyx":417
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -7849,7 +7913,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_19 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_19 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":414
+            /* "pandas/_libs/tslibs/fields.pyx":418
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.month             # <<<<<<<<<<<<<<
@@ -7863,7 +7927,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":407
+        /* "pandas/_libs/tslibs/fields.pyx":411
  * 
  *     elif field == 'M':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -7882,7 +7946,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":415
+    /* "pandas/_libs/tslibs/fields.pyx":419
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.month
  *         return out             # <<<<<<<<<<<<<<
@@ -7894,7 +7958,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":406
+    /* "pandas/_libs/tslibs/fields.pyx":410
  *         return out
  * 
  *     elif field == 'M':             # <<<<<<<<<<<<<<
@@ -7903,17 +7967,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":417
+  /* "pandas/_libs/tslibs/fields.pyx":421
  *         return out
  * 
  *     elif field == 'D':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_D, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_D, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 421, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":418
+    /* "pandas/_libs/tslibs/fields.pyx":422
  * 
  *     elif field == 'D':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -7928,7 +7992,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":419
+          /* "pandas/_libs/tslibs/fields.pyx":423
  *     elif field == 'D':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -7940,7 +8004,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":420
+            /* "pandas/_libs/tslibs/fields.pyx":424
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7951,7 +8015,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_21 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":421
+              /* "pandas/_libs/tslibs/fields.pyx":425
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -7961,7 +8025,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_21 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_21, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":422
+              /* "pandas/_libs/tslibs/fields.pyx":426
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -7970,7 +8034,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L19_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":420
+              /* "pandas/_libs/tslibs/fields.pyx":424
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -7979,7 +8043,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":424
+            /* "pandas/_libs/tslibs/fields.pyx":428
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -7989,7 +8053,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_22 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_22 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":425
+            /* "pandas/_libs/tslibs/fields.pyx":429
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.day             # <<<<<<<<<<<<<<
@@ -8003,7 +8067,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":418
+        /* "pandas/_libs/tslibs/fields.pyx":422
  * 
  *     elif field == 'D':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8022,7 +8086,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":426
+    /* "pandas/_libs/tslibs/fields.pyx":430
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.day
  *         return out             # <<<<<<<<<<<<<<
@@ -8034,7 +8098,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":417
+    /* "pandas/_libs/tslibs/fields.pyx":421
  *         return out
  * 
  *     elif field == 'D':             # <<<<<<<<<<<<<<
@@ -8043,17 +8107,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":428
+  /* "pandas/_libs/tslibs/fields.pyx":432
  *         return out
  * 
  *     elif field == 'h':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_h, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 428, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_h, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 432, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":429
+    /* "pandas/_libs/tslibs/fields.pyx":433
  * 
  *     elif field == 'h':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8068,7 +8132,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":430
+          /* "pandas/_libs/tslibs/fields.pyx":434
  *     elif field == 'h':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8080,7 +8144,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":431
+            /* "pandas/_libs/tslibs/fields.pyx":435
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8091,7 +8155,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_23 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":432
+              /* "pandas/_libs/tslibs/fields.pyx":436
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8101,7 +8165,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_23 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":433
+              /* "pandas/_libs/tslibs/fields.pyx":437
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8110,7 +8174,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L25_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":431
+              /* "pandas/_libs/tslibs/fields.pyx":435
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8119,7 +8183,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":435
+            /* "pandas/_libs/tslibs/fields.pyx":439
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8129,7 +8193,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_24 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_24 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":436
+            /* "pandas/_libs/tslibs/fields.pyx":440
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.hour             # <<<<<<<<<<<<<<
@@ -8143,7 +8207,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":429
+        /* "pandas/_libs/tslibs/fields.pyx":433
  * 
  *     elif field == 'h':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8162,7 +8226,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":437
+    /* "pandas/_libs/tslibs/fields.pyx":441
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.hour
  *         return out             # <<<<<<<<<<<<<<
@@ -8174,7 +8238,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":428
+    /* "pandas/_libs/tslibs/fields.pyx":432
  *         return out
  * 
  *     elif field == 'h':             # <<<<<<<<<<<<<<
@@ -8183,17 +8247,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":439
+  /* "pandas/_libs/tslibs/fields.pyx":443
  *         return out
  * 
  *     elif field == 'm':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_m, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_m, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 443, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":440
+    /* "pandas/_libs/tslibs/fields.pyx":444
  * 
  *     elif field == 'm':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8208,7 +8272,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":441
+          /* "pandas/_libs/tslibs/fields.pyx":445
  *     elif field == 'm':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8220,7 +8284,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":442
+            /* "pandas/_libs/tslibs/fields.pyx":446
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8231,7 +8295,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_25 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":443
+              /* "pandas/_libs/tslibs/fields.pyx":447
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8241,7 +8305,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_25 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":444
+              /* "pandas/_libs/tslibs/fields.pyx":448
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8250,7 +8314,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L31_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":442
+              /* "pandas/_libs/tslibs/fields.pyx":446
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8259,7 +8323,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":446
+            /* "pandas/_libs/tslibs/fields.pyx":450
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8269,7 +8333,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_26 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_26 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":447
+            /* "pandas/_libs/tslibs/fields.pyx":451
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.min             # <<<<<<<<<<<<<<
@@ -8283,7 +8347,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":440
+        /* "pandas/_libs/tslibs/fields.pyx":444
  * 
  *     elif field == 'm':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8302,7 +8366,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":448
+    /* "pandas/_libs/tslibs/fields.pyx":452
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.min
  *         return out             # <<<<<<<<<<<<<<
@@ -8314,7 +8378,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":439
+    /* "pandas/_libs/tslibs/fields.pyx":443
  *         return out
  * 
  *     elif field == 'm':             # <<<<<<<<<<<<<<
@@ -8323,17 +8387,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":450
+  /* "pandas/_libs/tslibs/fields.pyx":454
  *         return out
  * 
  *     elif field == 's':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_s, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 450, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_s, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 454, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":451
+    /* "pandas/_libs/tslibs/fields.pyx":455
  * 
  *     elif field == 's':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8348,7 +8412,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":452
+          /* "pandas/_libs/tslibs/fields.pyx":456
  *     elif field == 's':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8360,7 +8424,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":453
+            /* "pandas/_libs/tslibs/fields.pyx":457
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8371,7 +8435,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_27 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":454
+              /* "pandas/_libs/tslibs/fields.pyx":458
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8381,7 +8445,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_27 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":455
+              /* "pandas/_libs/tslibs/fields.pyx":459
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8390,7 +8454,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L37_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":453
+              /* "pandas/_libs/tslibs/fields.pyx":457
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8399,7 +8463,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":457
+            /* "pandas/_libs/tslibs/fields.pyx":461
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8409,7 +8473,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_28 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_28 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":458
+            /* "pandas/_libs/tslibs/fields.pyx":462
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.sec             # <<<<<<<<<<<<<<
@@ -8423,7 +8487,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":451
+        /* "pandas/_libs/tslibs/fields.pyx":455
  * 
  *     elif field == 's':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8442,7 +8506,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":459
+    /* "pandas/_libs/tslibs/fields.pyx":463
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.sec
  *         return out             # <<<<<<<<<<<<<<
@@ -8454,7 +8518,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":450
+    /* "pandas/_libs/tslibs/fields.pyx":454
  *         return out
  * 
  *     elif field == 's':             # <<<<<<<<<<<<<<
@@ -8463,17 +8527,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":461
+  /* "pandas/_libs/tslibs/fields.pyx":465
  *         return out
  * 
  *     elif field == 'us':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_us, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 461, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_us, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 465, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":462
+    /* "pandas/_libs/tslibs/fields.pyx":466
  * 
  *     elif field == 'us':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8488,7 +8552,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":463
+          /* "pandas/_libs/tslibs/fields.pyx":467
  *     elif field == 'us':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8500,7 +8564,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":464
+            /* "pandas/_libs/tslibs/fields.pyx":468
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8511,7 +8575,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_29 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":465
+              /* "pandas/_libs/tslibs/fields.pyx":469
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8521,7 +8585,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_29 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":466
+              /* "pandas/_libs/tslibs/fields.pyx":470
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8530,7 +8594,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L43_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":464
+              /* "pandas/_libs/tslibs/fields.pyx":468
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8539,7 +8603,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":468
+            /* "pandas/_libs/tslibs/fields.pyx":472
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8549,7 +8613,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_30 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_30 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":469
+            /* "pandas/_libs/tslibs/fields.pyx":473
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.us             # <<<<<<<<<<<<<<
@@ -8563,7 +8627,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":462
+        /* "pandas/_libs/tslibs/fields.pyx":466
  * 
  *     elif field == 'us':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8582,7 +8646,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":470
+    /* "pandas/_libs/tslibs/fields.pyx":474
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.us
  *         return out             # <<<<<<<<<<<<<<
@@ -8594,7 +8658,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":461
+    /* "pandas/_libs/tslibs/fields.pyx":465
  *         return out
  * 
  *     elif field == 'us':             # <<<<<<<<<<<<<<
@@ -8603,17 +8667,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":472
+  /* "pandas/_libs/tslibs/fields.pyx":476
  *         return out
  * 
  *     elif field == 'ns':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_ns, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_ns, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 476, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":473
+    /* "pandas/_libs/tslibs/fields.pyx":477
  * 
  *     elif field == 'ns':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8628,7 +8692,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":474
+          /* "pandas/_libs/tslibs/fields.pyx":478
  *     elif field == 'ns':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8640,7 +8704,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":475
+            /* "pandas/_libs/tslibs/fields.pyx":479
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8651,7 +8715,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_31 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":476
+              /* "pandas/_libs/tslibs/fields.pyx":480
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8661,7 +8725,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_31 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":477
+              /* "pandas/_libs/tslibs/fields.pyx":481
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8670,7 +8734,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L49_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":475
+              /* "pandas/_libs/tslibs/fields.pyx":479
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8679,7 +8743,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":479
+            /* "pandas/_libs/tslibs/fields.pyx":483
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8689,7 +8753,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_32 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_32 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":480
+            /* "pandas/_libs/tslibs/fields.pyx":484
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.ps // 1000             # <<<<<<<<<<<<<<
@@ -8702,7 +8766,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":473
+        /* "pandas/_libs/tslibs/fields.pyx":477
  * 
  *     elif field == 'ns':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8721,7 +8785,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":481
+    /* "pandas/_libs/tslibs/fields.pyx":485
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.ps // 1000
  *         return out             # <<<<<<<<<<<<<<
@@ -8733,7 +8797,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":472
+    /* "pandas/_libs/tslibs/fields.pyx":476
  *         return out
  * 
  *     elif field == 'ns':             # <<<<<<<<<<<<<<
@@ -8742,17 +8806,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":482
+  /* "pandas/_libs/tslibs/fields.pyx":486
  *                 out[i] = dts.ps // 1000
  *         return out
  *     elif field == 'doy':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_doy, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 482, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_doy, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 486, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":483
+    /* "pandas/_libs/tslibs/fields.pyx":487
  *         return out
  *     elif field == 'doy':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8767,7 +8831,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":484
+          /* "pandas/_libs/tslibs/fields.pyx":488
  *     elif field == 'doy':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8779,7 +8843,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":485
+            /* "pandas/_libs/tslibs/fields.pyx":489
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8790,7 +8854,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_33 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":486
+              /* "pandas/_libs/tslibs/fields.pyx":490
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8800,7 +8864,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_33 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":487
+              /* "pandas/_libs/tslibs/fields.pyx":491
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8809,7 +8873,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L55_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":485
+              /* "pandas/_libs/tslibs/fields.pyx":489
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8818,7 +8882,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":489
+            /* "pandas/_libs/tslibs/fields.pyx":493
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8828,7 +8892,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_34 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_34 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":490
+            /* "pandas/_libs/tslibs/fields.pyx":494
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = get_day_of_year(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -8841,7 +8905,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":483
+        /* "pandas/_libs/tslibs/fields.pyx":487
  *         return out
  *     elif field == 'doy':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8860,7 +8924,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":491
+    /* "pandas/_libs/tslibs/fields.pyx":495
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = get_day_of_year(dts.year, dts.month, dts.day)
  *         return out             # <<<<<<<<<<<<<<
@@ -8872,7 +8936,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":482
+    /* "pandas/_libs/tslibs/fields.pyx":486
  *                 out[i] = dts.ps // 1000
  *         return out
  *     elif field == 'doy':             # <<<<<<<<<<<<<<
@@ -8881,17 +8945,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":493
+  /* "pandas/_libs/tslibs/fields.pyx":497
  *         return out
  * 
  *     elif field == 'dow':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_dow, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_dow, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 497, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":494
+    /* "pandas/_libs/tslibs/fields.pyx":498
  * 
  *     elif field == 'dow':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8906,7 +8970,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":495
+          /* "pandas/_libs/tslibs/fields.pyx":499
  *     elif field == 'dow':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -8918,7 +8982,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":496
+            /* "pandas/_libs/tslibs/fields.pyx":500
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8929,7 +8993,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_35 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":497
+              /* "pandas/_libs/tslibs/fields.pyx":501
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -8939,7 +9003,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_35 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_35, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":498
+              /* "pandas/_libs/tslibs/fields.pyx":502
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -8948,7 +9012,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L61_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":496
+              /* "pandas/_libs/tslibs/fields.pyx":500
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -8957,7 +9021,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":500
+            /* "pandas/_libs/tslibs/fields.pyx":504
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -8967,7 +9031,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_36 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_36 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":501
+            /* "pandas/_libs/tslibs/fields.pyx":505
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dayofweek(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -8980,7 +9044,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":494
+        /* "pandas/_libs/tslibs/fields.pyx":498
  * 
  *     elif field == 'dow':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -8999,7 +9063,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":502
+    /* "pandas/_libs/tslibs/fields.pyx":506
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dayofweek(dts.year, dts.month, dts.day)
  *         return out             # <<<<<<<<<<<<<<
@@ -9011,7 +9075,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":493
+    /* "pandas/_libs/tslibs/fields.pyx":497
  *         return out
  * 
  *     elif field == 'dow':             # <<<<<<<<<<<<<<
@@ -9020,17 +9084,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":504
+  /* "pandas/_libs/tslibs/fields.pyx":508
  *         return out
  * 
  *     elif field == 'woy':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_woy, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 504, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_woy, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 508, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":505
+    /* "pandas/_libs/tslibs/fields.pyx":509
  * 
  *     elif field == 'woy':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9045,7 +9109,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":506
+          /* "pandas/_libs/tslibs/fields.pyx":510
  *     elif field == 'woy':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -9057,7 +9121,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":507
+            /* "pandas/_libs/tslibs/fields.pyx":511
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9068,7 +9132,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_37 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":508
+              /* "pandas/_libs/tslibs/fields.pyx":512
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -9078,7 +9142,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_37 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":509
+              /* "pandas/_libs/tslibs/fields.pyx":513
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -9087,7 +9151,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L67_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":507
+              /* "pandas/_libs/tslibs/fields.pyx":511
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9096,7 +9160,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":511
+            /* "pandas/_libs/tslibs/fields.pyx":515
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -9106,7 +9170,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_38 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_38 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":512
+            /* "pandas/_libs/tslibs/fields.pyx":516
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = get_week_of_year(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
@@ -9119,7 +9183,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":505
+        /* "pandas/_libs/tslibs/fields.pyx":509
  * 
  *     elif field == 'woy':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9138,7 +9202,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":513
+    /* "pandas/_libs/tslibs/fields.pyx":517
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = get_week_of_year(dts.year, dts.month, dts.day)
  *         return out             # <<<<<<<<<<<<<<
@@ -9150,7 +9214,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":504
+    /* "pandas/_libs/tslibs/fields.pyx":508
  *         return out
  * 
  *     elif field == 'woy':             # <<<<<<<<<<<<<<
@@ -9159,17 +9223,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":515
+  /* "pandas/_libs/tslibs/fields.pyx":519
  *         return out
  * 
  *     elif field == 'q':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_q, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 515, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_q, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 519, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":516
+    /* "pandas/_libs/tslibs/fields.pyx":520
  * 
  *     elif field == 'q':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9184,7 +9248,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":517
+          /* "pandas/_libs/tslibs/fields.pyx":521
  *     elif field == 'q':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -9196,7 +9260,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":518
+            /* "pandas/_libs/tslibs/fields.pyx":522
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9207,7 +9271,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_39 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":519
+              /* "pandas/_libs/tslibs/fields.pyx":523
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -9217,7 +9281,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_39 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_39, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":520
+              /* "pandas/_libs/tslibs/fields.pyx":524
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -9226,7 +9290,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L73_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":518
+              /* "pandas/_libs/tslibs/fields.pyx":522
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9235,7 +9299,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":522
+            /* "pandas/_libs/tslibs/fields.pyx":526
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -9245,7 +9309,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_40 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_40 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":523
+            /* "pandas/_libs/tslibs/fields.pyx":527
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.month             # <<<<<<<<<<<<<<
@@ -9256,7 +9320,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_40 = __pyx_v_i;
             *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_out.diminfo[0].strides) = __pyx_t_20;
 
-            /* "pandas/_libs/tslibs/fields.pyx":524
+            /* "pandas/_libs/tslibs/fields.pyx":528
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = dts.month
  *                 out[i] = ((out[i] - 1) // 3) + 1             # <<<<<<<<<<<<<<
@@ -9270,7 +9334,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":516
+        /* "pandas/_libs/tslibs/fields.pyx":520
  * 
  *     elif field == 'q':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9289,7 +9353,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":525
+    /* "pandas/_libs/tslibs/fields.pyx":529
  *                 out[i] = dts.month
  *                 out[i] = ((out[i] - 1) // 3) + 1
  *         return out             # <<<<<<<<<<<<<<
@@ -9301,7 +9365,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":515
+    /* "pandas/_libs/tslibs/fields.pyx":519
  *         return out
  * 
  *     elif field == 'q':             # <<<<<<<<<<<<<<
@@ -9310,17 +9374,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":527
+  /* "pandas/_libs/tslibs/fields.pyx":531
  *         return out
  * 
  *     elif field == 'dim':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_dim, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 527, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_dim, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 531, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":528
+    /* "pandas/_libs/tslibs/fields.pyx":532
  * 
  *     elif field == 'dim':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9335,7 +9399,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":529
+          /* "pandas/_libs/tslibs/fields.pyx":533
  *     elif field == 'dim':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -9347,7 +9411,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":530
+            /* "pandas/_libs/tslibs/fields.pyx":534
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9358,7 +9422,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_41 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":531
+              /* "pandas/_libs/tslibs/fields.pyx":535
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -9368,7 +9432,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
               __pyx_t_41 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_41, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":532
+              /* "pandas/_libs/tslibs/fields.pyx":536
  *                 if dtindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -9377,7 +9441,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
               goto __pyx_L79_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":530
+              /* "pandas/_libs/tslibs/fields.pyx":534
  *         with nogil:
  *             for i in range(count):
  *                 if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9386,7 +9450,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":534
+            /* "pandas/_libs/tslibs/fields.pyx":538
  *                     continue
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
@@ -9396,7 +9460,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
             __pyx_t_43 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_43 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
 
-            /* "pandas/_libs/tslibs/fields.pyx":535
+            /* "pandas/_libs/tslibs/fields.pyx":539
  * 
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = get_days_in_month(dts.year, dts.month)             # <<<<<<<<<<<<<<
@@ -9409,7 +9473,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":528
+        /* "pandas/_libs/tslibs/fields.pyx":532
  * 
  *     elif field == 'dim':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9428,7 +9492,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":536
+    /* "pandas/_libs/tslibs/fields.pyx":540
  *                 dt64_to_dtstruct(dtindex[i], &dts)
  *                 out[i] = get_days_in_month(dts.year, dts.month)
  *         return out             # <<<<<<<<<<<<<<
@@ -9440,7 +9504,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":527
+    /* "pandas/_libs/tslibs/fields.pyx":531
  *         return out
  * 
  *     elif field == 'dim':             # <<<<<<<<<<<<<<
@@ -9449,27 +9513,27 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":537
+  /* "pandas/_libs/tslibs/fields.pyx":541
  *                 out[i] = get_days_in_month(dts.year, dts.month)
  *         return out
  *     elif field == 'is_leap_year':             # <<<<<<<<<<<<<<
  *         return isleapyear_arr(get_date_field(dtindex, 'Y'))
  * 
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_leap_year, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 537, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_is_leap_year, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 541, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":538
+    /* "pandas/_libs/tslibs/fields.pyx":542
  *         return out
  *     elif field == 'is_leap_year':
  *         return isleapyear_arr(get_date_field(dtindex, 'Y'))             # <<<<<<<<<<<<<<
  * 
- *     raise ValueError("Field %s not supported" % field)
+ *     raise ValueError(f"Field {field} not supported")
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_get_date_field); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 538, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_get_date_field); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 542, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_dtindex, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_5numpy_int64_t__const__, (int (*)(char *, PyObject *)) NULL, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 538, __pyx_L1_error)
+    __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_dtindex, 1, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_5numpy_int64_t__const__, (int (*)(char *, PyObject *)) NULL, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 542, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_3 = NULL;
     __pyx_t_7 = 0;
@@ -9486,7 +9550,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_t_4, __pyx_n_u_Y};
-      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 538, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 542, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -9495,14 +9559,14 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_t_4, __pyx_n_u_Y};
-      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 538, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 542, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else
     #endif
     {
-      __pyx_t_44 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 538, __pyx_L1_error)
+      __pyx_t_44 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 542, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_44);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_44, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -9513,20 +9577,20 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
       __Pyx_GIVEREF(__pyx_n_u_Y);
       PyTuple_SET_ITEM(__pyx_t_44, 1+__pyx_t_7, __pyx_n_u_Y);
       __pyx_t_4 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_44, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 538, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_44, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 542, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_44); __pyx_t_44 = 0;
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 538, __pyx_L1_error)
-    __pyx_t_2 = __pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(((PyArrayObject *)__pyx_t_5), 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 538, __pyx_L1_error)
+    if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 542, __pyx_L1_error)
+    __pyx_t_2 = __pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(((PyArrayObject *)__pyx_t_5), 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 542, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_r = __pyx_t_2;
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":537
+    /* "pandas/_libs/tslibs/fields.pyx":541
  *                 out[i] = get_days_in_month(dts.year, dts.month)
  *         return out
  *     elif field == 'is_leap_year':             # <<<<<<<<<<<<<<
@@ -9535,23 +9599,43 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":540
+  /* "pandas/_libs/tslibs/fields.pyx":544
  *         return isleapyear_arr(get_date_field(dtindex, 'Y'))
  * 
- *     raise ValueError("Field %s not supported" % field)             # <<<<<<<<<<<<<<
+ *     raise ValueError(f"Field {field} not supported")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_PyUnicode_FormatSafe(__pyx_kp_u_Field_s_not_supported, __pyx_v_field); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 540, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 544, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 540, __pyx_L1_error)
+  __pyx_t_12 = 0;
+  __pyx_t_45 = 127;
+  __Pyx_INCREF(__pyx_kp_u_Field);
+  __pyx_t_12 += 6;
+  __Pyx_GIVEREF(__pyx_kp_u_Field);
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_u_Field);
+  __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_v_field, __pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 544, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_45 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) > __pyx_t_45) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) : __pyx_t_45;
+  __pyx_t_12 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5);
+  __Pyx_GIVEREF(__pyx_t_5);
+  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
+  __pyx_t_5 = 0;
+  __Pyx_INCREF(__pyx_kp_u_not_supported);
+  __pyx_t_12 += 14;
+  __Pyx_GIVEREF(__pyx_kp_u_not_supported);
+  PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_kp_u_not_supported);
+  __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_2, 3, __pyx_t_12, __pyx_t_45); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 544, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_Raise(__pyx_t_5, 0, 0, 0);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 544, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __PYX_ERR(0, 540, __pyx_L1_error)
+  __Pyx_Raise(__pyx_t_2, 0, 0, 0);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __PYX_ERR(0, 544, __pyx_L1_error)
 
-  /* "pandas/_libs/tslibs/fields.pyx":383
+  /* "pandas/_libs/tslibs/fields.pyx":387
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_field(const int64_t[:] dtindex, object field):             # <<<<<<<<<<<<<<
@@ -9585,7 +9669,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_8get_date_field(CYTHON_
   return __pyx_r;
 }
 
-/* "pandas/_libs/tslibs/fields.pyx":545
+/* "pandas/_libs/tslibs/fields.pyx":549
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_timedelta_field(const int64_t[:] tdindex, object field):             # <<<<<<<<<<<<<<
@@ -9629,11 +9713,11 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_11get_timedelta_field(P
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_field)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_timedelta_field", 1, 2, 2, 1); __PYX_ERR(0, 545, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_timedelta_field", 1, 2, 2, 1); __PYX_ERR(0, 549, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_timedelta_field") < 0)) __PYX_ERR(0, 545, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_timedelta_field") < 0)) __PYX_ERR(0, 549, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9641,12 +9725,12 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_11get_timedelta_field(P
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_tdindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_tdindex.memview)) __PYX_ERR(0, 545, __pyx_L3_error)
+    __pyx_v_tdindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(values[0], 0); if (unlikely(!__pyx_v_tdindex.memview)) __PYX_ERR(0, 549, __pyx_L3_error)
     __pyx_v_field = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_timedelta_field", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 545, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_timedelta_field", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 549, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pandas._libs.tslibs.fields.get_timedelta_field", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -9702,6 +9786,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
   Py_ssize_t __pyx_t_32;
   Py_ssize_t __pyx_t_33;
   Py_ssize_t __pyx_t_34;
+  Py_UCS4 __pyx_t_35;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -9711,7 +9796,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
   __pyx_pybuffernd_out.data = NULL;
   __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
 
-  /* "pandas/_libs/tslibs/fields.pyx":551
+  /* "pandas/_libs/tslibs/fields.pyx":555
  *     """
  *     cdef:
  *         Py_ssize_t i, count = len(tdindex)             # <<<<<<<<<<<<<<
@@ -9721,34 +9806,34 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_tdindex); 
   __pyx_v_count = __pyx_t_1;
 
-  /* "pandas/_libs/tslibs/fields.pyx":555
+  /* "pandas/_libs/tslibs/fields.pyx":559
  *         pandas_timedeltastruct tds
  * 
  *     out = np.empty(count, dtype='i4')             # <<<<<<<<<<<<<<
  * 
  *     if field == 'days':
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 555, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_n_u_i4) < 0) __PYX_ERR(0, 555, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 555, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_n_u_i4) < 0) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 555, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 559, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -9765,23 +9850,23 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 555, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 559, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_out = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":557
+  /* "pandas/_libs/tslibs/fields.pyx":561
  *     out = np.empty(count, dtype='i4')
  * 
  *     if field == 'days':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_days, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 557, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_days, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 561, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":558
+    /* "pandas/_libs/tslibs/fields.pyx":562
  * 
  *     if field == 'days':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9796,7 +9881,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":559
+          /* "pandas/_libs/tslibs/fields.pyx":563
  *     if field == 'days':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -9808,7 +9893,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":560
+            /* "pandas/_libs/tslibs/fields.pyx":564
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9819,7 +9904,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_15 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":561
+              /* "pandas/_libs/tslibs/fields.pyx":565
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -9829,7 +9914,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_15 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_15, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":562
+              /* "pandas/_libs/tslibs/fields.pyx":566
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -9838,7 +9923,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L7_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":560
+              /* "pandas/_libs/tslibs/fields.pyx":564
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9847,7 +9932,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":564
+            /* "pandas/_libs/tslibs/fields.pyx":568
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -9857,7 +9942,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_16 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_16 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":565
+            /* "pandas/_libs/tslibs/fields.pyx":569
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.days             # <<<<<<<<<<<<<<
@@ -9871,7 +9956,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":558
+        /* "pandas/_libs/tslibs/fields.pyx":562
  * 
  *     if field == 'days':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9890,7 +9975,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":566
+    /* "pandas/_libs/tslibs/fields.pyx":570
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.days
  *         return out             # <<<<<<<<<<<<<<
@@ -9902,7 +9987,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":557
+    /* "pandas/_libs/tslibs/fields.pyx":561
  *     out = np.empty(count, dtype='i4')
  * 
  *     if field == 'days':             # <<<<<<<<<<<<<<
@@ -9911,17 +9996,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":568
+  /* "pandas/_libs/tslibs/fields.pyx":572
  *         return out
  * 
  *     elif field == 'h':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_h, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 568, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_h, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 572, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":569
+    /* "pandas/_libs/tslibs/fields.pyx":573
  * 
  *     elif field == 'h':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -9936,7 +10021,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":570
+          /* "pandas/_libs/tslibs/fields.pyx":574
  *     elif field == 'h':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -9948,7 +10033,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":571
+            /* "pandas/_libs/tslibs/fields.pyx":575
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9959,7 +10044,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_18 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":572
+              /* "pandas/_libs/tslibs/fields.pyx":576
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -9969,7 +10054,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_18 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_18, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":573
+              /* "pandas/_libs/tslibs/fields.pyx":577
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -9978,7 +10063,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L13_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":571
+              /* "pandas/_libs/tslibs/fields.pyx":575
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -9987,7 +10072,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":575
+            /* "pandas/_libs/tslibs/fields.pyx":579
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -9997,7 +10082,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_19 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_19 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":576
+            /* "pandas/_libs/tslibs/fields.pyx":580
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.hrs             # <<<<<<<<<<<<<<
@@ -10011,7 +10096,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":569
+        /* "pandas/_libs/tslibs/fields.pyx":573
  * 
  *     elif field == 'h':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10030,7 +10115,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":577
+    /* "pandas/_libs/tslibs/fields.pyx":581
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.hrs
  *         return out             # <<<<<<<<<<<<<<
@@ -10042,7 +10127,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":568
+    /* "pandas/_libs/tslibs/fields.pyx":572
  *         return out
  * 
  *     elif field == 'h':             # <<<<<<<<<<<<<<
@@ -10051,17 +10136,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":579
+  /* "pandas/_libs/tslibs/fields.pyx":583
  *         return out
  * 
  *     elif field == 's':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_s, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 579, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_s, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 583, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":580
+    /* "pandas/_libs/tslibs/fields.pyx":584
  * 
  *     elif field == 's':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10076,7 +10161,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":581
+          /* "pandas/_libs/tslibs/fields.pyx":585
  *     elif field == 's':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10088,7 +10173,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":582
+            /* "pandas/_libs/tslibs/fields.pyx":586
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10099,7 +10184,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_21 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":583
+              /* "pandas/_libs/tslibs/fields.pyx":587
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10109,7 +10194,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_21 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_21, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":584
+              /* "pandas/_libs/tslibs/fields.pyx":588
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10118,7 +10203,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L19_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":582
+              /* "pandas/_libs/tslibs/fields.pyx":586
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10127,7 +10212,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":586
+            /* "pandas/_libs/tslibs/fields.pyx":590
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10137,7 +10222,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_22 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_22 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":587
+            /* "pandas/_libs/tslibs/fields.pyx":591
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.sec             # <<<<<<<<<<<<<<
@@ -10151,7 +10236,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":580
+        /* "pandas/_libs/tslibs/fields.pyx":584
  * 
  *     elif field == 's':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10170,7 +10255,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":588
+    /* "pandas/_libs/tslibs/fields.pyx":592
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.sec
  *         return out             # <<<<<<<<<<<<<<
@@ -10182,7 +10267,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":579
+    /* "pandas/_libs/tslibs/fields.pyx":583
  *         return out
  * 
  *     elif field == 's':             # <<<<<<<<<<<<<<
@@ -10191,17 +10276,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":590
+  /* "pandas/_libs/tslibs/fields.pyx":594
  *         return out
  * 
  *     elif field == 'seconds':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_seconds, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 590, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_seconds, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 594, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":591
+    /* "pandas/_libs/tslibs/fields.pyx":595
  * 
  *     elif field == 'seconds':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10216,7 +10301,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":592
+          /* "pandas/_libs/tslibs/fields.pyx":596
  *     elif field == 'seconds':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10228,7 +10313,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":593
+            /* "pandas/_libs/tslibs/fields.pyx":597
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10239,7 +10324,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_23 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":594
+              /* "pandas/_libs/tslibs/fields.pyx":598
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10249,7 +10334,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_23 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":595
+              /* "pandas/_libs/tslibs/fields.pyx":599
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10258,7 +10343,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L25_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":593
+              /* "pandas/_libs/tslibs/fields.pyx":597
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10267,7 +10352,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":597
+            /* "pandas/_libs/tslibs/fields.pyx":601
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10277,7 +10362,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_24 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_24 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":598
+            /* "pandas/_libs/tslibs/fields.pyx":602
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.seconds             # <<<<<<<<<<<<<<
@@ -10291,7 +10376,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":591
+        /* "pandas/_libs/tslibs/fields.pyx":595
  * 
  *     elif field == 'seconds':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10310,7 +10395,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":599
+    /* "pandas/_libs/tslibs/fields.pyx":603
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.seconds
  *         return out             # <<<<<<<<<<<<<<
@@ -10322,7 +10407,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":590
+    /* "pandas/_libs/tslibs/fields.pyx":594
  *         return out
  * 
  *     elif field == 'seconds':             # <<<<<<<<<<<<<<
@@ -10331,17 +10416,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":601
+  /* "pandas/_libs/tslibs/fields.pyx":605
  *         return out
  * 
  *     elif field == 'ms':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_ms, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 601, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_ms, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 605, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":602
+    /* "pandas/_libs/tslibs/fields.pyx":606
  * 
  *     elif field == 'ms':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10356,7 +10441,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":603
+          /* "pandas/_libs/tslibs/fields.pyx":607
  *     elif field == 'ms':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10368,7 +10453,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":604
+            /* "pandas/_libs/tslibs/fields.pyx":608
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10379,7 +10464,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_25 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":605
+              /* "pandas/_libs/tslibs/fields.pyx":609
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10389,7 +10474,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_25 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":606
+              /* "pandas/_libs/tslibs/fields.pyx":610
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10398,7 +10483,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L31_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":604
+              /* "pandas/_libs/tslibs/fields.pyx":608
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10407,7 +10492,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":608
+            /* "pandas/_libs/tslibs/fields.pyx":612
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10417,7 +10502,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_26 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_26 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":609
+            /* "pandas/_libs/tslibs/fields.pyx":613
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.ms             # <<<<<<<<<<<<<<
@@ -10431,7 +10516,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":602
+        /* "pandas/_libs/tslibs/fields.pyx":606
  * 
  *     elif field == 'ms':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10450,7 +10535,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":610
+    /* "pandas/_libs/tslibs/fields.pyx":614
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.ms
  *         return out             # <<<<<<<<<<<<<<
@@ -10462,7 +10547,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":601
+    /* "pandas/_libs/tslibs/fields.pyx":605
  *         return out
  * 
  *     elif field == 'ms':             # <<<<<<<<<<<<<<
@@ -10471,17 +10556,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":612
+  /* "pandas/_libs/tslibs/fields.pyx":616
  *         return out
  * 
  *     elif field == 'microseconds':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_microseconds, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 612, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_microseconds, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 616, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":613
+    /* "pandas/_libs/tslibs/fields.pyx":617
  * 
  *     elif field == 'microseconds':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10496,7 +10581,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":614
+          /* "pandas/_libs/tslibs/fields.pyx":618
  *     elif field == 'microseconds':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10508,7 +10593,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":615
+            /* "pandas/_libs/tslibs/fields.pyx":619
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10519,7 +10604,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_27 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":616
+              /* "pandas/_libs/tslibs/fields.pyx":620
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10529,7 +10614,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_27 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":617
+              /* "pandas/_libs/tslibs/fields.pyx":621
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10538,7 +10623,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L37_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":615
+              /* "pandas/_libs/tslibs/fields.pyx":619
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10547,7 +10632,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":619
+            /* "pandas/_libs/tslibs/fields.pyx":623
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10557,7 +10642,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_28 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_28 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":620
+            /* "pandas/_libs/tslibs/fields.pyx":624
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.microseconds             # <<<<<<<<<<<<<<
@@ -10571,7 +10656,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":613
+        /* "pandas/_libs/tslibs/fields.pyx":617
  * 
  *     elif field == 'microseconds':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10590,7 +10675,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":621
+    /* "pandas/_libs/tslibs/fields.pyx":625
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.microseconds
  *         return out             # <<<<<<<<<<<<<<
@@ -10602,7 +10687,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":612
+    /* "pandas/_libs/tslibs/fields.pyx":616
  *         return out
  * 
  *     elif field == 'microseconds':             # <<<<<<<<<<<<<<
@@ -10611,17 +10696,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":623
+  /* "pandas/_libs/tslibs/fields.pyx":627
  *         return out
  * 
  *     elif field == 'us':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_us, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 623, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_us, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 627, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":624
+    /* "pandas/_libs/tslibs/fields.pyx":628
  * 
  *     elif field == 'us':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10636,7 +10721,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":625
+          /* "pandas/_libs/tslibs/fields.pyx":629
  *     elif field == 'us':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10648,7 +10733,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":626
+            /* "pandas/_libs/tslibs/fields.pyx":630
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10659,7 +10744,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_29 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":627
+              /* "pandas/_libs/tslibs/fields.pyx":631
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10669,7 +10754,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_29 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":628
+              /* "pandas/_libs/tslibs/fields.pyx":632
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10678,7 +10763,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L43_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":626
+              /* "pandas/_libs/tslibs/fields.pyx":630
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10687,7 +10772,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":630
+            /* "pandas/_libs/tslibs/fields.pyx":634
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10697,7 +10782,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_30 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_30 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":631
+            /* "pandas/_libs/tslibs/fields.pyx":635
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.us             # <<<<<<<<<<<<<<
@@ -10711,7 +10796,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":624
+        /* "pandas/_libs/tslibs/fields.pyx":628
  * 
  *     elif field == 'us':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10730,7 +10815,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":632
+    /* "pandas/_libs/tslibs/fields.pyx":636
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.us
  *         return out             # <<<<<<<<<<<<<<
@@ -10742,7 +10827,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":623
+    /* "pandas/_libs/tslibs/fields.pyx":627
  *         return out
  * 
  *     elif field == 'us':             # <<<<<<<<<<<<<<
@@ -10751,17 +10836,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":634
+  /* "pandas/_libs/tslibs/fields.pyx":638
  *         return out
  * 
  *     elif field == 'ns':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_ns, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 634, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_ns, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 638, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":635
+    /* "pandas/_libs/tslibs/fields.pyx":639
  * 
  *     elif field == 'ns':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10776,7 +10861,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":636
+          /* "pandas/_libs/tslibs/fields.pyx":640
  *     elif field == 'ns':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10788,7 +10873,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":637
+            /* "pandas/_libs/tslibs/fields.pyx":641
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10799,7 +10884,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_31 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":638
+              /* "pandas/_libs/tslibs/fields.pyx":642
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10809,7 +10894,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_31 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":639
+              /* "pandas/_libs/tslibs/fields.pyx":643
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10818,7 +10903,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L49_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":637
+              /* "pandas/_libs/tslibs/fields.pyx":641
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10827,7 +10912,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":641
+            /* "pandas/_libs/tslibs/fields.pyx":645
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10837,7 +10922,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_32 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_32 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":642
+            /* "pandas/_libs/tslibs/fields.pyx":646
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.ns             # <<<<<<<<<<<<<<
@@ -10851,7 +10936,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":635
+        /* "pandas/_libs/tslibs/fields.pyx":639
  * 
  *     elif field == 'ns':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10870,7 +10955,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":643
+    /* "pandas/_libs/tslibs/fields.pyx":647
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.ns
  *         return out             # <<<<<<<<<<<<<<
@@ -10882,7 +10967,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":634
+    /* "pandas/_libs/tslibs/fields.pyx":638
  *         return out
  * 
  *     elif field == 'ns':             # <<<<<<<<<<<<<<
@@ -10891,17 +10976,17 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":645
+  /* "pandas/_libs/tslibs/fields.pyx":649
  *         return out
  * 
  *     elif field == 'nanoseconds':             # <<<<<<<<<<<<<<
  *         with nogil:
  *             for i in range(count):
  */
-  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_nanoseconds, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 645, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_field, __pyx_n_u_nanoseconds, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 649, __pyx_L1_error)
   if (__pyx_t_11) {
 
-    /* "pandas/_libs/tslibs/fields.pyx":646
+    /* "pandas/_libs/tslibs/fields.pyx":650
  * 
  *     elif field == 'nanoseconds':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -10916,7 +11001,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         #endif
         /*try:*/ {
 
-          /* "pandas/_libs/tslibs/fields.pyx":647
+          /* "pandas/_libs/tslibs/fields.pyx":651
  *     elif field == 'nanoseconds':
  *         with nogil:
  *             for i in range(count):             # <<<<<<<<<<<<<<
@@ -10928,7 +11013,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
             __pyx_v_i = __pyx_t_14;
 
-            /* "pandas/_libs/tslibs/fields.pyx":648
+            /* "pandas/_libs/tslibs/fields.pyx":652
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10939,7 +11024,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_11 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_33 * __pyx_v_tdindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
             if (__pyx_t_11) {
 
-              /* "pandas/_libs/tslibs/fields.pyx":649
+              /* "pandas/_libs/tslibs/fields.pyx":653
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1             # <<<<<<<<<<<<<<
@@ -10949,7 +11034,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
               __pyx_t_33 = __pyx_v_i;
               *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int32_t *, __pyx_pybuffernd_out.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_out.diminfo[0].strides) = -1;
 
-              /* "pandas/_libs/tslibs/fields.pyx":650
+              /* "pandas/_libs/tslibs/fields.pyx":654
  *                 if tdindex[i] == NPY_NAT:
  *                     out[i] = -1
  *                     continue             # <<<<<<<<<<<<<<
@@ -10958,7 +11043,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
               goto __pyx_L55_continue;
 
-              /* "pandas/_libs/tslibs/fields.pyx":648
+              /* "pandas/_libs/tslibs/fields.pyx":652
  *         with nogil:
  *             for i in range(count):
  *                 if tdindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
@@ -10967,7 +11052,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
             }
 
-            /* "pandas/_libs/tslibs/fields.pyx":652
+            /* "pandas/_libs/tslibs/fields.pyx":656
  *                     continue
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)             # <<<<<<<<<<<<<<
@@ -10977,7 +11062,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
             __pyx_t_34 = __pyx_v_i;
             __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_td64_to_tdstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_tdindex.data + __pyx_t_34 * __pyx_v_tdindex.strides[0]) ))), (&__pyx_v_tds));
 
-            /* "pandas/_libs/tslibs/fields.pyx":653
+            /* "pandas/_libs/tslibs/fields.pyx":657
  * 
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.nanoseconds             # <<<<<<<<<<<<<<
@@ -10991,7 +11076,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
           }
         }
 
-        /* "pandas/_libs/tslibs/fields.pyx":646
+        /* "pandas/_libs/tslibs/fields.pyx":650
  * 
  *     elif field == 'nanoseconds':
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -11010,19 +11095,19 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
         }
     }
 
-    /* "pandas/_libs/tslibs/fields.pyx":654
+    /* "pandas/_libs/tslibs/fields.pyx":658
  *                 td64_to_tdstruct(tdindex[i], &tds)
  *                 out[i] = tds.nanoseconds
  *         return out             # <<<<<<<<<<<<<<
  * 
- *     raise ValueError("Field %s not supported" % field)
+ *     raise ValueError(f"Field {field} not supported")
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(((PyObject *)__pyx_v_out));
     __pyx_r = ((PyObject *)__pyx_v_out);
     goto __pyx_L0;
 
-    /* "pandas/_libs/tslibs/fields.pyx":645
+    /* "pandas/_libs/tslibs/fields.pyx":649
  *         return out
  * 
  *     elif field == 'nanoseconds':             # <<<<<<<<<<<<<<
@@ -11031,23 +11116,43 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
  */
   }
 
-  /* "pandas/_libs/tslibs/fields.pyx":656
+  /* "pandas/_libs/tslibs/fields.pyx":660
  *         return out
  * 
- *     raise ValueError("Field %s not supported" % field)             # <<<<<<<<<<<<<<
+ *     raise ValueError(f"Field {field} not supported")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_5 = __Pyx_PyUnicode_FormatSafe(__pyx_kp_u_Field_s_not_supported, __pyx_v_field); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 656, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 656, __pyx_L1_error)
+  __pyx_t_12 = 0;
+  __pyx_t_35 = 127;
+  __Pyx_INCREF(__pyx_kp_u_Field);
+  __pyx_t_12 += 6;
+  __Pyx_GIVEREF(__pyx_kp_u_Field);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_kp_u_Field);
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_v_field, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 660, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_35 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_35) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_35;
+  __pyx_t_12 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2);
+  __pyx_t_2 = 0;
+  __Pyx_INCREF(__pyx_kp_u_not_supported);
+  __pyx_t_12 += 14;
+  __Pyx_GIVEREF(__pyx_kp_u_not_supported);
+  PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_kp_u_not_supported);
+  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, __pyx_t_12, __pyx_t_35); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __Pyx_Raise(__pyx_t_2, 0, 0, 0);
+  __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 660, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __PYX_ERR(0, 656, __pyx_L1_error)
+  __Pyx_Raise(__pyx_t_5, 0, 0, 0);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __PYX_ERR(0, 660, __pyx_L1_error)
 
-  /* "pandas/_libs/tslibs/fields.pyx":545
+  /* "pandas/_libs/tslibs/fields.pyx":549
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_timedelta_field(const int64_t[:] tdindex, object field):             # <<<<<<<<<<<<<<
@@ -11080,7 +11185,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_10get_timedelta_field(C
   return __pyx_r;
 }
 
-/* "pandas/_libs/tslibs/fields.pyx":659
+/* "pandas/_libs/tslibs/fields.pyx":663
  * 
  * 
  * cpdef isleapyear_arr(ndarray years):             # <<<<<<<<<<<<<<
@@ -11119,35 +11224,35 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   __pyx_pybuffernd_out.data = NULL;
   __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
 
-  /* "pandas/_libs/tslibs/fields.pyx":664
+  /* "pandas/_libs/tslibs/fields.pyx":668
  *         ndarray[int8_t] out
  * 
  *     out = np.zeros(len(years), dtype='int8')             # <<<<<<<<<<<<<<
  *     out[np.logical_or(years % 400 == 0,
  *                       np.logical_and(years % 4 == 0,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = PyObject_Length(((PyObject *)__pyx_v_years)); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 664, __pyx_L1_error)
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __pyx_t_3 = PyObject_Length(((PyObject *)__pyx_v_years)); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 668, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_n_u_int8) < 0) __PYX_ERR(0, 664, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 664, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_n_u_int8) < 0) __PYX_ERR(0, 668, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 664, __pyx_L1_error)
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 668, __pyx_L1_error)
   __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -11164,57 +11269,58 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
       __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 664, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 668, __pyx_L1_error)
   }
   __pyx_t_6 = 0;
   __pyx_v_out = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":665
+  /* "pandas/_libs/tslibs/fields.pyx":669
  * 
  *     out = np.zeros(len(years), dtype='int8')
  *     out[np.logical_or(years % 400 == 0,             # <<<<<<<<<<<<<<
  *                       np.logical_and(years % 4 == 0,
  *                                      years % 100 > 0))] = 1
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 665, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 669, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_logical_or); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 665, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_logical_or); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 669, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Remainder(((PyObject *)__pyx_v_years), __pyx_int_400); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 665, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Remainder(((PyObject *)__pyx_v_years), __pyx_int_400); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 669, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 665, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 669, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":666
+  /* "pandas/_libs/tslibs/fields.pyx":670
  *     out = np.zeros(len(years), dtype='int8')
  *     out[np.logical_or(years % 400 == 0,
  *                       np.logical_and(years % 4 == 0,             # <<<<<<<<<<<<<<
  *                                      years % 100 > 0))] = 1
  *     return out.view(bool)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 666, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_logical_and); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 666, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_logical_and); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  __pyx_t_11 = PyNumber_Remainder(((PyObject *)__pyx_v_years), __pyx_int_4); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 666, __pyx_L1_error)
+  __pyx_t_11 = PyNumber_Remainder(((PyObject *)__pyx_v_years), __pyx_int_4); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_13 = __Pyx_PyInt_EqObjC(__pyx_t_11, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 666, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyInt_EqObjC(__pyx_t_11, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_13);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":667
+  /* "pandas/_libs/tslibs/fields.pyx":671
  *     out[np.logical_or(years % 400 == 0,
  *                       np.logical_and(years % 4 == 0,
  *                                      years % 100 > 0))] = 1             # <<<<<<<<<<<<<<
  *     return out.view(bool)
+ * 
  */
-  __pyx_t_11 = PyNumber_Remainder(((PyObject *)__pyx_v_years), __pyx_int_100); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 667, __pyx_L1_error)
+  __pyx_t_11 = PyNumber_Remainder(((PyObject *)__pyx_v_years), __pyx_int_100); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 671, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_14 = PyObject_RichCompare(__pyx_t_11, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 667, __pyx_L1_error)
+  __pyx_t_14 = PyObject_RichCompare(__pyx_t_11, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 671, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __pyx_t_11 = NULL;
   __pyx_t_7 = 0;
@@ -11231,7 +11337,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_12)) {
     PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_t_13, __pyx_t_14};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 666, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 670, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
@@ -11241,7 +11347,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
     PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_t_13, __pyx_t_14};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 666, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 670, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
@@ -11249,7 +11355,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   } else
   #endif
   {
-    __pyx_t_15 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 666, __pyx_L1_error)
+    __pyx_t_15 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 670, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_15);
     if (__pyx_t_11) {
       __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -11260,7 +11366,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
     PyTuple_SET_ITEM(__pyx_t_15, 1+__pyx_t_7, __pyx_t_14);
     __pyx_t_13 = 0;
     __pyx_t_14 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 666, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 670, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
   }
@@ -11280,7 +11386,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_12, __pyx_t_2, __pyx_t_1};
-    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 665, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 669, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -11290,7 +11396,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_12, __pyx_t_2, __pyx_t_1};
-    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 665, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 669, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -11298,7 +11404,7 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   } else
   #endif
   {
-    __pyx_t_15 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 665, __pyx_L1_error)
+    __pyx_t_15 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 669, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_15);
     if (__pyx_t_12) {
       __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_12); __pyx_t_12 = NULL;
@@ -11309,21 +11415,23 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
     PyTuple_SET_ITEM(__pyx_t_15, 1+__pyx_t_7, __pyx_t_1);
     __pyx_t_2 = 0;
     __pyx_t_1 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_15, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 665, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_15, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 669, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_out), __pyx_t_5, __pyx_int_1) < 0)) __PYX_ERR(0, 665, __pyx_L1_error)
+  if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_out), __pyx_t_5, __pyx_int_1) < 0)) __PYX_ERR(0, 669, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":668
+  /* "pandas/_libs/tslibs/fields.pyx":672
  *                       np.logical_and(years % 4 == 0,
  *                                      years % 100 > 0))] = 1
  *     return out.view(bool)             # <<<<<<<<<<<<<<
+ * 
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_out), __pyx_n_s_view); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 668, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_out), __pyx_n_s_view); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 672, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_15 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -11337,14 +11445,14 @@ static PyObject *__pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(PyArrayOb
   }
   __pyx_t_5 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_15, ((PyObject*)&PyBool_Type)) : __Pyx_PyObject_CallOneArg(__pyx_t_4, ((PyObject*)&PyBool_Type));
   __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 668, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 672, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":659
+  /* "pandas/_libs/tslibs/fields.pyx":663
  * 
  * 
  * cpdef isleapyear_arr(ndarray years):             # <<<<<<<<<<<<<<
@@ -11391,7 +11499,7 @@ static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_13isleapyear_arr(PyObje
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("isleapyear_arr (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_years), __pyx_ptype_5numpy_ndarray, 1, "years", 0))) __PYX_ERR(0, 659, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_years), __pyx_ptype_5numpy_ndarray, 1, "years", 0))) __PYX_ERR(0, 663, __pyx_L1_error)
   __pyx_r = __pyx_pf_6pandas_5_libs_6tslibs_6fields_12isleapyear_arr(__pyx_self, ((PyArrayObject *)__pyx_v_years));
 
   /* function exit code */
@@ -11412,7 +11520,7 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_12isleapyear_arr(CYTHON
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("isleapyear_arr", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(__pyx_v_years, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 659, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_6pandas_5_libs_6tslibs_6fields_isleapyear_arr(__pyx_v_years, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11429,7 +11537,436 @@ static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_12isleapyear_arr(CYTHON
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":258
+/* "pandas/_libs/tslibs/fields.pyx":677
+ * @cython.wraparound(False)
+ * @cython.boundscheck(False)
+ * def build_isocalendar_sarray(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
+ *     """
+ *     Given a int64-based datetime array, return the ISO 8601 year, week, and day
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_15build_isocalendar_sarray(PyObject *__pyx_self, PyObject *__pyx_arg_dtindex); /*proto*/
+static char __pyx_doc_6pandas_5_libs_6tslibs_6fields_14build_isocalendar_sarray[] = "\n    Given a int64-based datetime array, return the ISO 8601 year, week, and day\n    as a structured array.\n    ";
+static PyMethodDef __pyx_mdef_6pandas_5_libs_6tslibs_6fields_15build_isocalendar_sarray = {"build_isocalendar_sarray", (PyCFunction)__pyx_pw_6pandas_5_libs_6tslibs_6fields_15build_isocalendar_sarray, METH_O, __pyx_doc_6pandas_5_libs_6tslibs_6fields_14build_isocalendar_sarray};
+static PyObject *__pyx_pw_6pandas_5_libs_6tslibs_6fields_15build_isocalendar_sarray(PyObject *__pyx_self, PyObject *__pyx_arg_dtindex) {
+  __Pyx_memviewslice __pyx_v_dtindex = { 0, 0, { 0 }, { 0 }, { 0 } };
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("build_isocalendar_sarray (wrapper)", 0);
+  assert(__pyx_arg_dtindex); {
+    __pyx_v_dtindex = __Pyx_PyObject_to_MemoryviewSlice_ds_nn___pyx_t_5numpy_int64_t__const__(__pyx_arg_dtindex, 0); if (unlikely(!__pyx_v_dtindex.memview)) __PYX_ERR(0, 677, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("pandas._libs.tslibs.fields.build_isocalendar_sarray", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6pandas_5_libs_6tslibs_6fields_14build_isocalendar_sarray(__pyx_self, __pyx_v_dtindex);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6pandas_5_libs_6tslibs_6fields_14build_isocalendar_sarray(CYTHON_UNUSED PyObject *__pyx_self, __Pyx_memviewslice __pyx_v_dtindex) {
+  Py_ssize_t __pyx_v_i;
+  Py_ssize_t __pyx_v_count;
+  npy_datetimestruct __pyx_v_dts;
+  PyArrayObject *__pyx_v_iso_years = 0;
+  PyArrayObject *__pyx_v_iso_weeks = 0;
+  PyArrayObject *__pyx_v_days = 0;
+  __pyx_t_6pandas_5_libs_6tslibs_9ccalendar_iso_calendar_t __pyx_v_ret_val;
+  PyObject *__pyx_v_sa_dtype = NULL;
+  PyObject *__pyx_v_out = NULL;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_days;
+  __Pyx_Buffer __pyx_pybuffer_days;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_iso_weeks;
+  __Pyx_Buffer __pyx_pybuffer_iso_weeks;
+  __Pyx_LocalBuf_ND __pyx_pybuffernd_iso_years;
+  __Pyx_Buffer __pyx_pybuffer_iso_years;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  size_t __pyx_t_1;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyArrayObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *__pyx_t_10 = NULL;
+  Py_ssize_t __pyx_t_11;
+  Py_ssize_t __pyx_t_12;
+  Py_ssize_t __pyx_t_13;
+  Py_ssize_t __pyx_t_14;
+  int __pyx_t_15;
+  __pyx_t_6pandas_5_libs_6tslibs_9ccalendar_iso_calendar_t __pyx_t_16;
+  Py_ssize_t __pyx_t_17;
+  Py_ssize_t __pyx_t_18;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("build_isocalendar_sarray", 0);
+  __pyx_pybuffer_iso_years.pybuffer.buf = NULL;
+  __pyx_pybuffer_iso_years.refcount = 0;
+  __pyx_pybuffernd_iso_years.data = NULL;
+  __pyx_pybuffernd_iso_years.rcbuffer = &__pyx_pybuffer_iso_years;
+  __pyx_pybuffer_iso_weeks.pybuffer.buf = NULL;
+  __pyx_pybuffer_iso_weeks.refcount = 0;
+  __pyx_pybuffernd_iso_weeks.data = NULL;
+  __pyx_pybuffernd_iso_weeks.rcbuffer = &__pyx_pybuffer_iso_weeks;
+  __pyx_pybuffer_days.pybuffer.buf = NULL;
+  __pyx_pybuffer_days.refcount = 0;
+  __pyx_pybuffernd_days.data = NULL;
+  __pyx_pybuffernd_days.rcbuffer = &__pyx_pybuffer_days;
+
+  /* "pandas/_libs/tslibs/fields.pyx":683
+ *     """
+ *     cdef:
+ *         Py_ssize_t i, count = len(dtindex)             # <<<<<<<<<<<<<<
+ *         npy_datetimestruct dts
+ *         ndarray[uint32_t] iso_years, iso_weeks, days
+ */
+  __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_dtindex); 
+  __pyx_v_count = __pyx_t_1;
+
+  /* "pandas/_libs/tslibs/fields.pyx":688
+ *         iso_calendar_t ret_val
+ * 
+ *     sa_dtype = [             # <<<<<<<<<<<<<<
+ *         ("year", "u4"),
+ *         ("week", "u4"),
+ */
+  __pyx_t_2 = PyList_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 688, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_INCREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_tuple__10);
+  __Pyx_INCREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  PyList_SET_ITEM(__pyx_t_2, 1, __pyx_tuple__11);
+  __Pyx_INCREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
+  PyList_SET_ITEM(__pyx_t_2, 2, __pyx_tuple__12);
+  __pyx_v_sa_dtype = ((PyObject*)__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":694
+ *     ]
+ * 
+ *     out = np.empty(count, dtype=sa_dtype)             # <<<<<<<<<<<<<<
+ * 
+ *     iso_years = out["year"]
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_v_sa_dtype) < 0) __PYX_ERR(0, 694, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_out = __pyx_t_5;
+  __pyx_t_5 = 0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":696
+ *     out = np.empty(count, dtype=sa_dtype)
+ * 
+ *     iso_years = out["year"]             # <<<<<<<<<<<<<<
+ *     iso_weeks = out["week"]
+ *     days = out["day"]
+ */
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_year); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 696, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 696, __pyx_L1_error)
+  __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
+  {
+    __Pyx_BufFmt_StackElem __pyx_stack[1];
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_iso_years.rcbuffer->pybuffer);
+    __pyx_t_7 = __Pyx_GetBufferAndValidate(&__pyx_pybuffernd_iso_years.rcbuffer->pybuffer, (PyObject*)__pyx_t_6, &__Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack);
+    if (unlikely(__pyx_t_7 < 0)) {
+      PyErr_Fetch(&__pyx_t_8, &__pyx_t_9, &__pyx_t_10);
+      if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_iso_years.rcbuffer->pybuffer, (PyObject*)__pyx_v_iso_years, &__Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack) == -1)) {
+        Py_XDECREF(__pyx_t_8); Py_XDECREF(__pyx_t_9); Py_XDECREF(__pyx_t_10);
+        __Pyx_RaiseBufferFallbackError();
+      } else {
+        PyErr_Restore(__pyx_t_8, __pyx_t_9, __pyx_t_10);
+      }
+      __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
+    }
+    __pyx_pybuffernd_iso_years.diminfo[0].strides = __pyx_pybuffernd_iso_years.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_iso_years.diminfo[0].shape = __pyx_pybuffernd_iso_years.rcbuffer->pybuffer.shape[0];
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 696, __pyx_L1_error)
+  }
+  __pyx_t_6 = 0;
+  __pyx_v_iso_years = ((PyArrayObject *)__pyx_t_5);
+  __pyx_t_5 = 0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":697
+ * 
+ *     iso_years = out["year"]
+ *     iso_weeks = out["week"]             # <<<<<<<<<<<<<<
+ *     days = out["day"]
+ * 
+ */
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_week); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 697, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 697, __pyx_L1_error)
+  __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
+  {
+    __Pyx_BufFmt_StackElem __pyx_stack[1];
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer);
+    __pyx_t_7 = __Pyx_GetBufferAndValidate(&__pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer, (PyObject*)__pyx_t_6, &__Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack);
+    if (unlikely(__pyx_t_7 < 0)) {
+      PyErr_Fetch(&__pyx_t_10, &__pyx_t_9, &__pyx_t_8);
+      if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer, (PyObject*)__pyx_v_iso_weeks, &__Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack) == -1)) {
+        Py_XDECREF(__pyx_t_10); Py_XDECREF(__pyx_t_9); Py_XDECREF(__pyx_t_8);
+        __Pyx_RaiseBufferFallbackError();
+      } else {
+        PyErr_Restore(__pyx_t_10, __pyx_t_9, __pyx_t_8);
+      }
+      __pyx_t_10 = __pyx_t_9 = __pyx_t_8 = 0;
+    }
+    __pyx_pybuffernd_iso_weeks.diminfo[0].strides = __pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_iso_weeks.diminfo[0].shape = __pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer.shape[0];
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 697, __pyx_L1_error)
+  }
+  __pyx_t_6 = 0;
+  __pyx_v_iso_weeks = ((PyArrayObject *)__pyx_t_5);
+  __pyx_t_5 = 0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":698
+ *     iso_years = out["year"]
+ *     iso_weeks = out["week"]
+ *     days = out["day"]             # <<<<<<<<<<<<<<
+ * 
+ *     with nogil:
+ */
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_out, __pyx_n_u_day); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 698, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 698, __pyx_L1_error)
+  __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
+  {
+    __Pyx_BufFmt_StackElem __pyx_stack[1];
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_days.rcbuffer->pybuffer);
+    __pyx_t_7 = __Pyx_GetBufferAndValidate(&__pyx_pybuffernd_days.rcbuffer->pybuffer, (PyObject*)__pyx_t_6, &__Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack);
+    if (unlikely(__pyx_t_7 < 0)) {
+      PyErr_Fetch(&__pyx_t_8, &__pyx_t_9, &__pyx_t_10);
+      if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_days.rcbuffer->pybuffer, (PyObject*)__pyx_v_days, &__Pyx_TypeInfo_nn___pyx_t_5numpy_uint32_t, PyBUF_FORMAT| PyBUF_STRIDES| PyBUF_WRITABLE, 1, 0, __pyx_stack) == -1)) {
+        Py_XDECREF(__pyx_t_8); Py_XDECREF(__pyx_t_9); Py_XDECREF(__pyx_t_10);
+        __Pyx_RaiseBufferFallbackError();
+      } else {
+        PyErr_Restore(__pyx_t_8, __pyx_t_9, __pyx_t_10);
+      }
+      __pyx_t_8 = __pyx_t_9 = __pyx_t_10 = 0;
+    }
+    __pyx_pybuffernd_days.diminfo[0].strides = __pyx_pybuffernd_days.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_days.diminfo[0].shape = __pyx_pybuffernd_days.rcbuffer->pybuffer.shape[0];
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 698, __pyx_L1_error)
+  }
+  __pyx_t_6 = 0;
+  __pyx_v_days = ((PyArrayObject *)__pyx_t_5);
+  __pyx_t_5 = 0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":700
+ *     days = out["day"]
+ * 
+ *     with nogil:             # <<<<<<<<<<<<<<
+ *         for i in range(count):
+ *             if dtindex[i] == NPY_NAT:
+ */
+  {
+      #ifdef WITH_THREAD
+      PyThreadState *_save;
+      Py_UNBLOCK_THREADS
+      __Pyx_FastGIL_Remember();
+      #endif
+      /*try:*/ {
+
+        /* "pandas/_libs/tslibs/fields.pyx":701
+ * 
+ *     with nogil:
+ *         for i in range(count):             # <<<<<<<<<<<<<<
+ *             if dtindex[i] == NPY_NAT:
+ *                 ret_val = 0, 0, 0
+ */
+        __pyx_t_11 = __pyx_v_count;
+        __pyx_t_12 = __pyx_t_11;
+        for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
+          __pyx_v_i = __pyx_t_13;
+
+          /* "pandas/_libs/tslibs/fields.pyx":702
+ *     with nogil:
+ *         for i in range(count):
+ *             if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
+ *                 ret_val = 0, 0, 0
+ *             else:
+ */
+          __pyx_t_14 = __pyx_v_i;
+          __pyx_t_15 = (((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_14 * __pyx_v_dtindex.strides[0]) ))) == __pyx_v_6pandas_5_libs_6tslibs_7nattype_NPY_NAT) != 0);
+          if (__pyx_t_15) {
+
+            /* "pandas/_libs/tslibs/fields.pyx":703
+ *         for i in range(count):
+ *             if dtindex[i] == NPY_NAT:
+ *                 ret_val = 0, 0, 0             # <<<<<<<<<<<<<<
+ *             else:
+ *                 dt64_to_dtstruct(dtindex[i], &dts)
+ */
+            __pyx_t_16.f0 = 0;
+            __pyx_t_16.f1 = 0;
+            __pyx_t_16.f2 = 0;
+            __pyx_v_ret_val = __pyx_t_16;
+
+            /* "pandas/_libs/tslibs/fields.pyx":702
+ *     with nogil:
+ *         for i in range(count):
+ *             if dtindex[i] == NPY_NAT:             # <<<<<<<<<<<<<<
+ *                 ret_val = 0, 0, 0
+ *             else:
+ */
+            goto __pyx_L8;
+          }
+
+          /* "pandas/_libs/tslibs/fields.pyx":705
+ *                 ret_val = 0, 0, 0
+ *             else:
+ *                 dt64_to_dtstruct(dtindex[i], &dts)             # <<<<<<<<<<<<<<
+ *                 ret_val = get_iso_calendar(dts.year, dts.month, dts.day)
+ * 
+ */
+          /*else*/ {
+            __pyx_t_14 = __pyx_v_i;
+            __pyx_f_6pandas_5_libs_6tslibs_11np_datetime_dt64_to_dtstruct((*((__pyx_t_5numpy_int64_t const  *) ( /* dim=0 */ (__pyx_v_dtindex.data + __pyx_t_14 * __pyx_v_dtindex.strides[0]) ))), (&__pyx_v_dts));
+
+            /* "pandas/_libs/tslibs/fields.pyx":706
+ *             else:
+ *                 dt64_to_dtstruct(dtindex[i], &dts)
+ *                 ret_val = get_iso_calendar(dts.year, dts.month, dts.day)             # <<<<<<<<<<<<<<
+ * 
+ *             iso_years[i] = ret_val[0]
+ */
+            __pyx_v_ret_val = __pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_iso_calendar(__pyx_v_dts.year, __pyx_v_dts.month, __pyx_v_dts.day, 0);
+          }
+          __pyx_L8:;
+
+          /* "pandas/_libs/tslibs/fields.pyx":708
+ *                 ret_val = get_iso_calendar(dts.year, dts.month, dts.day)
+ * 
+ *             iso_years[i] = ret_val[0]             # <<<<<<<<<<<<<<
+ *             iso_weeks[i] = ret_val[1]
+ *             days[i] = ret_val[2]
+ */
+          __pyx_t_14 = __pyx_v_i;
+          *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_uint32_t *, __pyx_pybuffernd_iso_years.rcbuffer->pybuffer.buf, __pyx_t_14, __pyx_pybuffernd_iso_years.diminfo[0].strides) = __pyx_v_ret_val.f0;
+
+          /* "pandas/_libs/tslibs/fields.pyx":709
+ * 
+ *             iso_years[i] = ret_val[0]
+ *             iso_weeks[i] = ret_val[1]             # <<<<<<<<<<<<<<
+ *             days[i] = ret_val[2]
+ *     return out
+ */
+          __pyx_t_17 = __pyx_v_i;
+          *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_uint32_t *, __pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer.buf, __pyx_t_17, __pyx_pybuffernd_iso_weeks.diminfo[0].strides) = __pyx_v_ret_val.f1;
+
+          /* "pandas/_libs/tslibs/fields.pyx":710
+ *             iso_years[i] = ret_val[0]
+ *             iso_weeks[i] = ret_val[1]
+ *             days[i] = ret_val[2]             # <<<<<<<<<<<<<<
+ *     return out
+ */
+          __pyx_t_18 = __pyx_v_i;
+          *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_uint32_t *, __pyx_pybuffernd_days.rcbuffer->pybuffer.buf, __pyx_t_18, __pyx_pybuffernd_days.diminfo[0].strides) = __pyx_v_ret_val.f2;
+        }
+      }
+
+      /* "pandas/_libs/tslibs/fields.pyx":700
+ *     days = out["day"]
+ * 
+ *     with nogil:             # <<<<<<<<<<<<<<
+ *         for i in range(count):
+ *             if dtindex[i] == NPY_NAT:
+ */
+      /*finally:*/ {
+        /*normal exit:*/{
+          #ifdef WITH_THREAD
+          __Pyx_FastGIL_Forget();
+          Py_BLOCK_THREADS
+          #endif
+          goto __pyx_L5;
+        }
+        __pyx_L5:;
+      }
+  }
+
+  /* "pandas/_libs/tslibs/fields.pyx":711
+ *             iso_weeks[i] = ret_val[1]
+ *             days[i] = ret_val[2]
+ *     return out             # <<<<<<<<<<<<<<
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_out);
+  __pyx_r = __pyx_v_out;
+  goto __pyx_L0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":677
+ * @cython.wraparound(False)
+ * @cython.boundscheck(False)
+ * def build_isocalendar_sarray(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
+ *     """
+ *     Given a int64-based datetime array, return the ISO 8601 year, week, and day
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  { PyObject *__pyx_type, *__pyx_value, *__pyx_tb;
+    __Pyx_PyThreadState_declare
+    __Pyx_PyThreadState_assign
+    __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_days.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer);
+    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_iso_years.rcbuffer->pybuffer);
+  __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
+  __Pyx_AddTraceback("pandas._libs.tslibs.fields.build_isocalendar_sarray", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  goto __pyx_L2;
+  __pyx_L0:;
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_days.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_iso_weeks.rcbuffer->pybuffer);
+  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_iso_years.rcbuffer->pybuffer);
+  __pyx_L2:;
+  __PYX_XDEC_MEMVIEW(&__pyx_v_dtindex, 1);
+  __Pyx_XDECREF((PyObject *)__pyx_v_iso_years);
+  __Pyx_XDECREF((PyObject *)__pyx_v_iso_weeks);
+  __Pyx_XDECREF((PyObject *)__pyx_v_days);
+  __Pyx_XDECREF(__pyx_v_sa_dtype);
+  __Pyx_XDECREF(__pyx_v_out);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -11481,7 +12018,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_info->obj = Py_None; __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(__pyx_v_info->obj);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":265
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":265
  * 
  *             cdef int i, ndim
  *             cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -11490,7 +12027,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":266
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":266
  *             cdef int i, ndim
  *             cdef int endian_detector = 1
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -11499,7 +12036,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":268
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":268
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)
  * 
  *             ndim = PyArray_NDIM(self)             # <<<<<<<<<<<<<<
@@ -11508,7 +12045,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_ndim = PyArray_NDIM(__pyx_v_self);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":270
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *             ndim = PyArray_NDIM(self)
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -11522,7 +12059,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L4_bool_binop_done;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":271
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":271
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_C_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -11533,7 +12070,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L4_bool_binop_done:;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":270
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *             ndim = PyArray_NDIM(self)
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -11542,20 +12079,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (unlikely(__pyx_t_1)) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":272
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 272, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(1, 272, __pyx_L1_error)
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":270
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *             ndim = PyArray_NDIM(self)
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -11564,7 +12101,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":274
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -11578,7 +12115,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L7_bool_binop_done;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":275
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":275
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_F_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -11589,7 +12126,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L7_bool_binop_done:;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":274
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -11598,20 +12135,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (unlikely(__pyx_t_1)) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":276
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
  * 
  *             info.buf = PyArray_DATA(self)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 276, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __PYX_ERR(1, 276, __pyx_L1_error)
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":274
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -11620,7 +12157,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":278
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":278
  *                 raise ValueError(u"ndarray is not Fortran contiguous")
  * 
  *             info.buf = PyArray_DATA(self)             # <<<<<<<<<<<<<<
@@ -11629,7 +12166,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->buf = PyArray_DATA(__pyx_v_self);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":279
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":279
  * 
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim             # <<<<<<<<<<<<<<
@@ -11638,7 +12175,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->ndim = __pyx_v_ndim;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":280
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -11648,7 +12185,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":283
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":283
  *                 # Allocate new buffer for strides and shape info.
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>PyObject_Malloc(sizeof(Py_ssize_t) * 2 * <size_t>ndim)             # <<<<<<<<<<<<<<
@@ -11657,7 +12194,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->strides = ((Py_ssize_t *)PyObject_Malloc((((sizeof(Py_ssize_t)) * 2) * ((size_t)__pyx_v_ndim))));
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":284
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":284
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>PyObject_Malloc(sizeof(Py_ssize_t) * 2 * <size_t>ndim)
  *                 info.shape = info.strides + ndim             # <<<<<<<<<<<<<<
@@ -11666,7 +12203,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->shape = (__pyx_v_info->strides + __pyx_v_ndim);
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":285
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":285
  *                 info.strides = <Py_ssize_t*>PyObject_Malloc(sizeof(Py_ssize_t) * 2 * <size_t>ndim)
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):             # <<<<<<<<<<<<<<
@@ -11678,7 +12215,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":286
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":286
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]             # <<<<<<<<<<<<<<
@@ -11687,7 +12224,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
       (__pyx_v_info->strides[__pyx_v_i]) = (PyArray_STRIDES(__pyx_v_self)[__pyx_v_i]);
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":287
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":287
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]
  *                     info.shape[i] = PyArray_DIMS(self)[i]             # <<<<<<<<<<<<<<
@@ -11697,7 +12234,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       (__pyx_v_info->shape[__pyx_v_i]) = (PyArray_DIMS(__pyx_v_self)[__pyx_v_i]);
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":280
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -11707,7 +12244,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L9;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":289
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":289
  *                     info.shape[i] = PyArray_DIMS(self)[i]
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)             # <<<<<<<<<<<<<<
@@ -11717,7 +12254,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->strides = ((Py_ssize_t *)PyArray_STRIDES(__pyx_v_self));
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":290
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)             # <<<<<<<<<<<<<<
@@ -11728,7 +12265,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L9:;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":291
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":291
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -11737,7 +12274,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->suboffsets = NULL;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":292
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":292
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)             # <<<<<<<<<<<<<<
@@ -11746,7 +12283,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->itemsize = PyArray_ITEMSIZE(__pyx_v_self);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":293
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":293
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)
  *             info.readonly = not PyArray_ISWRITEABLE(self)             # <<<<<<<<<<<<<<
@@ -11755,7 +12292,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->readonly = (!(PyArray_ISWRITEABLE(__pyx_v_self) != 0));
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":296
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":296
  * 
  *             cdef int t
  *             cdef char* f = NULL             # <<<<<<<<<<<<<<
@@ -11764,7 +12301,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_f = NULL;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":297
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":297
  *             cdef int t
  *             cdef char* f = NULL
  *             cdef dtype descr = <dtype>PyArray_DESCR(self)             # <<<<<<<<<<<<<<
@@ -11777,7 +12314,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_descr = ((PyArray_Descr *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":300
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":300
  *             cdef int offset
  * 
  *             info.obj = self             # <<<<<<<<<<<<<<
@@ -11790,7 +12327,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __Pyx_DECREF(__pyx_v_info->obj);
   __pyx_v_info->obj = ((PyObject *)__pyx_v_self);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":302
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":302
  *             info.obj = self
  * 
  *             if not PyDataType_HASFIELDS(descr):             # <<<<<<<<<<<<<<
@@ -11800,7 +12337,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = ((!(PyDataType_HASFIELDS(__pyx_v_descr) != 0)) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":303
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":303
  * 
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num             # <<<<<<<<<<<<<<
@@ -11810,7 +12347,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_4 = __pyx_v_descr->type_num;
     __pyx_v_t = __pyx_t_4;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":304
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":304
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -11830,7 +12367,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     }
     __pyx_L15_next_or:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":305
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":305
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -11847,7 +12384,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_1 = __pyx_t_2;
     __pyx_L14_bool_binop_done:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":304
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":304
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -11856,20 +12393,20 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     if (unlikely(__pyx_t_1)) {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":306
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":306
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 306, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 306, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(1, 306, __pyx_L1_error)
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":304
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":304
  *             if not PyDataType_HASFIELDS(descr):
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -11878,7 +12415,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":307
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":307
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"             # <<<<<<<<<<<<<<
@@ -11891,7 +12428,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_UBYTE:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":308
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":308
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"             # <<<<<<<<<<<<<<
@@ -11902,7 +12439,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_SHORT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":309
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":309
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"             # <<<<<<<<<<<<<<
@@ -11913,7 +12450,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_USHORT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":310
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":310
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"             # <<<<<<<<<<<<<<
@@ -11924,7 +12461,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_INT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":311
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":311
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"             # <<<<<<<<<<<<<<
@@ -11935,7 +12472,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_UINT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":312
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":312
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"             # <<<<<<<<<<<<<<
@@ -11946,7 +12483,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_LONG:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":313
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":313
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"             # <<<<<<<<<<<<<<
@@ -11957,7 +12494,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_ULONG:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":314
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":314
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"             # <<<<<<<<<<<<<<
@@ -11968,7 +12505,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_LONGLONG:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":315
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":315
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"             # <<<<<<<<<<<<<<
@@ -11979,7 +12516,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_ULONGLONG:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":316
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":316
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"             # <<<<<<<<<<<<<<
@@ -11990,7 +12527,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_FLOAT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":317
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":317
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"             # <<<<<<<<<<<<<<
@@ -12001,7 +12538,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_DOUBLE:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":318
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":318
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"             # <<<<<<<<<<<<<<
@@ -12012,7 +12549,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_LONGDOUBLE:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":319
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":319
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"             # <<<<<<<<<<<<<<
@@ -12023,7 +12560,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_CFLOAT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":320
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":320
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"             # <<<<<<<<<<<<<<
@@ -12034,7 +12571,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_CDOUBLE:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":321
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":321
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"             # <<<<<<<<<<<<<<
@@ -12045,7 +12582,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_CLONGDOUBLE:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":322
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":322
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"             # <<<<<<<<<<<<<<
@@ -12056,7 +12593,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       case NPY_OBJECT:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":323
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":323
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"
  *                 elif t == NPY_OBJECT:      f = "O"             # <<<<<<<<<<<<<<
@@ -12067,7 +12604,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       default:
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":325
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":325
  *                 elif t == NPY_OBJECT:      f = "O"
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -12088,7 +12625,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":326
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":326
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f             # <<<<<<<<<<<<<<
@@ -12097,7 +12634,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->format = __pyx_v_f;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":327
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":327
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f
  *                 return             # <<<<<<<<<<<<<<
@@ -12107,7 +12644,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":302
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":302
  *             info.obj = self
  * 
  *             if not PyDataType_HASFIELDS(descr):             # <<<<<<<<<<<<<<
@@ -12116,7 +12653,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":329
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":329
  *                 return
  *             else:
  *                 info.format = <char*>PyObject_Malloc(_buffer_format_string_len)             # <<<<<<<<<<<<<<
@@ -12126,7 +12663,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->format = ((char *)PyObject_Malloc(0xFF));
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":330
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":330
  *             else:
  *                 info.format = <char*>PyObject_Malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment             # <<<<<<<<<<<<<<
@@ -12135,7 +12672,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     (__pyx_v_info->format[0]) = '^';
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":331
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":331
  *                 info.format = <char*>PyObject_Malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0             # <<<<<<<<<<<<<<
@@ -12144,7 +12681,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_offset = 0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":332
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":332
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0
  *                 f = _util_dtypestring(descr, info.format + 1,             # <<<<<<<<<<<<<<
@@ -12154,7 +12691,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_9 = __pyx_f_5numpy__util_dtypestring(__pyx_v_descr, (__pyx_v_info->format + 1), (__pyx_v_info->format + 0xFF), (&__pyx_v_offset)); if (unlikely(__pyx_t_9 == ((char *)NULL))) __PYX_ERR(1, 332, __pyx_L1_error)
     __pyx_v_f = __pyx_t_9;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":335
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":335
  *                                       info.format + _buffer_format_string_len,
  *                                       &offset)
  *                 f[0] = c'\0' # Terminate format string             # <<<<<<<<<<<<<<
@@ -12164,7 +12701,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     (__pyx_v_f[0]) = '\x00';
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":258
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -12196,7 +12733,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":337
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":337
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -12220,7 +12757,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__releasebuffer__", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":338
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":338
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -12230,7 +12767,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (PyArray_HASFIELDS(__pyx_v_self) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":339
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":339
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):
  *                 PyObject_Free(info.format)             # <<<<<<<<<<<<<<
@@ -12239,7 +12776,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     PyObject_Free(__pyx_v_info->format);
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":338
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":338
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -12248,7 +12785,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":340
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":340
  *             if PyArray_HASFIELDS(self):
  *                 PyObject_Free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -12258,7 +12795,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":341
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":341
  *                 PyObject_Free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 PyObject_Free(info.strides)             # <<<<<<<<<<<<<<
@@ -12267,7 +12804,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     PyObject_Free(__pyx_v_info->strides);
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":340
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":340
  *             if PyArray_HASFIELDS(self):
  *                 PyObject_Free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -12276,7 +12813,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":337
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":337
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -12288,7 +12825,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":820
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":820
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -12305,7 +12842,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":821
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":821
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -12319,7 +12856,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":820
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":820
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -12338,7 +12875,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":823
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -12355,7 +12892,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":824
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":824
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -12369,7 +12906,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":823
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -12388,7 +12925,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":826
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":826
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -12405,7 +12942,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":827
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":827
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -12419,7 +12956,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":826
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":826
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -12438,7 +12975,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":829
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":829
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -12455,7 +12992,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":830
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":830
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -12469,7 +13006,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":829
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":829
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -12488,7 +13025,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":832
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":832
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -12505,7 +13042,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":833
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":833
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -12519,7 +13056,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":832
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":832
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -12538,7 +13075,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":835
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":835
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -12552,7 +13089,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("PyDataType_SHAPE", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":836
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":836
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -12562,7 +13099,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   __pyx_t_1 = (PyDataType_HASSUBARRAY(__pyx_v_d) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":837
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":837
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):
  *         return <tuple>d.subarray.shape             # <<<<<<<<<<<<<<
@@ -12574,7 +13111,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     __pyx_r = ((PyObject*)__pyx_v_d->subarray->shape);
     goto __pyx_L0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":836
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":836
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -12583,7 +13120,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":839
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":839
  *         return <tuple>d.subarray.shape
  *     else:
  *         return ()             # <<<<<<<<<<<<<<
@@ -12597,7 +13134,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     goto __pyx_L0;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":835
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":835
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -12612,7 +13149,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":841
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":841
  *         return ()
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -12644,7 +13181,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_util_dtypestring", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":846
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":846
  * 
  *     cdef dtype child
  *     cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -12653,7 +13190,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_endian_detector = 1;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":847
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":847
  *     cdef dtype child
  *     cdef int endian_detector = 1
  *     cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -12662,7 +13199,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":850
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":850
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -12685,7 +13222,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_childname, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":851
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":851
  * 
  *     for childname in descr.names:
  *         fields = descr.fields[childname]             # <<<<<<<<<<<<<<
@@ -12702,7 +13239,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_fields, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":852
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":852
  *     for childname in descr.names:
  *         fields = descr.fields[childname]
  *         child, new_offset = fields             # <<<<<<<<<<<<<<
@@ -12737,7 +13274,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_new_offset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":854
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":854
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -12754,20 +13291,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((((__pyx_v_end - __pyx_v_f) - ((int)__pyx_t_5)) < 15) != 0);
     if (unlikely(__pyx_t_6)) {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":855
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":855
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 855, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 855, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(1, 855, __pyx_L1_error)
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":854
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":854
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -12776,7 +13313,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":857
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":857
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -12796,7 +13333,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L8_next_or:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":858
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":858
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -12813,7 +13350,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = __pyx_t_7;
     __pyx_L7_bool_binop_done:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":857
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":857
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -12822,20 +13359,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     if (unlikely(__pyx_t_6)) {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":859
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":859
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 859, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 859, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __PYX_ERR(1, 859, __pyx_L1_error)
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":857
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":857
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -12844,7 +13381,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":869
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":869
  * 
  *         # Output padding bytes
  *         while offset[0] < new_offset:             # <<<<<<<<<<<<<<
@@ -12860,7 +13397,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (!__pyx_t_6) break;
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":870
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":870
  *         # Output padding bytes
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte             # <<<<<<<<<<<<<<
@@ -12869,7 +13406,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       (__pyx_v_f[0]) = 0x78;
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":871
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":871
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte
  *             f += 1             # <<<<<<<<<<<<<<
@@ -12878,7 +13415,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":872
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":872
  *             f[0] = 120 # "x"; pad byte
  *             f += 1
  *             offset[0] += 1             # <<<<<<<<<<<<<<
@@ -12889,7 +13426,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + 1);
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":874
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":874
  *             offset[0] += 1
  * 
  *         offset[0] += child.itemsize             # <<<<<<<<<<<<<<
@@ -12899,7 +13436,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_8 = 0;
     (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + __pyx_v_child->elsize);
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":876
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":876
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -12909,7 +13446,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((!(PyDataType_HASFIELDS(__pyx_v_child) != 0)) != 0);
     if (__pyx_t_6) {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":877
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":877
  * 
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num             # <<<<<<<<<<<<<<
@@ -12921,7 +13458,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_XDECREF_SET(__pyx_v_t, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":878
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":878
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -12931,20 +13468,20 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __pyx_t_6 = (((__pyx_v_end - __pyx_v_f) < 5) != 0);
       if (unlikely(__pyx_t_6)) {
 
-        /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":879
+        /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":879
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 879, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 879, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_Raise(__pyx_t_4, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __PYX_ERR(1, 879, __pyx_L1_error)
 
-        /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":878
+        /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":878
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -12953,7 +13490,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":882
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":882
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"             # <<<<<<<<<<<<<<
@@ -12971,7 +13508,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":883
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":883
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"             # <<<<<<<<<<<<<<
@@ -12989,7 +13526,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":884
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":884
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"             # <<<<<<<<<<<<<<
@@ -13007,7 +13544,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":885
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":885
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"             # <<<<<<<<<<<<<<
@@ -13025,7 +13562,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":886
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":886
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"             # <<<<<<<<<<<<<<
@@ -13043,7 +13580,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":887
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":887
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"             # <<<<<<<<<<<<<<
@@ -13061,7 +13598,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":888
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":888
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"             # <<<<<<<<<<<<<<
@@ -13079,7 +13616,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":889
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":889
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"             # <<<<<<<<<<<<<<
@@ -13097,7 +13634,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":890
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":890
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"             # <<<<<<<<<<<<<<
@@ -13115,7 +13652,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":891
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":891
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"             # <<<<<<<<<<<<<<
@@ -13133,7 +13670,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":892
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":892
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"             # <<<<<<<<<<<<<<
@@ -13151,7 +13688,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":893
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":893
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"             # <<<<<<<<<<<<<<
@@ -13169,7 +13706,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":894
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":894
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"             # <<<<<<<<<<<<<<
@@ -13187,7 +13724,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":895
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":895
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf             # <<<<<<<<<<<<<<
@@ -13207,7 +13744,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":896
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":896
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd             # <<<<<<<<<<<<<<
@@ -13227,7 +13764,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":897
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":897
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg             # <<<<<<<<<<<<<<
@@ -13247,7 +13784,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":898
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":898
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"             # <<<<<<<<<<<<<<
@@ -13265,7 +13802,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":900
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":900
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -13284,7 +13821,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       }
       __pyx_L15:;
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":901
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":901
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *             f += 1             # <<<<<<<<<<<<<<
@@ -13293,7 +13830,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":876
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":876
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -13303,7 +13840,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       goto __pyx_L13;
     }
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":905
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":905
  *             # Cython ignores struct boundary information ("T{...}"),
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)             # <<<<<<<<<<<<<<
@@ -13316,7 +13853,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L13:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":850
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":850
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -13326,7 +13863,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":906
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":906
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)
  *     return f             # <<<<<<<<<<<<<<
@@ -13336,7 +13873,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   __pyx_r = __pyx_v_f;
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":841
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":841
  *         return ()
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -13361,7 +13898,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1021
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1021
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -13373,7 +13910,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1022
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1022
  * 
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!             # <<<<<<<<<<<<<<
@@ -13382,7 +13919,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_INCREF(__pyx_v_base);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1023
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1023
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!
  *     PyArray_SetBaseObject(arr, base)             # <<<<<<<<<<<<<<
@@ -13391,7 +13928,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   (void)(PyArray_SetBaseObject(__pyx_v_arr, __pyx_v_base));
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1021
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1021
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -13403,7 +13940,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1025
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1025
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -13418,7 +13955,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1026
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1026
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)             # <<<<<<<<<<<<<<
@@ -13427,7 +13964,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   __pyx_v_base = PyArray_BASE(__pyx_v_arr);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1027
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1027
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -13437,7 +13974,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1028
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1028
  *     base = PyArray_BASE(arr)
  *     if base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -13448,7 +13985,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1027
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1027
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -13457,7 +13994,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1029
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1029
  *     if base is NULL:
  *         return None
  *     return <object>base             # <<<<<<<<<<<<<<
@@ -13469,7 +14006,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_r = ((PyObject *)__pyx_v_base);
   goto __pyx_L0;
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1025
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1025
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -13484,7 +14021,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1033
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1033
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -13508,7 +14045,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_array", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1034
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1034
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13524,7 +14061,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1035
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1035
  * cdef inline int import_array() except -1:
  *     try:
  *         _import_array()             # <<<<<<<<<<<<<<
@@ -13533,7 +14070,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  */
       __pyx_t_4 = _import_array(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 1035, __pyx_L3_error)
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1034
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1034
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13547,7 +14084,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1036
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1036
  *     try:
  *         _import_array()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -13562,14 +14099,14 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1037
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1037
  *         _import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_umath() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1037, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1037, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -13578,7 +14115,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1034
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1034
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13593,7 +14130,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1033
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1033
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -13616,7 +14153,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1039
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1039
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -13640,7 +14177,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_umath", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1040
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1040
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13656,7 +14193,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1041
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1041
  * cdef inline int import_umath() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -13665,7 +14202,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 1041, __pyx_L3_error)
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1040
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1040
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13679,7 +14216,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1042
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1042
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -13694,14 +14231,14 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1043
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1043
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_ufunc() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1043, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1043, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -13710,7 +14247,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1040
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1040
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13725,7 +14262,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1039
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1039
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -13748,7 +14285,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1045
+/* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1045
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -13772,7 +14309,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_ufunc", 0);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1046
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1046
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13788,7 +14325,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1047
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1047
  * cdef inline int import_ufunc() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -13797,7 +14334,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 1047, __pyx_L3_error)
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1046
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1046
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13811,7 +14348,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1048
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1048
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -13825,12 +14362,12 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1049
+      /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1049
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1049, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1049, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -13839,7 +14376,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1046
+    /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1046
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13854,7 +14391,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1045
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1045
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -15084,7 +15621,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__17, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 133, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 133, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15116,7 +15653,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 136, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15243,7 +15780,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 148, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15517,7 +16054,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(3, 176, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(3, 176, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -15761,7 +16298,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 192, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 192, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16495,7 +17032,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -16551,7 +17088,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -18261,7 +18798,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 418, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 418, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -19309,7 +19846,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 495, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(3, 495, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -19671,7 +20208,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 520, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -20220,7 +20757,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 570, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 570, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -20337,7 +20874,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__28, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 577, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__31, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 577, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -21375,7 +21912,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -21431,7 +21968,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -21788,9 +22325,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__31);
-            __Pyx_GIVEREF(__pyx_slice__31);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__31);
+            __Pyx_INCREF(__pyx_slice__34);
+            __Pyx_GIVEREF(__pyx_slice__34);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__34);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(3, 682, __pyx_L1_error)
@@ -21823,7 +22360,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__31); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(3, 685, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__34); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(3, 685, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -21963,9 +22500,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__31);
-        __Pyx_GIVEREF(__pyx_slice__31);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__31);
+        __Pyx_INCREF(__pyx_slice__34);
+        __Pyx_GIVEREF(__pyx_slice__34);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__34);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(3, 696, __pyx_L1_error)
@@ -22092,7 +22629,7 @@ static PyObject *assert_direct_dimensions(Py_ssize_t *__pyx_v_suboffsets, int __
  * 
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 703, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -24276,7 +24813,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -24332,7 +24869,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUS
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__37, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -28676,8 +29213,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_DAY_SECONDS, __pyx_k_DAY_SECONDS, sizeof(__pyx_k_DAY_SECONDS), 0, 0, 1, 1},
   {&__pyx_n_s_Ellipsis, __pyx_k_Ellipsis, sizeof(__pyx_k_Ellipsis), 0, 0, 1, 1},
   {&__pyx_kp_s_Empty_shape_tuple_for_cython_arr, __pyx_k_Empty_shape_tuple_for_cython_arr, sizeof(__pyx_k_Empty_shape_tuple_for_cython_arr), 0, 0, 1, 0},
-  {&__pyx_kp_u_Field_field_not_supported, __pyx_k_Field_field_not_supported, sizeof(__pyx_k_Field_field_not_supported), 0, 1, 0, 0},
-  {&__pyx_kp_u_Field_s_not_supported, __pyx_k_Field_s_not_supported, sizeof(__pyx_k_Field_s_not_supported), 0, 1, 0, 0},
+  {&__pyx_kp_u_Field, __pyx_k_Field, sizeof(__pyx_k_Field), 0, 1, 0, 0},
   {&__pyx_kp_u_Format_string_allocated_too_shor, __pyx_k_Format_string_allocated_too_shor, sizeof(__pyx_k_Format_string_allocated_too_shor), 0, 1, 0, 0},
   {&__pyx_kp_u_Format_string_allocated_too_shor_2, __pyx_k_Format_string_allocated_too_shor_2, sizeof(__pyx_k_Format_string_allocated_too_shor_2), 0, 1, 0, 0},
   {&__pyx_n_s_ImportError, __pyx_k_ImportError, sizeof(__pyx_k_ImportError), 0, 0, 1, 1},
@@ -28707,6 +29243,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_build_field_sarray, __pyx_k_build_field_sarray, sizeof(__pyx_k_build_field_sarray), 0, 0, 1, 1},
+  {&__pyx_n_s_build_isocalendar_sarray, __pyx_k_build_isocalendar_sarray, sizeof(__pyx_k_build_isocalendar_sarray), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
   {&__pyx_n_u_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 1, 0, 1},
   {&__pyx_n_s_capitalize, __pyx_k_capitalize, sizeof(__pyx_k_capitalize), 0, 0, 1, 1},
@@ -28715,6 +29252,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
   {&__pyx_kp_s_contiguous_and_indirect, __pyx_k_contiguous_and_indirect, sizeof(__pyx_k_contiguous_and_indirect), 0, 0, 1, 0},
   {&__pyx_n_s_count, __pyx_k_count, sizeof(__pyx_k_count), 0, 0, 1, 1},
+  {&__pyx_n_u_day, __pyx_k_day, sizeof(__pyx_k_day), 0, 1, 0, 1},
   {&__pyx_n_u_day_name, __pyx_k_day_name, sizeof(__pyx_k_day_name), 0, 1, 0, 1},
   {&__pyx_n_s_days, __pyx_k_days, sizeof(__pyx_k_days), 0, 0, 1, 1},
   {&__pyx_n_u_days, __pyx_k_days, sizeof(__pyx_k_days), 0, 1, 0, 1},
@@ -28768,6 +29306,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_is_year_end, __pyx_k_is_year_end, sizeof(__pyx_k_is_year_end), 0, 1, 0, 1},
   {&__pyx_n_u_is_year_start, __pyx_k_is_year_start, sizeof(__pyx_k_is_year_start), 0, 1, 0, 1},
   {&__pyx_n_s_isleap, __pyx_k_isleap, sizeof(__pyx_k_isleap), 0, 0, 1, 1},
+  {&__pyx_n_s_iso_weeks, __pyx_k_iso_weeks, sizeof(__pyx_k_iso_weeks), 0, 0, 1, 1},
+  {&__pyx_n_s_iso_years, __pyx_k_iso_years, sizeof(__pyx_k_iso_years), 0, 0, 1, 1},
   {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
   {&__pyx_kp_s_itemsize_0_for_cython_array, __pyx_k_itemsize_0_for_cython_array, sizeof(__pyx_k_itemsize_0_for_cython_array), 0, 0, 1, 0},
   {&__pyx_n_s_ldom, __pyx_k_ldom, sizeof(__pyx_k_ldom), 0, 0, 1, 1},
@@ -28799,6 +29339,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_ndim, __pyx_k_ndim, sizeof(__pyx_k_ndim), 0, 0, 1, 1},
   {&__pyx_n_s_new, __pyx_k_new, sizeof(__pyx_k_new), 0, 0, 1, 1},
   {&__pyx_kp_s_no_default___reduce___due_to_non, __pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 0, 1, 0},
+  {&__pyx_kp_u_not_supported, __pyx_k_not_supported, sizeof(__pyx_k_not_supported), 0, 1, 0, 0},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_u_ns, __pyx_k_ns, sizeof(__pyx_k_ns), 0, 1, 0, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
@@ -28826,6 +29367,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
+  {&__pyx_n_s_ret_val, __pyx_k_ret_val, sizeof(__pyx_k_ret_val), 0, 0, 1, 1},
   {&__pyx_n_u_s, __pyx_k_s, sizeof(__pyx_k_s), 0, 1, 0, 1},
   {&__pyx_n_s_sa_dtype, __pyx_k_sa_dtype, sizeof(__pyx_k_sa_dtype), 0, 0, 1, 1},
   {&__pyx_n_s_seconds, __pyx_k_seconds, sizeof(__pyx_k_seconds), 0, 0, 1, 1},
@@ -28847,6 +29389,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_tds, __pyx_k_tds, sizeof(__pyx_k_tds), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_u_u, __pyx_k_u, sizeof(__pyx_k_u), 0, 1, 0, 1},
+  {&__pyx_n_u_u4, __pyx_k_u4, sizeof(__pyx_k_u4), 0, 1, 0, 1},
   {&__pyx_kp_s_unable_to_allocate_array_data, __pyx_k_unable_to_allocate_array_data, sizeof(__pyx_k_unable_to_allocate_array_data), 0, 0, 1, 0},
   {&__pyx_kp_s_unable_to_allocate_shape_and_str, __pyx_k_unable_to_allocate_shape_and_str, sizeof(__pyx_k_unable_to_allocate_shape_and_str), 0, 0, 1, 0},
   {&__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_k_unknown_dtype_code_in_numpy_pxd, sizeof(__pyx_k_unknown_dtype_code_in_numpy_pxd), 0, 1, 0, 0},
@@ -28854,16 +29397,17 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_update, __pyx_k_update, sizeof(__pyx_k_update), 0, 0, 1, 1},
   {&__pyx_n_u_us, __pyx_k_us, sizeof(__pyx_k_us), 0, 1, 0, 1},
   {&__pyx_n_s_view, __pyx_k_view, sizeof(__pyx_k_view), 0, 0, 1, 1},
-  {&__pyx_n_u_weekday_name, __pyx_k_weekday_name, sizeof(__pyx_k_weekday_name), 0, 1, 0, 1},
+  {&__pyx_n_u_week, __pyx_k_week, sizeof(__pyx_k_week), 0, 1, 0, 1},
   {&__pyx_n_u_woy, __pyx_k_woy, sizeof(__pyx_k_woy), 0, 1, 0, 1},
+  {&__pyx_n_u_year, __pyx_k_year, sizeof(__pyx_k_year), 0, 1, 0, 1},
   {&__pyx_n_s_years, __pyx_k_years, sizeof(__pyx_k_years), 0, 0, 1, 1},
   {&__pyx_n_s_zeros, __pyx_k_zeros, sizeof(__pyx_k_zeros), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 75, __pyx_L1_error)
-  __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_n_s_object); if (!__pyx_builtin_object) __PYX_ERR(0, 101, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_n_s_object); if (!__pyx_builtin_object) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 135, __pyx_L1_error)
   __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(1, 855, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 1037, __pyx_L1_error)
   __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(3, 148, __pyx_L1_error)
@@ -28881,181 +29425,214 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "pandas/_libs/tslibs/fields.pyx":57
- *         ndarray[int32_t] years, months, days, hours, minutes, seconds, mus
+  /* "pandas/_libs/tslibs/fields.pyx":58
  * 
- *     sa_dtype = [('Y', 'i4'),  # year             # <<<<<<<<<<<<<<
- *                 ('M', 'i4'),  # month
- *                 ('D', 'i4'),  # day
+ *     sa_dtype = [
+ *         ("Y", "i4"),  # year             # <<<<<<<<<<<<<<
+ *         ("M", "i4"),  # month
+ *         ("D", "i4"),  # day
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_n_u_Y, __pyx_n_u_i4); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_n_u_Y, __pyx_n_u_i4); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "pandas/_libs/tslibs/fields.pyx":58
- * 
- *     sa_dtype = [('Y', 'i4'),  # year
- *                 ('M', 'i4'),  # month             # <<<<<<<<<<<<<<
- *                 ('D', 'i4'),  # day
- *                 ('h', 'i4'),  # hour
+  /* "pandas/_libs/tslibs/fields.pyx":59
+ *     sa_dtype = [
+ *         ("Y", "i4"),  # year
+ *         ("M", "i4"),  # month             # <<<<<<<<<<<<<<
+ *         ("D", "i4"),  # day
+ *         ("h", "i4"),  # hour
  */
-  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_n_u_M, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_n_u_M, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "pandas/_libs/tslibs/fields.pyx":59
- *     sa_dtype = [('Y', 'i4'),  # year
- *                 ('M', 'i4'),  # month
- *                 ('D', 'i4'),  # day             # <<<<<<<<<<<<<<
- *                 ('h', 'i4'),  # hour
- *                 ('m', 'i4'),  # min
+  /* "pandas/_libs/tslibs/fields.pyx":60
+ *         ("Y", "i4"),  # year
+ *         ("M", "i4"),  # month
+ *         ("D", "i4"),  # day             # <<<<<<<<<<<<<<
+ *         ("h", "i4"),  # hour
+ *         ("m", "i4"),  # min
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_u_D, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_u_D, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "pandas/_libs/tslibs/fields.pyx":60
- *                 ('M', 'i4'),  # month
- *                 ('D', 'i4'),  # day
- *                 ('h', 'i4'),  # hour             # <<<<<<<<<<<<<<
- *                 ('m', 'i4'),  # min
- *                 ('s', 'i4'),  # second
+  /* "pandas/_libs/tslibs/fields.pyx":61
+ *         ("M", "i4"),  # month
+ *         ("D", "i4"),  # day
+ *         ("h", "i4"),  # hour             # <<<<<<<<<<<<<<
+ *         ("m", "i4"),  # min
+ *         ("s", "i4"),  # second
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_u_h, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_u_h, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "pandas/_libs/tslibs/fields.pyx":61
- *                 ('D', 'i4'),  # day
- *                 ('h', 'i4'),  # hour
- *                 ('m', 'i4'),  # min             # <<<<<<<<<<<<<<
- *                 ('s', 'i4'),  # second
- *                 ('u', 'i4')]  # microsecond
+  /* "pandas/_libs/tslibs/fields.pyx":62
+ *         ("D", "i4"),  # day
+ *         ("h", "i4"),  # hour
+ *         ("m", "i4"),  # min             # <<<<<<<<<<<<<<
+ *         ("s", "i4"),  # second
+ *         ("u", "i4"),  # microsecond
  */
-  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_n_u_m, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_n_u_m, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "pandas/_libs/tslibs/fields.pyx":62
- *                 ('h', 'i4'),  # hour
- *                 ('m', 'i4'),  # min
- *                 ('s', 'i4'),  # second             # <<<<<<<<<<<<<<
- *                 ('u', 'i4')]  # microsecond
- * 
+  /* "pandas/_libs/tslibs/fields.pyx":63
+ *         ("h", "i4"),  # hour
+ *         ("m", "i4"),  # min
+ *         ("s", "i4"),  # second             # <<<<<<<<<<<<<<
+ *         ("u", "i4"),  # microsecond
+ *     ]
  */
-  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_u_s, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_n_u_s, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "pandas/_libs/tslibs/fields.pyx":63
- *                 ('m', 'i4'),  # min
- *                 ('s', 'i4'),  # second
- *                 ('u', 'i4')]  # microsecond             # <<<<<<<<<<<<<<
+  /* "pandas/_libs/tslibs/fields.pyx":64
+ *         ("m", "i4"),  # min
+ *         ("s", "i4"),  # second
+ *         ("u", "i4"),  # microsecond             # <<<<<<<<<<<<<<
+ *     ]
  * 
- *     out = np.empty(count, dtype=sa_dtype)
  */
-  __pyx_tuple__7 = PyTuple_Pack(2, __pyx_n_u_u, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(2, __pyx_n_u_u, __pyx_n_u_i4); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "pandas/_libs/tslibs/fields.pyx":177
+  /* "pandas/_libs/tslibs/fields.pyx":181
  *         # month of year.
  * 
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (             # <<<<<<<<<<<<<<
  *                 freqstr[1:3] in ['MS', 'QS', 'AS']):
  *             end_month = 12 if month_kw == 1 else month_kw - 1
  */
-  __pyx_slice__8 = PySlice_New(__pyx_int_0, __pyx_int_2, Py_None); if (unlikely(!__pyx_slice__8)) __PYX_ERR(0, 177, __pyx_L1_error)
+  __pyx_slice__8 = PySlice_New(__pyx_int_0, __pyx_int_2, Py_None); if (unlikely(!__pyx_slice__8)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__8);
   __Pyx_GIVEREF(__pyx_slice__8);
 
-  /* "pandas/_libs/tslibs/fields.pyx":178
+  /* "pandas/_libs/tslibs/fields.pyx":182
  * 
  *         if (freqstr[0:2] in ['MS', 'QS', 'AS']) or (
  *                 freqstr[1:3] in ['MS', 'QS', 'AS']):             # <<<<<<<<<<<<<<
  *             end_month = 12 if month_kw == 1 else month_kw - 1
  *             start_month = month_kw
  */
-  __pyx_slice__9 = PySlice_New(__pyx_int_1, __pyx_int_3, Py_None); if (unlikely(!__pyx_slice__9)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_slice__9 = PySlice_New(__pyx_int_1, __pyx_int_3, Py_None); if (unlikely(!__pyx_slice__9)) __PYX_ERR(0, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__9);
   __Pyx_GIVEREF(__pyx_slice__9);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":272
+  /* "pandas/_libs/tslibs/fields.pyx":689
+ * 
+ *     sa_dtype = [
+ *         ("year", "u4"),             # <<<<<<<<<<<<<<
+ *         ("week", "u4"),
+ *         ("day", "u4"),
+ */
+  __pyx_tuple__10 = PyTuple_Pack(2, __pyx_n_u_year, __pyx_n_u_u4); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 689, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
+
+  /* "pandas/_libs/tslibs/fields.pyx":690
+ *     sa_dtype = [
+ *         ("year", "u4"),
+ *         ("week", "u4"),             # <<<<<<<<<<<<<<
+ *         ("day", "u4"),
+ *     ]
+ */
+  __pyx_tuple__11 = PyTuple_Pack(2, __pyx_n_u_week, __pyx_n_u_u4); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 690, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+
+  /* "pandas/_libs/tslibs/fields.pyx":691
+ *         ("year", "u4"),
+ *         ("week", "u4"),
+ *         ("day", "u4"),             # <<<<<<<<<<<<<<
+ *     ]
+ * 
+ */
+  __pyx_tuple__12 = PyTuple_Pack(2, __pyx_n_u_day, __pyx_n_u_u4); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 691, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__12);
+  __Pyx_GIVEREF(__pyx_tuple__12);
+
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 272, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 272, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":276
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_ARRAY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
  * 
  *             info.buf = PyArray_DATA(self)
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(1, 276, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 276, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__14);
+  __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":306
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":306
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-  __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(1, 306, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 306, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":855
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":855
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(1, 855, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__13);
-  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 855, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":879
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":879
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(1, 879, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 879, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1037
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1037
  *         _import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 1037, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 1037, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "../../../../../../opt/conda/envs/cf249b496aae59f2a35047c28676df47/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1043
+  /* "../../../../../../opt/conda/envs/b0f0bff5209ec486d705d7d540eeb943/lib/python3.8/site-packages/Cython/Includes/numpy/__init__.pxd":1043
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__16 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 1043, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__16);
-  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(1, 1043, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
 
   /* "View.MemoryView":133
  * 
@@ -29064,9 +29641,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__17 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(3, 133, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(3, 133, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
 
   /* "View.MemoryView":136
  * 
@@ -29075,9 +29652,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(3, 136, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__18);
-  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(3, 136, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
 
   /* "View.MemoryView":148
  * 
@@ -29086,9 +29663,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(3, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(3, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "View.MemoryView":176
  *             self.data = <char *>malloc(self.len)
@@ -29097,9 +29674,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(3, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(3, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
 
   /* "View.MemoryView":192
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -29108,9 +29685,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(3, 192, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(3, 192, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -29118,18 +29695,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(3, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(3, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(3, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(3, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "View.MemoryView":418
  *     def __setitem__(memoryview self, object index, object value):
@@ -29138,9 +29715,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(3, 418, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(3, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "View.MemoryView":495
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -29149,9 +29726,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(3, 495, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(3, 495, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "View.MemoryView":520
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -29160,9 +29737,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(3, 520, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(3, 520, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "View.MemoryView":570
  *         if self.view.strides == NULL:
@@ -29171,9 +29748,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(3, 570, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(3, 570, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "View.MemoryView":577
  *     def suboffsets(self):
@@ -29182,12 +29759,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__28 = PyTuple_New(1); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(3, 577, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
+  __pyx_tuple__31 = PyTuple_New(1); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(3, 577, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__28, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  PyTuple_SET_ITEM(__pyx_tuple__31, 0, __pyx_int_neg_1);
+  __Pyx_GIVEREF(__pyx_tuple__31);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -29195,18 +29772,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(3, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(3, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(3, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(3, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
 
   /* "View.MemoryView":682
  *         if item is Ellipsis:
@@ -29215,9 +29792,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 seen_ellipsis = True
  *             else:
  */
-  __pyx_slice__31 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__31)) __PYX_ERR(3, 682, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__31);
-  __Pyx_GIVEREF(__pyx_slice__31);
+  __pyx_slice__34 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__34)) __PYX_ERR(3, 682, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__34);
+  __Pyx_GIVEREF(__pyx_slice__34);
 
   /* "View.MemoryView":703
  *     for suboffset in suboffsets[:ndim]:
@@ -29226,9 +29803,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(3, 703, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(3, 703, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__35);
+  __Pyx_GIVEREF(__pyx_tuple__35);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -29236,30 +29813,30 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(3, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
+  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(3, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(3, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__34);
-  __Pyx_GIVEREF(__pyx_tuple__34);
+  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(3, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__37);
+  __Pyx_GIVEREF(__pyx_tuple__37);
 
   /* "pandas/_libs/tslibs/fields.pyx":25
  * 
  * 
- * def get_time_micros(ndarray[int64_t] dtindex):             # <<<<<<<<<<<<<<
+ * def get_time_micros(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
  *     """
  *     Return the number of microseconds in the time component of a
  */
-  __pyx_tuple__35 = PyTuple_Pack(2, __pyx_n_s_dtindex, __pyx_n_s_micros); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 25, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_time_micros, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_tuple__38 = PyTuple_Pack(3, __pyx_n_s_dtindex, __pyx_n_s_dtindex, __pyx_n_s_micros); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__38);
+  __Pyx_GIVEREF(__pyx_tuple__38);
+  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_time_micros, 25, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 25, __pyx_L1_error)
 
   /* "pandas/_libs/tslibs/fields.pyx":48
  * @cython.wraparound(False)
@@ -29268,58 +29845,70 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     """
  *     Datetime as int64 representation to a structured array of fields
  */
-  __pyx_tuple__37 = PyTuple_Pack(14, __pyx_n_s_dtindex, __pyx_n_s_dtindex, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_dts, __pyx_n_s_years, __pyx_n_s_months, __pyx_n_s_days, __pyx_n_s_hours, __pyx_n_s_minutes, __pyx_n_s_seconds, __pyx_n_s_mus, __pyx_n_s_sa_dtype, __pyx_n_s_out); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 48, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__37);
-  __Pyx_GIVEREF(__pyx_tuple__37);
-  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(1, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__37, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_build_field_sarray, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_tuple__40 = PyTuple_Pack(14, __pyx_n_s_dtindex, __pyx_n_s_dtindex, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_dts, __pyx_n_s_years, __pyx_n_s_months, __pyx_n_s_days, __pyx_n_s_hours, __pyx_n_s_minutes, __pyx_n_s_seconds, __pyx_n_s_mus, __pyx_n_s_sa_dtype, __pyx_n_s_out); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__40);
+  __Pyx_GIVEREF(__pyx_tuple__40);
+  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(1, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_build_field_sarray, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 48, __pyx_L1_error)
 
-  /* "pandas/_libs/tslibs/fields.pyx":90
+  /* "pandas/_libs/tslibs/fields.pyx":92
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_name_field(const int64_t[:] dtindex, object field, object locale=None):             # <<<<<<<<<<<<<<
  *     """
  *     Given a int64-based datetime index, return array of strings of date
  */
-  __pyx_tuple__39 = PyTuple_Pack(9, __pyx_n_s_dtindex, __pyx_n_s_field, __pyx_n_s_locale, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_out, __pyx_n_s_names, __pyx_n_s_dts, __pyx_n_s_dow); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 90, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__39);
-  __Pyx_GIVEREF(__pyx_tuple__39);
-  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__39, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_date_name_field, 90, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_tuple__42 = PyTuple_Pack(9, __pyx_n_s_dtindex, __pyx_n_s_field, __pyx_n_s_locale, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_out, __pyx_n_s_names, __pyx_n_s_dts, __pyx_n_s_dow); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__42);
+  __Pyx_GIVEREF(__pyx_tuple__42);
+  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_date_name_field, 92, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) __PYX_ERR(0, 92, __pyx_L1_error)
 
-  /* "pandas/_libs/tslibs/fields.pyx":140
+  /* "pandas/_libs/tslibs/fields.pyx":142
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_start_end_field(const int64_t[:] dtindex, object field,             # <<<<<<<<<<<<<<
  *                         object freqstr=None, int month_kw=12):
  *     """
  */
-  __pyx_tuple__41 = PyTuple_Pack(18, __pyx_n_s_dtindex, __pyx_n_s_field, __pyx_n_s_freqstr, __pyx_n_s_month_kw, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_is_business, __pyx_n_s_end_month, __pyx_n_s_start_month, __pyx_n_s_out, __pyx_n_s_month_offset, __pyx_n_s_isleap, __pyx_n_s_dts, __pyx_n_s_mo_off, __pyx_n_s_dom, __pyx_n_s_doy, __pyx_n_s_dow, __pyx_n_s_ldom); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 140, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__41);
-  __Pyx_GIVEREF(__pyx_tuple__41);
-  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(4, 0, 18, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__41, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_start_end_field, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_tuple__44 = PyTuple_Pack(18, __pyx_n_s_dtindex, __pyx_n_s_field, __pyx_n_s_freqstr, __pyx_n_s_month_kw, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_is_business, __pyx_n_s_end_month, __pyx_n_s_start_month, __pyx_n_s_out, __pyx_n_s_month_offset, __pyx_n_s_isleap, __pyx_n_s_dts, __pyx_n_s_mo_off, __pyx_n_s_dom, __pyx_n_s_doy, __pyx_n_s_dow, __pyx_n_s_ldom); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(0, 142, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__44);
+  __Pyx_GIVEREF(__pyx_tuple__44);
+  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(4, 0, 18, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__44, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_start_end_field, 142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 142, __pyx_L1_error)
 
-  /* "pandas/_libs/tslibs/fields.pyx":383
+  /* "pandas/_libs/tslibs/fields.pyx":387
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_field(const int64_t[:] dtindex, object field):             # <<<<<<<<<<<<<<
  *     """
  *     Given a int64-based datetime index, extract the year, month, etc.,
  */
-  __pyx_tuple__43 = PyTuple_Pack(6, __pyx_n_s_dtindex, __pyx_n_s_field, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_out, __pyx_n_s_dts); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 383, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__43);
-  __Pyx_GIVEREF(__pyx_tuple__43);
-  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__43, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_date_field, 383, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_tuple__46 = PyTuple_Pack(6, __pyx_n_s_dtindex, __pyx_n_s_field, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_out, __pyx_n_s_dts); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__46);
+  __Pyx_GIVEREF(__pyx_tuple__46);
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_date_field, 387, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 387, __pyx_L1_error)
 
-  /* "pandas/_libs/tslibs/fields.pyx":545
+  /* "pandas/_libs/tslibs/fields.pyx":549
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_timedelta_field(const int64_t[:] tdindex, object field):             # <<<<<<<<<<<<<<
  *     """
  *     Given a int64-based timedelta index, extract the days, hrs, sec.,
  */
-  __pyx_tuple__45 = PyTuple_Pack(6, __pyx_n_s_tdindex, __pyx_n_s_field, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_out, __pyx_n_s_tds); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 545, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__45);
-  __Pyx_GIVEREF(__pyx_tuple__45);
-  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__45, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_timedelta_field, 545, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 545, __pyx_L1_error)
+  __pyx_tuple__48 = PyTuple_Pack(6, __pyx_n_s_tdindex, __pyx_n_s_field, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_out, __pyx_n_s_tds); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 549, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__48);
+  __Pyx_GIVEREF(__pyx_tuple__48);
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_get_timedelta_field, 549, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 549, __pyx_L1_error)
+
+  /* "pandas/_libs/tslibs/fields.pyx":677
+ * @cython.wraparound(False)
+ * @cython.boundscheck(False)
+ * def build_isocalendar_sarray(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
+ *     """
+ *     Given a int64-based datetime array, return the ISO 8601 year, week, and day
+ */
+  __pyx_tuple__50 = PyTuple_Pack(11, __pyx_n_s_dtindex, __pyx_n_s_dtindex, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_dts, __pyx_n_s_iso_years, __pyx_n_s_iso_weeks, __pyx_n_s_days, __pyx_n_s_ret_val, __pyx_n_s_sa_dtype, __pyx_n_s_out); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 677, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__50);
+  __Pyx_GIVEREF(__pyx_tuple__50);
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(1, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pandas__libs_tslibs_fields_pyx, __pyx_n_s_build_isocalendar_sarray, 677, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 677, __pyx_L1_error)
 
   /* "View.MemoryView":286
  *         return self.name
@@ -29328,9 +29917,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(3, 286, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__47);
-  __Pyx_GIVEREF(__pyx_tuple__47);
+  __pyx_tuple__52 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(3, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
 
   /* "View.MemoryView":287
  * 
@@ -29339,9 +29928,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(3, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__48);
-  __Pyx_GIVEREF(__pyx_tuple__48);
+  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(3, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__53);
+  __Pyx_GIVEREF(__pyx_tuple__53);
 
   /* "View.MemoryView":288
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -29350,9 +29939,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__49 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(3, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
+  __pyx_tuple__54 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(3, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__54);
+  __Pyx_GIVEREF(__pyx_tuple__54);
 
   /* "View.MemoryView":291
  * 
@@ -29361,9 +29950,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(3, 291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__50);
-  __Pyx_GIVEREF(__pyx_tuple__50);
+  __pyx_tuple__55 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(3, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__55);
+  __Pyx_GIVEREF(__pyx_tuple__55);
 
   /* "View.MemoryView":292
  * 
@@ -29372,19 +29961,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__51 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(3, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
+  __pyx_tuple__56 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(3, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__56);
+  __Pyx_GIVEREF(__pyx_tuple__56);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__52 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(3, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__52);
-  __Pyx_GIVEREF(__pyx_tuple__52);
-  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(3, 1, __pyx_L1_error)
+  __pyx_tuple__57 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(3, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__57);
+  __Pyx_GIVEREF(__pyx_tuple__57);
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(3, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -29580,10 +30169,10 @@ static int __Pyx_modinit_type_import_code(void) {
   __pyx_ptype_7cpython_8datetime_tzinfo = __Pyx_ImportType(__pyx_t_1, "datetime", "tzinfo", sizeof(PyDateTime_TZInfo), __Pyx_ImportType_CheckSize_Warn);
    if (!__pyx_ptype_7cpython_8datetime_tzinfo) __PYX_ERR(2, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyImport_ImportModule("pandas._libs.tslibs.nattype"); if (unlikely(!__pyx_t_1)) __PYX_ERR(5, 11, __pyx_L1_error)
+  __pyx_t_1 = PyImport_ImportModule("pandas._libs.tslibs.nattype"); if (unlikely(!__pyx_t_1)) __PYX_ERR(5, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_6pandas_5_libs_6tslibs_7nattype__NaT = __Pyx_ImportType(__pyx_t_1, "pandas._libs.tslibs.nattype", "_NaT", sizeof(struct __pyx_obj_6pandas_5_libs_6tslibs_7nattype__NaT), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_6pandas_5_libs_6tslibs_7nattype__NaT) __PYX_ERR(5, 11, __pyx_L1_error)
+   if (!__pyx_ptype_6pandas_5_libs_6tslibs_7nattype__NaT) __PYX_ERR(5, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -29633,6 +30222,7 @@ static int __Pyx_modinit_function_import_code(void) {
   if (__Pyx_ImportFunction(__pyx_t_1, "is_leapyear", (void (**)(void))&__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_is_leapyear, "int (__pyx_t_5numpy_int64_t)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ImportFunction(__pyx_t_1, "get_days_in_month", (void (**)(void))&__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_days_in_month, "__pyx_t_5numpy_int32_t (int, Py_ssize_t, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ImportFunction(__pyx_t_1, "get_week_of_year", (void (**)(void))&__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_week_of_year, "__pyx_t_5numpy_int32_t (int, int, int, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_ImportFunction(__pyx_t_1, "get_iso_calendar", (void (**)(void))&__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_iso_calendar, "__pyx_t_6pandas_5_libs_6tslibs_9ccalendar_iso_calendar_t (int, int, int, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   if (__Pyx_ImportFunction(__pyx_t_1, "get_day_of_year", (void (**)(void))&__pyx_f_6pandas_5_libs_6tslibs_9ccalendar_get_day_of_year, "__pyx_t_5numpy_int32_t (int, int, int, int __pyx_skip_dispatch)") < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   Py_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_2 = PyImport_ImportModule("pandas._libs.tslibs.np_datetime"); if (!__pyx_t_2) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -29858,7 +30448,7 @@ if (!__Pyx_RefNanny) {
  * 
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as cnp
- * from numpy cimport ndarray, int64_t, int32_t, int8_t
+ * from numpy cimport ndarray, int64_t, int32_t, int8_t, uint32_t
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -29867,7 +30457,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pandas/_libs/tslibs/fields.pyx":12
  * cimport numpy as cnp
- * from numpy cimport ndarray, int64_t, int32_t, int8_t
+ * from numpy cimport ndarray, int64_t, int32_t, int8_t, uint32_t
  * cnp.import_array()             # <<<<<<<<<<<<<<
  * 
  * from pandas._libs.tslibs.ccalendar import (
@@ -29927,7 +30517,7 @@ if (!__Pyx_RefNanny) {
   /* "pandas/_libs/tslibs/fields.pyx":25
  * 
  * 
- * def get_time_micros(ndarray[int64_t] dtindex):             # <<<<<<<<<<<<<<
+ * def get_time_micros(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
  *     """
  *     Return the number of microseconds in the time component of a
  */
@@ -29948,52 +30538,64 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_build_field_sarray, __pyx_t_3) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":90
+  /* "pandas/_libs/tslibs/fields.pyx":92
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_name_field(const int64_t[:] dtindex, object field, object locale=None):             # <<<<<<<<<<<<<<
  *     """
  *     Given a int64-based datetime index, return array of strings of date
  */
-  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_5get_date_name_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_5get_date_name_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_date_name_field, __pyx_t_3) < 0) __PYX_ERR(0, 90, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_date_name_field, __pyx_t_3) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":140
+  /* "pandas/_libs/tslibs/fields.pyx":142
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_start_end_field(const int64_t[:] dtindex, object field,             # <<<<<<<<<<<<<<
  *                         object freqstr=None, int month_kw=12):
  *     """
  */
-  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_7get_start_end_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_7get_start_end_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_start_end_field, __pyx_t_3) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_start_end_field, __pyx_t_3) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":383
+  /* "pandas/_libs/tslibs/fields.pyx":387
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_date_field(const int64_t[:] dtindex, object field):             # <<<<<<<<<<<<<<
  *     """
  *     Given a int64-based datetime index, extract the year, month, etc.,
  */
-  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_9get_date_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_9get_date_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_date_field, __pyx_t_3) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_date_field, __pyx_t_3) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pandas/_libs/tslibs/fields.pyx":545
+  /* "pandas/_libs/tslibs/fields.pyx":549
  * @cython.wraparound(False)
  * @cython.boundscheck(False)
  * def get_timedelta_field(const int64_t[:] tdindex, object field):             # <<<<<<<<<<<<<<
  *     """
  *     Given a int64-based timedelta index, extract the days, hrs, sec.,
  */
-  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_11get_timedelta_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 545, __pyx_L1_error)
+  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_11get_timedelta_field, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 549, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_timedelta_field, __pyx_t_3) < 0) __PYX_ERR(0, 545, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_timedelta_field, __pyx_t_3) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "pandas/_libs/tslibs/fields.pyx":677
+ * @cython.wraparound(False)
+ * @cython.boundscheck(False)
+ * def build_isocalendar_sarray(const int64_t[:] dtindex):             # <<<<<<<<<<<<<<
+ *     """
+ *     Given a int64-based datetime array, return the ISO 8601 year, week, and day
+ */
+  __pyx_t_3 = PyCFunction_NewEx(&__pyx_mdef_6pandas_5_libs_6tslibs_6fields_15build_isocalendar_sarray, NULL, __pyx_n_s_pandas__libs_tslibs_fields); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 677, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_build_isocalendar_sarray, __pyx_t_3) < 0) __PYX_ERR(0, 677, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "pandas/_libs/tslibs/fields.pyx":1
@@ -30026,7 +30628,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__47, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 286, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__52, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 286, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_3);
@@ -30040,7 +30642,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__48, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 287, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_3);
@@ -30054,7 +30656,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__49, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 288, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__54, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_3);
@@ -30068,7 +30670,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 291, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__55, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_3);
@@ -30082,7 +30684,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__51, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 292, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__56, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_3);
@@ -30230,24 +30832,97 @@ static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
     return result;
 }
 
-/* ArgTypeTest */
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
+/* PyDictVersioning */
+#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
+    PyObject *dict = Py_TYPE(obj)->tp_dict;
+    return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
+}
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj) {
+    PyObject **dictptr = NULL;
+    Py_ssize_t offset = Py_TYPE(obj)->tp_dictoffset;
+    if (offset) {
+#if CYTHON_COMPILING_IN_CPYTHON
+        dictptr = (likely(offset > 0)) ? (PyObject **) ((char *)obj + offset) : _PyObject_GetDictPtr(obj);
+#else
+        dictptr = _PyObject_GetDictPtr(obj);
+#endif
+    }
+    return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
+}
+static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version) {
+    PyObject *dict = Py_TYPE(obj)->tp_dict;
+    if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
+        return 0;
+    return obj_dict_version == __Pyx_get_object_dict_version(obj);
+}
+#endif
+
+/* GetModuleGlobalName */
+#if CYTHON_USE_DICT_VERSIONS
+static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_version, PyObject **dict_cached_value)
+#else
+static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
+#endif
 {
+    PyObject *result;
+#if !CYTHON_AVOID_BORROWED_REFS
+#if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030500A1
+    result = _PyDict_GetItem_KnownHash(__pyx_d, name, ((PyASCIIObject *) name)->hash);
+    __PYX_UPDATE_DICT_CACHE(__pyx_d, result, *dict_cached_value, *dict_version)
+    if (likely(result)) {
+        return __Pyx_NewRef(result);
+    } else if (unlikely(PyErr_Occurred())) {
+        return NULL;
+    }
+#else
+    result = PyDict_GetItem(__pyx_d, name);
+    __PYX_UPDATE_DICT_CACHE(__pyx_d, result, *dict_cached_value, *dict_version)
+    if (likely(result)) {
+        return __Pyx_NewRef(result);
+    }
+#endif
+#else
+    result = PyObject_GetItem(__pyx_d, name);
+    __PYX_UPDATE_DICT_CACHE(__pyx_d, result, *dict_cached_value, *dict_version)
+    if (likely(result)) {
+        return __Pyx_NewRef(result);
+    }
+    PyErr_Clear();
+#endif
+    return __Pyx_GetBuiltinName(name);
+}
+
+/* PyObjectCall */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
+    PyObject *result;
+    ternaryfunc call = func->ob_type->tp_call;
+    if (unlikely(!call))
+        return PyObject_Call(func, arg, kw);
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    result = (*call)(func, arg, kw);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
+    return result;
+}
+#endif
+
+/* ExtTypeTest */
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
     if (unlikely(!type)) {
         PyErr_SetString(PyExc_SystemError, "Missing type object");
         return 0;
     }
-    else if (exact) {
-        #if PY_MAJOR_VERSION == 2
-        if ((type == &PyBaseString_Type) && likely(__Pyx_PyBaseString_CheckExact(obj))) return 1;
-        #endif
-    }
-    else {
-        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
-    }
-    PyErr_Format(PyExc_TypeError,
-        "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
-        name, type->tp_name, Py_TYPE(obj)->tp_name);
+    if (likely(__Pyx_TypeCheck(obj, type)))
+        return 1;
+    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
+                 Py_TYPE(obj)->tp_name, type->tp_name);
     return 0;
 }
 
@@ -30811,100 +31486,6 @@ fail:;
   return -1;
 }
 
-/* PyDictVersioning */
-  #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
-    PyObject *dict = Py_TYPE(obj)->tp_dict;
-    return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
-}
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj) {
-    PyObject **dictptr = NULL;
-    Py_ssize_t offset = Py_TYPE(obj)->tp_dictoffset;
-    if (offset) {
-#if CYTHON_COMPILING_IN_CPYTHON
-        dictptr = (likely(offset > 0)) ? (PyObject **) ((char *)obj + offset) : _PyObject_GetDictPtr(obj);
-#else
-        dictptr = _PyObject_GetDictPtr(obj);
-#endif
-    }
-    return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
-}
-static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version) {
-    PyObject *dict = Py_TYPE(obj)->tp_dict;
-    if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
-        return 0;
-    return obj_dict_version == __Pyx_get_object_dict_version(obj);
-}
-#endif
-
-/* GetModuleGlobalName */
-  #if CYTHON_USE_DICT_VERSIONS
-static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_version, PyObject **dict_cached_value)
-#else
-static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
-#endif
-{
-    PyObject *result;
-#if !CYTHON_AVOID_BORROWED_REFS
-#if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030500A1
-    result = _PyDict_GetItem_KnownHash(__pyx_d, name, ((PyASCIIObject *) name)->hash);
-    __PYX_UPDATE_DICT_CACHE(__pyx_d, result, *dict_cached_value, *dict_version)
-    if (likely(result)) {
-        return __Pyx_NewRef(result);
-    } else if (unlikely(PyErr_Occurred())) {
-        return NULL;
-    }
-#else
-    result = PyDict_GetItem(__pyx_d, name);
-    __PYX_UPDATE_DICT_CACHE(__pyx_d, result, *dict_cached_value, *dict_version)
-    if (likely(result)) {
-        return __Pyx_NewRef(result);
-    }
-#endif
-#else
-    result = PyObject_GetItem(__pyx_d, name);
-    __PYX_UPDATE_DICT_CACHE(__pyx_d, result, *dict_cached_value, *dict_version)
-    if (likely(result)) {
-        return __Pyx_NewRef(result);
-    }
-    PyErr_Clear();
-#endif
-    return __Pyx_GetBuiltinName(name);
-}
-
-/* PyObjectCall */
-  #if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
-    PyObject *result;
-    ternaryfunc call = func->ob_type->tp_call;
-    if (unlikely(!call))
-        return PyObject_Call(func, arg, kw);
-    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
-        return NULL;
-    result = (*call)(func, arg, kw);
-    Py_LeaveRecursiveCall();
-    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
-        PyErr_SetString(
-            PyExc_SystemError,
-            "NULL result without error in PyObject_Call");
-    }
-    return result;
-}
-#endif
-
-/* ExtTypeTest */
-  static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    if (likely(__Pyx_TypeCheck(obj, type)))
-        return 1;
-    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
-                 Py_TYPE(obj)->tp_name, type->tp_name);
-    return 0;
-}
-
 /* BufferFallbackError */
   static void __Pyx_RaiseBufferFallbackError(void) {
   PyErr_SetString(PyExc_ValueError,
@@ -30932,30 +31513,6 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
     tstate->curexc_type = 0;
     tstate->curexc_value = 0;
     tstate->curexc_traceback = 0;
-}
-#endif
-
-/* DictGetItem */
-  #if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
-static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {
-    PyObject *value;
-    value = PyDict_GetItemWithError(d, key);
-    if (unlikely(!value)) {
-        if (!PyErr_Occurred()) {
-            if (unlikely(PyTuple_Check(key))) {
-                PyObject* args = PyTuple_Pack(1, key);
-                if (likely(args)) {
-                    PyErr_SetObject(PyExc_KeyError, args);
-                    Py_DECREF(args);
-                }
-            } else {
-                PyErr_SetObject(PyExc_KeyError, key);
-            }
-        }
-        return NULL;
-    }
-    Py_INCREF(value);
-    return value;
 }
 #endif
 
@@ -31090,6 +31647,30 @@ static CYTHON_INLINE void __Pyx_XDEC_MEMVIEW(__Pyx_memviewslice *memslice,
         memslice->memview = NULL;
     }
 }
+
+/* DictGetItem */
+  #if PY_MAJOR_VERSION >= 3 && !CYTHON_COMPILING_IN_PYPY
+static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {
+    PyObject *value;
+    value = PyDict_GetItemWithError(d, key);
+    if (unlikely(!value)) {
+        if (!PyErr_Occurred()) {
+            if (unlikely(PyTuple_Check(key))) {
+                PyObject* args = PyTuple_Pack(1, key);
+                if (likely(args)) {
+                    PyErr_SetObject(PyExc_KeyError, args);
+                    Py_DECREF(args);
+                }
+            } else {
+                PyErr_SetObject(PyExc_KeyError, key);
+            }
+        }
+        return NULL;
+    }
+    Py_INCREF(value);
+    return value;
+}
+#endif
 
 /* RaiseArgTupleInvalid */
   static void __Pyx_RaiseArgtupleInvalid(
@@ -31606,6 +32187,68 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
 }
 #endif
 
+/* JoinPyUnicode */
+  static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      CYTHON_UNUSED Py_UCS4 max_char) {
+#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    PyObject *result_uval;
+    int result_ukind;
+    Py_ssize_t i, char_pos;
+    void *result_udata;
+#if CYTHON_PEP393_ENABLED
+    result_uval = PyUnicode_New(result_ulength, max_char);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
+    result_udata = PyUnicode_DATA(result_uval);
+#else
+    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = sizeof(Py_UNICODE);
+    result_udata = PyUnicode_AS_UNICODE(result_uval);
+#endif
+    char_pos = 0;
+    for (i=0; i < value_count; i++) {
+        int ukind;
+        Py_ssize_t ulength;
+        void *udata;
+        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
+        if (unlikely(__Pyx_PyUnicode_READY(uval)))
+            goto bad;
+        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
+        if (unlikely(!ulength))
+            continue;
+        if (unlikely(char_pos + ulength < 0))
+            goto overflow;
+        ukind = __Pyx_PyUnicode_KIND(uval);
+        udata = __Pyx_PyUnicode_DATA(uval);
+        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
+            memcpy((char *)result_udata + char_pos * result_ukind, udata, (size_t) (ulength * result_ukind));
+        } else {
+            #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
+            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
+            #else
+            Py_ssize_t j;
+            for (j=0; j < ulength; j++) {
+                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
+                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
+            }
+            #endif
+        }
+        char_pos += ulength;
+    }
+    return result_uval;
+overflow:
+    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
+bad:
+    Py_DECREF(result_uval);
+    return NULL;
+#else
+    result_ulength++;
+    value_count++;
+    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
+#endif
+}
+
 /* RaiseException */
   #if PY_MAJOR_VERSION < 3
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb,
@@ -32058,6 +32701,27 @@ done:
     }
     return (
         PyObject_RichCompare(op1, op2, Py_EQ));
+}
+
+/* ArgTypeTest */
+  static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
+{
+    if (unlikely(!type)) {
+        PyErr_SetString(PyExc_SystemError, "Missing type object");
+        return 0;
+    }
+    else if (exact) {
+        #if PY_MAJOR_VERSION == 2
+        if ((type == &PyBaseString_Type) && likely(__Pyx_PyBaseString_CheckExact(obj))) return 1;
+        #endif
+    }
+    else {
+        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
+    }
+    PyErr_Format(PyExc_TypeError,
+        "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
+        name, type->tp_name, Py_TYPE(obj)->tp_name);
+    return 0;
 }
 
 /* RaiseTooManyValuesToUnpack */

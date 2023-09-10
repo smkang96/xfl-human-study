@@ -11,7 +11,6 @@ from pandas.core.dtypes.missing import remove_na_arraylike
 import pandas as pd
 
 from pandas.io.formats.printing import pprint_thing
-from pandas.plotting._matplotlib import converter
 from pandas.plotting._matplotlib.core import LinePlot, MPLPlot
 from pandas.plotting._matplotlib.style import _get_standard_colors
 from pandas.plotting._matplotlib.tools import _flatten, _subplots
@@ -75,9 +74,8 @@ class BoxPlot(LinePlot):
                 for key, values in self.color.items():
                     if key not in valid_keys:
                         raise ValueError(
-                            "color dict contains invalid "
-                            "key '{0}' "
-                            "The key must be either {1}".format(key, valid_keys)
+                            f"color dict contains invalid key '{key}'. "
+                            f"The key must be either {valid_keys}"
                         )
         else:
             self.color = None
@@ -109,14 +107,20 @@ class BoxPlot(LinePlot):
             medians = self.color or self._medians_c
             caps = self.color or self._caps_c
 
-        setp(bp["boxes"], color=boxes, alpha=1)
-        setp(bp["whiskers"], color=whiskers, alpha=1)
-        setp(bp["medians"], color=medians, alpha=1)
-        setp(bp["caps"], color=caps, alpha=1)
+        # GH 30346, when users specifying those arguments explicitly, our defaults
+        # for these four kwargs should be overridden; if not, use Pandas settings
+        if not self.kwds.get("boxprops"):
+            setp(bp["boxes"], color=boxes, alpha=1)
+        if not self.kwds.get("whiskerprops"):
+            setp(bp["whiskers"], color=whiskers, alpha=1)
+        if not self.kwds.get("medianprops"):
+            setp(bp["medians"], color=medians, alpha=1)
+        if not self.kwds.get("capprops"):
+            setp(bp["caps"], color=caps, alpha=1)
 
     def _make_plot(self):
         if self.subplots:
-            self._return_obj = pd.Series()
+            self._return_obj = pd.Series(dtype=object)
 
             for i, (label, y) in enumerate(self._iter_data()):
                 ax = self._get_ax(i)
@@ -185,7 +189,7 @@ def _grouped_plot_by_column(
     ax=None,
     layout=None,
     return_type=None,
-    **kwargs
+    **kwargs,
 ):
     grouped = data.groupby(by)
     if columns is None:
@@ -218,7 +222,7 @@ def _grouped_plot_by_column(
         result = axes
 
     byline = by[0] if len(by) == 1 else by
-    fig.suptitle("Boxplot grouped by {byline}".format(byline=byline))
+    fig.suptitle(f"Boxplot grouped by {byline}")
     fig.subplots_adjust(bottom=0.15, top=0.9, left=0.1, right=0.9, wspace=0.2)
 
     return result
@@ -235,7 +239,7 @@ def boxplot(
     figsize=None,
     layout=None,
     return_type=None,
-    **kwds
+    **kwds,
 ):
 
     import matplotlib.pyplot as plt
@@ -269,20 +273,25 @@ def boxplot(
                         result[key_to_index[key]] = value
                     else:
                         raise ValueError(
-                            "color dict contains invalid "
-                            "key '{0}' "
-                            "The key must be either {1}".format(key, valid_keys)
+                            f"color dict contains invalid key '{key}'. "
+                            f"The key must be either {valid_keys}"
                         )
             else:
                 result.fill(colors)
 
         return result
 
-    def maybe_color_bp(bp):
-        setp(bp["boxes"], color=colors[0], alpha=1)
-        setp(bp["whiskers"], color=colors[1], alpha=1)
-        setp(bp["medians"], color=colors[2], alpha=1)
-        setp(bp["caps"], color=colors[3], alpha=1)
+    def maybe_color_bp(bp, **kwds):
+        # GH 30346, when users specifying those arguments explicitly, our defaults
+        # for these four kwargs should be overridden; if not, use Pandas settings
+        if not kwds.get("boxprops"):
+            setp(bp["boxes"], color=colors[0], alpha=1)
+        if not kwds.get("whiskerprops"):
+            setp(bp["whiskers"], color=colors[1], alpha=1)
+        if not kwds.get("medianprops"):
+            setp(bp["medians"], color=colors[2], alpha=1)
+        if not kwds.get("capprops"):
+            setp(bp["caps"], color=colors[3], alpha=1)
 
     def plot_group(keys, values, ax):
         keys = [pprint_thing(x) for x in keys]
@@ -294,7 +303,7 @@ def boxplot(
             ax.set_xticklabels(keys, rotation=rot)
         else:
             ax.set_yticklabels(keys, rotation=rot)
-        maybe_color_bp(bp)
+        maybe_color_bp(bp, **kwds)
 
         # Return axes in multiplot case, maybe revisit later # 985
         if return_type == "dict":
@@ -331,9 +340,7 @@ def boxplot(
         if return_type is None:
             return_type = "axes"
         if layout is not None:
-            raise ValueError(
-                "The 'layout' keyword is not supported when " "'by' is None"
-            )
+            raise ValueError("The 'layout' keyword is not supported when 'by' is None")
 
         if ax is None:
             rc = {"figure.figsize": figsize} if figsize is not None else {}
@@ -362,11 +369,10 @@ def boxplot_frame(
     figsize=None,
     layout=None,
     return_type=None,
-    **kwds
+    **kwds,
 ):
     import matplotlib.pyplot as plt
 
-    converter._WARN = False  # no warning for pandas plots
     ax = boxplot(
         self,
         column=column,
@@ -378,7 +384,7 @@ def boxplot_frame(
         figsize=figsize,
         layout=layout,
         return_type=return_type,
-        **kwds
+        **kwds,
     )
     plt.draw_if_interactive()
     return ax
@@ -396,9 +402,8 @@ def boxplot_frame_groupby(
     layout=None,
     sharex=False,
     sharey=True,
-    **kwds
+    **kwds,
 ):
-    converter._WARN = False  # no warning for pandas plots
     if subplots is True:
         naxes = len(grouped)
         fig, axes = _subplots(
@@ -412,7 +417,8 @@ def boxplot_frame_groupby(
         )
         axes = _flatten(axes)
 
-        ret = pd.Series()
+        ret = pd.Series(dtype=object)
+
         for (key, group), ax in zip(grouped, axes):
             d = group.boxplot(
                 ax=ax, column=column, fontsize=fontsize, rot=rot, grid=grid, **kwds
@@ -437,6 +443,6 @@ def boxplot_frame_groupby(
             ax=ax,
             figsize=figsize,
             layout=layout,
-            **kwds
+            **kwds,
         )
     return ret

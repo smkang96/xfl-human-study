@@ -2,9 +2,6 @@
 The tests in this package are to ensure the proper resultant dtypes of
 set operations.
 """
-from collections import OrderedDict
-import itertools as it
-
 import numpy as np
 import pytest
 
@@ -12,29 +9,15 @@ from pandas.core.dtypes.common import is_dtype_equal
 
 import pandas as pd
 from pandas import Float64Index, Int64Index, RangeIndex, UInt64Index
+import pandas._testing as tm
 from pandas.api.types import pandas_dtype
-from pandas.tests.indexes.conftest import indices_list
-import pandas.util.testing as tm
 
-COMPATIBLE_INCONSISTENT_PAIRS = OrderedDict(
-    [
-        ((Int64Index, RangeIndex), (tm.makeIntIndex, tm.makeRangeIndex)),
-        ((Float64Index, Int64Index), (tm.makeFloatIndex, tm.makeIntIndex)),
-        ((Float64Index, RangeIndex), (tm.makeFloatIndex, tm.makeIntIndex)),
-        ((Float64Index, UInt64Index), (tm.makeFloatIndex, tm.makeUIntIndex)),
-    ]
-)
-
-
-@pytest.fixture(
-    params=list(it.combinations(indices_list, 2)),
-    ids=lambda x: type(x[0]).__name__ + type(x[1]).__name__,
-)
-def index_pair(request):
-    """
-    Create all combinations of 2 index types.
-    """
-    return request.param
+COMPATIBLE_INCONSISTENT_PAIRS = {
+    (Int64Index, RangeIndex): (tm.makeIntIndex, tm.makeRangeIndex),
+    (Float64Index, Int64Index): (tm.makeFloatIndex, tm.makeIntIndex),
+    (Float64Index, RangeIndex): (tm.makeFloatIndex, tm.makeIntIndex),
+    (Float64Index, UInt64Index): (tm.makeFloatIndex, tm.makeUIntIndex),
+}
 
 
 def test_union_same_types(indices):
@@ -45,14 +28,15 @@ def test_union_same_types(indices):
     assert idx1.union(idx2).dtype == idx1.dtype
 
 
-def test_union_different_types(index_pair):
+def test_union_different_types(indices, index_fixture2):
+    # This test only considers combinations of indices
     # GH 23525
-    idx1, idx2 = index_pair
+    idx1, idx2 = indices, index_fixture2
     type_pair = tuple(sorted([type(idx1), type(idx2)], key=lambda x: str(x)))
     if type_pair in COMPATIBLE_INCONSISTENT_PAIRS:
         pytest.xfail("This test only considers non compatible indexes.")
 
-    if any(isinstance(idx, pd.MultiIndex) for idx in index_pair):
+    if any(isinstance(idx, pd.MultiIndex) for idx in (idx1, idx2)):
         pytest.xfail("This test doesn't consider multiindixes.")
 
     if is_dtype_equal(idx1.dtype, idx2.dtype):

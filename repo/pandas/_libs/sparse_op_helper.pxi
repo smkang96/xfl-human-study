@@ -165,7 +165,7 @@ cdef inline tuple int_op_add_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -348,7 +348,7 @@ cdef inline tuple int_op_add_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -531,7 +531,7 @@ cdef inline tuple int_op_sub_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -714,7 +714,7 @@ cdef inline tuple int_op_sub_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -897,7 +897,7 @@ cdef inline tuple int_op_mul_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -1080,7 +1080,7 @@ cdef inline tuple int_op_mul_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -1263,7 +1263,7 @@ cdef inline tuple int_op_div_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -1446,7 +1446,7 @@ cdef inline tuple int_op_div_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -1629,7 +1629,7 @@ cdef inline tuple int_op_mod_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -1812,7 +1812,7 @@ cdef inline tuple int_op_mod_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -1995,7 +1995,7 @@ cdef inline tuple int_op_truediv_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -2178,7 +2178,7 @@ cdef inline tuple int_op_truediv_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -2361,7 +2361,7 @@ cdef inline tuple int_op_floordiv_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -2544,7 +2544,7 @@ cdef inline tuple int_op_floordiv_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -2727,7 +2727,7 @@ cdef inline tuple int_op_pow_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -2910,7 +2910,7 @@ cdef inline tuple int_op_pow_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -3093,7 +3093,7 @@ cdef inline tuple int_op_eq_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -3276,7 +3276,7 @@ cdef inline tuple int_op_eq_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -3459,7 +3459,7 @@ cdef inline tuple int_op_ne_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -3642,7 +3642,7 @@ cdef inline tuple int_op_ne_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -3825,7 +3825,7 @@ cdef inline tuple int_op_lt_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -4008,7 +4008,7 @@ cdef inline tuple int_op_lt_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -4191,7 +4191,7 @@ cdef inline tuple int_op_gt_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -4374,7 +4374,7 @@ cdef inline tuple int_op_gt_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -4557,7 +4557,7 @@ cdef inline tuple int_op_le_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -4740,7 +4740,7 @@ cdef inline tuple int_op_le_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -4923,7 +4923,7 @@ cdef inline tuple int_op_ge_float64(float64_t[:] x_,
                                               float64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         float64_t[:] x, y
@@ -5106,7 +5106,7 @@ cdef inline tuple int_op_ge_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -5289,7 +5289,7 @@ cdef inline tuple int_op_and_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -5472,7 +5472,7 @@ cdef inline tuple int_op_and_uint8(uint8_t[:] x_,
                                               uint8_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         uint8_t[:] x, y
@@ -5655,7 +5655,7 @@ cdef inline tuple int_op_or_int64(int64_t[:] x_,
                                               int64_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         int64_t[:] x, y
@@ -5838,7 +5838,7 @@ cdef inline tuple int_op_or_uint8(uint8_t[:] x_,
                                               uint8_t yfill):
     cdef:
         IntIndex out_index
-        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
         int32_t xloc, yloc
         int32_t[:] xindices, yindices, out_indices
         uint8_t[:] x, y
@@ -5908,3 +5908,369 @@ cpdef sparse_or_uint8(uint8_t[:] x,
 cpdef sparse_fill_or_uint8(uint8_t xfill,
                                        uint8_t yfill):
     return xfill | yfill
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+cdef inline tuple block_op_xor_int64(int64_t[:] x_,
+                                                BlockIndex xindex,
+                                                int64_t xfill,
+                                                int64_t[:] y_,
+                                                BlockIndex yindex,
+                                                int64_t yfill):
+    '''
+    Binary operator on BlockIndex objects with fill values
+    '''
+
+    cdef:
+        BlockIndex out_index
+        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        int32_t xbp = 0, ybp = 0 # block positions
+        int32_t xloc, yloc
+        Py_ssize_t xblock = 0, yblock = 0 # block numbers
+
+        int64_t[:] x, y
+        ndarray[uint8_t, ndim=1] out
+
+    # to suppress Cython warning
+    x = x_
+    y = y_
+
+    out_index = xindex.make_union(yindex)
+    out = np.empty(out_index.npoints, dtype=np.uint8)
+
+    # Wow, what a hack job. Need to do something about this
+
+    # walk the two SparseVectors, adding matched locations...
+    for out_i in range(out_index.npoints):
+        if yblock == yindex.nblocks:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+
+            # advance x location
+            xbp += 1
+            if xbp == xindex.lenbuf[xblock]:
+                xblock += 1
+                xbp = 0
+            continue
+
+        if xblock == xindex.nblocks:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+
+            # advance y location
+            ybp += 1
+            if ybp == yindex.lenbuf[yblock]:
+                yblock += 1
+                ybp = 0
+            continue
+
+        yloc = yindex.locbuf[yblock] + ybp
+        xloc = xindex.locbuf[xblock] + xbp
+
+        # each index in the out_index had to come from either x, y, or both
+        if xloc == yloc:
+            out[out_i] = x[xi] ^ y[yi]
+            xi += 1
+            yi += 1
+
+            # advance both locations
+            xbp += 1
+            if xbp == xindex.lenbuf[xblock]:
+                xblock += 1
+                xbp = 0
+
+            ybp += 1
+            if ybp == yindex.lenbuf[yblock]:
+                yblock += 1
+                ybp = 0
+
+        elif xloc < yloc:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+
+            # advance x location
+            xbp += 1
+            if xbp == xindex.lenbuf[xblock]:
+                xblock += 1
+                xbp = 0
+        else:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+
+            # advance y location
+            ybp += 1
+            if ybp == yindex.lenbuf[yblock]:
+                yblock += 1
+                ybp = 0
+
+    return out, out_index, xfill ^ yfill
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+cdef inline tuple int_op_xor_int64(int64_t[:] x_,
+                                              IntIndex xindex,
+                                              int64_t xfill,
+                                              int64_t[:] y_,
+                                              IntIndex yindex,
+                                              int64_t yfill):
+    cdef:
+        IntIndex out_index
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
+        int32_t xloc, yloc
+        int32_t[:] xindices, yindices, out_indices
+        int64_t[:] x, y
+        ndarray[uint8_t, ndim=1] out
+
+    # suppress Cython compiler warnings due to inlining
+    x = x_
+    y = y_
+
+    # need to do this first to know size of result array
+    out_index = xindex.make_union(yindex)
+    out = np.empty(out_index.npoints, dtype=np.uint8)
+
+    xindices = xindex.indices
+    yindices = yindex.indices
+    out_indices = out_index.indices
+
+    # walk the two SparseVectors, adding matched locations...
+    for out_i in range(out_index.npoints):
+        if xi == xindex.npoints:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+            continue
+
+        if yi == yindex.npoints:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+            continue
+
+        xloc = xindices[xi]
+        yloc = yindices[yi]
+
+        # each index in the out_index had to come from either x, y, or both
+        if xloc == yloc:
+            out[out_i] = x[xi] ^ y[yi]
+            xi += 1
+            yi += 1
+        elif xloc < yloc:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+        else:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+
+    return out, out_index, xfill ^ yfill
+
+
+cpdef sparse_xor_int64(int64_t[:] x,
+                                  SparseIndex xindex, int64_t xfill,
+                                  int64_t[:] y,
+                                  SparseIndex yindex, int64_t yfill):
+
+    if isinstance(xindex, BlockIndex):
+        return block_op_xor_int64(x, xindex.to_block_index(), xfill,
+                                             y, yindex.to_block_index(), yfill)
+    elif isinstance(xindex, IntIndex):
+        return int_op_xor_int64(x, xindex.to_int_index(), xfill,
+                                           y, yindex.to_int_index(), yfill)
+    else:
+        raise NotImplementedError
+
+
+cpdef sparse_fill_xor_int64(int64_t xfill,
+                                       int64_t yfill):
+    return xfill ^ yfill
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+cdef inline tuple block_op_xor_uint8(uint8_t[:] x_,
+                                                BlockIndex xindex,
+                                                uint8_t xfill,
+                                                uint8_t[:] y_,
+                                                BlockIndex yindex,
+                                                uint8_t yfill):
+    '''
+    Binary operator on BlockIndex objects with fill values
+    '''
+
+    cdef:
+        BlockIndex out_index
+        Py_ssize_t xi = 0, yi = 0, out_i = 0 # fp buf indices
+        int32_t xbp = 0, ybp = 0 # block positions
+        int32_t xloc, yloc
+        Py_ssize_t xblock = 0, yblock = 0 # block numbers
+
+        uint8_t[:] x, y
+        ndarray[uint8_t, ndim=1] out
+
+    # to suppress Cython warning
+    x = x_
+    y = y_
+
+    out_index = xindex.make_union(yindex)
+    out = np.empty(out_index.npoints, dtype=np.uint8)
+
+    # Wow, what a hack job. Need to do something about this
+
+    # walk the two SparseVectors, adding matched locations...
+    for out_i in range(out_index.npoints):
+        if yblock == yindex.nblocks:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+
+            # advance x location
+            xbp += 1
+            if xbp == xindex.lenbuf[xblock]:
+                xblock += 1
+                xbp = 0
+            continue
+
+        if xblock == xindex.nblocks:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+
+            # advance y location
+            ybp += 1
+            if ybp == yindex.lenbuf[yblock]:
+                yblock += 1
+                ybp = 0
+            continue
+
+        yloc = yindex.locbuf[yblock] + ybp
+        xloc = xindex.locbuf[xblock] + xbp
+
+        # each index in the out_index had to come from either x, y, or both
+        if xloc == yloc:
+            out[out_i] = x[xi] ^ y[yi]
+            xi += 1
+            yi += 1
+
+            # advance both locations
+            xbp += 1
+            if xbp == xindex.lenbuf[xblock]:
+                xblock += 1
+                xbp = 0
+
+            ybp += 1
+            if ybp == yindex.lenbuf[yblock]:
+                yblock += 1
+                ybp = 0
+
+        elif xloc < yloc:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+
+            # advance x location
+            xbp += 1
+            if xbp == xindex.lenbuf[xblock]:
+                xblock += 1
+                xbp = 0
+        else:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+
+            # advance y location
+            ybp += 1
+            if ybp == yindex.lenbuf[yblock]:
+                yblock += 1
+                ybp = 0
+
+    return out, out_index, xfill ^ yfill
+
+
+@cython.wraparound(False)
+@cython.boundscheck(False)
+cdef inline tuple int_op_xor_uint8(uint8_t[:] x_,
+                                              IntIndex xindex,
+                                              uint8_t xfill,
+                                              uint8_t[:] y_,
+                                              IntIndex yindex,
+                                              uint8_t yfill):
+    cdef:
+        IntIndex out_index
+        Py_ssize_t xi = 0, yi = 0, out_i = 0  # fp buf indices
+        int32_t xloc, yloc
+        int32_t[:] xindices, yindices, out_indices
+        uint8_t[:] x, y
+        ndarray[uint8_t, ndim=1] out
+
+    # suppress Cython compiler warnings due to inlining
+    x = x_
+    y = y_
+
+    # need to do this first to know size of result array
+    out_index = xindex.make_union(yindex)
+    out = np.empty(out_index.npoints, dtype=np.uint8)
+
+    xindices = xindex.indices
+    yindices = yindex.indices
+    out_indices = out_index.indices
+
+    # walk the two SparseVectors, adding matched locations...
+    for out_i in range(out_index.npoints):
+        if xi == xindex.npoints:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+            continue
+
+        if yi == yindex.npoints:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+            continue
+
+        xloc = xindices[xi]
+        yloc = yindices[yi]
+
+        # each index in the out_index had to come from either x, y, or both
+        if xloc == yloc:
+            out[out_i] = x[xi] ^ y[yi]
+            xi += 1
+            yi += 1
+        elif xloc < yloc:
+            # use y fill value
+            out[out_i] = x[xi] ^ yfill
+            xi += 1
+        else:
+            # use x fill value
+            out[out_i] = xfill ^ y[yi]
+            yi += 1
+
+    return out, out_index, xfill ^ yfill
+
+
+cpdef sparse_xor_uint8(uint8_t[:] x,
+                                  SparseIndex xindex, uint8_t xfill,
+                                  uint8_t[:] y,
+                                  SparseIndex yindex, uint8_t yfill):
+
+    if isinstance(xindex, BlockIndex):
+        return block_op_xor_uint8(x, xindex.to_block_index(), xfill,
+                                             y, yindex.to_block_index(), yfill)
+    elif isinstance(xindex, IntIndex):
+        return int_op_xor_uint8(x, xindex.to_int_index(), xfill,
+                                           y, yindex.to_int_index(), yfill)
+    else:
+        raise NotImplementedError
+
+
+cpdef sparse_fill_xor_uint8(uint8_t xfill,
+                                       uint8_t yfill):
+    return xfill ^ yfill

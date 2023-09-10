@@ -10,6 +10,10 @@ WARNING: DO NOT edit .pxi FILE directly, .pxi is generated from .pxi.in
 # ----------------------------------------------------------------------
 
 from pandas._libs.tslibs.util cimport get_c_string
+from pandas._libs.missing cimport C_NA
+
+cdef extern from "Python.h":
+    void PyErr_Clear()
 
 ctypedef struct Float64VectorData:
     float64_t *data
@@ -100,7 +104,7 @@ cdef class Float64Vector:
             PyMem_Free(self.data)
             self.data = NULL
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.data.n
 
     cpdef to_array(self):
@@ -155,7 +159,7 @@ cdef class UInt64Vector:
             PyMem_Free(self.data)
             self.data = NULL
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.data.n
 
     cpdef to_array(self):
@@ -206,7 +210,7 @@ cdef class Int64Vector:
             PyMem_Free(self.data)
             self.data = NULL
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.data.n
 
     cpdef to_array(self):
@@ -272,7 +276,7 @@ cdef class StringVector:
             PyMem_Free(self.data)
             self.data = NULL
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.data.n
 
     def to_array(self):
@@ -296,7 +300,7 @@ cdef class StringVector:
 
         append_data_string(self.data, x)
 
-    cdef extend(self, ndarray[:] x):
+    cdef extend(self, ndarray[object] x):
         for i in range(len(x)):
             self.append(x[i])
 
@@ -316,7 +320,7 @@ cdef class ObjectVector:
         self.ao = np.empty(_INIT_VEC_CAP, dtype=object)
         self.data = <PyObject**>self.ao.data
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.n
 
     cdef inline append(self, object obj):
@@ -341,7 +345,7 @@ cdef class ObjectVector:
         self.external_view_exists = True
         return self.ao
 
-    cdef extend(self, ndarray[:] x):
+    cdef extend(self, ndarray[object] x):
         for i in range(len(x)):
             self.append(x[i])
 
@@ -362,7 +366,7 @@ cdef class Float64HashTable(HashTable):
             size_hint = min(size_hint, _SIZE_HINT_LIMIT)
             kh_resize_float64(self.table, size_hint)
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.table.size
 
     def __dealloc__(self):
@@ -371,7 +375,8 @@ cdef class Float64HashTable(HashTable):
             self.table = NULL
 
     def __contains__(self, object key):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         k = kh_get_float64(self.table, key)
         return k != self.table.n_buckets
 
@@ -382,7 +387,8 @@ cdef class Float64HashTable(HashTable):
                                        sizeof(uint32_t))  # flags
 
     cpdef get_item(self, float64_t val):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         k = kh_get_float64(self.table, val)
         if k != self.table.n_buckets:
             return self.table.vals[k]
@@ -668,7 +674,7 @@ cdef class UInt64HashTable(HashTable):
             size_hint = min(size_hint, _SIZE_HINT_LIMIT)
             kh_resize_uint64(self.table, size_hint)
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.table.size
 
     def __dealloc__(self):
@@ -677,7 +683,8 @@ cdef class UInt64HashTable(HashTable):
             self.table = NULL
 
     def __contains__(self, object key):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         k = kh_get_uint64(self.table, key)
         return k != self.table.n_buckets
 
@@ -688,7 +695,8 @@ cdef class UInt64HashTable(HashTable):
                                        sizeof(uint32_t))  # flags
 
     cpdef get_item(self, uint64_t val):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         k = kh_get_uint64(self.table, val)
         if k != self.table.n_buckets:
             return self.table.vals[k]
@@ -970,7 +978,7 @@ cdef class Int64HashTable(HashTable):
             size_hint = min(size_hint, _SIZE_HINT_LIMIT)
             kh_resize_int64(self.table, size_hint)
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.table.size
 
     def __dealloc__(self):
@@ -979,7 +987,8 @@ cdef class Int64HashTable(HashTable):
             self.table = NULL
 
     def __contains__(self, object key):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         k = kh_get_int64(self.table, key)
         return k != self.table.n_buckets
 
@@ -990,7 +999,8 @@ cdef class Int64HashTable(HashTable):
                                        sizeof(uint32_t))  # flags
 
     cpdef get_item(self, int64_t val):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         k = kh_get_int64(self.table, val)
         if k != self.table.n_buckets:
             return self.table.vals[k]
@@ -1290,7 +1300,7 @@ cdef class StringHashTable(HashTable):
                                        sizeof(Py_ssize_t) + # vals
                                        sizeof(uint32_t)) # flags
 
-    cpdef get_item(self, object val):
+    cpdef get_item(self, str val):
         cdef:
             khiter_t k
             const char *v
@@ -1302,16 +1312,16 @@ cdef class StringHashTable(HashTable):
         else:
             raise KeyError(val)
 
-    cpdef set_item(self, object key, Py_ssize_t val):
+    cpdef set_item(self, str key, Py_ssize_t val):
         cdef:
             khiter_t k
             int ret = 0
             const char *v
 
-        v = get_c_string(val)
+        v = get_c_string(key)
 
         k = kh_put_str(self.table, v, &ret)
-        self.table.keys[k] = key
+        self.table.keys[k] = v
         if kh_exist_str(self.table, k):
             self.table.vals[k] = val
         else:
@@ -1360,8 +1370,10 @@ cdef class StringHashTable(HashTable):
         for i in range(n):
             val = values[i]
 
-            if isinstance(val, (str, unicode)):
-                v = get_c_string(val)
+            if isinstance(val, str):
+                # GH#31499 if we have a np.str_ get_c_string won't recognize
+                #  it as a str, even though isinstance does.
+                v = get_c_string(<str>val)
             else:
                 v = get_c_string(self.na_string_sentinel)
             vecs[i] = v
@@ -1393,8 +1405,10 @@ cdef class StringHashTable(HashTable):
         for i in range(n):
             val = values[i]
 
-            if isinstance(val, (str, unicode)):
-                v = get_c_string(val)
+            if isinstance(val, str):
+                # GH#31499 if we have a np.str_ get_c_string won't recognize
+                #  it as a str, even though isinstance does.
+                v = get_c_string(<str>val)
             else:
                 v = get_c_string(self.na_string_sentinel)
             vecs[i] = v
@@ -1467,7 +1481,7 @@ cdef class StringHashTable(HashTable):
             val = values[i]
 
             if (ignore_na
-                and (not isinstance(val, (str, unicode))
+                and (not isinstance(val, str)
                      or (use_na_value and val == na_value))):
                 # if missing values do not count as unique values (i.e. if
                 # ignore_na is True), we can skip the actual value, and
@@ -1475,7 +1489,10 @@ cdef class StringHashTable(HashTable):
                 labels[i] = na_sentinel
             else:
                 # if ignore_na is False, we also stringify NaN/None/etc.
-                v = get_c_string(val)
+                v = get_c_string(<str>val)
+                if v == NULL:
+                    PyErr_Clear()
+                    v = get_c_string(<str>repr(val))
                 vecs[i] = v
 
         # compute
@@ -1588,11 +1605,12 @@ cdef class PyObjectHashTable(HashTable):
             kh_destroy_pymap(self.table)
             self.table = NULL
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self.table.size
 
     def __contains__(self, object key):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
         hash(key)
 
         k = kh_get_pymap(self.table, <PyObject*>key)
@@ -1605,7 +1623,8 @@ cdef class PyObjectHashTable(HashTable):
                                        sizeof(uint32_t))  # flags
 
     cpdef get_item(self, object val):
-        cdef khiter_t k
+        cdef:
+            khiter_t k
 
         k = kh_get_pymap(self.table, <PyObject*>val)
         if k != self.table.n_buckets:
@@ -1717,8 +1736,12 @@ cdef class PyObjectHashTable(HashTable):
             val = values[i]
             hash(val)
 
-            if ignore_na and ((val != val or val is None)
-                              or (use_na_value and val == na_value)):
+            if ignore_na and (
+                (val is C_NA)
+                or (val != val)
+                or (val is None)
+                or (use_na_value and val == na_value)
+            ):
                 # if missing values do not count as unique values (i.e. if
                 # ignore_na is True), skip the hashtable entry for them, and
                 # replace the corresponding label with na_sentinel

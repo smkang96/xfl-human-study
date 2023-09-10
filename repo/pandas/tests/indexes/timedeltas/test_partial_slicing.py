@@ -3,30 +3,25 @@ import pytest
 
 import pandas as pd
 from pandas import Series, Timedelta, timedelta_range
-from pandas.util.testing import assert_series_equal
+import pandas._testing as tm
 
 
 class TestSlicing:
-    def test_slice_keeps_name(self):
-        # GH4226
-        dr = pd.timedelta_range("1d", "5d", freq="H", name="timebucket")
-        assert dr[1:].name == dr.name
-
     def test_partial_slice(self):
         rng = timedelta_range("1 day 10:11:12", freq="h", periods=500)
         s = Series(np.arange(len(rng)), index=rng)
 
         result = s["5 day":"6 day"]
         expected = s.iloc[86:134]
-        assert_series_equal(result, expected)
+        tm.assert_series_equal(result, expected)
 
         result = s["5 day":]
         expected = s.iloc[86:]
-        assert_series_equal(result, expected)
+        tm.assert_series_equal(result, expected)
 
         result = s[:"6 day"]
         expected = s.iloc[:134]
-        assert_series_equal(result, expected)
+        tm.assert_series_equal(result, expected)
 
         result = s["6 days, 23:11:12"]
         assert result == s.iloc[133]
@@ -43,11 +38,11 @@ class TestSlicing:
 
         result = s["1 day 10:11:12":]
         expected = s.iloc[0:]
-        assert_series_equal(result, expected)
+        tm.assert_series_equal(result, expected)
 
         result = s["1 day 10:11:12.001":]
         expected = s.iloc[1000:]
-        assert_series_equal(result, expected)
+        tm.assert_series_equal(result, expected)
 
         result = s["1 days, 10:11:12.001001"]
         assert result == s.iloc[1001]
@@ -57,9 +52,9 @@ class TestSlicing:
         SLC = pd.IndexSlice
 
         def assert_slices_equivalent(l_slc, i_slc):
-            assert_series_equal(ts[l_slc], ts.iloc[i_slc])
-            assert_series_equal(ts.loc[l_slc], ts.iloc[i_slc])
-            assert_series_equal(ts.loc[l_slc], ts.iloc[i_slc])
+            tm.assert_series_equal(ts[l_slc], ts.iloc[i_slc])
+            tm.assert_series_equal(ts.loc[l_slc], ts.iloc[i_slc])
+            tm.assert_series_equal(ts.loc[l_slc], ts.iloc[i_slc])
 
         assert_slices_equivalent(SLC[Timedelta(hours=7) :: -1], SLC[7::-1])
         assert_slices_equivalent(SLC["7 hours"::-1], SLC[7::-1])
