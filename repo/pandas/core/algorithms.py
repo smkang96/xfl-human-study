@@ -1906,9 +1906,10 @@ def diff(arr, n: int, axis: int = 0):
     """
 
     n = int(n)
+    
     na = np.nan
     dtype = arr.dtype
-
+    print('arr@@@@@@@@@2',arr)
     is_timedelta = False
     if needs_i8_conversion(arr):
         dtype = np.float64
@@ -1917,7 +1918,14 @@ def diff(arr, n: int, axis: int = 0):
         is_timedelta = True
 
     elif is_bool_dtype(dtype):
-        dtype = np.object_
+        for i in range(len(arr)):
+            if arr[i]==False:
+                arr[i]=0
+                print(0)
+            else:
+                arr[i]=1
+                print(1)
+        print(arr)
 
     elif is_integer_dtype(dtype):
         dtype = np.float64

@@ -295,6 +295,7 @@ class TestSeriesAnalytics:
     def test_obj_diff(self):
         # object series
         s = Series([False, True, 5.0, nan, True, False])
+        print('s : ',s)
         result = s.diff()
         expected = s - s.shift(1)
         assert_series_equal(result, expected)
