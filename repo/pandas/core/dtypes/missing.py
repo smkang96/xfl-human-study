@@ -445,8 +445,8 @@ def array_equivalent(left, right, strict_nan=False):
                 if not isinstance(right_value, float) or not np.isnan(right_value):
                     return False
             else:
-                if left_value != right_value:
-                    return False
+                # if left_value.any() != right_value.any():
+                    return np.array_equal(left, right)#False
         return True
 
     # NaNs can occur in float and complex arrays.
