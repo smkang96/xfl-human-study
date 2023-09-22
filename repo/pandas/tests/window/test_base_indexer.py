@@ -153,6 +153,8 @@ def test_rolling_forward_window(constructor, func, np_func, expected, np_kwargs)
     match = "Forward-looking windows can't have center=True"
     with pytest.raises(ValueError, match=match):
         rolling = constructor(values).rolling(window=indexer, center=True)
+        print('rolling : ',rolling)
+        print('func : ',func)
         result = getattr(rolling, func)()
 
     match = "Forward-looking windows don't support setting the closed argument"
